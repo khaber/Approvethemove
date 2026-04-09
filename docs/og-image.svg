@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#141428"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4a9eff"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.3" r="0.6">
+      <stop offset="0%" stop-color="#4a9eff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#4a9eff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Logo mark -->
+  <rect x="100" y="130" width="100" height="100" rx="22" fill="url(#accent)"/>
+  <text x="150" y="200" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="58" font-weight="800" fill="#fff" text-anchor="middle">A</text>
+
+  <!-- Title -->
+  <text x="100" y="330" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="88" font-weight="800" fill="#f0f0f0" letter-spacing="-3">Approve The Move</text>
+
+  <!-- Subtitle -->
+  <text x="100" y="400" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="40" font-weight="500" fill="#888">Free iOS apps. No ads. No subscriptions.</text>
+
+  <!-- Tags row -->
+  <g transform="translate(100, 470)">
+    <rect x="0" y="0" width="180" height="50" rx="25" fill="rgba(74, 158, 255, 0.15)" stroke="rgba(74, 158, 255, 0.3)" stroke-width="1"/>
+    <text x="90" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="600" fill="#4a9eff" text-anchor="middle">100% Free</text>
+
+    <rect x="200" y="0" width="160" height="50" rx="25" fill="rgba(52, 199, 89, 0.15)" stroke="rgba(52, 199, 89, 0.3)" stroke-width="1"/>
+    <text x="280" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="600" fill="#34c759" text-anchor="middle">No Ads</text>
+
+    <rect x="380" y="0" width="160" height="50" rx="25" fill="rgba(255, 159, 10, 0.15)" stroke="rgba(255, 159, 10, 0.3)" stroke-width="1"/>
+    <text x="460" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="600" fill="#ff9f0a" text-anchor="middle">6 Apps</text>
+  </g>
+
+  <!-- By line -->
+  <text x="1100" y="580" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="24" font-weight="500" fill="#666" text-anchor="end">by Yousif Ameen</text>
+</svg>

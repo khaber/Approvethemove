@@ -1,0 +1,21 @@
+# Xcode project folders (private source code)
+ATM Flow/
+ATM Split/
+ATMChat/
+Currency Converter/
+Qatari Joker/
+Qatari Joker_BACKUP_*/
+Unit Converter/
+GlucoRelay/
+
+# Design options (local only)
+design-options/
+
+# Claude Code config
+.claude/
+CLAUDE.md
+
+# macOS
+.DS_Store
+**/.DS_Store
+*.xcuserdata
