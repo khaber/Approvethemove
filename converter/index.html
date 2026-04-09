@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter — Live Exchange Rates | Approve The Move</title>
+  <meta name="description" content="Convert between 100+ world currencies with live exchange rates. Works offline. Free, no ads.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://approvethemove.com/converter/">
+  <meta property="og:title" content="Currency Converter — Live Exchange Rates">
+  <meta property="og:description" content="Convert between 100+ world currencies with live exchange rates. Works offline. Free, no ads.">
+  <meta property="og:image" content="https://approvethemove.com/og-image.svg">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Currency Converter — Live Exchange Rates">
+  <meta name="twitter:description" content="Convert between 100+ world currencies with live exchange rates. Works offline. Free, no ads.">
+  <meta name="twitter:image" content="https://approvethemove.com/og-image.svg">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container">
+      <a href="/" class="nav-brand"><img src="../logo.svg" alt="" class="nav-logo"><span>Approve The Move</span></a>
+      <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="/#apps">Apps</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="app-hero">
+    <div class="container">
+      <img src="../images/icon-converter.png" alt="Currency Converter" class="app-icon-large">
+      <h1>Currency Converter</h1>
+      <p class="subtitle">Convert between 100+ world currencies with live exchange rates. Clean, fast, and works offline with cached rates.</p>
+      <div class="app-badges">
+        <span class="badge coming-soon">Coming Soon</span>
+        <span class="badge free">Free</span>
+        <span class="badge no-ads">No Ads</span>
+        <span class="badge">100+ Currencies</span>
+        <span class="badge">iOS 17+</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <h2>Features</h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <h3>Live Exchange Rates</h3>
+          <p>Fetches real-time rates so your conversions are always current. See exactly when rates were last updated.</p>
+        </div>
+        <div class="feature-item">
+          <h3>100+ Currencies</h3>
+          <p>All major world currencies supported. Add the ones you use most to your quick-access list.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Instant Conversion</h3>
+          <p>See results as you type. Convert to multiple currencies at once from a single input.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Offline Mode</h3>
+          <p>Cached rates keep the app working even without internet. Bundled fallback rates included.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Clean Keypad</h3>
+          <p>Intuitive numeric keypad designed for quick, easy number entry. No clutter.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Customizable</h3>
+          <p>Light/dark mode and custom accent colors. Make it yours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <h2>How to Use</h2>
+      <div class="steps">
+        <div class="step">
+          <p><strong>Add your currencies</strong> — Tap + to add the currencies you use most to your list.</p>
+        </div>
+        <div class="step">
+          <p><strong>Enter an amount</strong> — Use the keypad to type a number. All conversions update instantly.</p>
+        </div>
+        <div class="step">
+          <p><strong>View rates</strong> — See the exchange rate used for each conversion and when it was last updated.</p>
+        </div>
+        <div class="step">
+          <p><strong>Refresh</strong> — Tap refresh to pull the latest rates. The app also caches rates for offline use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Where do the exchange rates come from?</summary>
+          <p>Live rates are fetched from open.er-api.com, a public currency data API. No personal data is sent with the request &mdash; just the currency query.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does it work offline?</summary>
+          <p>Yes. The app caches rates so you can keep using it without internet. Cached rates are saved on your device for offline use.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How often are rates updated?</summary>
+          <p>Rates refresh automatically when you open the app with an internet connection. You can also manually refresh them anytime with one tap.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How many currencies are supported?</summary>
+          <p>Over 100 world currencies. You can add the ones you use most to your quick list and reorder them however you want.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is there really no subscription or ads?</summary>
+          <p>Correct. It's fully free with zero ads, zero tracking, and no "premium" version locked behind a paywall.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <h2>Privacy</h2>
+      <p>Currency Converter only fetches exchange rate data from a public API. No personal data is collected or stored externally. Cached rates are stored on your device.</p>
+      <p><a href="privacy.html">Read full privacy policy &rarr;</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="https://www.instagram.com/yousif.ameen" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <p>&copy; 2026 Approve The Move. Built by Yousif Ameen.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">&uarr;</button>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

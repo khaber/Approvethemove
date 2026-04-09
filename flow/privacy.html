@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — ATM Flow | Approve The Move</title>
+  <meta name="description" content="Privacy policy for ATM Flow. We don't collect your data.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://approvethemove.com/flow/privacy.html">
+  <meta property="og:title" content="ATM Flow — Privacy Policy">
+  <meta property="og:description" content="Privacy policy for ATM Flow. We don't collect your data.">
+  <meta property="og:image" content="https://approvethemove.com/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body data-accent="green">
+
+  <nav class="nav">
+    <div class="container">
+      <a href="/" class="nav-brand"><img src="../logo.svg" alt="" class="nav-logo"><span>Approve The Move</span></a>
+      <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="/#apps">Apps</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="privacy-content">
+      <h1>ATM Flow — Privacy Policy</h1>
+      <p class="last-updated">Last updated: March 25, 2026</p>
+
+      <h2>Overview</h2>
+      <p>ATM Flow is a personal finance tracking app built by Yousif Ameen under Approve The Move. Your privacy is fundamental to how this app is built.</p>
+
+      <h2>Data Storage</h2>
+      <p>All your financial data — accounts, transactions, budgets, goals, categories, and tags — is stored in two places:</p>
+      <ul>
+        <li><strong>On your device</strong> — using SwiftData, Apple's local database framework</li>
+        <li><strong>In your personal iCloud account</strong> — via CloudKit, Apple's sync service, so your data syncs across your own devices</li>
+      </ul>
+      <p>Your data is stored in your private CloudKit container. Only you can access it through your Apple ID. The developer (Approve The Move) cannot read, access, or retrieve your data.</p>
+
+      <h2>Data Collection</h2>
+      <p>ATM Flow collects <strong>no data</strong>. Specifically:</p>
+      <ul>
+        <li>No analytics or usage tracking</li>
+        <li>No crash reporting SDKs</li>
+        <li>No advertising frameworks or identifiers</li>
+        <li>No third-party SDKs that collect data</li>
+        <li>No server-side storage controlled by the developer</li>
+      </ul>
+
+      <h2>Network Activity</h2>
+      <p>The only network activity is CloudKit sync between your own devices via your iCloud account. This is handled entirely by Apple's infrastructure and protected by your Apple ID credentials.</p>
+
+      <h2>Photos</h2>
+      <p>ATM Flow allows you to attach photos to transactions. These photos are stored locally on your device and in your iCloud. They are never uploaded to external servers.</p>
+
+      <h2>Biometric Data</h2>
+      <p>ATM Flow supports Face ID and Touch ID for app lock. Biometric data is handled entirely by iOS and never leaves the Secure Enclave on your device. The app only receives a yes/no authentication result.</p>
+
+      <h2>Data Deletion</h2>
+      <p>You can delete any data at any time within the app. Deleted data is moved to trash and can be permanently removed. Uninstalling the app removes all local data. iCloud data can be managed through your device's iCloud settings.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>If this privacy policy ever changes, you will be notified within the app before any changes take effect.</p>
+
+      <h2>Contact</h2>
+      <p>If you have questions about this privacy policy, contact: <strong>support@approvethemove.com</strong></p>
+    </div>
+  </div>
+
+  <footer class="footer" style="margin-top:80px;">
+    <div class="container">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="../flow/">ATM Flow</a>
+        <a href="/privacy/">All Privacy Policies</a>
+      </div>
+      <p>&copy; 2026 Approve The Move. Built by Yousif Ameen.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">&uarr;</button>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
