@@ -2,30 +2,32 @@
    Approve The Move — Website Styles
    ============================================ */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 :root {
-  --bg: #0a0a0a;
-  --bg-card: #141414;
-  --bg-card-hover: #1a1a1a;
-  --text: #f0f0f0;
-  --text-muted: #888;
+  --bg: #09090b;
+  --bg-card: #131316;
+  --bg-card-hover: #1a1a1f;
+  --text: #f4f4f5;
+  --text-muted: #a1a1aa;
   --accent: #4a9eff;
   --accent-rgb: 74, 158, 255;
   --accent-glow: rgba(74, 158, 255, 0.15);
   --accent-2: #7c3aed;
-  --border: #222;
+  --border: #27272a;
   --radius: 16px;
-  --radius-sm: 10px;
+  --radius-sm: 12px;
   --max-width: 1100px;
-  --transition: 0.25s ease;
+  --transition: 0.2s ease;
 }
 
 [data-theme="light"] {
-  --bg: #f5f5f7;
-  --bg-card: #fff;
-  --bg-card-hover: #f0f0f2;
-  --text: #1d1d1f;
-  --text-muted: #6e6e73;
-  --border: #d2d2d7;
+  --bg: #fafafa;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f4f4f5;
+  --text: #18181b;
+  --text-muted: #71717a;
+  --border: #e4e4e7;
   --accent-glow: rgba(74, 158, 255, 0.08);
 }
 
@@ -77,11 +79,13 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(ellipse at top, rgba(74, 158, 255, 0.03) 0%, transparent 60%);
+  background-attachment: fixed;
 }
 
 a {
@@ -110,7 +114,7 @@ img {
 }
 
 section {
-  padding: 80px 0;
+  padding: 64px 0;
 }
 
 /* ============================================
@@ -207,7 +211,7 @@ section {
    ============================================ */
 
 .hero {
-  padding: 160px 0 100px;
+  padding: 130px 0 48px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -293,7 +297,7 @@ section {
    ============================================ */
 
 .about {
-  padding: 60px 0 80px;
+  padding: 24px 0 64px;
 }
 
 .about-content {
@@ -370,6 +374,7 @@ section {
   display: flex;
   flex-direction: column;
   position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 0 0 1px rgba(255,255,255,0.03) inset;
 }
 
 .card-status {
@@ -412,7 +417,8 @@ section {
 .app-card:hover {
   background: var(--bg-card-hover);
   border-color: var(--accent);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(var(--accent-rgb), 0.15) inset;
 }
 
 .app-card-header {
@@ -428,6 +434,7 @@ section {
   border-radius: 14px;
   object-fit: cover;
   flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .app-icon-placeholder {
@@ -966,8 +973,9 @@ section {
 
 .footer {
   border-top: 1px solid var(--border);
-  padding: 40px 0;
+  padding: 48px 0 36px;
   text-align: center;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.2));
 }
 
 .footer p {
@@ -1002,7 +1010,7 @@ section {
   }
 
   .hero {
-    padding: 120px 0 60px;
+    padding: 110px 0 36px;
   }
 
   .app-hero {
