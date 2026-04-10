@@ -40,6 +40,4 @@
     <text x="460" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="600" fill="#ff9f0a" text-anchor="middle">6 Apps</text>
   </g>
 
-  <!-- By line -->
-  <text x="1100" y="580" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="24" font-weight="500" fill="#666" text-anchor="end">by Yousif Ameen</text>
 </svg>
