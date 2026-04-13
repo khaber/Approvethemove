@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — ATMChat | Approve The Move</title>
-  <meta name="description" content="Privacy policy for ATMChat. We don't collect your data.">
+  <title>Privacy Policy & Terms of Use — ATMChat | Approve The Move</title>
+  <meta name="description" content="Privacy policy and terms of use for ATMChat by Approve The Move. We respect your privacy and do not collect personal data.">
   <meta name="theme-color" content="#0a0a0a">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="stylesheet" href="../css/style.css">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://approvethemove.com/chat/privacy.html">
-  <meta property="og:title" content="ATMChat — Privacy Policy">
-  <meta property="og:description" content="Privacy policy for ATMChat. We don't collect your data.">
+  <meta property="og:title" content="ATMChat — Privacy Policy & Terms of Use">
+  <meta property="og:description" content="Privacy policy and terms of use for ATMChat by Approve The Move.">
   <meta property="og:image" content="https://approvethemove.com/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -32,48 +32,404 @@
 
   <div class="container">
     <div class="privacy-content">
-      <h1>ATMChat — Privacy Policy</h1>
-      <p class="last-updated">Last updated: March 25, 2026</p>
 
-      <h2>Overview</h2>
-      <p>ATMChat is a decentralized offline messaging app built by Approve The Move. It is designed from the ground up with privacy as a core principle.</p>
+      <h1>ATMChat — Privacy Policy & Terms of Use</h1>
+      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: April 13, 2026</p>
 
-      <h2>How ATMChat Works</h2>
-      <p>ATMChat sends messages directly between devices using Wi-Fi (MultipeerConnectivity) and Bluetooth Low Energy. There are no servers involved. Messages travel peer-to-peer and are never routed through the internet or any external infrastructure.</p>
+      <p style="margin-bottom:2em;">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for ATMChat. Please read both sections carefully before using the App.</p>
 
-      <h2>Data Storage</h2>
+      <!-- ======================================================== -->
+      <!--                     PART I: PRIVACY POLICY               -->
+      <!-- ======================================================== -->
+
+      <h1 style="font-size:1.5em; margin-top:2em; padding-top:1.5em; border-top:1px solid var(--border);">Part I — Privacy Policy</h1>
+
+      <!-- 1. Introduction -->
+      <h2>1. Introduction</h2>
+      <p>This Privacy Policy explains how ATMChat ("the App"), developed and published by Approve The Move ("we", "us", or "our"), handles information when you ("you" or "the user") download, install, or use the App on any supported device.</p>
+      <p>We are committed to protecting your privacy. This policy applies to all versions of ATMChat distributed through the Apple App Store and any future platforms.</p>
+      <p>By downloading, installing, or using ATMChat, you acknowledge that you have read, understood, and agree to the practices described in this policy. If you do not agree, please do not use the App and remove it from your device.</p>
+
+      <!-- 2. Information We Collect -->
+      <h2>2. Information We Collect</h2>
+      <p><strong>We do not collect, transmit, or process any personal data.</strong> ATMChat is designed from the ground up as a privacy-first, offline mesh messaging application. Specifically:</p>
       <ul>
-        <li><strong>Messages</strong> — stored locally on your device only</li>
-        <li><strong>Chat history</strong> — persisted on-device for your convenience</li>
-        <li><strong>Device identity</strong> — a randomly generated UUID stored on your device, not linked to your Apple ID or personal information</li>
-        <li><strong>Avatars and display names</strong> — stored locally and shared only with peers you connect to</li>
+        <li><strong>No account creation</strong> — You are never required or asked to sign up, log in, create an account, or provide an email address, phone number, or any other personal identifier. Your device identity is a randomly generated UUID that is not linked to your Apple ID, phone number, or any personal information.</li>
+        <li><strong>No analytics or tracking</strong> — We do not use any analytics frameworks, crash reporting services, telemetry tools, device fingerprinting, or usage tracking of any kind.</li>
+        <li><strong>No advertising</strong> — The App contains no advertisements, no advertising SDKs, no ad identifiers (IDFA), and no advertising networks.</li>
+        <li><strong>No server-side communication</strong> — The App does not connect to the internet, does not make HTTP requests, and does not transmit any data to any external server, cloud service, or remote endpoint. All networking activity is strictly local peer-to-peer.</li>
+        <li><strong>No cloud sync</strong> — Messages, conversations, and all other data remain exclusively on your device. There is no cloud backup, no server-side message storage, and no synchronization service of any kind.</li>
+        <li><strong>No in-app purchases</strong> — No financial, billing, or payment information is collected or processed.</li>
+        <li><strong>No location data</strong> — The App does not request, access, or store your geographic location.</li>
       </ul>
 
-      <h2>Data Collection</h2>
-      <p>ATMChat collects <strong>no data</strong>. Specifically:</p>
+      <!-- 3. On-Device Storage -->
+      <h2>3. On-Device Storage</h2>
+      <p>ATMChat stores data locally on your device using two storage mechanisms. This data is stored within the App's private sandbox, is not accessible to other apps, and <strong>never leaves your device</strong> except when explicitly transmitted to nearby peers during active messaging sessions (see Section 4).</p>
+
+      <h3>3.1 UserDefaults</h3>
+      <p>A small amount of non-personal preference data is stored using Apple's <strong>UserDefaults</strong> system:</p>
       <ul>
-        <li>No analytics or usage tracking</li>
-        <li>No advertising frameworks</li>
-        <li>No account creation — your device is your identity</li>
-        <li>No server-side storage or cloud sync</li>
-        <li>No contact list access beyond what you explicitly share</li>
-        <li>No location tracking</li>
+        <li>Display name (the name you choose, shared only with peers you connect to)</li>
+        <li>A randomly generated unique identifier (UUID) used solely to identify your device during local messaging sessions — not linked to your Apple ID or any personal information</li>
+        <li>Theme preference (System, Light, or Dark)</li>
+        <li>Accent color selection</li>
+        <li>Haptic feedback preference</li>
+      </ul>
+      <p>This data is declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
+
+      <h3>3.2 ChatStorage (Custom Local Storage)</h3>
+      <p>ATMChat uses a custom on-device storage system called <strong>ChatStorage</strong> to persist your messaging data locally. This includes:</p>
+      <ul>
+        <li>Message history (text messages, media metadata, and message content)</li>
+        <li>Conversation list (the list of peers you have communicated with)</li>
+        <li>Read receipts (which messages you have read and when)</li>
+      </ul>
+      <p>All ChatStorage data resides exclusively within the App's iOS sandbox on your device. It is never uploaded, synced, backed up to any cloud service, or transmitted to any server. The only time message content leaves your device is when it is sent directly to a nearby peer over the local network (see Section 4).</p>
+
+      <p><strong>How to delete:</strong> You can delete individual messages, clear entire conversations from within the App, or erase all locally stored data at any time by deleting ATMChat from your device. No residual data is retained after uninstallation.</p>
+
+      <!-- 4. Local Networking & Mesh Messaging -->
+      <h2>4. Local Networking & Mesh Messaging</h2>
+      <p>Local networking is the <strong>primary feature</strong> of ATMChat. The App enables direct, peer-to-peer mesh messaging between nearby devices using two Apple frameworks: <strong>MultipeerConnectivity</strong> (Wi-Fi) and <strong>CoreBluetooth</strong> (Bluetooth Low Energy). This section provides comprehensive detail about how your data is handled during messaging sessions.</p>
+
+      <h3>4.1 How It Works</h3>
+      <ul>
+        <li><strong>No internet connection is used or required.</strong> All communication occurs directly between devices over local Wi-Fi and Bluetooth Low Energy (BLE). No data passes through our servers, Apple's servers, or any third-party relay.</li>
+        <li>The App uses Apple's <strong>Bonjour</strong> protocol (via MultipeerConnectivity) and <strong>BLE advertising</strong> (via CoreBluetooth) to discover nearby devices that are running ATMChat.</li>
+        <li>Once peers discover each other, a direct connection is established. All subsequent data exchange occurs over this local peer-to-peer link.</li>
+        <li><strong>No message logs exist on any server.</strong> Because the App never connects to the internet and operates no backend infrastructure, there is no server that could store, log, intercept, or retain any of your messages. We have no ability to read, access, or recover your messages.</li>
       </ul>
 
-      <h2>Network Activity</h2>
-      <p>ATMChat has <strong>zero internet network activity</strong>. All communication happens over local Wi-Fi and Bluetooth between nearby devices. No data ever leaves your local network.</p>
+      <h3>4.2 Data Transmitted During Sessions</h3>
+      <p>During an active local messaging session, the following types of data may be transmitted between connected devices:</p>
+      <ul>
+        <li><strong>Text messages</strong> — The content of messages you type and send to other peers.</li>
+        <li><strong>Photos</strong> — Images you select from your photo library or capture with your camera to send to peers.</li>
+        <li><strong>Videos</strong> — Video files you select or record to send to peers.</li>
+        <li><strong>Voice messages</strong> — Audio recordings you create within the App to send to peers.</li>
+        <li><strong>Contact cards</strong> — Contact information you explicitly choose to share with peers.</li>
+        <li><strong>Files</strong> — Documents and files you explicitly select to send to peers.</li>
+        <li><strong>Delivery receipts</strong> — Confirmation signals indicating that a message has been delivered to the recipient's device.</li>
+        <li><strong>Read receipts</strong> — Signals indicating that a recipient has opened and viewed your message.</li>
+        <li><strong>Message reactions</strong> — Emoji reactions you attach to specific messages.</li>
+        <li><strong>Delete requests</strong> — When you delete a message for all participants, a deletion signal is sent to connected peers to remove the message from their devices.</li>
+        <li><strong>Display names and device UUIDs</strong> — So peers can identify each other during messaging sessions. UUIDs are randomly generated and not linked to any personal information.</li>
+      </ul>
+      <p>All of this data is transmitted <strong>directly between devices over the local network</strong>. None of it is routed through the internet, stored on any server, or accessible to anyone other than the connected peers in the session.</p>
 
-      <h2>Media &amp; Files</h2>
-      <p>Photos, videos, voice messages, and files you send are transmitted directly to the recipient's device over the local connection. They are not uploaded to any server or cloud storage.</p>
+      <h3>4.3 Mesh Routing & Privacy Implications</h3>
+      <p>ATMChat supports <strong>mesh networking</strong>, which means messages can hop through intermediate devices to reach their intended recipient. This enables communication even when two devices are not directly within range of each other, as long as intermediate ATMChat devices form a connected path.</p>
+      <p>Important privacy details about mesh routing:</p>
+      <ul>
+        <li><strong>Intermediate devices act as relays only.</strong> When a message hops through an intermediate device, that device forwards the encrypted data without storing, decrypting, or displaying it. The message content is not accessible to the relay device's user.</li>
+        <li><strong>All mesh-routed data is encrypted.</strong> Messages transmitted through the mesh are protected by Apple's built-in TLS encryption (see Section 4.4). Intermediate devices cannot read the content of messages they relay.</li>
+        <li><strong>No persistent relay logs.</strong> Intermediate devices do not retain any record of messages they have forwarded. Once a message is relayed, no trace of it remains on the relay device.</li>
+        <li><strong>Routing metadata is minimal.</strong> The only information an intermediate device processes is the minimum necessary to forward data to the next hop — it does not have access to the full message content, sender identity, or conversation context.</li>
+      </ul>
 
-      <h2>Data Deletion</h2>
-      <p>You can delete individual messages (including for all participants) or clear entire conversations. Uninstalling the app removes all data permanently.</p>
+      <h3>4.4 Encryption</h3>
+      <p>All peer-to-peer communication is encrypted using <strong>Apple's built-in TLS encryption</strong> (MCSession with <code>.required</code> encryption preference). This means:</p>
+      <ul>
+        <li>All data transmitted between devices — including text messages, photos, videos, voice messages, files, and all metadata — is encrypted in transit.</li>
+        <li>Data cannot be intercepted or read by other devices on the same network that are not part of the active session.</li>
+        <li>The encryption is handled entirely by Apple's MultipeerConnectivity framework at the transport layer, using industry-standard TLS protocols.</li>
+        <li>We do not implement custom encryption on top of Apple's TLS — we rely on Apple's well-audited, system-level encryption implementation.</li>
+      </ul>
 
-      <h2>Changes to This Policy</h2>
-      <p>If this privacy policy ever changes, you will be notified within the app before any changes take effect.</p>
+      <h3>4.5 Session Lifecycle</h3>
+      <p>When a messaging session ends (either by disconnecting, moving out of range, or closing the App), the active peer-to-peer connection is terminated. Message history that has been saved to ChatStorage (Section 3.2) persists locally on your device for your convenience. However, no session data is transmitted to any server, and no session metadata is retained beyond what is stored locally on your own device.</p>
 
-      <h2>Contact</h2>
-      <p>If you have questions about this privacy policy, contact: <strong>support@approvethemove.com</strong></p>
+      <h3>4.6 Media & File Privacy</h3>
+      <p>Photos, videos, voice messages, contact cards, and files you send through ATMChat are transmitted directly to the recipient's device over the local peer-to-peer connection. They are never uploaded to any server, cloud storage service, or content delivery network. Once transmitted, the media exists only on the sender's and recipient's devices.</p>
+
+      <!-- 5. Third-Party Services & SDKs -->
+      <h2>5. Third-Party Services & SDKs</h2>
+      <p>ATMChat does <strong>not</strong> integrate, embed, or communicate with any third-party services, SDKs, APIs, or frameworks that collect, process, or transmit user data. The App uses exclusively Apple-provided first-party system frameworks:</p>
+      <table style="width:100%; margin:1em 0; border-collapse:collapse;">
+        <tr style="border-bottom:1px solid var(--border);">
+          <th style="text-align:left; padding:8px;">Framework</th>
+          <th style="text-align:left; padding:8px;">Purpose</th>
+          <th style="text-align:left; padding:8px;">Data Collection</th>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">SwiftUI</td>
+          <td style="padding:8px;">User interface rendering</td>
+          <td style="padding:8px;">None</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">MultipeerConnectivity</td>
+          <td style="padding:8px;">Local peer-to-peer Wi-Fi mesh networking</td>
+          <td style="padding:8px;">None (local only)</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">CoreBluetooth</td>
+          <td style="padding:8px;">Bluetooth Low Energy (BLE) mesh networking</td>
+          <td style="padding:8px;">None (local only)</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">AVFoundation</td>
+          <td style="padding:8px;">Audio and video recording for voice messages and media capture</td>
+          <td style="padding:8px;">None</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;">PhotosUI</td>
+          <td style="padding:8px;">Photo and video selection from user's library</td>
+          <td style="padding:8px;">None</td>
+        </tr>
+      </table>
+      <p>We do not use Firebase, Google Analytics, Facebook SDK, Unity, AdMob, Crashlytics, Sentry, Amplitude, Mixpanel, or any other third-party data collection tool.</p>
+
+      <!-- 6. Apple's Data Practices -->
+      <h2>6. Apple's Data Practices</h2>
+      <p>While ATMChat itself does not collect data, please be aware that Apple may independently collect certain information related to your use of the App Store, such as download statistics and crash logs. This data collection is governed by <a href="https://www.apple.com/legal/privacy/" style="color:var(--accent);">Apple's Privacy Policy</a>, not ours, and is outside our control.</p>
+      <p>We have declared in App Store Connect that ATMChat collects <strong>no data</strong> linked to or tracking the user, as reflected on the App's App Store product page under "App Privacy."</p>
+
+      <!-- 7. Children's Privacy -->
+      <h2>7. Children's Privacy</h2>
+      <p>ATMChat is rated <strong>4+</strong> by Apple and is designed to be suitable for users of all ages. The App does not contain violence, gambling (real or simulated), horror, mature themes, profanity, or any other objectionable material.</p>
+      <p>Because we do not collect any personal information from any user of any age, we are compliant with the following regulations regarding children's privacy:</p>
+      <ul>
+        <li><strong>COPPA</strong> (Children's Online Privacy Protection Act, United States) — We do not knowingly collect personal information from children under the age of 13. Since the App collects no personal information from anyone, no COPPA violation can occur.</li>
+        <li><strong>GDPR-K / Age of Digital Consent</strong> (European Economic Area) — We do not process personal data of minors under 16 (or the lower age set by individual EEA member states). Since no personal data is processed, no parental consent is required.</li>
+        <li><strong>Apple's Guidelines for Apps Used by Children</strong> — The App contains no data collection, no third-party analytics, no advertising, and no external links within the messaging experience.</li>
+      </ul>
+      <p>Parents, guardians, and educators can allow children to use ATMChat with full confidence that no personal information is collected, stored, or shared.</p>
+
+      <!-- 8. Your Rights Under Applicable Laws -->
+      <h2>8. Your Rights Under Applicable Laws</h2>
+      <p>We respect and support the privacy rights granted to individuals under applicable data protection legislation worldwide.</p>
+
+      <h3>8.1 European Economic Area (GDPR)</h3>
+      <p>If you are located in the European Economic Area (EEA), the United Kingdom, or Switzerland, the <strong>General Data Protection Regulation (GDPR)</strong> and equivalent local laws grant you the following rights regarding personal data:</p>
+      <ul>
+        <li><strong>Right of access</strong> (Article 15) — Request a copy of personal data held about you.</li>
+        <li><strong>Right to rectification</strong> (Article 16) — Request correction of inaccurate personal data.</li>
+        <li><strong>Right to erasure</strong> (Article 17) — Request deletion of your personal data.</li>
+        <li><strong>Right to restrict processing</strong> (Article 18) — Request that we limit how we use your data.</li>
+        <li><strong>Right to data portability</strong> (Article 20) — Receive your data in a structured, machine-readable format.</li>
+        <li><strong>Right to object</strong> (Article 21) — Object to processing based on legitimate interests.</li>
+        <li><strong>Right to withdraw consent</strong> (Article 7) — Withdraw previously given consent at any time.</li>
+      </ul>
+      <p><strong>Since we do not collect, store, or process any personal data, there is no data for us to provide, correct, restrict, delete, port, or cease processing.</strong> Your local preferences and message history can be erased by deleting the App. If you believe we hold data about you in error, please contact us and we will investigate promptly.</p>
+      <p><strong>Legal basis for processing:</strong> We do not process personal data. The on-device preference and message storage operates under <strong>legitimate interest</strong> (providing a functional messaging experience) and does not constitute data processing under GDPR as the data never leaves the device or reaches us.</p>
+      <p><strong>Data controller:</strong> Approve The Move (contact details in Section 14).</p>
+
+      <h3>8.2 California (CCPA / CPRA)</h3>
+      <p>If you are a California resident, the <strong>California Consumer Privacy Act (CCPA)</strong> as amended by the <strong>California Privacy Rights Act (CPRA)</strong> grants you specific rights regarding personal information:</p>
+      <ul>
+        <li><strong>Right to know</strong> — You may request disclosure of the categories and specific pieces of personal information collected.</li>
+        <li><strong>Right to delete</strong> — You may request deletion of personal information collected.</li>
+        <li><strong>Right to correct</strong> — You may request correction of inaccurate personal information.</li>
+        <li><strong>Right to opt out of sale or sharing</strong> — You may direct us not to sell or share your personal information.</li>
+        <li><strong>Right to non-discrimination</strong> — You will not be discriminated against for exercising your privacy rights.</li>
+      </ul>
+      <p><strong>We do not collect, sell, or share personal information.</strong> We have not sold or shared personal information of any consumer in the preceding 12 months, nor do we intend to do so.</p>
+      <p>California's "Do Not Track" signals and Global Privacy Control (GPC) are respected by default, as the App does not track users in any capacity.</p>
+
+      <h3>8.3 Qatar & Middle East</h3>
+      <p>If you are located in Qatar or other Gulf Cooperation Council (GCC) states, we comply with applicable data protection laws, including Qatar's Law No. 13 of 2016 on Personal Data Privacy. As we do not collect personal data, no registration with the Compliance and Data Protection Department is required.</p>
+
+      <h3>8.4 Other Jurisdictions</h3>
+      <p>Regardless of your location, the same principle applies: we do not collect personal data, so there is no data to exercise rights over. If your local laws grant you additional privacy rights, please contact us and we will cooperate fully.</p>
+
+      <!-- 9. Data Security -->
+      <h2>9. Data Security</h2>
+      <p>Although we do not collect or store personal data on any server, we employ the following security measures to protect your experience within the App:</p>
+      <ul>
+        <li><strong>Encrypted peer-to-peer communications</strong> — All local messaging sessions use Apple's mandatory TLS encryption via MCSession, ensuring all data transmitted between devices — including messages, media, files, and metadata — is encrypted in transit and cannot be intercepted.</li>
+        <li><strong>Sandboxed storage</strong> — On-device preferences and message history are stored within the App's iOS sandbox, which is isolated from other apps and protected by the operating system.</li>
+        <li><strong>No network exposure</strong> — The App makes no internet connections, eliminating the risk of remote data breaches, man-in-the-middle attacks, or unauthorized server access.</li>
+        <li><strong>No persistent sensitive data</strong> — No passwords, tokens, credentials, or financial data are ever stored or processed.</li>
+        <li><strong>Mesh relay isolation</strong> — When messages are routed through intermediate devices in the mesh, relay devices cannot decrypt, read, or store the content of messages they forward.</li>
+      </ul>
+
+      <!-- 10. Data Retention -->
+      <h2>10. Data Retention</h2>
+      <p>We do not operate servers, databases, or cloud storage of any kind. We do not retain any user data. All data associated with ATMChat exists exclusively on your personal device:</p>
+      <table style="width:100%; margin:1em 0; border-collapse:collapse;">
+        <tr style="border-bottom:1px solid var(--border);">
+          <th style="text-align:left; padding:8px;">Data Type</th>
+          <th style="text-align:left; padding:8px;">Storage Location</th>
+          <th style="text-align:left; padding:8px;">Retention Period</th>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">User preferences</td>
+          <td style="padding:8px;">Device (UserDefaults)</td>
+          <td style="padding:8px;">Until App is deleted</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">Message history</td>
+          <td style="padding:8px;">Device (ChatStorage)</td>
+          <td style="padding:8px;">Until deleted by user or App is deleted</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">Conversation list</td>
+          <td style="padding:8px;">Device (ChatStorage)</td>
+          <td style="padding:8px;">Until deleted by user or App is deleted</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">Read receipts</td>
+          <td style="padding:8px;">Device (ChatStorage)</td>
+          <td style="padding:8px;">Until deleted by user or App is deleted</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;">Active session data</td>
+          <td style="padding:8px;">Device (RAM only)</td>
+          <td style="padding:8px;">Active session only</td>
+        </tr>
+      </table>
+      <p>When you delete the App, all associated data is permanently removed from your device by the operating system.</p>
+
+      <!-- 11. International Considerations -->
+      <h2>11. International Considerations</h2>
+      <p>ATMChat is available worldwide through the Apple App Store. Since the App does not collect or transmit any data to external servers, there are no international data transfers to disclose. All data remains on your local device at all times, regardless of your geographic location.</p>
+      <p>When you send messages to nearby peers, the data travels directly between devices over the local network and never crosses international boundaries via the internet or any remote infrastructure.</p>
+
+      <!-- ======================================================== -->
+      <!--                  PART II: TERMS OF USE                   -->
+      <!-- ======================================================== -->
+
+      <h1 style="font-size:1.5em; margin-top:2.5em; padding-top:1.5em; border-top:1px solid var(--border);">Part II — Terms of Use</h1>
+
+      <!-- 12. Acceptance of Terms -->
+      <h2>12. Acceptance of Terms</h2>
+      <p>By downloading, installing, accessing, or using ATMChat, you agree to be bound by these Terms of Use. If you do not agree to these terms, do not use the App and remove it from your device.</p>
+      <p>These terms constitute a legally binding agreement between you and Approve The Move ("we", "us", "our") governing your use of the App.</p>
+
+      <!-- 13. License -->
+      <h2>13. License Grant</h2>
+      <p>Subject to your compliance with these terms, we grant you a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to download, install, and use ATMChat on any Apple device that you own or control, solely for your personal, non-commercial communication purposes.</p>
+      <p>This license is also governed by the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" style="color:var(--accent);">Apple Licensed Application End User License Agreement (EULA)</a>, which is incorporated into these terms by reference.</p>
+
+      <!-- 14. Restrictions -->
+      <h2>14. Restrictions</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Copy, modify, distribute, sell, lease, sublicense, or create derivative works based on the App.</li>
+        <li>Reverse-engineer, decompile, disassemble, or attempt to extract the source code of the App.</li>
+        <li>Remove, alter, or obscure any copyright, trademark, or proprietary notices.</li>
+        <li>Use the App for any unlawful purpose or in violation of any applicable laws or regulations.</li>
+        <li>Exploit the App or any part of it for commercial purposes without our prior written consent.</li>
+        <li>Attempt to interfere with or disrupt the integrity of the App or the experience of other users during local messaging sessions.</li>
+        <li>Use the App to transmit content that is illegal, harassing, threatening, defamatory, obscene, or otherwise objectionable.</li>
+        <li>Attempt to intercept, monitor, or tamper with messages transmitted between other users' devices.</li>
+      </ul>
+
+      <!-- 15. Intellectual Property -->
+      <h2>15. Intellectual Property</h2>
+      <p>All rights, title, and interest in and to ATMChat — including but not limited to the software code, visual design, user interface elements, graphics, animations, sound effects, messaging protocols, and documentation — are and shall remain the exclusive property of Approve The Move.</p>
+      <p>The name "ATMChat", the Approve The Move name and logo, and all associated branding are trademarks of Approve The Move. Nothing in these terms grants you any right to use our trademarks without prior written permission.</p>
+
+      <!-- 16. User Content -->
+      <h2>16. User Content</h2>
+      <p>ATMChat enables you to send messages, photos, videos, voice messages, files, and other content ("User Content") to nearby peers. You retain full ownership of all User Content you create and transmit through the App.</p>
+      <p>Because ATMChat operates without servers or cloud infrastructure, we never receive, store, access, or have any control over your User Content. You are solely responsible for the content you transmit to other users.</p>
+
+      <!-- 17. Message Delivery Disclaimer -->
+      <h2>17. Message Delivery Disclaimer</h2>
+      <p><strong>ATMChat is an offline, peer-to-peer mesh messaging application. Message delivery is not guaranteed.</strong> Due to the inherent nature of local mesh networking:</p>
+      <ul>
+        <li><strong>Range limitations</strong> — Messages can only be delivered to devices within range of your local Wi-Fi or Bluetooth Low Energy signal, either directly or via intermediate mesh devices.</li>
+        <li><strong>Mesh availability</strong> — If there is no connected path of ATMChat devices between you and the intended recipient, messages cannot be delivered.</li>
+        <li><strong>Session dependency</strong> — Messages can only be transmitted while both sender and recipient (or a connected mesh path) have the App actively running. There is no server to queue or store messages for later delivery.</li>
+        <li><strong>Environmental factors</strong> — Physical obstacles, interference, device settings, and distance may affect connection quality and message delivery reliability.</li>
+        <li><strong>No offline queuing</strong> — If a recipient is not reachable at the time of sending, the message may not be delivered. The App does not queue messages for future delivery via the internet because the App does not use the internet.</li>
+      </ul>
+      <p>You acknowledge and agree that ATMChat is not a substitute for reliable, guaranteed communication services. Do not rely on ATMChat for time-sensitive, emergency, or critical communications.</p>
+
+      <!-- 18. Disclaimer of Warranties -->
+      <h2>18. Disclaimer of Warranties</h2>
+      <p><strong>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</strong></p>
+      <p>To the fullest extent permitted by applicable law, we disclaim all warranties, including but not limited to:</p>
+      <ul>
+        <li>Implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</li>
+        <li>Warranties that the App will be uninterrupted, error-free, secure, or free of viruses or other harmful components.</li>
+        <li>Warranties regarding the accuracy, reliability, or completeness of any content within the App.</li>
+        <li>Warranties that messages will be delivered successfully, completely, or in a timely manner.</li>
+        <li>Warranties regarding the availability, range, or reliability of local peer-to-peer or mesh networking connections.</li>
+      </ul>
+      <p>You acknowledge that the App is a communication tool that depends on local networking conditions and that your use of the App is at your sole risk.</p>
+
+      <!-- 19. Limitation of Liability -->
+      <h2>19. Limitation of Liability</h2>
+      <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL APPROVE THE MOVE OR ANY OF ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY:</strong></p>
+      <ul>
+        <li>Indirect, incidental, special, consequential, or punitive damages;</li>
+        <li>Loss of profits, revenue, data, goodwill, or other intangible losses;</li>
+        <li>Damages arising from your use of or inability to use the App;</li>
+        <li>Damages arising from any unauthorized access to or alteration of your device;</li>
+        <li>Damages arising from failure to deliver messages or loss of message content;</li>
+        <li>Damages arising from interception or unauthorized access to data transmitted over local networks;</li>
+        <li>Any other damages arising out of or in connection with these terms or the App;</li>
+      </ul>
+      <p><strong>regardless of the theory of liability (contract, tort, negligence, strict liability, or otherwise), even if we have been advised of the possibility of such damages.</strong></p>
+      <p>In jurisdictions that do not allow the exclusion or limitation of liability for certain damages, our liability shall be limited to the maximum extent permitted by law. In no event shall our total aggregate liability exceed the amount you paid for the App (which is zero, as the App is free).</p>
+
+      <!-- 20. Indemnification -->
+      <h2>20. Indemnification</h2>
+      <p>You agree to indemnify, defend, and hold harmless Approve The Move, and their respective officers, directors, employees, contractors, agents, licensors, and suppliers from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or related to:</p>
+      <ul>
+        <li>Your use of or access to the App;</li>
+        <li>Your violation of these Terms of Use;</li>
+        <li>Your violation of any applicable law or the rights of any third party;</li>
+        <li>Any content you transmit through the App.</li>
+      </ul>
+
+      <!-- 21. Governing Law & Dispute Resolution -->
+      <h2>21. Governing Law & Dispute Resolution</h2>
+      <p>These terms shall be governed by and construed in accordance with the laws of the <strong>State of Qatar</strong>, without regard to its conflict of law provisions.</p>
+      <p>Any dispute, controversy, or claim arising out of or relating to these terms or the App shall be resolved as follows:</p>
+      <ol>
+        <li><strong>Informal resolution</strong> — You agree to first attempt to resolve any dispute informally by contacting us at <a href="mailto:support@approvethemove.com" style="color:var(--accent);">support@approvethemove.com</a>. We will attempt to resolve the dispute within 30 days.</li>
+        <li><strong>Binding arbitration</strong> — If informal resolution fails, any remaining dispute shall be resolved through binding arbitration administered in Doha, Qatar, in accordance with the rules of the Qatar International Court and Dispute Resolution Centre (QICDRC), unless otherwise required by your local laws.</li>
+      </ol>
+      <p>Nothing in this section shall prevent either party from seeking injunctive or equitable relief from a court of competent jurisdiction to prevent the actual or threatened infringement of intellectual property rights.</p>
+      <p><strong>For EU/EEA residents:</strong> Nothing in these terms limits your right to bring proceedings before the courts of your country of residence, as required by Regulation (EU) No 1215/2012.</p>
+      <p><strong>For US residents:</strong> You and we each waive the right to a jury trial and the right to participate in a class action lawsuit or class-wide arbitration.</p>
+
+      <!-- 22. Termination -->
+      <h2>22. Termination</h2>
+      <p>These terms are effective until terminated. Your rights under these terms will terminate automatically and without notice if you fail to comply with any provision.</p>
+      <p>Upon termination, you must cease all use of the App and delete all copies from your devices. Sections 15 through 21 shall survive any termination of these terms.</p>
+      <p>We reserve the right to modify, suspend, or discontinue the App (or any part thereof) at any time without notice or liability.</p>
+
+      <!-- 23. Severability -->
+      <h2>23. Severability</h2>
+      <p>If any provision of these terms is found to be unlawful, void, or unenforceable by a court of competent jurisdiction, that provision shall be deemed severable and shall not affect the validity and enforceability of the remaining provisions, which shall continue in full force and effect.</p>
+
+      <!-- 24. Entire Agreement -->
+      <h2>24. Entire Agreement</h2>
+      <p>These terms, together with the Privacy Policy above and Apple's Licensed Application EULA, constitute the entire agreement between you and Approve The Move regarding your use of ATMChat. These terms supersede any prior agreements, communications, or understandings, whether written or oral, relating to the App.</p>
+
+      <!-- ======================================================== -->
+      <!--                      GENERAL                             -->
+      <!-- ======================================================== -->
+
+      <h1 style="font-size:1.5em; margin-top:2.5em; padding-top:1.5em; border-top:1px solid var(--border);">General</h1>
+
+      <!-- 25. Changes to This Document -->
+      <h2>25. Changes to This Document</h2>
+      <p>We may update this Privacy Policy and Terms of Use from time to time to reflect changes in the App, our practices, or applicable laws. When we make changes:</p>
+      <ul>
+        <li>We will update the "Last updated" date at the top of this page.</li>
+        <li>For material changes, we will notify you through the App before the changes take effect.</li>
+        <li>The updated document will be posted at this URL: <a href="https://approvethemove.com/chat/privacy" style="color:var(--accent);">approvethemove.com/chat/privacy</a></li>
+      </ul>
+      <p>Your continued use of the App after changes are posted constitutes acceptance of the updated terms. If you disagree with any changes, your sole remedy is to stop using the App and delete it from your device.</p>
+
+      <!-- 26. Contact Us -->
+      <h2>26. Contact Us</h2>
+      <p>If you have any questions, concerns, complaints, or requests regarding this Privacy Policy, these Terms of Use, or our practices, please contact us:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:support@approvethemove.com" style="color:var(--accent);">support@approvethemove.com</a></li>
+        <li><strong>Organization:</strong> Approve The Move</li>
+        <li><strong>Website:</strong> <a href="https://approvethemove.com" style="color:var(--accent);">approvethemove.com</a></li>
+      </ul>
+      <p>We commit to responding to all privacy-related inquiries within <strong>30 days</strong> of receipt. For GDPR-related requests, we will respond within the legally required timeframe of one calendar month.</p>
+
+      <p style="margin-top:3em; padding-top:1.5em; border-top:1px solid var(--border); font-size:0.9em; opacity:0.6;">Document version 2.0 &nbsp;|&nbsp; Effective April 13, 2026 &nbsp;|&nbsp; Applies to ATMChat v0.1 and all subsequent versions unless superseded.</p>
+
     </div>
   </div>
 

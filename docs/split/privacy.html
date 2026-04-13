@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — ATM Split | Approve The Move</title>
-  <meta name="description" content="Privacy policy for ATM Split. We don't collect your data.">
+  <title>Privacy Policy & Terms of Use — ATM Split | Approve The Move</title>
+  <meta name="description" content="Privacy policy and terms of use for ATM Split by Approve The Move. We respect your privacy and do not collect personal data.">
   <meta name="theme-color" content="#0a0a0a">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="stylesheet" href="../css/style.css">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://approvethemove.com/split/privacy.html">
-  <meta property="og:title" content="ATM Split — Privacy Policy">
-  <meta property="og:description" content="Privacy policy for ATM Split. We don't collect your data.">
+  <meta property="og:title" content="ATM Split — Privacy Policy & Terms of Use">
+  <meta property="og:description" content="Privacy policy and terms of use for ATM Split by Approve The Move.">
   <meta property="og:image" content="https://approvethemove.com/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -32,39 +32,345 @@
 
   <div class="container">
     <div class="privacy-content">
-      <h1>ATM Split — Privacy Policy</h1>
-      <p class="last-updated">Last updated: March 25, 2026</p>
 
-      <h2>Overview</h2>
-      <p>ATM Split is an expense splitting app built by Approve The Move. Your privacy is fundamental to how this app is built.</p>
+      <h1>ATM Split — Privacy Policy & Terms of Use</h1>
+      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: April 13, 2026</p>
 
-      <h2>Data Storage</h2>
-      <p>All your data — groups, members, expenses, and settlements — is stored locally on your device. No cloud sync, no external servers.</p>
+      <p style="margin-bottom:2em;">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for ATM Split. Please read both sections carefully before using the App.</p>
 
-      <h2>Data Collection</h2>
-      <p>ATM Split collects <strong>no data</strong>. Specifically:</p>
+      <!-- ======================================================== -->
+      <!--                     PART I: PRIVACY POLICY               -->
+      <!-- ======================================================== -->
+
+      <h1 style="font-size:1.5em; margin-top:2em; padding-top:1.5em; border-top:1px solid var(--border);">Part I — Privacy Policy</h1>
+
+      <!-- 1. Introduction -->
+      <h2>1. Introduction</h2>
+      <p>This Privacy Policy explains how ATM Split ("the App"), developed and published by Approve The Move ("we", "us", or "our"), handles information when you ("you" or "the user") download, install, or use the App on any supported device.</p>
+      <p>We are committed to protecting your privacy. This policy applies to all versions of ATM Split distributed through the Apple App Store and any future platforms.</p>
+      <p>By downloading, installing, or using ATM Split, you acknowledge that you have read, understood, and agree to the practices described in this policy. If you do not agree, please do not use the App and remove it from your device.</p>
+
+      <!-- 2. Information We Collect -->
+      <h2>2. Information We Collect</h2>
+      <p><strong>We do not collect, transmit, or process any personal data.</strong> ATM Split is designed from the ground up as a privacy-first application. Specifically:</p>
       <ul>
-        <li>No analytics or usage tracking</li>
-        <li>No advertising frameworks or identifiers</li>
-        <li>No account creation or sign-in required</li>
-        <li>No third-party SDKs that collect data</li>
-        <li>No server-side storage</li>
+        <li><strong>No account creation</strong> — You are never required or asked to sign up, log in, create an account, or provide an email address, phone number, or any other personal identifier.</li>
+        <li><strong>No analytics or tracking</strong> — We do not use any analytics frameworks, crash reporting services, telemetry tools, device fingerprinting, or usage tracking of any kind.</li>
+        <li><strong>No advertising</strong> — The App contains no advertisements, no advertising SDKs, no ad identifiers (IDFA), and no advertising networks.</li>
+        <li><strong>No cloud sync</strong> — The App does not sync data to iCloud, our servers, or any third-party cloud service. All data remains exclusively on your device.</li>
+        <li><strong>No in-app purchases</strong> — No financial, billing, or payment information is collected or processed.</li>
+        <li><strong>No location data</strong> — The App does not request, access, or store your geographic location.</li>
+        <li><strong>No contacts or photos</strong> — The App does not access your contacts, photo library, camera, microphone, or any other device sensor beyond haptic feedback.</li>
       </ul>
 
-      <h2>Network Activity</h2>
-      <p>The only network request ATM Split makes is fetching exchange rates from a public API for multi-currency support. This request contains no personal data — it only retrieves currency rates.</p>
+      <!-- 3. On-Device Storage -->
+      <h2>3. On-Device Storage</h2>
+      <p>ATM Split stores data locally on your device using two Apple-provided storage systems: <strong>SwiftData</strong> (a persistent on-device database) and <strong>UserDefaults</strong> (lightweight key-value storage for preferences). All data is stored within the App's private sandbox, is not accessible to other apps, and <strong>never leaves your device</strong>.</p>
 
-      <h2>CSV Export</h2>
-      <p>When you export group data as CSV, the file is generated locally on your device. You control where it goes via the iOS share sheet.</p>
+      <h3>3.1 SwiftData (Persistent Storage)</h3>
+      <p>The App uses Apple's SwiftData framework to store your expense-related data on-device. This includes:</p>
+      <ul>
+        <li>Expense groups (names, creation dates, currencies)</li>
+        <li>Members and persons within each group</li>
+        <li>Individual expenses (amounts, descriptions, dates, payers)</li>
+        <li>Split shares (how each expense is divided among members)</li>
+        <li>Settlements (who owes whom and how much)</li>
+        <li>Categories assigned to expenses</li>
+      </ul>
+      <p>This data is stored in a local SQLite database managed by SwiftData within the App's sandbox. It is not uploaded, synced, or transmitted anywhere. There is no iCloud sync, no cloud backup of App data, and no server-side storage.</p>
 
-      <h2>Data Deletion</h2>
-      <p>You can delete any group, expense, or member at any time. Uninstalling the app removes all data permanently.</p>
+      <h3>3.2 UserDefaults (Preferences)</h3>
+      <p>A small amount of non-personal preference data is stored using Apple's UserDefaults system:</p>
+      <ul>
+        <li>Theme preference (System, Light, or Dark)</li>
+        <li>Accent color selection</li>
+        <li>Haptic feedback preference</li>
+      </ul>
 
-      <h2>Changes to This Policy</h2>
-      <p>If this privacy policy ever changes, you will be notified within the app before any changes take effect.</p>
+      <p>Both storage mechanisms are declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
+      <p><strong>How to delete:</strong> You can delete any individual group, expense, member, or settlement within the App at any time. To erase all data permanently, delete ATM Split from your device. No residual data is retained after uninstallation.</p>
 
-      <h2>Contact</h2>
-      <p>If you have questions about this privacy policy, contact: <strong>support@approvethemove.com</strong></p>
+      <!-- 4. Network Activity -->
+      <h2>4. Network Activity</h2>
+      <p>ATM Split makes <strong>one type of network request</strong>: fetching live currency exchange rates to support multi-currency expense splitting.</p>
+
+      <h3>4.1 Exchange Rate Requests</h3>
+      <ul>
+        <li><strong>Endpoint:</strong> The App retrieves exchange rate data from <strong>open.er-api.com</strong>, a public currency exchange rate API.</li>
+        <li><strong>Data sent:</strong> The request contains only the base currency code (e.g., "USD", "QAR") as a URL path parameter. <strong>No personal data, device identifiers, IP-based tracking, or user information of any kind is included in the request.</strong></li>
+        <li><strong>Data received:</strong> The response contains only currency exchange rate numbers. No tracking cookies, tokens, or user-identifying data are returned.</li>
+        <li><strong>Frequency:</strong> Requests are made only when needed for currency conversion and are not made on a background schedule.</li>
+        <li><strong>Offline use:</strong> The App is fully functional offline for single-currency groups. Exchange rate fetching is only triggered when multi-currency support is used.</li>
+      </ul>
+
+      <h3>4.2 No Other Network Communication</h3>
+      <p>Apart from exchange rate requests, the App does not connect to the internet, does not make any other HTTP requests, and does not transmit any data to any external server, cloud service, or remote endpoint. There is no telemetry, no analytics pings, no crash reporting uploads, and no background network activity.</p>
+
+      <!-- 5. CSV Export -->
+      <h2>5. CSV Export</h2>
+      <p>ATM Split allows you to export group data as a CSV file for your own records. This export is handled as follows:</p>
+      <ul>
+        <li><strong>Generated locally:</strong> The CSV file is created entirely on your device. No data is sent to any server during generation.</li>
+        <li><strong>Shared via iOS share sheet:</strong> When you export, the standard iOS share sheet is presented, giving you full control over where the file is sent (AirDrop, Files, email, etc.). We do not control, intercept, or log your sharing choice.</li>
+        <li><strong>No copies retained:</strong> The App does not retain a copy of exported CSV files. Once the share sheet is dismissed, the temporary file is discarded.</li>
+      </ul>
+
+      <!-- 6. Third-Party Services & SDKs -->
+      <h2>6. Third-Party Services & SDKs</h2>
+      <p>ATM Split does <strong>not</strong> integrate, embed, or communicate with any third-party services, SDKs, or frameworks that collect, process, or transmit user data. The App uses exclusively Apple-provided first-party system frameworks:</p>
+      <table style="width:100%; margin:1em 0; border-collapse:collapse;">
+        <tr style="border-bottom:1px solid var(--border);">
+          <th style="text-align:left; padding:8px;">Framework</th>
+          <th style="text-align:left; padding:8px;">Purpose</th>
+          <th style="text-align:left; padding:8px;">Data Collection</th>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">SwiftUI</td>
+          <td style="padding:8px;">User interface rendering</td>
+          <td style="padding:8px;">None</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">SwiftData</td>
+          <td style="padding:8px;">On-device persistent data storage</td>
+          <td style="padding:8px;">None (local only)</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;">Foundation</td>
+          <td style="padding:8px;">HTTP requests for exchange rates</td>
+          <td style="padding:8px;">None (no personal data sent)</td>
+        </tr>
+      </table>
+      <p>We do not use Firebase, Google Analytics, Facebook SDK, Unity, AdMob, Crashlytics, Sentry, Amplitude, Mixpanel, or any other third-party data collection tool.</p>
+      <p>The exchange rate API (open.er-api.com) is a public, read-only service. We have no data-sharing agreement with this service, and no personal data is transmitted to it.</p>
+
+      <!-- 7. Apple's Data Practices -->
+      <h2>7. Apple's Data Practices</h2>
+      <p>While ATM Split itself does not collect data, please be aware that Apple may independently collect certain information related to your use of the App Store, such as download statistics and crash logs. This data collection is governed by <a href="https://www.apple.com/legal/privacy/" style="color:var(--accent);">Apple's Privacy Policy</a>, not ours, and is outside our control.</p>
+      <p>We have declared in App Store Connect that ATM Split collects <strong>no data</strong> linked to or tracking the user, as reflected on the App's App Store product page under "App Privacy."</p>
+
+      <!-- 8. Children's Privacy -->
+      <h2>8. Children's Privacy</h2>
+      <p>ATM Split is rated <strong>4+</strong> by Apple and is designed to be suitable for users of all ages. The App does not contain violence, gambling (real or simulated), horror, mature themes, profanity, or any other objectionable material.</p>
+      <p>Because we do not collect any personal information from any user of any age, we are compliant with the following regulations regarding children's privacy:</p>
+      <ul>
+        <li><strong>COPPA</strong> (Children's Online Privacy Protection Act, United States) — We do not knowingly collect personal information from children under the age of 13. Since the App collects no personal information from anyone, no COPPA violation can occur.</li>
+        <li><strong>GDPR-K / Age of Digital Consent</strong> (European Economic Area) — We do not process personal data of minors under 16 (or the lower age set by individual EEA member states). Since no personal data is processed, no parental consent is required.</li>
+        <li><strong>Apple's Guidelines for Apps Used by Children</strong> — The App contains no data collection, no third-party analytics, no advertising, and no external links within the core experience.</li>
+      </ul>
+      <p>Parents, guardians, and educators can allow children to use ATM Split with full confidence that no personal information is collected, stored, or shared.</p>
+
+      <!-- 9. Your Rights Under Applicable Laws -->
+      <h2>9. Your Rights Under Applicable Laws</h2>
+      <p>We respect and support the privacy rights granted to individuals under applicable data protection legislation worldwide.</p>
+
+      <h3>9.1 European Economic Area (GDPR)</h3>
+      <p>If you are located in the European Economic Area (EEA), the United Kingdom, or Switzerland, the <strong>General Data Protection Regulation (GDPR)</strong> and equivalent local laws grant you the following rights regarding personal data:</p>
+      <ul>
+        <li><strong>Right of access</strong> (Article 15) — Request a copy of personal data held about you.</li>
+        <li><strong>Right to rectification</strong> (Article 16) — Request correction of inaccurate personal data.</li>
+        <li><strong>Right to erasure</strong> (Article 17) — Request deletion of your personal data.</li>
+        <li><strong>Right to restrict processing</strong> (Article 18) — Request that we limit how we use your data.</li>
+        <li><strong>Right to data portability</strong> (Article 20) — Receive your data in a structured, machine-readable format.</li>
+        <li><strong>Right to object</strong> (Article 21) — Object to processing based on legitimate interests.</li>
+        <li><strong>Right to withdraw consent</strong> (Article 7) — Withdraw previously given consent at any time.</li>
+      </ul>
+      <p><strong>Since we do not collect, store, or process any personal data, there is no data for us to provide, correct, restrict, delete, port, or cease processing.</strong> Your local data can be erased by deleting individual items within the App or by deleting the App entirely. If you believe we hold data about you in error, please contact us and we will investigate promptly.</p>
+      <p><strong>Legal basis for processing:</strong> We do not process personal data. The on-device data storage operates under <strong>legitimate interest</strong> (providing a functional user experience) and does not constitute data processing under GDPR as the data never leaves the device or reaches us.</p>
+      <p><strong>Data controller:</strong> Approve The Move (contact details in Section 15).</p>
+
+      <h3>9.2 California (CCPA / CPRA)</h3>
+      <p>If you are a California resident, the <strong>California Consumer Privacy Act (CCPA)</strong> as amended by the <strong>California Privacy Rights Act (CPRA)</strong> grants you specific rights regarding personal information:</p>
+      <ul>
+        <li><strong>Right to know</strong> — You may request disclosure of the categories and specific pieces of personal information collected.</li>
+        <li><strong>Right to delete</strong> — You may request deletion of personal information collected.</li>
+        <li><strong>Right to correct</strong> — You may request correction of inaccurate personal information.</li>
+        <li><strong>Right to opt out of sale or sharing</strong> — You may direct us not to sell or share your personal information.</li>
+        <li><strong>Right to non-discrimination</strong> — You will not be discriminated against for exercising your privacy rights.</li>
+      </ul>
+      <p><strong>We do not collect, sell, or share personal information.</strong> We have not sold or shared personal information of any consumer in the preceding 12 months, nor do we intend to do so.</p>
+      <p>California's "Do Not Track" signals and Global Privacy Control (GPC) are respected by default, as the App does not track users in any capacity.</p>
+
+      <h3>9.3 Qatar & Middle East</h3>
+      <p>If you are located in Qatar or other Gulf Cooperation Council (GCC) states, we comply with applicable data protection laws, including Qatar's Law No. 13 of 2016 on Personal Data Privacy. As we do not collect personal data, no registration with the Compliance and Data Protection Department is required.</p>
+
+      <h3>9.4 Other Jurisdictions</h3>
+      <p>Regardless of your location, the same principle applies: we do not collect personal data, so there is no data to exercise rights over. If your local laws grant you additional privacy rights, please contact us and we will cooperate fully.</p>
+
+      <!-- 10. Data Security -->
+      <h2>10. Data Security</h2>
+      <p>Although we do not collect or store personal data on any server, we employ the following security measures to protect your experience within the App:</p>
+      <ul>
+        <li><strong>Sandboxed storage</strong> — All on-device data (SwiftData database and UserDefaults preferences) is stored within the App's iOS sandbox, which is isolated from other apps and protected by the operating system.</li>
+        <li><strong>Encrypted network requests</strong> — Exchange rate requests are made over HTTPS (TLS encryption), ensuring data in transit cannot be intercepted.</li>
+        <li><strong>No persistent sensitive data</strong> — No passwords, tokens, credentials, or payment information are ever stored or processed.</li>
+        <li><strong>No remote attack surface</strong> — The App does not expose any server endpoints, APIs, or network services. The only outbound request is a simple HTTPS GET for exchange rates, which transmits no personal data.</li>
+      </ul>
+
+      <!-- 11. Data Retention -->
+      <h2>11. Data Retention</h2>
+      <p>We do not operate servers, databases, or cloud storage of any kind. We do not retain any user data. All data associated with ATM Split exists exclusively on your personal device:</p>
+      <table style="width:100%; margin:1em 0; border-collapse:collapse;">
+        <tr style="border-bottom:1px solid var(--border);">
+          <th style="text-align:left; padding:8px;">Data Type</th>
+          <th style="text-align:left; padding:8px;">Storage Location</th>
+          <th style="text-align:left; padding:8px;">Retention Period</th>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">Expense groups, members, expenses, splits, settlements, categories</td>
+          <td style="padding:8px;">Device (SwiftData)</td>
+          <td style="padding:8px;">Until deleted by user or App is uninstalled</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">User preferences (theme, accent color, haptics)</td>
+          <td style="padding:8px;">Device (UserDefaults)</td>
+          <td style="padding:8px;">Until App is deleted</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;">Exported CSV files</td>
+          <td style="padding:8px;">Temporary (discarded after sharing)</td>
+          <td style="padding:8px;">Duration of share sheet session only</td>
+        </tr>
+      </table>
+      <p>When you delete the App, all associated data is permanently removed from your device by the operating system.</p>
+
+      <!-- 12. International Considerations -->
+      <h2>12. International Considerations</h2>
+      <p>ATM Split is available worldwide through the Apple App Store. Since the App does not collect or transmit any personal data to external servers, there are no international data transfers to disclose. The only outbound network request (exchange rate fetching) contains no personal data. All user-created data remains on your local device at all times, regardless of your geographic location.</p>
+
+      <!-- ======================================================== -->
+      <!--                  PART II: TERMS OF USE                   -->
+      <!-- ======================================================== -->
+
+      <h1 style="font-size:1.5em; margin-top:2.5em; padding-top:1.5em; border-top:1px solid var(--border);">Part II — Terms of Use</h1>
+
+      <!-- 13. Acceptance of Terms -->
+      <h2>13. Acceptance of Terms</h2>
+      <p>By downloading, installing, accessing, or using ATM Split, you agree to be bound by these Terms of Use. If you do not agree to these terms, do not use the App and remove it from your device.</p>
+      <p>These terms constitute a legally binding agreement between you and Approve The Move ("we", "us", "our") governing your use of the App.</p>
+
+      <!-- 14. License -->
+      <h2>14. License Grant</h2>
+      <p>Subject to your compliance with these terms, we grant you a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to download, install, and use ATM Split on any Apple device that you own or control, solely for your personal, non-commercial purposes.</p>
+      <p>This license is also governed by the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" style="color:var(--accent);">Apple Licensed Application End User License Agreement (EULA)</a>, which is incorporated into these terms by reference.</p>
+
+      <!-- 15. Restrictions -->
+      <h2>15. Restrictions</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Copy, modify, distribute, sell, lease, sublicense, or create derivative works based on the App.</li>
+        <li>Reverse-engineer, decompile, disassemble, or attempt to extract the source code of the App.</li>
+        <li>Remove, alter, or obscure any copyright, trademark, or proprietary notices.</li>
+        <li>Use the App for any unlawful purpose or in violation of any applicable laws or regulations.</li>
+        <li>Exploit the App or any part of it for commercial purposes without our prior written consent.</li>
+        <li>Rely on the App's calculations as the sole basis for financial decisions, legal obligations, or binding financial agreements without independent verification.</li>
+      </ul>
+
+      <!-- 16. Intellectual Property -->
+      <h2>16. Intellectual Property</h2>
+      <p>All rights, title, and interest in and to ATM Split — including but not limited to the software code, visual design, user interface elements, graphics, animations, and documentation — are and shall remain the exclusive property of Approve The Move.</p>
+      <p>The name "ATM Split", the Approve The Move name and logo, and all associated branding are trademarks of Approve The Move. Nothing in these terms grants you any right to use our trademarks without prior written permission.</p>
+
+      <!-- 17. Financial Calculations Disclaimer -->
+      <h2>17. Financial Calculations Disclaimer</h2>
+      <p><strong>ATM Split is a convenience tool designed to help you split expenses and track shared costs among friends, family, or groups. It is not a financial, accounting, or legal service.</strong></p>
+      <ul>
+        <li><strong>Settlement calculations are for reference only.</strong> The amounts displayed as owed, owing, or suggested for settlement are approximate calculations provided for your convenience and should be treated as suggestions, not definitive financial obligations.</li>
+        <li><strong>Users must verify all amounts before making real payments.</strong> You are solely responsible for confirming the accuracy of any settlement amount before transferring money, making payments, or taking any financial action based on the App's output.</li>
+        <li><strong>Financial accuracy is not guaranteed.</strong> While we strive for correctness, we do not warrant that calculations — including expense splits, settlement optimizations, or currency conversions — are free from error. Rounding, currency fluctuations, and other factors may cause discrepancies.</li>
+        <li><strong>Exchange rates are approximate.</strong> Currency conversion rates are sourced from a public third-party API and may not reflect real-time market rates. We are not responsible for any financial loss arising from exchange rate inaccuracies.</li>
+        <li><strong>Not a substitute for professional advice.</strong> The App does not provide financial, tax, legal, or accounting advice. For significant financial matters, consult a qualified professional.</li>
+      </ul>
+      <p>By using ATM Split, you acknowledge and agree that all financial decisions based on the App's calculations are made at your own risk and sole discretion.</p>
+
+      <!-- 18. Disclaimer of Warranties -->
+      <h2>18. Disclaimer of Warranties</h2>
+      <p><strong>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</strong></p>
+      <p>To the fullest extent permitted by applicable law, we disclaim all warranties, including but not limited to:</p>
+      <ul>
+        <li>Implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</li>
+        <li>Warranties that the App will be uninterrupted, error-free, secure, or free of viruses or other harmful components.</li>
+        <li>Warranties regarding the accuracy, reliability, or completeness of any calculations, currency conversions, or financial data within the App.</li>
+      </ul>
+      <p>You acknowledge that the App is a utility tool provided for convenience purposes and that your use of the App is at your sole risk.</p>
+
+      <!-- 19. Limitation of Liability -->
+      <h2>19. Limitation of Liability</h2>
+      <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL APPROVE THE MOVE OR ANY OF ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY:</strong></p>
+      <ul>
+        <li>Indirect, incidental, special, consequential, or punitive damages;</li>
+        <li>Loss of profits, revenue, data, goodwill, or other intangible losses;</li>
+        <li>Damages arising from your use of or inability to use the App;</li>
+        <li>Damages arising from any unauthorized access to or alteration of your device;</li>
+        <li>Financial losses arising from reliance on the App's calculations, settlement suggestions, or currency conversions;</li>
+        <li>Any other damages arising out of or in connection with these terms or the App;</li>
+      </ul>
+      <p><strong>regardless of the theory of liability (contract, tort, negligence, strict liability, or otherwise), even if we have been advised of the possibility of such damages.</strong></p>
+      <p>In jurisdictions that do not allow the exclusion or limitation of liability for certain damages, our liability shall be limited to the maximum extent permitted by law. In no event shall our total aggregate liability exceed the amount you paid for the App (which is zero, as the App is free).</p>
+
+      <!-- 20. Indemnification -->
+      <h2>20. Indemnification</h2>
+      <p>You agree to indemnify, defend, and hold harmless Approve The Move, and their respective officers, directors, employees, contractors, agents, licensors, and suppliers from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or related to:</p>
+      <ul>
+        <li>Your use of or access to the App;</li>
+        <li>Your violation of these Terms of Use;</li>
+        <li>Your violation of any applicable law or the rights of any third party;</li>
+        <li>Any financial dispute arising from your reliance on the App's calculations or settlement suggestions.</li>
+      </ul>
+
+      <!-- 21. Governing Law & Dispute Resolution -->
+      <h2>21. Governing Law & Dispute Resolution</h2>
+      <p>These terms shall be governed by and construed in accordance with the laws of the <strong>State of Qatar</strong>, without regard to its conflict of law provisions.</p>
+      <p>Any dispute, controversy, or claim arising out of or relating to these terms or the App shall be resolved as follows:</p>
+      <ol>
+        <li><strong>Informal resolution</strong> — You agree to first attempt to resolve any dispute informally by contacting us at <a href="mailto:support@approvethemove.com" style="color:var(--accent);">support@approvethemove.com</a>. We will attempt to resolve the dispute within 30 days.</li>
+        <li><strong>Binding arbitration</strong> — If informal resolution fails, any remaining dispute shall be resolved through binding arbitration administered in Doha, Qatar, in accordance with the rules of the Qatar International Court and Dispute Resolution Centre (QICDRC), unless otherwise required by your local laws.</li>
+      </ol>
+      <p>Nothing in this section shall prevent either party from seeking injunctive or equitable relief from a court of competent jurisdiction to prevent the actual or threatened infringement of intellectual property rights.</p>
+      <p><strong>For EU/EEA residents:</strong> Nothing in these terms limits your right to bring proceedings before the courts of your country of residence, as required by Regulation (EU) No 1215/2012.</p>
+      <p><strong>For US residents:</strong> You and we each waive the right to a jury trial and the right to participate in a class action lawsuit or class-wide arbitration.</p>
+
+      <!-- 22. Termination -->
+      <h2>22. Termination</h2>
+      <p>These terms are effective until terminated. Your rights under these terms will terminate automatically and without notice if you fail to comply with any provision.</p>
+      <p>Upon termination, you must cease all use of the App and delete all copies from your devices. Sections 16 through 21 shall survive any termination of these terms.</p>
+      <p>We reserve the right to modify, suspend, or discontinue the App (or any part thereof) at any time without notice or liability.</p>
+
+      <!-- 23. Severability -->
+      <h2>23. Severability</h2>
+      <p>If any provision of these terms is found to be unlawful, void, or unenforceable by a court of competent jurisdiction, that provision shall be deemed severable and shall not affect the validity and enforceability of the remaining provisions, which shall continue in full force and effect.</p>
+
+      <!-- 24. Entire Agreement -->
+      <h2>24. Entire Agreement</h2>
+      <p>These terms, together with the Privacy Policy above and Apple's Licensed Application EULA, constitute the entire agreement between you and Approve The Move regarding your use of ATM Split. These terms supersede any prior agreements, communications, or understandings, whether written or oral, relating to the App.</p>
+
+      <!-- ======================================================== -->
+      <!--                      GENERAL                             -->
+      <!-- ======================================================== -->
+
+      <h1 style="font-size:1.5em; margin-top:2.5em; padding-top:1.5em; border-top:1px solid var(--border);">General</h1>
+
+      <!-- 25. Changes to This Document -->
+      <h2>25. Changes to This Document</h2>
+      <p>We may update this Privacy Policy and Terms of Use from time to time to reflect changes in the App, our practices, or applicable laws. When we make changes:</p>
+      <ul>
+        <li>We will update the "Last updated" date at the top of this page.</li>
+        <li>For material changes, we will notify you through the App before the changes take effect.</li>
+        <li>The updated document will be posted at this URL: <a href="https://approvethemove.com/split/privacy" style="color:var(--accent);">approvethemove.com/split/privacy</a></li>
+      </ul>
+      <p>Your continued use of the App after changes are posted constitutes acceptance of the updated terms. If you disagree with any changes, your sole remedy is to stop using the App and delete it from your device.</p>
+
+      <!-- 26. Contact Us -->
+      <h2>26. Contact Us</h2>
+      <p>If you have any questions, concerns, complaints, or requests regarding this Privacy Policy, these Terms of Use, or our practices, please contact us:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:support@approvethemove.com" style="color:var(--accent);">support@approvethemove.com</a></li>
+        <li><strong>Organization:</strong> Approve The Move</li>
+        <li><strong>Website:</strong> <a href="https://approvethemove.com" style="color:var(--accent);">approvethemove.com</a></li>
+      </ul>
+      <p>We commit to responding to all privacy-related inquiries within <strong>30 days</strong> of receipt. For GDPR-related requests, we will respond within the legally required timeframe of one calendar month.</p>
+
+      <p style="margin-top:3em; padding-top:1.5em; border-top:1px solid var(--border); font-size:0.9em; opacity:0.6;">Document version 2.0 &nbsp;|&nbsp; Effective April 13, 2026 &nbsp;|&nbsp; Applies to ATM Split v1.0 and all subsequent versions unless superseded.</p>
+
     </div>
   </div>
 

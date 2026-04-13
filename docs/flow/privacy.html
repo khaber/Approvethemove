@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — ATM Flow | Approve The Move</title>
-  <meta name="description" content="Privacy policy for ATM Flow. We don't collect your data.">
+  <title>Privacy Policy & Terms of Use — ATM Flow | Approve The Move</title>
+  <meta name="description" content="Privacy policy and terms of use for ATM Flow by Approve The Move. Your financial data stays on your device and in your iCloud — we never see it.">
   <meta name="theme-color" content="#0a0a0a">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="stylesheet" href="../css/style.css">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://approvethemove.com/flow/privacy.html">
-  <meta property="og:title" content="ATM Flow — Privacy Policy">
-  <meta property="og:description" content="Privacy policy for ATM Flow. We don't collect your data.">
+  <meta property="og:title" content="ATM Flow — Privacy Policy & Terms of Use">
+  <meta property="og:description" content="Privacy policy and terms of use for ATM Flow by Approve The Move.">
   <meta property="og:image" content="https://approvethemove.com/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -32,47 +32,392 @@
 
   <div class="container">
     <div class="privacy-content">
-      <h1>ATM Flow — Privacy Policy</h1>
-      <p class="last-updated">Last updated: March 25, 2026</p>
 
-      <h2>Overview</h2>
-      <p>ATM Flow is a personal finance tracking app built by Approve The Move. Your privacy is fundamental to how this app is built.</p>
+      <h1>ATM Flow — Privacy Policy & Terms of Use</h1>
+      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: April 13, 2026</p>
 
-      <h2>Data Storage</h2>
-      <p>All your financial data — accounts, transactions, budgets, goals, categories, and tags — is stored in two places:</p>
+      <p style="margin-bottom:2em;">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for ATM Flow. Please read both sections carefully before using the App.</p>
+
+      <!-- ======================================================== -->
+      <!--                     PART I: PRIVACY POLICY               -->
+      <!-- ======================================================== -->
+
+      <h1 style="font-size:1.5em; margin-top:2em; padding-top:1.5em; border-top:1px solid var(--border);">Part I — Privacy Policy</h1>
+
+      <!-- 1. Introduction -->
+      <h2>1. Introduction</h2>
+      <p>This Privacy Policy explains how ATM Flow ("the App"), developed and published by Approve The Move ("we", "us", or "our"), handles information when you ("you" or "the user") download, install, or use the App on any supported device.</p>
+      <p>We are committed to protecting your privacy. This policy applies to all versions of ATM Flow distributed through the Apple App Store and any future platforms.</p>
+      <p>By downloading, installing, or using ATM Flow, you acknowledge that you have read, understood, and agree to the practices described in this policy. If you do not agree, please do not use the App and remove it from your device.</p>
+
+      <!-- 2. Information We Collect -->
+      <h2>2. Information We Collect</h2>
+      <p><strong>We do not collect, transmit, or process any personal data.</strong> ATM Flow is designed from the ground up as a privacy-first application. Specifically:</p>
       <ul>
-        <li><strong>On your device</strong> — using SwiftData, Apple's local database framework</li>
-        <li><strong>In your personal iCloud account</strong> — via CloudKit, Apple's sync service, so your data syncs across your own devices</li>
+        <li><strong>No account creation</strong> — You are never required or asked to sign up, log in, create an account, or provide an email address, phone number, or any other personal identifier.</li>
+        <li><strong>No analytics or tracking</strong> — We do not use any analytics frameworks, crash reporting services, telemetry tools, device fingerprinting, or usage tracking of any kind.</li>
+        <li><strong>No advertising</strong> — The App contains no advertisements, no advertising SDKs, no ad identifiers (IDFA), and no advertising networks.</li>
+        <li><strong>No server-side communication</strong> — The App does not connect to any external server, cloud service, or remote endpoint operated by us or any third party. The only network activity is Apple CloudKit sync to your own private iCloud container (see Section 4).</li>
+        <li><strong>No in-app purchases</strong> — No financial, billing, or payment information is collected or processed.</li>
+        <li><strong>No location data</strong> — The App does not request, access, or store your geographic location.</li>
+        <li><strong>No contacts</strong> — The App does not access your contacts, microphone, or any device sensor beyond haptic feedback and the camera/photo library (used solely for attaching photos to transactions; see Section 5).</li>
       </ul>
-      <p>Your data is stored in your private CloudKit container. Only you can access it through your Apple ID. The developer (Approve The Move) cannot read, access, or retrieve your data.</p>
 
-      <h2>Data Collection</h2>
-      <p>ATM Flow collects <strong>no data</strong>. Specifically:</p>
+      <!-- 3. On-Device Storage -->
+      <h2>3. On-Device Storage</h2>
+      <p>ATM Flow stores data locally on your device using two Apple-provided storage systems. All data is stored within the App's private sandbox, is not accessible to other apps, and <strong>is never transmitted to any server we operate</strong>.</p>
+
+      <h3>3.1 UserDefaults</h3>
+      <p>A small amount of non-personal preference data is stored using Apple's <strong>UserDefaults</strong> system:</p>
       <ul>
-        <li>No analytics or usage tracking</li>
-        <li>No crash reporting SDKs</li>
-        <li>No advertising frameworks or identifiers</li>
-        <li>No third-party SDKs that collect data</li>
-        <li>No server-side storage controlled by the developer</li>
+        <li>Theme preference (System, Light, or Dark)</li>
+        <li>Accent color selection</li>
+        <li>Haptic feedback preference</li>
+        <li>App lock setting (whether biometric authentication is enabled)</li>
+      </ul>
+      <p>This data is declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
+
+      <h3>3.2 SwiftData</h3>
+      <p>Your financial data is stored on your device using Apple's <strong>SwiftData</strong> framework, a local database that operates entirely within the App's sandbox. Data stored in SwiftData includes:</p>
+      <ul>
+        <li>Accounts (bank accounts, wallets, credit cards, etc.)</li>
+        <li>Transactions (income, expenses, transfers)</li>
+        <li>Budgets</li>
+        <li>Financial goals</li>
+        <li>Categories and tags</li>
+        <li>Recurring transactions</li>
+        <li>Transaction templates</li>
+        <li>Photos attached to transactions (stored as local files; see Section 5)</li>
+      </ul>
+      <p>All of this data exists exclusively on your device and, if you have iCloud enabled, in your personal iCloud container (see Section 4). We have no ability to read, access, or retrieve any of this data.</p>
+
+      <p><strong>How to delete:</strong> You can delete any individual record (account, transaction, budget, goal, category, tag, recurring transaction, or template) at any time within the App. You can erase all locally stored data by deleting ATM Flow from your device. No residual data is retained after uninstallation. iCloud data can be managed through your device's iCloud storage settings.</p>
+
+      <!-- 4. iCloud Sync (CloudKit) -->
+      <h2>4. iCloud Sync (CloudKit)</h2>
+      <p>ATM Flow uses Apple's <strong>CloudKit</strong> framework to sync your SwiftData database across your own devices via iCloud.</p>
+
+      <h3>4.1 How It Works</h3>
+      <ul>
+        <li><strong>Your data goes to your iCloud, not our servers.</strong> CloudKit stores your data in a <strong>private database container</strong> associated with your personal Apple ID. Only you can access this data through devices signed into your Apple ID.</li>
+        <li>The developer (Approve The Move) <strong>cannot read, access, query, or retrieve</strong> any data in your private CloudKit container. Apple's architecture enforces this separation — private containers are cryptographically inaccessible to the app developer.</li>
+        <li>iCloud sync is managed entirely by Apple's infrastructure and protected by your Apple ID credentials and Apple's encryption.</li>
       </ul>
 
-      <h2>Network Activity</h2>
-      <p>The only network activity is CloudKit sync between your own devices via your iCloud account. This is handled entirely by Apple's infrastructure and protected by your Apple ID credentials.</p>
+      <h3>4.2 Data Transmitted via CloudKit</h3>
+      <p>When iCloud sync is enabled on your device, the following data is synced between your own devices:</p>
+      <ul>
+        <li>All SwiftData records (accounts, transactions, budgets, goals, categories, tags, recurring transactions, templates)</li>
+        <li>Photos attached to transactions</li>
+      </ul>
+      <p>No other data (contacts, location, browsing history, device information, etc.) is ever transmitted.</p>
 
-      <h2>Photos</h2>
-      <p>ATM Flow allows you to attach photos to transactions. These photos are stored locally on your device and in your iCloud. They are never uploaded to external servers.</p>
+      <h3>4.3 Encryption</h3>
+      <p>All data synced through CloudKit is encrypted <strong>in transit</strong> using TLS and <strong>at rest</strong> on Apple's servers. For more information on Apple's data protection practices, see <a href="https://support.apple.com/en-us/102651" style="color:var(--accent);">Apple's iCloud security overview</a>.</p>
 
-      <h2>Biometric Data</h2>
-      <p>ATM Flow supports Face ID and Touch ID for app lock. Biometric data is handled entirely by iOS and never leaves the Secure Enclave on your device. The app only receives a yes/no authentication result.</p>
+      <h3>4.4 Disabling iCloud Sync</h3>
+      <p>You can disable iCloud sync for ATM Flow at any time through your device's Settings > Apple ID > iCloud. When sync is disabled, your data remains stored locally on your device only. Existing iCloud data can be deleted through your iCloud storage settings.</p>
 
-      <h2>Data Deletion</h2>
-      <p>You can delete any data at any time within the app. Deleted data is moved to trash and can be permanently removed. Uninstalling the app removes all local data. iCloud data can be managed through your device's iCloud settings.</p>
+      <!-- 5. Photos & Camera -->
+      <h2>5. Photos & Camera</h2>
+      <p>ATM Flow allows you to attach photos to transactions (e.g., photos of receipts). This feature is entirely optional.</p>
+      <ul>
+        <li><strong>Photo storage</strong> — Attached photos are stored locally on your device within the App's sandbox and, if iCloud sync is enabled, in your private CloudKit container.</li>
+        <li><strong>No upload to external servers</strong> — Photos are never uploaded to any server we operate or any third-party service.</li>
+        <li><strong>Camera and photo library access</strong> — The App will request your permission before accessing your camera or photo library. You can revoke this permission at any time through your device's Settings > ATM Flow.</li>
+      </ul>
 
-      <h2>Changes to This Policy</h2>
-      <p>If this privacy policy ever changes, you will be notified within the app before any changes take effect.</p>
+      <!-- 6. Biometric Authentication (Face ID / Touch ID) -->
+      <h2>6. Biometric Authentication (Face ID / Touch ID)</h2>
+      <p>ATM Flow supports Face ID and Touch ID for optional app lock functionality, using Apple's <strong>LocalAuthentication</strong> framework.</p>
+      <ul>
+        <li><strong>No biometric data is accessed by the App.</strong> All biometric processing is handled entirely by iOS within the device's <strong>Secure Enclave</strong> — a dedicated hardware security processor.</li>
+        <li>The App only receives a <strong>yes/no authentication result</strong> from iOS. It never receives, processes, stores, or transmits fingerprint data, facial geometry, or any other biometric information.</li>
+        <li>Biometric data never leaves the Secure Enclave, never reaches the App's process, and is never transmitted to any server.</li>
+      </ul>
 
-      <h2>Contact</h2>
-      <p>If you have questions about this privacy policy, contact: <strong>support@approvethemove.com</strong></p>
+      <!-- 7. CSV Import -->
+      <h2>7. CSV Import</h2>
+      <p>ATM Flow allows you to import financial data from CSV files stored on your device.</p>
+      <ul>
+        <li><strong>Local processing only</strong> — CSV files are read and processed entirely on your device. No file data is uploaded to any external server.</li>
+        <li>The imported data is stored in your local SwiftData database (and synced to your private iCloud container if iCloud sync is enabled).</li>
+        <li>The original CSV file remains unchanged on your device; the App only reads from it.</li>
+      </ul>
+
+      <!-- 8. Third-Party Services & SDKs -->
+      <h2>8. Third-Party Services & SDKs</h2>
+      <p>ATM Flow does <strong>not</strong> integrate, embed, or communicate with any third-party services, SDKs, APIs, or frameworks that collect, process, or transmit user data. The App uses exclusively Apple-provided first-party system frameworks:</p>
+      <table style="width:100%; margin:1em 0; border-collapse:collapse;">
+        <tr style="border-bottom:1px solid var(--border);">
+          <th style="text-align:left; padding:8px;">Framework</th>
+          <th style="text-align:left; padding:8px;">Purpose</th>
+          <th style="text-align:left; padding:8px;">Data Collection</th>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">SwiftUI</td>
+          <td style="padding:8px;">User interface rendering</td>
+          <td style="padding:8px;">None</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">SwiftData</td>
+          <td style="padding:8px;">On-device structured data storage</td>
+          <td style="padding:8px;">None (local only)</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">CloudKit</td>
+          <td style="padding:8px;">iCloud sync to user's private container</td>
+          <td style="padding:8px;">None (user's own iCloud)</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">Charts</td>
+          <td style="padding:8px;">Financial data visualization</td>
+          <td style="padding:8px;">None</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">WidgetKit</td>
+          <td style="padding:8px;">Home screen and Lock Screen widgets</td>
+          <td style="padding:8px;">None</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;">LocalAuthentication</td>
+          <td style="padding:8px;">Face ID / Touch ID for app lock</td>
+          <td style="padding:8px;">None (biometric data stays in Secure Enclave)</td>
+        </tr>
+      </table>
+      <p>We do not use Firebase, Google Analytics, Facebook SDK, AdMob, Crashlytics, Sentry, Amplitude, Mixpanel, or any other third-party data collection tool.</p>
+
+      <!-- 9. Apple's Data Practices -->
+      <h2>9. Apple's Data Practices</h2>
+      <p>While ATM Flow itself does not collect data, please be aware that Apple may independently collect certain information related to your use of the App Store, such as download statistics and crash logs. This data collection is governed by <a href="https://www.apple.com/legal/privacy/" style="color:var(--accent);">Apple's Privacy Policy</a>, not ours, and is outside our control.</p>
+      <p>We have declared in App Store Connect that ATM Flow collects <strong>no data</strong> linked to or tracking the user, as reflected on the App's App Store product page under "App Privacy."</p>
+
+      <!-- 10. Children's Privacy -->
+      <h2>10. Children's Privacy</h2>
+      <p>ATM Flow is rated <strong>4+</strong> by Apple and is designed to be suitable for users of all ages. The App does not contain violence, gambling (real or simulated), horror, mature themes, profanity, or any other objectionable material.</p>
+      <p>Because we do not collect any personal information from any user of any age, we are compliant with the following regulations regarding children's privacy:</p>
+      <ul>
+        <li><strong>COPPA</strong> (Children's Online Privacy Protection Act, United States) — We do not knowingly collect personal information from children under the age of 13. Since the App collects no personal information from anyone, no COPPA violation can occur.</li>
+        <li><strong>GDPR-K / Age of Digital Consent</strong> (European Economic Area) — We do not process personal data of minors under 16 (or the lower age set by individual EEA member states). Since no personal data is processed, no parental consent is required.</li>
+        <li><strong>Apple's Guidelines for Apps Used by Children</strong> — The App contains no data collection, no third-party analytics, no advertising, and no external links within the App experience.</li>
+      </ul>
+      <p>Parents, guardians, and educators can allow children to use ATM Flow with full confidence that no personal information is collected, stored, or shared.</p>
+
+      <!-- 11. Your Rights Under Applicable Laws -->
+      <h2>11. Your Rights Under Applicable Laws</h2>
+      <p>We respect and support the privacy rights granted to individuals under applicable data protection legislation worldwide.</p>
+
+      <h3>11.1 European Economic Area (GDPR)</h3>
+      <p>If you are located in the European Economic Area (EEA), the United Kingdom, or Switzerland, the <strong>General Data Protection Regulation (GDPR)</strong> and equivalent local laws grant you the following rights regarding personal data:</p>
+      <ul>
+        <li><strong>Right of access</strong> (Article 15) — Request a copy of personal data held about you.</li>
+        <li><strong>Right to rectification</strong> (Article 16) — Request correction of inaccurate personal data.</li>
+        <li><strong>Right to erasure</strong> (Article 17) — Request deletion of your personal data.</li>
+        <li><strong>Right to restrict processing</strong> (Article 18) — Request that we limit how we use your data.</li>
+        <li><strong>Right to data portability</strong> (Article 20) — Receive your data in a structured, machine-readable format.</li>
+        <li><strong>Right to object</strong> (Article 21) — Object to processing based on legitimate interests.</li>
+        <li><strong>Right to withdraw consent</strong> (Article 7) — Withdraw previously given consent at any time.</li>
+      </ul>
+      <p><strong>Since we do not collect, store, or process any personal data, there is no data for us to provide, correct, restrict, delete, port, or cease processing.</strong> Your local preferences can be erased by deleting the App. Your iCloud data can be managed through your device's iCloud settings. If you believe we hold data about you in error, please contact us and we will investigate promptly.</p>
+      <p><strong>Legal basis for processing:</strong> We do not process personal data. The on-device preference storage operates under <strong>legitimate interest</strong> (providing a functional user experience) and does not constitute data processing under GDPR as the data never leaves the device or reaches us. CloudKit data is stored in your own private iCloud account and is not accessible to us.</p>
+      <p><strong>Data controller:</strong> Approve The Move (contact details in Section 17).</p>
+
+      <h3>11.2 California (CCPA / CPRA)</h3>
+      <p>If you are a California resident, the <strong>California Consumer Privacy Act (CCPA)</strong> as amended by the <strong>California Privacy Rights Act (CPRA)</strong> grants you specific rights regarding personal information:</p>
+      <ul>
+        <li><strong>Right to know</strong> — You may request disclosure of the categories and specific pieces of personal information collected.</li>
+        <li><strong>Right to delete</strong> — You may request deletion of personal information collected.</li>
+        <li><strong>Right to correct</strong> — You may request correction of inaccurate personal information.</li>
+        <li><strong>Right to opt out of sale or sharing</strong> — You may direct us not to sell or share your personal information.</li>
+        <li><strong>Right to non-discrimination</strong> — You will not be discriminated against for exercising your privacy rights.</li>
+      </ul>
+      <p><strong>We do not collect, sell, or share personal information.</strong> We have not sold or shared personal information of any consumer in the preceding 12 months, nor do we intend to do so.</p>
+      <p>California's "Do Not Track" signals and Global Privacy Control (GPC) are respected by default, as the App does not track users in any capacity.</p>
+
+      <h3>11.3 Qatar & Middle East</h3>
+      <p>If you are located in Qatar or other Gulf Cooperation Council (GCC) states, we comply with applicable data protection laws, including Qatar's Law No. 13 of 2016 on Personal Data Privacy. As we do not collect personal data, no registration with the Compliance and Data Protection Department is required.</p>
+
+      <h3>11.4 Other Jurisdictions</h3>
+      <p>Regardless of your location, the same principle applies: we do not collect personal data, so there is no data to exercise rights over. If your local laws grant you additional privacy rights, please contact us and we will cooperate fully.</p>
+
+      <!-- 12. Data Security -->
+      <h2>12. Data Security</h2>
+      <p>Although we do not collect or store personal data on any server, we employ the following security measures to protect your experience within the App:</p>
+      <ul>
+        <li><strong>Encrypted iCloud sync</strong> — All data synced through CloudKit is encrypted in transit (TLS) and at rest on Apple's servers, protected by Apple's enterprise-grade security infrastructure.</li>
+        <li><strong>Sandboxed storage</strong> — On-device data (both UserDefaults and SwiftData) is stored within the App's iOS sandbox, which is isolated from other apps and protected by the operating system.</li>
+        <li><strong>Secure biometric authentication</strong> — Face ID and Touch ID data is processed exclusively within the Secure Enclave hardware processor and never exposed to the App or any external system.</li>
+        <li><strong>No network exposure</strong> — The App makes no internet connections to any server we operate, eliminating the risk of remote data breaches, man-in-the-middle attacks, or unauthorized server access. CloudKit sync is handled entirely by Apple's infrastructure.</li>
+        <li><strong>No persistent sensitive data</strong> — No passwords, tokens, credentials, or third-party financial data are ever stored or processed.</li>
+      </ul>
+
+      <!-- 13. Data Retention -->
+      <h2>13. Data Retention</h2>
+      <p>We do not operate servers, databases, or cloud storage of any kind. We do not retain any user data. All data associated with ATM Flow exists exclusively on your personal device and, if iCloud sync is enabled, in your private iCloud container:</p>
+      <table style="width:100%; margin:1em 0; border-collapse:collapse;">
+        <tr style="border-bottom:1px solid var(--border);">
+          <th style="text-align:left; padding:8px;">Data Type</th>
+          <th style="text-align:left; padding:8px;">Storage Location</th>
+          <th style="text-align:left; padding:8px;">Retention Period</th>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">User preferences</td>
+          <td style="padding:8px;">Device (UserDefaults)</td>
+          <td style="padding:8px;">Until App is deleted</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">Financial data (accounts, transactions, budgets, goals, categories, tags, recurring transactions, templates)</td>
+          <td style="padding:8px;">Device (SwiftData) + iCloud (CloudKit)</td>
+          <td style="padding:8px;">Until deleted by user or App is removed</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;">Transaction photos</td>
+          <td style="padding:8px;">Device (local files) + iCloud (CloudKit)</td>
+          <td style="padding:8px;">Until deleted by user or App is removed</td>
+        </tr>
+      </table>
+      <p>When you delete the App, all local data is permanently removed from your device by the operating system. iCloud data can be managed and deleted through your device's Settings > Apple ID > iCloud > Manage Storage.</p>
+
+      <!-- 14. International Considerations -->
+      <h2>14. International Considerations</h2>
+      <p>ATM Flow is available worldwide through the Apple App Store. The App does not transmit any data to external servers operated by us. CloudKit sync transfers data between your own devices through Apple's iCloud infrastructure. Apple may process iCloud data in data centers located in various countries; this is governed by <a href="https://www.apple.com/legal/privacy/" style="color:var(--accent);">Apple's Privacy Policy</a> and your iCloud terms of service, not by us. We have no control over or access to your iCloud data.</p>
+
+      <!-- ======================================================== -->
+      <!--                  PART II: TERMS OF USE                   -->
+      <!-- ======================================================== -->
+
+      <h1 style="font-size:1.5em; margin-top:2.5em; padding-top:1.5em; border-top:1px solid var(--border);">Part II — Terms of Use</h1>
+
+      <!-- 15. Acceptance of Terms -->
+      <h2>15. Acceptance of Terms</h2>
+      <p>By downloading, installing, accessing, or using ATM Flow, you agree to be bound by these Terms of Use. If you do not agree to these terms, do not use the App and remove it from your device.</p>
+      <p>These terms constitute a legally binding agreement between you and Approve The Move ("we", "us", "our") governing your use of the App.</p>
+
+      <!-- 16. License -->
+      <h2>16. License Grant</h2>
+      <p>Subject to your compliance with these terms, we grant you a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to download, install, and use ATM Flow on any Apple device that you own or control, solely for your personal, non-commercial financial tracking purposes.</p>
+      <p>This license is also governed by the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" style="color:var(--accent);">Apple Licensed Application End User License Agreement (EULA)</a>, which is incorporated into these terms by reference.</p>
+
+      <!-- 17. Restrictions -->
+      <h2>17. Restrictions</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Copy, modify, distribute, sell, lease, sublicense, or create derivative works based on the App.</li>
+        <li>Reverse-engineer, decompile, disassemble, or attempt to extract the source code of the App.</li>
+        <li>Remove, alter, or obscure any copyright, trademark, or proprietary notices.</li>
+        <li>Use the App for any unlawful purpose or in violation of any applicable laws or regulations.</li>
+        <li>Exploit the App or any part of it for commercial purposes without our prior written consent.</li>
+        <li>Attempt to interfere with or disrupt the integrity of the App or its data storage systems.</li>
+      </ul>
+
+      <!-- 18. Financial Data Disclaimer -->
+      <h2>18. Financial Data Disclaimer</h2>
+      <p><strong>ATM Flow is a personal finance tracking tool designed to help you organize and visualize your financial information. It is not a financial advisor, tax preparation tool, accounting system, or investment platform.</strong></p>
+      <p>You acknowledge and agree that:</p>
+      <ul>
+        <li><strong>Not financial advice</strong> — The App does not provide financial, investment, tax, legal, or accounting advice of any kind. Any financial data, calculations, charts, summaries, budgets, or projections displayed within the App are for your personal informational and organizational purposes only.</li>
+        <li><strong>No reliance for financial decisions</strong> — You should not rely solely on the data or calculations presented by the App when making tax filings, legal decisions, investment decisions, or any other financial decisions with legal or monetary consequences. Always consult a qualified financial advisor, accountant, or tax professional for such matters.</li>
+        <li><strong>Accuracy not guaranteed</strong> — While we strive to ensure that the App's calculations (including but not limited to totals, balances, budget tracking, goal progress, and chart visualizations) are accurate, we do not warrant or guarantee the accuracy, completeness, or reliability of any financial calculations or data displayed by the App. Rounding, data entry errors, sync delays, or software defects may cause discrepancies.</li>
+        <li><strong>User responsibility</strong> — You are solely responsible for the accuracy of the financial data you enter into the App. The App processes and displays data based on your input; incorrect input will produce incorrect results.</li>
+        <li><strong>No substitute for professional records</strong> — The App is not a substitute for official bank statements, tax records, or professional accounting systems. You should maintain independent records for all important financial matters.</li>
+      </ul>
+
+      <!-- 19. Intellectual Property -->
+      <h2>19. Intellectual Property</h2>
+      <p>All rights, title, and interest in and to ATM Flow — including but not limited to the software code, visual design, user interface elements, graphics, animations, icons, charts, and documentation — are and shall remain the exclusive property of Approve The Move.</p>
+      <p>The name "ATM Flow", the Approve The Move name and logo, and all associated branding are trademarks of Approve The Move. Nothing in these terms grants you any right to use our trademarks without prior written permission.</p>
+
+      <!-- 20. Disclaimer of Warranties -->
+      <h2>20. Disclaimer of Warranties</h2>
+      <p><strong>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</strong></p>
+      <p>To the fullest extent permitted by applicable law, we disclaim all warranties, including but not limited to:</p>
+      <ul>
+        <li>Implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</li>
+        <li>Warranties that the App will be uninterrupted, error-free, secure, or free of viruses or other harmful components.</li>
+        <li>Warranties regarding the accuracy, reliability, or completeness of any content, calculations, or financial data displayed within the App.</li>
+        <li>Warranties that iCloud sync will operate without interruption, delay, or data loss.</li>
+      </ul>
+      <p>You acknowledge that the App is a personal finance tracking tool and that your use of the App is at your sole risk. Financial data displayed by the App is based on user input and should be independently verified for any consequential use.</p>
+
+      <!-- 21. Limitation of Liability -->
+      <h2>21. Limitation of Liability</h2>
+      <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL APPROVE THE MOVE OR ANY OF ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY:</strong></p>
+      <ul>
+        <li>Indirect, incidental, special, consequential, or punitive damages;</li>
+        <li>Loss of profits, revenue, data, goodwill, or other intangible losses;</li>
+        <li>Damages arising from your use of or inability to use the App;</li>
+        <li>Damages arising from any unauthorized access to or alteration of your device;</li>
+        <li>Damages arising from inaccurate financial calculations, data loss, or sync failures;</li>
+        <li>Damages arising from financial decisions made based on data displayed by the App;</li>
+        <li>Any other damages arising out of or in connection with these terms or the App;</li>
+      </ul>
+      <p><strong>regardless of the theory of liability (contract, tort, negligence, strict liability, or otherwise), even if we have been advised of the possibility of such damages.</strong></p>
+      <p>In jurisdictions that do not allow the exclusion or limitation of liability for certain damages, our liability shall be limited to the maximum extent permitted by law. In no event shall our total aggregate liability exceed the amount you paid for the App (which is zero, as the App is free).</p>
+
+      <!-- 22. Indemnification -->
+      <h2>22. Indemnification</h2>
+      <p>You agree to indemnify, defend, and hold harmless Approve The Move, and their respective officers, directors, employees, contractors, agents, licensors, and suppliers from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or related to:</p>
+      <ul>
+        <li>Your use of or access to the App;</li>
+        <li>Your violation of these Terms of Use;</li>
+        <li>Your violation of any applicable law or the rights of any third party;</li>
+        <li>Any financial decisions you make based on data displayed by the App.</li>
+      </ul>
+
+      <!-- 23. Governing Law & Dispute Resolution -->
+      <h2>23. Governing Law & Dispute Resolution</h2>
+      <p>These terms shall be governed by and construed in accordance with the laws of the <strong>State of Qatar</strong>, without regard to its conflict of law provisions.</p>
+      <p>Any dispute, controversy, or claim arising out of or relating to these terms or the App shall be resolved as follows:</p>
+      <ol>
+        <li><strong>Informal resolution</strong> — You agree to first attempt to resolve any dispute informally by contacting us at <a href="mailto:support@approvethemove.com" style="color:var(--accent);">support@approvethemove.com</a>. We will attempt to resolve the dispute within 30 days.</li>
+        <li><strong>Binding arbitration</strong> — If informal resolution fails, any remaining dispute shall be resolved through binding arbitration administered in Doha, Qatar, in accordance with the rules of the Qatar International Court and Dispute Resolution Centre (QICDRC), unless otherwise required by your local laws.</li>
+      </ol>
+      <p>Nothing in this section shall prevent either party from seeking injunctive or equitable relief from a court of competent jurisdiction to prevent the actual or threatened infringement of intellectual property rights.</p>
+      <p><strong>For EU/EEA residents:</strong> Nothing in these terms limits your right to bring proceedings before the courts of your country of residence, as required by Regulation (EU) No 1215/2012.</p>
+      <p><strong>For US residents:</strong> You and we each waive the right to a jury trial and the right to participate in a class action lawsuit or class-wide arbitration.</p>
+
+      <!-- 24. Termination -->
+      <h2>24. Termination</h2>
+      <p>These terms are effective until terminated. Your rights under these terms will terminate automatically and without notice if you fail to comply with any provision.</p>
+      <p>Upon termination, you must cease all use of the App and delete all copies from your devices. Sections 19 through 23 shall survive any termination of these terms.</p>
+      <p>We reserve the right to modify, suspend, or discontinue the App (or any part thereof) at any time without notice or liability.</p>
+
+      <!-- 25. Severability -->
+      <h2>25. Severability</h2>
+      <p>If any provision of these terms is found to be unlawful, void, or unenforceable by a court of competent jurisdiction, that provision shall be deemed severable and shall not affect the validity and enforceability of the remaining provisions, which shall continue in full force and effect.</p>
+
+      <!-- 26. Entire Agreement -->
+      <h2>26. Entire Agreement</h2>
+      <p>These terms, together with the Privacy Policy above and Apple's Licensed Application EULA, constitute the entire agreement between you and Approve The Move regarding your use of ATM Flow. These terms supersede any prior agreements, communications, or understandings, whether written or oral, relating to the App.</p>
+
+      <!-- ======================================================== -->
+      <!--                      GENERAL                             -->
+      <!-- ======================================================== -->
+
+      <h1 style="font-size:1.5em; margin-top:2.5em; padding-top:1.5em; border-top:1px solid var(--border);">General</h1>
+
+      <!-- 27. Changes to This Document -->
+      <h2>27. Changes to This Document</h2>
+      <p>We may update this Privacy Policy and Terms of Use from time to time to reflect changes in the App, our practices, or applicable laws. When we make changes:</p>
+      <ul>
+        <li>We will update the "Last updated" date at the top of this page.</li>
+        <li>For material changes, we will notify you through the App before the changes take effect.</li>
+        <li>The updated document will be posted at this URL: <a href="https://approvethemove.com/flow/privacy" style="color:var(--accent);">approvethemove.com/flow/privacy</a></li>
+      </ul>
+      <p>Your continued use of the App after changes are posted constitutes acceptance of the updated terms. If you disagree with any changes, your sole remedy is to stop using the App and delete it from your device.</p>
+
+      <!-- 28. Contact Us -->
+      <h2>28. Contact Us</h2>
+      <p>If you have any questions, concerns, complaints, or requests regarding this Privacy Policy, these Terms of Use, or our practices, please contact us:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:support@approvethemove.com" style="color:var(--accent);">support@approvethemove.com</a></li>
+        <li><strong>Organization:</strong> Approve The Move</li>
+        <li><strong>Website:</strong> <a href="https://approvethemove.com" style="color:var(--accent);">approvethemove.com</a></li>
+      </ul>
+      <p>We commit to responding to all privacy-related inquiries within <strong>30 days</strong> of receipt. For GDPR-related requests, we will respond within the legally required timeframe of one calendar month.</p>
+
+      <p style="margin-top:3em; padding-top:1.5em; border-top:1px solid var(--border); font-size:0.9em; opacity:0.6;">Document version 2.0 &nbsp;|&nbsp; Effective April 13, 2026 &nbsp;|&nbsp; Applies to ATM Flow v1.0 and all subsequent versions unless superseded.</p>
+
     </div>
   </div>
 
