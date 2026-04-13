@@ -402,6 +402,24 @@ section {
   border-color: rgba(184, 134, 11, 0.3);
 }
 
+.card-status.live {
+  background: rgba(52, 199, 89, 0.12);
+  color: #34c759;
+  border: 1px solid rgba(52, 199, 89, 0.3);
+}
+
+[data-theme="light"] .card-status.live {
+  background: rgba(40, 150, 68, 0.12);
+  color: #289644;
+  border-color: rgba(40, 150, 68, 0.3);
+}
+
+.badge.live {
+  background: rgba(52, 199, 89, 0.12);
+  color: #34c759;
+  border-color: rgba(52, 199, 89, 0.2);
+}
+
 .badge.coming-soon {
   background: rgba(255, 204, 10, 0.12);
   color: #ffcc0a;
