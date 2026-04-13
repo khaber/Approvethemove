@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy & Terms of Use — Qatari Cards | Approve The Move</title>
+  <meta name="description" content="Privacy policy and terms of use for Qatari Cards by Approve The Move. We respect your privacy and do not collect personal data.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://approvethemove.com/QatariCards/privacy.html">
+  <meta property="og:title" content="Qatari Cards — Privacy Policy & Terms of Use">
+  <meta property="og:description" content="Privacy policy and terms of use for Qatari Cards by Approve The Move.">
+  <meta property="og:image" content="https://approvethemove.com/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body data-accent="red">
+
+  <nav class="nav">
+    <div class="container">
+      <a href="/" class="nav-brand"><img src="../logo.svg" alt="" class="nav-logo"><span>Approve The Move</span></a>
+      <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="/#apps">Apps</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="privacy-content">
+
+      <h1>Qatari Cards — Privacy Policy & Terms of Use</h1>
+      <p class="last-updated">Effective date: April 9, 2026 &nbsp;|&nbsp; Last updated: April 9, 2026</p>
+
+      <p style="margin-bottom:2em;">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for Qatari Cards. Please read both sections carefully before using the App.</p>
+
+      <!-- ======================================================== -->
+      <!--                     PART I: PRIVACY POLICY               -->
+      <!-- ======================================================== -->
+
+      <h1 style="font-size:1.5em; margin-top:2em; padding-top:1.5em; border-top:1px solid var(--border);">Part I — Privacy Policy</h1>
+
+      <!-- 1. Introduction -->
+      <h2>1. Introduction</h2>
+      <p>This Privacy Policy explains how Qatari Cards ("the App"), developed and published by Approve The Move ("we", "us", or "our"), handles information when you ("you" or "the user") download, install, or use the App on any supported device.</p>
+      <p>We are committed to protecting your privacy. This policy applies to all versions of Qatari Cards distributed through the Apple App Store and any future platforms.</p>
+      <p>By downloading, installing, or using Qatari Cards, you acknowledge that you have read, understood, and agree to the practices described in this policy. If you do not agree, please do not use the App and remove it from your device.</p>
+
+      <!-- 2. Information We Collect -->
+      <h2>2. Information We Collect</h2>
+      <p><strong>We do not collect, transmit, or process any personal data.</strong> Qatari Cards is designed from the ground up as a privacy-first, offline application. Specifically:</p>
+      <ul>
+        <li><strong>No account creation</strong> — You are never required or asked to sign up, log in, create an account, or provide an email address, phone number, or any other personal identifier.</li>
+        <li><strong>No analytics or tracking</strong> — We do not use any analytics frameworks, crash reporting services, telemetry tools, device fingerprinting, or usage tracking of any kind.</li>
+        <li><strong>No advertising</strong> — The App contains no advertisements, no advertising SDKs, no ad identifiers (IDFA), and no advertising networks.</li>
+        <li><strong>No server-side communication</strong> — The App does not connect to the internet, does not make HTTP requests, and does not transmit any data to any external server, cloud service, or remote endpoint.</li>
+        <li><strong>No in-app purchases</strong> — No financial, billing, or payment information is collected or processed.</li>
+        <li><strong>No location data</strong> — The App does not request, access, or store your geographic location.</li>
+        <li><strong>No contacts or photos</strong> — The App does not access your contacts, photo library, camera, microphone, or any other device sensor beyond haptic feedback.</li>
+      </ul>
+
+      <!-- 3. On-Device Storage -->
+      <h2>3. On-Device Storage</h2>
+      <p>Qatari Cards stores a small amount of non-personal preference data locally on your device using Apple's <strong>UserDefaults</strong> system. This data is stored within the App's private sandbox, is not accessible to other apps, and <strong>never leaves your device</strong>.</p>
+      <p>Data stored locally includes:</p>
+      <ul>
+        <li>Display name (the player name you choose, used only within the App)</li>
+        <li>A randomly generated unique identifier (UUID) used solely to identify your device during local multiplayer sessions</li>
+        <li>Theme preference (System, Light, or Dark)</li>
+        <li>Accent color selection</li>
+        <li>Game settings: AI difficulty, AI speed, sound effects, haptic feedback, and card play confirmation preferences</li>
+      </ul>
+      <p>All active game state — including your cards, bids, tricks, scores, and round history — exists only in volatile memory (RAM) during gameplay. When you close or terminate the App, all game state is permanently discarded. There is no cloud sync, no saved game files, no replay history, and no persistent game data.</p>
+      <p>This data is declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
+      <p><strong>How to delete:</strong> You can erase all locally stored preferences at any time by deleting Qatari Cards from your device. No residual data is retained after uninstallation.</p>
+
+      <!-- 4. Local Multiplayer & Networking -->
+      <h2>4. Local Multiplayer & Networking</h2>
+      <p>Qatari Cards offers local multiplayer using Apple's <strong>MultipeerConnectivity</strong> framework. This enables direct, peer-to-peer connections between nearby devices over <strong>Wi-Fi</strong> and <strong>Bluetooth</strong>.</p>
+
+      <h3>4.1 How It Works</h3>
+      <ul>
+        <li><strong>No internet connection is used or required.</strong> All communication occurs directly between devices on the local network. No data passes through our servers, Apple's servers, or any third-party relay.</li>
+        <li>The App uses Apple's <strong>Bonjour</strong> protocol to discover nearby devices advertising or browsing for games.</li>
+      </ul>
+
+      <h3>4.2 Data Transmitted During Sessions</h3>
+      <p>During an active local multiplayer session, the following data is transmitted between connected devices:</p>
+      <ul>
+        <li><strong>Player display names</strong> — So players can identify each other during the game.</li>
+        <li><strong>Player unique identifiers (UUID)</strong> — Used internally to match peers to game seats. These are randomly generated and not linked to any personal information.</li>
+        <li><strong>Game state messages</strong> — Card plays, bids, pass actions, trump suit selection, trick results, round results, and score updates.</li>
+      </ul>
+      <p>No other data (photos, contacts, location, device information, browsing history, etc.) is ever transmitted.</p>
+
+      <h3>4.3 Encryption</h3>
+      <p>All peer-to-peer communication is encrypted using <strong>Apple's built-in TLS encryption</strong> (MCSession with <code>.required</code> encryption preference). This means all game data transmitted between devices is encrypted in transit and cannot be intercepted by other devices or networks.</p>
+
+      <h3>4.4 Session Lifecycle</h3>
+      <p>When a multiplayer session ends (either by completing the game, disconnecting, or closing the App), all session data is permanently discarded on all connected devices. No multiplayer data is retained, logged, or stored after the session concludes.</p>
+
+      <!-- 5. Third-Party Services & SDKs -->
+      <h2>5. Third-Party Services & SDKs</h2>
+      <p>Qatari Cards does <strong>not</strong> integrate, embed, or communicate with any third-party services, SDKs, APIs, or frameworks that collect, process, or transmit user data. The App uses exclusively Apple-provided first-party system frameworks:</p>
+      <table style="width:100%; margin:1em 0; border-collapse:collapse;">
+        <tr style="border-bottom:1px solid var(--border);">
+          <th style="text-align:left; padding:8px;">Framework</th>
+          <th style="text-align:left; padding:8px;">Purpose</th>
+          <th style="text-align:left; padding:8px;">Data Collection</th>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">SwiftUI</td>
+          <td style="padding:8px;">User interface rendering</td>
+          <td style="padding:8px;">None</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">MultipeerConnectivity</td>
+          <td style="padding:8px;">Local peer-to-peer networking</td>
+          <td style="padding:8px;">None (local only)</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">AudioToolbox</td>
+          <td style="padding:8px;">System sound effects</td>
+          <td style="padding:8px;">None</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;">UIKit (Haptics)</td>
+          <td style="padding:8px;">Haptic feedback</td>
+          <td style="padding:8px;">None</td>
+        </tr>
+      </table>
+      <p>We do not use Firebase, Google Analytics, Facebook SDK, Unity, AdMob, Crashlytics, Sentry, Amplitude, Mixpanel, or any other third-party data collection tool.</p>
+
+      <!-- 6. Apple's Data Practices -->
+      <h2>6. Apple's Data Practices</h2>
+      <p>While Qatari Cards itself does not collect data, please be aware that Apple may independently collect certain information related to your use of the App Store, such as download statistics and crash logs. This data collection is governed by <a href="https://www.apple.com/legal/privacy/" style="color:var(--accent);">Apple's Privacy Policy</a>, not ours, and is outside our control.</p>
+      <p>We have declared in App Store Connect that Qatari Cards collects <strong>no data</strong> linked to or tracking the user, as reflected on the App's App Store product page under "App Privacy."</p>
+
+      <!-- 7. Children's Privacy -->
+      <h2>7. Children's Privacy</h2>
+      <p>Qatari Cards is rated <strong>4+</strong> by Apple and is designed to be suitable for users of all ages. The App does not contain violence, gambling (real or simulated), horror, mature themes, profanity, or any other objectionable material.</p>
+      <p>Because we do not collect any personal information from any user of any age, we are compliant with the following regulations regarding children's privacy:</p>
+      <ul>
+        <li><strong>COPPA</strong> (Children's Online Privacy Protection Act, United States) — We do not knowingly collect personal information from children under the age of 13. Since the App collects no personal information from anyone, no COPPA violation can occur.</li>
+        <li><strong>GDPR-K / Age of Digital Consent</strong> (European Economic Area) — We do not process personal data of minors under 16 (or the lower age set by individual EEA member states). Since no personal data is processed, no parental consent is required.</li>
+        <li><strong>Apple's Guidelines for Apps Used by Children</strong> — The App contains no data collection, no third-party analytics, no advertising, and no external links within the gameplay experience.</li>
+      </ul>
+      <p>Parents, guardians, and educators can allow children to use Qatari Cards with full confidence that no personal information is collected, stored, or shared.</p>
+
+      <!-- 8. Your Rights Under Applicable Laws -->
+      <h2>8. Your Rights Under Applicable Laws</h2>
+      <p>We respect and support the privacy rights granted to individuals under applicable data protection legislation worldwide.</p>
+
+      <h3>8.1 European Economic Area (GDPR)</h3>
+      <p>If you are located in the European Economic Area (EEA), the United Kingdom, or Switzerland, the <strong>General Data Protection Regulation (GDPR)</strong> and equivalent local laws grant you the following rights regarding personal data:</p>
+      <ul>
+        <li><strong>Right of access</strong> (Article 15) — Request a copy of personal data held about you.</li>
+        <li><strong>Right to rectification</strong> (Article 16) — Request correction of inaccurate personal data.</li>
+        <li><strong>Right to erasure</strong> (Article 17) — Request deletion of your personal data.</li>
+        <li><strong>Right to restrict processing</strong> (Article 18) — Request that we limit how we use your data.</li>
+        <li><strong>Right to data portability</strong> (Article 20) — Receive your data in a structured, machine-readable format.</li>
+        <li><strong>Right to object</strong> (Article 21) — Object to processing based on legitimate interests.</li>
+        <li><strong>Right to withdraw consent</strong> (Article 7) — Withdraw previously given consent at any time.</li>
+      </ul>
+      <p><strong>Since we do not collect, store, or process any personal data, there is no data for us to provide, correct, restrict, delete, port, or cease processing.</strong> Your local preferences can be erased by deleting the App. If you believe we hold data about you in error, please contact us and we will investigate promptly.</p>
+      <p><strong>Legal basis for processing:</strong> We do not process personal data. The on-device preference storage operates under <strong>legitimate interest</strong> (providing a functional user experience) and does not constitute data processing under GDPR as the data never leaves the device or reaches us.</p>
+      <p><strong>Data controller:</strong> Approve The Move (contact details in Section 14).</p>
+
+      <h3>8.2 California (CCPA / CPRA)</h3>
+      <p>If you are a California resident, the <strong>California Consumer Privacy Act (CCPA)</strong> as amended by the <strong>California Privacy Rights Act (CPRA)</strong> grants you specific rights regarding personal information:</p>
+      <ul>
+        <li><strong>Right to know</strong> — You may request disclosure of the categories and specific pieces of personal information collected.</li>
+        <li><strong>Right to delete</strong> — You may request deletion of personal information collected.</li>
+        <li><strong>Right to correct</strong> — You may request correction of inaccurate personal information.</li>
+        <li><strong>Right to opt out of sale or sharing</strong> — You may direct us not to sell or share your personal information.</li>
+        <li><strong>Right to non-discrimination</strong> — You will not be discriminated against for exercising your privacy rights.</li>
+      </ul>
+      <p><strong>We do not collect, sell, or share personal information.</strong> We have not sold or shared personal information of any consumer in the preceding 12 months, nor do we intend to do so.</p>
+      <p>California's "Do Not Track" signals and Global Privacy Control (GPC) are respected by default, as the App does not track users in any capacity.</p>
+
+      <h3>8.3 Qatar & Middle East</h3>
+      <p>If you are located in Qatar or other Gulf Cooperation Council (GCC) states, we comply with applicable data protection laws, including Qatar's Law No. 13 of 2016 on Personal Data Privacy. As we do not collect personal data, no registration with the Compliance and Data Protection Department is required.</p>
+
+      <h3>8.4 Other Jurisdictions</h3>
+      <p>Regardless of your location, the same principle applies: we do not collect personal data, so there is no data to exercise rights over. If your local laws grant you additional privacy rights, please contact us and we will cooperate fully.</p>
+
+      <!-- 9. Data Security -->
+      <h2>9. Data Security</h2>
+      <p>Although we do not collect or store personal data on any server, we employ the following security measures to protect your experience within the App:</p>
+      <ul>
+        <li><strong>Encrypted multiplayer communications</strong> — All local multiplayer sessions use Apple's mandatory TLS encryption via MCSession, ensuring game data transmitted between devices cannot be intercepted.</li>
+        <li><strong>Sandboxed storage</strong> — On-device preferences are stored within the App's iOS sandbox, which is isolated from other apps and protected by the operating system.</li>
+        <li><strong>No network exposure</strong> — The App makes no internet connections, eliminating the risk of remote data breaches, man-in-the-middle attacks, or unauthorized server access.</li>
+        <li><strong>No persistent sensitive data</strong> — No passwords, tokens, credentials, or financial data are ever stored or processed.</li>
+      </ul>
+
+      <!-- 10. Data Retention -->
+      <h2>10. Data Retention</h2>
+      <p>We do not operate servers, databases, or cloud storage of any kind. We do not retain any user data. All data associated with Qatari Cards exists exclusively on your personal device:</p>
+      <table style="width:100%; margin:1em 0; border-collapse:collapse;">
+        <tr style="border-bottom:1px solid var(--border);">
+          <th style="text-align:left; padding:8px;">Data Type</th>
+          <th style="text-align:left; padding:8px;">Storage Location</th>
+          <th style="text-align:left; padding:8px;">Retention Period</th>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">User preferences</td>
+          <td style="padding:8px;">Device (UserDefaults)</td>
+          <td style="padding:8px;">Until App is deleted</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;">Game state</td>
+          <td style="padding:8px;">Device (RAM only)</td>
+          <td style="padding:8px;">Current session only</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;">Multiplayer session data</td>
+          <td style="padding:8px;">Device (RAM only)</td>
+          <td style="padding:8px;">Active session only</td>
+        </tr>
+      </table>
+      <p>When you delete the App, all associated data is permanently removed from your device by the operating system.</p>
+
+      <!-- 11. International Considerations -->
+      <h2>11. International Considerations</h2>
+      <p>Qatari Cards is available worldwide through the Apple App Store. Since the App does not collect or transmit any data to external servers, there are no international data transfers to disclose. All data remains on your local device at all times, regardless of your geographic location.</p>
+
+      <!-- ======================================================== -->
+      <!--                  PART II: TERMS OF USE                   -->
+      <!-- ======================================================== -->
+
+      <h1 style="font-size:1.5em; margin-top:2.5em; padding-top:1.5em; border-top:1px solid var(--border);">Part II — Terms of Use</h1>
+
+      <!-- 12. Acceptance of Terms -->
+      <h2>12. Acceptance of Terms</h2>
+      <p>By downloading, installing, accessing, or using Qatari Cards, you agree to be bound by these Terms of Use. If you do not agree to these terms, do not use the App and remove it from your device.</p>
+      <p>These terms constitute a legally binding agreement between you and Approve The Move ("we", "us", "our") governing your use of the App.</p>
+
+      <!-- 13. License -->
+      <h2>13. License Grant</h2>
+      <p>Subject to your compliance with these terms, we grant you a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to download, install, and use Qatari Cards on any Apple device that you own or control, solely for your personal, non-commercial entertainment purposes.</p>
+      <p>This license is also governed by the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" style="color:var(--accent);">Apple Licensed Application End User License Agreement (EULA)</a>, which is incorporated into these terms by reference.</p>
+
+      <!-- 14. Restrictions -->
+      <h2>14. Restrictions</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Copy, modify, distribute, sell, lease, sublicense, or create derivative works based on the App.</li>
+        <li>Reverse-engineer, decompile, disassemble, or attempt to extract the source code of the App.</li>
+        <li>Remove, alter, or obscure any copyright, trademark, or proprietary notices.</li>
+        <li>Use the App for any unlawful purpose or in violation of any applicable laws or regulations.</li>
+        <li>Exploit the App or any part of it for commercial purposes without our prior written consent.</li>
+        <li>Attempt to interfere with or disrupt the integrity of the App or the experience of other players during local multiplayer sessions.</li>
+      </ul>
+
+      <!-- 15. Intellectual Property -->
+      <h2>15. Intellectual Property</h2>
+      <p>All rights, title, and interest in and to Qatari Cards — including but not limited to the software code, visual design, user interface elements, graphics, animations, sound effects, game mechanics, and documentation — are and shall remain the exclusive property of Approve The Move.</p>
+      <p>The name "Qatari Cards", the Approve The Move name and logo, and all associated branding are trademarks of Approve The Move. Nothing in these terms grants you any right to use our trademarks without prior written permission.</p>
+      <p>The traditional card game rules are part of the public domain and are not claimed as proprietary.</p>
+
+      <!-- 16. Disclaimer of Warranties -->
+      <h2>16. Disclaimer of Warranties</h2>
+      <p><strong>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</strong></p>
+      <p>To the fullest extent permitted by applicable law, we disclaim all warranties, including but not limited to:</p>
+      <ul>
+        <li>Implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</li>
+        <li>Warranties that the App will be uninterrupted, error-free, secure, or free of viruses or other harmful components.</li>
+        <li>Warranties regarding the accuracy, reliability, or completeness of any content within the App.</li>
+      </ul>
+      <p>You acknowledge that the App is a game provided for entertainment purposes and that your use of the App is at your sole risk.</p>
+
+      <!-- 17. Limitation of Liability -->
+      <h2>17. Limitation of Liability</h2>
+      <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL APPROVE THE MOVE OR ANY OF ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY:</strong></p>
+      <ul>
+        <li>Indirect, incidental, special, consequential, or punitive damages;</li>
+        <li>Loss of profits, revenue, data, goodwill, or other intangible losses;</li>
+        <li>Damages arising from your use of or inability to use the App;</li>
+        <li>Damages arising from any unauthorized access to or alteration of your device;</li>
+        <li>Any other damages arising out of or in connection with these terms or the App;</li>
+      </ul>
+      <p><strong>regardless of the theory of liability (contract, tort, negligence, strict liability, or otherwise), even if we have been advised of the possibility of such damages.</strong></p>
+      <p>In jurisdictions that do not allow the exclusion or limitation of liability for certain damages, our liability shall be limited to the maximum extent permitted by law. In no event shall our total aggregate liability exceed the amount you paid for the App (which is zero, as the App is free).</p>
+
+      <!-- 18. Indemnification -->
+      <h2>18. Indemnification</h2>
+      <p>You agree to indemnify, defend, and hold harmless Approve The Move, and their respective officers, directors, employees, contractors, agents, licensors, and suppliers from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or related to:</p>
+      <ul>
+        <li>Your use of or access to the App;</li>
+        <li>Your violation of these Terms of Use;</li>
+        <li>Your violation of any applicable law or the rights of any third party.</li>
+      </ul>
+
+      <!-- 19. Governing Law & Dispute Resolution -->
+      <h2>19. Governing Law & Dispute Resolution</h2>
+      <p>These terms shall be governed by and construed in accordance with the laws of the <strong>State of Qatar</strong>, without regard to its conflict of law provisions.</p>
+      <p>Any dispute, controversy, or claim arising out of or relating to these terms or the App shall be resolved as follows:</p>
+      <ol>
+        <li><strong>Informal resolution</strong> — You agree to first attempt to resolve any dispute informally by contacting us at <a href="mailto:support@approvethemove.com" style="color:var(--accent);">support@approvethemove.com</a>. We will attempt to resolve the dispute within 30 days.</li>
+        <li><strong>Binding arbitration</strong> — If informal resolution fails, any remaining dispute shall be resolved through binding arbitration administered in Doha, Qatar, in accordance with the rules of the Qatar International Court and Dispute Resolution Centre (QICDRC), unless otherwise required by your local laws.</li>
+      </ol>
+      <p>Nothing in this section shall prevent either party from seeking injunctive or equitable relief from a court of competent jurisdiction to prevent the actual or threatened infringement of intellectual property rights.</p>
+      <p><strong>For EU/EEA residents:</strong> Nothing in these terms limits your right to bring proceedings before the courts of your country of residence, as required by Regulation (EU) No 1215/2012.</p>
+      <p><strong>For US residents:</strong> You and we each waive the right to a jury trial and the right to participate in a class action lawsuit or class-wide arbitration.</p>
+
+      <!-- 20. Termination -->
+      <h2>20. Termination</h2>
+      <p>These terms are effective until terminated. Your rights under these terms will terminate automatically and without notice if you fail to comply with any provision.</p>
+      <p>Upon termination, you must cease all use of the App and delete all copies from your devices. Sections 15 through 19 shall survive any termination of these terms.</p>
+      <p>We reserve the right to modify, suspend, or discontinue the App (or any part thereof) at any time without notice or liability.</p>
+
+      <!-- 21. Severability -->
+      <h2>21. Severability</h2>
+      <p>If any provision of these terms is found to be unlawful, void, or unenforceable by a court of competent jurisdiction, that provision shall be deemed severable and shall not affect the validity and enforceability of the remaining provisions, which shall continue in full force and effect.</p>
+
+      <!-- 22. Entire Agreement -->
+      <h2>22. Entire Agreement</h2>
+      <p>These terms, together with the Privacy Policy above and Apple's Licensed Application EULA, constitute the entire agreement between you and Approve The Move regarding your use of Qatari Cards. These terms supersede any prior agreements, communications, or understandings, whether written or oral, relating to the App.</p>
+
+      <!-- ======================================================== -->
+      <!--                      GENERAL                             -->
+      <!-- ======================================================== -->
+
+      <h1 style="font-size:1.5em; margin-top:2.5em; padding-top:1.5em; border-top:1px solid var(--border);">General</h1>
+
+      <!-- 23. Changes to This Document -->
+      <h2>23. Changes to This Document</h2>
+      <p>We may update this Privacy Policy and Terms of Use from time to time to reflect changes in the App, our practices, or applicable laws. When we make changes:</p>
+      <ul>
+        <li>We will update the "Last updated" date at the top of this page.</li>
+        <li>For material changes, we will notify you through the App before the changes take effect.</li>
+        <li>The updated document will be posted at this URL: <a href="https://approvethemove.com/QatariCards/privacy" style="color:var(--accent);">approvethemove.com/QatariCards/privacy</a></li>
+      </ul>
+      <p>Your continued use of the App after changes are posted constitutes acceptance of the updated terms. If you disagree with any changes, your sole remedy is to stop using the App and delete it from your device.</p>
+
+      <!-- 24. Contact Us -->
+      <h2>24. Contact Us</h2>
+      <p>If you have any questions, concerns, complaints, or requests regarding this Privacy Policy, these Terms of Use, or our practices, please contact us:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:support@approvethemove.com" style="color:var(--accent);">support@approvethemove.com</a></li>
+        <li><strong>Organization:</strong> Approve The Move</li>
+        <li><strong>Website:</strong> <a href="https://approvethemove.com" style="color:var(--accent);">approvethemove.com</a></li>
+      </ul>
+      <p>We commit to responding to all privacy-related inquiries within <strong>30 days</strong> of receipt. For GDPR-related requests, we will respond within the legally required timeframe of one calendar month.</p>
+
+      <p style="margin-top:3em; padding-top:1.5em; border-top:1px solid var(--border); font-size:0.9em; opacity:0.6;">Document version 2.0 &nbsp;|&nbsp; Effective April 9, 2026 &nbsp;|&nbsp; Applies to Qatari Cards v0.1 and all subsequent versions unless superseded.</p>
+
+    </div>
+  </div>
+
+  <footer class="footer" style="margin-top:80px;">
+    <div class="container">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="../QatariCards/">Qatari Cards</a>
+        <a href="/privacy/">All Privacy Policies</a>
+      </div>
+      <p>&copy; 2026 Approve The Move. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">&uarr;</button>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

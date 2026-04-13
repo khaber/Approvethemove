@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qatari Cards — Trick-Taking Card Game | Approve The Move</title>
+  <meta name="description" content="The classic Qatari trick-taking card game. Play solo against AI or locally with friends. Free, no ads.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://approvethemove.com/QatariCards/">
+  <meta property="og:title" content="Qatari Cards — Card Game">
+  <meta property="og:description" content="The classic Qatari trick-taking card game. Play solo against AI or locally with friends. Free, no ads.">
+  <meta property="og:image" content="https://approvethemove.com/og-image.svg">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Qatari Cards — Card Game">
+  <meta name="twitter:description" content="The classic Qatari trick-taking card game. Play solo against AI or locally with friends. Free, no ads.">
+  <meta name="twitter:image" content="https://approvethemove.com/og-image.svg">
+</head>
+<body data-accent="red">
+
+  <nav class="nav">
+    <div class="container">
+      <a href="/" class="nav-brand"><img src="../logo.svg" alt="" class="nav-logo"><span>Approve The Move</span></a>
+      <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="/#apps">Apps</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="app-hero">
+    <div class="container">
+      <img src="../images/icon-qataricards.png" alt="Qatari Cards" class="app-icon-large">
+      <h1>Qatari Cards</h1>
+      <p class="subtitle">The classic Qatari trick-taking card game with bidding, trump selection, and team play. Solo against AI or local multiplayer.</p>
+      <div class="app-badges">
+        <span class="badge coming-soon">Coming Soon</span>
+        <span class="badge free">Free</span>
+        <span class="badge no-ads">No Ads</span>
+        <span class="badge">AI Opponents</span>
+        <span class="badge">Local Multiplayer</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <h2>Screenshots</h2>
+      <div class="screenshot-gallery">
+        <div class="screenshot-item">
+          <img src="../images/screenshots/QatariCards/1_MainMenu_ProMax.png" alt="Main Menu" loading="lazy">
+          <div class="caption">Main Menu</div>
+        </div>
+        <div class="screenshot-item">
+          <img src="../images/screenshots/QatariCards/2_Bidding_ProMax.png" alt="Bidding Phase" loading="lazy">
+          <div class="caption">Bidding Phase</div>
+        </div>
+        <div class="screenshot-item">
+          <img src="../images/screenshots/QatariCards/3_TrumpSelection_ProMax.png" alt="Trump Selection" loading="lazy">
+          <div class="caption">Trump Selection</div>
+        </div>
+        <div class="screenshot-item">
+          <img src="../images/screenshots/QatariCards/4_Gameplay_ProMax.png" alt="Gameplay" loading="lazy">
+          <div class="caption">Gameplay</div>
+        </div>
+      </div>
+      <p class="screenshot-hint">Scroll to see more &rarr;</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <h2>Game Modes</h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <h3>4-Player Game</h3>
+          <p>Classic 4-player format. Two teams of two, sitting opposite each other. 8 cards each from a modified deck (7 of Spades removed).</p>
+        </div>
+        <div class="feature-item">
+          <h3>6-Player Game</h3>
+          <p>Extended format with 6 players in two teams of three. Alternating seats. Uses cards from 3 upward (3 of Spades removed).</p>
+        </div>
+        <div class="feature-item">
+          <h3>Single Player (vs AI)</h3>
+          <p>Play against intelligent AI opponents that bid strategically and play competitively.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Local Multiplayer</h3>
+          <p>Play with 2-6 friends on nearby devices using peer-to-peer connectivity. No internet needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <h2>How to Play</h2>
+
+      <h3 style="margin-top:24px; margin-bottom:16px;">Overview</h3>
+      <p>Qatari Cards is a team-based trick-taking card game. Players bid on how many tricks they can win, choose a trump suit, then play to meet their bid. The team that reaches 32 penalty points first loses.</p>
+
+      <h3 style="margin-top:32px; margin-bottom:16px;">Game Flow</h3>
+      <div class="steps">
+        <div class="step">
+          <p><strong>Dealing</strong> — Each player receives 8 cards. One card in the deck is the Wild Card — the most powerful card in the game.</p>
+        </div>
+        <div class="step">
+          <p><strong>Bidding (Mazaad)</strong> — Starting after the dealer, players bid from 5 to 8 on how many tricks their team will win. You can pass or raise. If everyone passes, the Wild Card holder must bid 5.</p>
+        </div>
+        <div class="step">
+          <p><strong>Trump Selection</strong> — The highest bidder (declarer) picks the trump suit. Trump cards beat all non-trump cards.</p>
+        </div>
+        <div class="step">
+          <p><strong>Playing Tricks</strong> — Players take turns playing one card each. You must follow the led suit if you can. If you can't, you may play trump or any other card. Highest card of the led suit wins, unless trumped.</p>
+        </div>
+        <div class="step">
+          <p><strong>Scoring</strong> — If the bidding team wins at least as many tricks as they bid, the defending team gets penalty points. If not, the bidding team gets penalties. First team to 32 points loses.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:32px; margin-bottom:16px;">Key Rules</h3>
+      <div class="features-grid">
+        <div class="feature-item">
+          <h3>The Wild Card</h3>
+          <p>The Wild Card beats every card in the game, always winning the trick it's played in. But you can't lead with the Wild Card unless it's your only remaining card.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Wild Card Endgame</h3>
+          <p>If you're forced to lead the final trick with the Wild Card as your only card, your team immediately loses the round. Plan carefully.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Forced Wild Card Bid</h3>
+          <p>If all players pass during bidding, the player holding the Wild Card must bid the minimum (5). You can't avoid playing.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Card Ranking</h3>
+          <p>From lowest to highest: 7, 8, 9, 10, Jack, Queen, King, Ace (4-player). Trump suit outranks all other suits.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Follow Suit</h3>
+          <p>You must play a card of the led suit if you have one. If you can't follow suit, you're free to play trump or any card.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Kappoot (Bid 8)</h3>
+          <p>The maximum bid. If you bid Kappoot and win all 8 tricks, the penalty is devastating for the other team. If you fail, it's devastating for yours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <h2>Strategy Tips</h2>
+      <div class="steps">
+        <div class="step">
+          <p><strong>Bid conservatively</strong> — Unless you have strong trump cards and the Wild Card, keep your bids modest.</p>
+        </div>
+        <div class="step">
+          <p><strong>Track played cards</strong> — Pay attention to what's been played. Knowing which high cards are gone changes everything.</p>
+        </div>
+        <div class="step">
+          <p><strong>Protect your Wild Card</strong> — Don't waste the Wild Card early. Use it to win critical tricks or avoid the endgame penalty.</p>
+        </div>
+        <div class="step">
+          <p><strong>Coordinate with your partner</strong> — In multiplayer, teamwork wins games. Set up tricks for your partner.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How many players can play?</summary>
+          <p>4 or 6 players. You can play solo against AI bots or with up to 5 other people on nearby devices.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I play alone?</summary>
+          <p>Yes. Single-player mode lets you play against intelligent AI opponents that bid strategically and play competitively.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need internet for multiplayer?</summary>
+          <p>No. Local multiplayer uses peer-to-peer connectivity over Wi-Fi and Bluetooth between nearby devices.</p>
+        </details>
+        <details class="faq-item">
+          <summary>I've never played Qatari Cards before. Is there a tutorial?</summary>
+          <p>The full rules are on this page above. It's a trick-taking team game with bidding and trump &mdash; similar to Spades or Hearts if you've played those. The app guides you through the key phases as you play.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What does the Wild Card card do?</summary>
+          <p>The Wild Card beats every other card in the game. But there's a catch: if you're forced to lead the final trick with the Wild Card as your only card, your team loses the round immediately. It's powerful but risky.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <h2>Privacy</h2>
+      <p>Qatari Cards stores nothing. Game state exists only in memory while you play. No data is saved, collected, or transmitted.</p>
+      <p><a href="privacy.html">Read full privacy policy &rarr;</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="https://www.instagram.com/yousif.ameen" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <p>&copy; 2026 Approve The Move. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">&uarr;</button>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
