@@ -20,7 +20,7 @@ docs/
 ├── flow/                   # ATM Flow pages
 ├── split/                  # ATM Split pages
 ├── chat/                   # ATMChat pages
-├── joker/                  # Qatari Joker pages
+├── QatariCards/            # Qatari Cards pages
 ├── converter/              # Currency Converter pages
 ├── units/                  # Unit Converter pages
 └── privacy/                # Privacy policy hub
