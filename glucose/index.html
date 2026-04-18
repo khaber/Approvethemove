@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlucoRelay — Universal CGM Dashboard | Approve The Move</title>
+  <meta name="description" content="One iPhone dashboard for every CGM. Dexcom, Libre, Medtronic, Nightscout, Medtrum & Apple Health — all in one app. Free, no ads, no account.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://approvethemove.com/glucorelay/">
+  <meta property="og:title" content="GlucoRelay — Universal CGM Dashboard">
+  <meta property="og:description" content="One iPhone dashboard for every CGM. Free, no ads, no account.">
+  <meta property="og:image" content="https://approvethemove.com/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GlucoRelay — Universal CGM Dashboard">
+  <meta name="twitter:description" content="One iPhone dashboard for every CGM. Free, no ads, no account.">
+  <meta name="twitter:image" content="https://approvethemove.com/og-image.svg">
+</head>
+<body data-accent="green">
+
+  <nav class="nav">
+    <div class="container">
+      <a href="/" class="nav-brand"><img src="../logo.svg" alt="" class="nav-logo"><span>Approve The Move</span></a>
+      <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="/#apps">Apps</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="app-hero">
+    <div class="container">
+      <h1>GlucoRelay</h1>
+      <p class="subtitle">One iPhone dashboard for every CGM. Dexcom, FreeStyle Libre, Medtronic CareLink, Nightscout, Medtrum, and Apple Health — all in one place. Built by a dad for families managing diabetes together.</p>
+      <div class="app-badges">
+        <span class="badge">TestFlight Beta Live</span>
+        <span class="badge free">Free</span>
+        <span class="badge no-ads">No Ads</span>
+        <span class="badge">No Account</span>
+        <span class="badge">iOS 18.6+</span>
+      </div>
+      <div style="margin-top:24px;">
+        <a href="https://testflight.apple.com/join/7yGWJqyU" class="btn-primary" style="background:#34C759;color:white;padding:14px 28px;border-radius:14px;text-decoration:none;font-weight:600;display:inline-block;">Join the TestFlight Beta &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container" style="max-width:880px;margin:60px auto;padding:0 20px;">
+
+    <section style="margin-bottom:60px;">
+      <h2>What it does</h2>
+      <p>GlucoRelay reads your glucose data from the cloud service you <em>already</em> use with your CGM provider, and shows it on iPhone, Apple Watch, Home Screen widgets, Dynamic Island, and a dedicated nightstand mode. No signup, no account creation, no advertising, no tracking. Your CGM credentials stay on your device in the iOS Keychain.</p>
+    </section>
+
+    <section style="margin-bottom:60px;">
+      <h2>Why it exists</h2>
+      <p>My son wears a Medtronic 780G pump. His cousin uses Dexcom G7. My friend's daughter just switched to a FreeStyle Libre. Every family I know juggles two or three different CGM apps that don't talk to each other.</p>
+      <p>I wanted <em>one</em> app where I could see all of them. Sugarmate is Dexcom-only. Happy Bob is Dexcom-only. Every vendor app supports its own brand. So I built GlucoRelay.</p>
+    </section>
+
+    <section style="margin-bottom:60px;">
+      <h2>Supported CGM sources</h2>
+      <ul style="line-height:2;">
+        <li><strong>Dexcom Share</strong> — G5, G6, G7, ONE, Stelo (real-time)</li>
+        <li><strong>Dexcom API</strong> (OAuth 2.0)</li>
+        <li><strong>FreeStyle LibreLinkUp</strong> — Libre 2, 2 Plus, 3, 3 Plus (11 regions)</li>
+        <li><strong>Medtronic CareLink</strong> — MiniMed 670G, 770G, 780G, Guardian (40+ countries)</li>
+        <li><strong>Nightscout</strong> — self-hosted</li>
+        <li><strong>Medtrum EasyView</strong> — Nano, TouchCare A7+</li>
+        <li><strong>Apple Health</strong> — any CGM that syncs to Health</li>
+        <li><strong>CloudKit Follower</strong> — share with family using an 8-character code (no account needed)</li>
+        <li><strong>Demo Data</strong> — try the app without a CGM</li>
+      </ul>
+    </section>
+
+    <section style="margin-bottom:60px;">
+      <h2>Features</h2>
+      <ul style="line-height:2;">
+        <li>Apple Watch complications for every watch face</li>
+        <li>Home Screen widgets in 3 sizes + Lock Screen + StandBy</li>
+        <li>Live Activity in Dynamic Island and Lock Screen</li>
+        <li>Nightstand mode &mdash; tap the glucose number for a bedside clock</li>
+        <li>Predictive low/high alerts with linear regression (15&ndash;30 minutes ahead)</li>
+        <li>Daily morning summary with overnight time-in-range</li>
+        <li>Universal pump status display (battery, reservoir, sensor life, IOB)</li>
+        <li>Critical alerts that bypass Do Not Disturb</li>
+        <li>Follower sharing without requiring accounts</li>
+        <li>CSV and PDF export with date range picker</li>
+        <li>Siri Shortcuts ("Hey Siri, what's my blood sugar?")</li>
+      </ul>
+    </section>
+
+    <section style="margin-bottom:60px;background:rgba(52,199,89,0.08);padding:24px;border-radius:14px;">
+      <h2>We need YOUR help testing</h2>
+      <p>I own a Medtronic CGM. To verify GlucoRelay works correctly with every other CGM brand, I need testers from across the diabetes community. The TestFlight beta is open with no waitlist.</p>
+      <p><strong>Especially looking for:</strong></p>
+      <ul>
+        <li>FreeStyle Libre 3 and Libre 2 users (every region)</li>
+        <li>Dexcom Share users (G5, G6, G7, ONE)</li>
+        <li>Nightscout self-hosted users</li>
+        <li>Medtrum EasyView users (extremely rare &mdash; please come forward!)</li>
+        <li>Parents using follower mode for their child</li>
+      </ul>
+      <p style="margin-top:20px;">
+        <a href="https://testflight.apple.com/join/7yGWJqyU" style="background:#34C759;color:white;padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:600;display:inline-block;">Install via TestFlight &rarr;</a>
+      </p>
+      <p style="font-size:0.9em;margin-top:16px;color:var(--text-secondary);">Take a screenshot anywhere in the app to send a debug report &mdash; no typing required. Or email <a href="mailto:support@approvethemove.com">support@approvethemove.com</a>.</p>
+    </section>
+
+    <section style="margin-bottom:60px;">
+      <h2>Privacy</h2>
+      <ul style="line-height:2;">
+        <li>Zero backend &mdash; we operate no servers</li>
+        <li>CGM credentials stored only in iOS Keychain</li>
+        <li>HealthKit access is read-only</li>
+        <li>No analytics, no tracking, no advertising</li>
+        <li>Follower sharing uses Apple CloudKit; readings expire after 24h</li>
+      </ul>
+      <p>Full <a href="privacy.html">privacy policy</a>.</p>
+    </section>
+
+    <section style="margin-bottom:60px;">
+      <h2>Important disclaimer</h2>
+      <p style="background:rgba(255,159,10,0.1);padding:16px;border-radius:10px;">
+        <strong>GlucoRelay is not a medical device.</strong> It is a viewer that reads data from the CGM cloud service you already use. Always verify readings with your primary CGM receiver before making treatment decisions. GlucoRelay is not affiliated with Dexcom, Abbott, Medtronic, Medtrum, or any CGM manufacturer.
+      </p>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="mailto:support@approvethemove.com">Support</a>
+      </div>
+      <p>&copy; 2026 Approve The Move. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">&uarr;</button>
+  <script src="../js/main.js"></script>
+</body>
+</html>

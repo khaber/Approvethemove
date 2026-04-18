@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — GlucoRelay | Approve The Move</title>
+  <meta name="description" content="Privacy policy for GlucoRelay. We don't collect your data.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://approvethemove.c../glucose/privacy.html">
+  <meta property="og:title" content="GlucoRelay — Privacy Policy">
+  <meta property="og:description" content="Privacy policy for GlucoRelay. We don't collect your data.">
+  <meta property="og:image" content="https://approvethemove.com/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container">
+      <a href="/" class="nav-brand"><img src="../logo.svg" alt="" class="nav-logo"><span>Approve The Move</span></a>
+      <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="/#apps">Apps</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="privacy-content">
+      <h1>GlucoRelay — Privacy Policy</h1>
+      <p class="last-updated">Effective: April 19, 2026</p>
+
+      <h2>Overview</h2>
+      <p>GlucoRelay is a free, open-source iPhone dashboard for continuous glucose monitor (CGM) data, built and published by Approve The Move. It connects to cloud services you already use with your CGM provider and displays the readings. We do not operate any servers and do not collect your personal data.</p>
+
+      <h2>Data We Access</h2>
+      <ul>
+        <li><strong>Glucose readings</strong> &mdash; value, trend, timestamp &mdash; from the CGM provider you select (Dexcom, FreeStyle LibreLinkUp, Medtronic CareLink, Nightscout, Medtrum EasyView, or Apple Health).</li>
+        <li><strong>Device status</strong> when available from the source (pump battery, reservoir level, sensor life, insulin-on-board).</li>
+        <li><strong>Apple Health blood glucose samples</strong>, only if you grant HealthKit access.</li>
+      </ul>
+
+      <h2>Data Storage</h2>
+      <ul>
+        <li><strong>On your device only.</strong> Glucose data, settings, and preferences are stored locally on your iPhone, Apple Watch, and in your private iCloud container.</li>
+        <li><strong>Authentication credentials</strong> (CGM account tokens) are stored in the iOS Keychain, Apple's encrypted credential storage.</li>
+        <li><strong>No server.</strong> GlucoRelay does not operate any backend infrastructure. Data flows directly between your device and your CGM provider's cloud service.</li>
+      </ul>
+
+      <h2>Follower Sharing (Optional)</h2>
+      <p>If you enable Follower Sharing, glucose readings are uploaded to Apple's CloudKit public database with an 8-character share code. Only people you give the share code to can access your readings. Shared readings are automatically deleted after 24 hours.</p>
+
+      <h2>Data We Do NOT Collect</h2>
+      <ul>
+        <li>No personal information (name, email, phone)</li>
+        <li>No analytics, tracking, or advertising frameworks</li>
+        <li>No telemetry</li>
+        <li>No CGM account passwords (only encrypted session tokens)</li>
+        <li>No data sold or shared with third parties</li>
+      </ul>
+
+      <h2>Third-Party Services</h2>
+      <p>GlucoRelay connects only to CGM cloud services operated by their respective companies (Dexcom, Abbott, Medtronic, Medtrum). Your use of those services is governed by their privacy policies. GlucoRelay only reads data and never writes or modifies your CGM data.</p>
+
+      <h2>Debug Reports (TestFlight)</h2>
+      <p>If you use the &ldquo;Send Feedback&rdquo; feature, a debug report is generated containing device info, connection status, and recent glucose readings. This report is shared only when you explicitly choose to send it. Passwords and authentication tokens are never included.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>GlucoRelay may be used by parents to monitor their children's glucose levels. The app does not collect any personal information from children or any users.</p>
+
+      <h2>Your Rights</h2>
+      <ul>
+        <li>You can disconnect from any CGM source at any time, which removes stored session tokens.</li>
+        <li>You can delete the app to remove all locally stored data.</li>
+        <li>You can revoke HealthKit access in iOS Settings at any time.</li>
+        <li>You can stop Follower Sharing at any time, which deactivates your share code.</li>
+      </ul>
+
+      <h2>Medical Disclaimer</h2>
+      <p>GlucoRelay is <strong>not a medical device</strong>. It is a passive viewer of data from the CGM cloud service you already use. Always verify readings with your primary CGM receiver before making treatment decisions. GlucoRelay is not affiliated with Dexcom, Abbott, Medtronic, Medtrum, or any CGM manufacturer.</p>
+
+      <h2>Contact</h2>
+      <p>If you have questions about this privacy policy, contact: <strong>support@approvethemove.com</strong></p>
+    </div>
+  </div>
+
+  <footer class="footer" style="margin-top:80px;">
+    <div class="container">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="../glucose/">GlucoRelay</a>
+        <a href="/privacy/">All Privacy Policies</a>
+      </div>
+      <p>&copy; 2026 Approve The Move. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">&uarr;</button>
+  <script src="../js/main.js"></script>
+</body>
+</html>
