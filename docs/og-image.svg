@@ -26,18 +26,18 @@
   <text x="100" y="330" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="88" font-weight="800" fill="#f0f0f0" letter-spacing="-3">Approve The Move</text>
 
   <!-- Subtitle -->
-  <text x="100" y="400" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="40" font-weight="500" fill="#888">Free iOS apps. No ads. No subscriptions.</text>
+  <text x="100" y="400" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="40" font-weight="500" fill="#888">iOS apps built in Qatar. A hobby project.</text>
 
   <!-- Tags row -->
   <g transform="translate(100, 470)">
     <rect x="0" y="0" width="180" height="50" rx="25" fill="rgba(74, 158, 255, 0.15)" stroke="rgba(74, 158, 255, 0.3)" stroke-width="1"/>
-    <text x="90" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="600" fill="#4a9eff" text-anchor="middle">100% Free</text>
+    <text x="90" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="600" fill="#4a9eff" text-anchor="middle">SwiftUI</text>
 
-    <rect x="200" y="0" width="160" height="50" rx="25" fill="rgba(52, 199, 89, 0.15)" stroke="rgba(52, 199, 89, 0.3)" stroke-width="1"/>
-    <text x="280" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="600" fill="#34c759" text-anchor="middle">No Ads</text>
+    <rect x="200" y="0" width="170" height="50" rx="25" fill="rgba(52, 199, 89, 0.15)" stroke="rgba(52, 199, 89, 0.3)" stroke-width="1"/>
+    <text x="285" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="600" fill="#34c759" text-anchor="middle">3 Live Apps</text>
 
-    <rect x="380" y="0" width="160" height="50" rx="25" fill="rgba(255, 159, 10, 0.15)" stroke="rgba(255, 159, 10, 0.3)" stroke-width="1"/>
-    <text x="460" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="600" fill="#ff9f0a" text-anchor="middle">6 Apps</text>
+    <rect x="390" y="0" width="160" height="50" rx="25" fill="rgba(255, 100, 130, 0.15)" stroke="rgba(255, 100, 130, 0.3)" stroke-width="1"/>
+    <text x="470" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="600" fill="#ff6482" text-anchor="middle">1 in Beta</text>
   </g>
 
 </svg>
