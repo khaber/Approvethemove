@@ -11,6 +11,10 @@
 # Design options (local only)
 /design-options/
 
+# Local build tooling (asset generation, transforms, browser tests)
+/.tools/
+/.tools-pw/
+
 # Claude Code config
 .claude/
 CLAUDE.md
