@@ -1,117 +1,78 @@
 # Deployment Guide — approvethemove.com
 
-This folder (`docs/`) contains the full Approve The Move website, ready to deploy to GitHub Pages with the custom domain `approvethemove.com`.
+The website is a static site with **a single source of truth: the
+[`docs/`](docs/) folder**. GitHub Pages serves the site from `docs/` on
+the default branch with the custom domain `approvethemove.com`. There is
+no build step — the files in `docs/` are exactly what is served.
+
+> The repository used to contain a second, hand-maintained copy of the
+> site at the repo root. It drifted out of sync with `docs/` and has been
+> removed. **Only edit `docs/`.**
 
 ## Structure
 
 ```
 docs/
-├── index.html              # Landing page
-├── 404.html                # Custom 404 error page
-├── favicon.svg             # Browser tab icon
-├── og-image.svg            # Social share card
-├── sitemap.xml             # Search engine sitemap
-├── robots.txt              # Crawler rules
-├── CNAME                   # Custom domain config
-├── .nojekyll               # Disable Jekyll processing
-├── css/style.css           # All styles
-├── js/main.js              # Theme toggle + back to top
-├── images/                 # App icons
-├── flow/                   # ATM Flow pages
-├── split/                  # ATM Split pages
-├── chat/                   # ATMChat pages
-├── joker/                  # Qatari Joker pages
-├── converter/              # Currency Converter pages
-├── units/                  # Unit Converter pages
-└── privacy/                # Privacy policy hub
+├── index.html                # Landing page
+├── 404.html                  # Custom 404 (noindex)
+├── favicon.svg               # Vector icon
+├── og-image.png              # 1200×630 social share card (PNG)
+├── manifest.webmanifest      # PWA manifest
+├── sitemap.xml               # Search engine sitemap (with lastmod)
+├── robots.txt                # Crawler rules
+├── CNAME                     # Custom domain (approvethemove.com)
+├── .nojekyll                 # Disable Jekyll processing
+├── css/style.css             # All styles (no render-blocking @import)
+├── js/main.js                # Progressive enhancement only
+├── icons/                    # apple-touch-icon + maskable PWA icons
+├── images/                   # App icons + screenshots
+├── flow/  split/  chat/  converter/  units/  QatariCards/  GlucoRelay/
+└── privacy/                  # Privacy policy hub
 ```
+
+Every page is self-contained static HTML. Shared chrome (head, header,
+nav, footer, scripts) is intentionally duplicated per file because there
+is no build step; keep it in sync when editing.
 
 ## Deploy to GitHub Pages
 
-### Option 1: Use an existing repository
+1. Commit and push changes to the default branch.
+2. In **Settings → Pages**: Source = **Deploy from a branch**, Branch =
+   default branch, Folder = **`/docs`**.
+3. GitHub Pages rebuilds and deploys within ~1 minute.
 
-If you already have a repo named `approvethemove.github.io` or similar:
+The `CNAME` file lives in `docs/` (the publishing source), so GitHub
+detects the custom domain automatically. Enable **Enforce HTTPS** once
+DNS has propagated.
 
-```bash
-cd ~/Documents/ApproveTheMove
-git init
-git add docs/
-git commit -m "Initial website"
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-git branch -M main
-git push -u origin main
-```
+### DNS
 
-Then in GitHub repository settings:
-1. Go to **Settings → Pages**
-2. Under "Source", choose **Deploy from a branch**
-3. Branch: `main`, Folder: `/docs`
-4. Click **Save**
+**Apex domain (approvethemove.com):** four `A` records →
+`185.199.108.153`, `185.199.109.153`, `185.199.110.153`,
+`185.199.111.153`.
 
-### Option 2: Create a new repository
+**www subdomain:** `CNAME` → `YOUR_USERNAME.github.io`.
 
-1. Go to https://github.com/new
-2. Create a repo named `approvethemove` (or any name)
-3. Follow the commands shown by GitHub to push this folder
-4. Configure Pages as in Option 1
-
-## Custom Domain Setup
-
-### DNS Configuration
-
-At your domain registrar (wherever you bought `approvethemove.com`), add these DNS records:
-
-**For apex domain (approvethemove.com):**
-
-| Type  | Name | Value                     |
-|-------|------|---------------------------|
-| A     | @    | 185.199.108.153           |
-| A     | @    | 185.199.109.153           |
-| A     | @    | 185.199.110.153           |
-| A     | @    | 185.199.111.153           |
-
-**For www subdomain (www.approvethemove.com):**
-
-| Type  | Name | Value                         |
-|-------|------|-------------------------------|
-| CNAME | www  | YOUR_USERNAME.github.io       |
-
-### GitHub Pages Settings
-
-1. In repo **Settings → Pages**
-2. Under "Custom domain", enter `approvethemove.com`
-3. Click **Save**
-4. Check **Enforce HTTPS** once DNS propagates (usually within 24 hours)
-
-The `CNAME` file in this folder already contains `approvethemove.com`, so GitHub will detect it automatically.
-
-## Updating the Site
-
-To update the site after making changes:
+## Local testing
 
 ```bash
-cd ~/Documents/ApproveTheMove
-git add docs/
-git commit -m "Update website"
-git push
-```
-
-GitHub Pages will automatically rebuild and deploy within a minute.
-
-## Local Testing
-
-To test the site locally before deploying:
-
-```bash
-cd ~/Documents/ApproveTheMove/docs
+cd docs
 python3 -m http.server 8000
+# open http://localhost:8000
 ```
 
-Then open http://localhost:8000 in your browser.
+## Regenerating assets
+
+`og-image.png` and the PWA/Apple icons under `docs/icons/` are generated
+from SVG. The generation scripts live in the git-ignored `.tools/`
+directory (Node + `@resvg/resvg-js`, Inter font). Re-run them only if the
+brand mark or social card changes.
 
 ## Notes
 
-- The `.nojekyll` file tells GitHub Pages to skip Jekyll processing since this is pure HTML.
-- The `CNAME` file is required for custom domain to work on GitHub Pages.
-- The `og-image.svg` is used for social media previews. For maximum compatibility, consider creating a 1200×630 PNG version and updating the `og:image` tags.
-- All internal links use relative paths, so the site works both on GitHub Pages subdomains and custom domains.
+- `.nojekyll` tells GitHub Pages to skip Jekyll (pure static HTML).
+- All shared assets are referenced with absolute paths (`/css/...`,
+  `/js/...`, `/favicon.svg`), so links work identically on the custom
+  domain and on `*.github.io`.
+- Social/share image is a real PNG (`og-image.png`) for maximum
+  crawler/social-platform compatibility.
