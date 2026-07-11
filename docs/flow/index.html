@@ -8,8 +8,8 @@
 <link rel="canonical" href="https://approvethemove.com/flow/">
 <meta name="author" content="Yousif Ameen">
 <meta name="color-scheme" content="dark light">
-<meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0c0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=20260515">
+<link rel="stylesheet" href="/css/style.css?v=20260710">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Approve The Move">
 <meta property="og:locale" content="en_US">
@@ -36,7 +36,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ATM Flow","operatingSystem":"iOS","applicationCategory":"FinanceApplication","url":"https://approvethemove.com/flow/","description":"Track your money across multiple accounts with budgets, reports, and CloudKit sync. Free, no ads.","author":{"@type":"Person","name":"Yousif Ameen"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script>(function(){try{var t=localStorage.getItem("atm-theme");if(t!=="dark"&&t!=="light"){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
-<body data-accent="green">
+<body data-app="flow" data-accent="green">
 
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" id="top">
@@ -76,6 +76,11 @@
         <span class="badge">CloudKit Sync</span>
         <span class="badge">iOS 17+</span>
       </div>
+
+      <aside class="founder-note">
+        <p>I tried every finance tracker on the App Store and kept hitting subscription walls before I could even see a report. So I built the one I actually use &mdash; every account, every budget, synced through my own iCloud and nobody else's servers.</p>
+        <cite>&mdash; Yousif, Doha</cite>
+      </aside>
     </div>
   </section>
 
@@ -84,23 +89,33 @@
       <h2>Screenshots</h2>
       <div class="screenshot-gallery">
         <div class="screenshot-item">
-          <img src="../images/screenshots/flow/01_dashboard.png" alt="Dashboard" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/flow/01_dashboard.png" alt="Dashboard" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Dashboard</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/flow/04_reports.png" alt="Reports" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/flow/04_reports.png" alt="Reports" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Reports</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/flow/05_budgets.png" alt="Budgets" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/flow/05_budgets.png" alt="Budgets" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Budgets</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/flow/06_dashboard_goals.png" alt="Goals" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/flow/06_dashboard_goals.png" alt="Goals" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Goals</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/flow/03_arabic_rtl.png" alt="Arabic RTL" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/flow/03_arabic_rtl.png" alt="Arabic RTL" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Arabic RTL</div>
         </div>
       </div>
@@ -182,23 +197,23 @@
     <div class="container">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Is ATM Flow really 100% free?</summary>
           <p>Yes. No ads, no subscriptions, no in-app purchases, no paywalls. Download it, use every feature, keep it forever. This isn't a trial &mdash; it's the whole app.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Will my financial data be shared or uploaded anywhere?</summary>
           <p>No. All your accounts, transactions, and budgets live on your device and sync privately through your own iCloud account via CloudKit. I can't see your data &mdash; only you can.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Does it sync across my iPhone, iPad, and Mac?</summary>
           <p>Yes. ATM Flow uses CloudKit to sync across every Apple device signed into your iCloud account. Changes on your iPhone appear on your iPad within seconds.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Can I import transactions from my bank?</summary>
           <p>Yes. Export a CSV from your bank's website or app, and ATM Flow can import it. You can also set up recurring transactions for salary, subscriptions, or rent so you don't have to re-enter them.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>What happens if I delete the app?</summary>
           <p>Local data on the device is removed. Your iCloud data stays safe until you manage it through your device's iCloud settings, so you can reinstall and get everything back.</p>
         </details>
@@ -224,11 +239,13 @@
         <a href="https://www.instagram.com/yousif.ameen" target="_blank" rel="noopener">Instagram</a>
       </div>
       <p>&copy; 2026 Approve The Move. All rights reserved.</p>
+      <p class="footer-signoff" lang="ar" dir="rtl">صُنع بحب في الدوحة</p>
+      <p class="footer-doha"><span data-doha-clock></span></p>
     </div>
   </footer>
 
   <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
 
-  <script src="/js/main.js?v=20260515" defer></script>
+  <script src="/js/main.js?v=20260710" defer></script>
 </body>
 </html>

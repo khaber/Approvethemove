@@ -8,8 +8,8 @@
 <link rel="canonical" href="https://approvethemove.com/QatariCards/">
 <meta name="author" content="Yousif Ameen">
 <meta name="color-scheme" content="dark light">
-<meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0c0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=20260515">
+<link rel="stylesheet" href="/css/style.css?v=20260710">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Approve The Move">
 <meta property="og:locale" content="en_US">
@@ -36,7 +36,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Qatari Cards","operatingSystem":"iOS","applicationCategory":"GameApplication","url":"https://approvethemove.com/QatariCards/","description":"The classic Qatari trick-taking card game. Play solo against AI or locally with friends. Free, no ads.","author":{"@type":"Person","name":"Yousif Ameen"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":"https://apps.apple.com/app/id6760917981","downloadUrl":"https://apps.apple.com/app/id6760917981"}</script>
 <script>(function(){try{var t=localStorage.getItem("atm-theme");if(t!=="dark"&&t!=="light"){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
-<body data-accent="red">
+<body data-app="qataricards" data-accent="red">
 
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" id="top">
@@ -76,6 +76,11 @@
         <span class="badge">AI Opponents</span>
         <span class="badge">Local Multiplayer</span>
       </div>
+
+      <aside class="founder-note">
+        <p>This is the card game played in majlis gatherings all over Qatar. I built it so the game I grew up around doesn't need a full table of four to enjoy.</p>
+        <cite>&mdash; Yousif, Doha</cite>
+      </aside>
     </div>
   </section>
 
@@ -84,31 +89,45 @@
       <h2>Screenshots</h2>
       <div class="screenshot-gallery">
         <div class="screenshot-item">
-          <img src="../images/screenshots/QatariCards/1_MainMenu_ProMax.png" alt="Main Menu" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/QatariCards/1_MainMenu_ProMax.png" alt="Main Menu" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Main Menu</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/QatariCards/2_Bidding_ProMax.png" alt="Bidding Phase" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/QatariCards/2_Bidding_ProMax.png" alt="Bidding Phase" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Bidding Phase</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/QatariCards/3_TrumpSelection_ProMax.png" alt="Trump Selection" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/QatariCards/3_TrumpSelection_ProMax.png" alt="Trump Selection" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Trump Selection</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/QatariCards/4_Gameplay_ProMax.png" alt="Gameplay" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/QatariCards/4_Gameplay_ProMax.png" alt="Gameplay" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Gameplay</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/QatariCards/5_Settings_ProMax.png" alt="Settings" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/QatariCards/5_Settings_ProMax.png" alt="Settings" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Settings</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/QatariCards/6_Multiplayer_ProMax.png" alt="Local Multiplayer" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/QatariCards/6_Multiplayer_ProMax.png" alt="Local Multiplayer" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Local Multiplayer</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/QatariCards/6_HowToPlay_ProMax.png" alt="How to Play" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/QatariCards/6_HowToPlay_ProMax.png" alt="How to Play" loading="lazy" decoding="async">
+          </div>
           <div class="caption">How to Play</div>
         </div>
       </div>
@@ -220,23 +239,23 @@
     <div class="container">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>How many players can play?</summary>
           <p>4 or 6 players. You can play solo against AI bots or with up to 5 other people on nearby devices.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Can I play alone?</summary>
           <p>Yes. Single-player mode lets you play against intelligent AI opponents that bid strategically and play competitively.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Do I need internet for multiplayer?</summary>
           <p>No. Local multiplayer uses peer-to-peer connectivity over Wi-Fi and Bluetooth between nearby devices.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>I've never played Qatari Cards before. Is there a tutorial?</summary>
           <p>The full rules are on this page above. It's a trick-taking team game with bidding and trump &mdash; similar to Spades or Hearts if you've played those. The app guides you through the key phases as you play.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>What does the Wild Card card do?</summary>
           <p>The Wild Card beats every other card in the game. But there's a catch: if you're forced to lead the final trick with the Wild Card as your only card, your team loses the round immediately. It's powerful but risky.</p>
         </details>
@@ -262,11 +281,13 @@
         <a href="https://www.instagram.com/yousif.ameen" target="_blank" rel="noopener">Instagram</a>
       </div>
       <p>&copy; 2026 Approve The Move. All rights reserved.</p>
+      <p class="footer-signoff" lang="ar" dir="rtl">صُنع بحب في الدوحة</p>
+      <p class="footer-doha"><span data-doha-clock></span></p>
     </div>
   </footer>
 
   <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
 
-  <script src="/js/main.js?v=20260515" defer></script>
+  <script src="/js/main.js?v=20260710" defer></script>
 </body>
 </html>

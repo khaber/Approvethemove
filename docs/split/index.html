@@ -8,8 +8,8 @@
 <link rel="canonical" href="https://approvethemove.com/split/">
 <meta name="author" content="Yousif Ameen">
 <meta name="color-scheme" content="dark light">
-<meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0c0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=20260515">
+<link rel="stylesheet" href="/css/style.css?v=20260710">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Approve The Move">
 <meta property="og:locale" content="en_US">
@@ -36,7 +36,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ATM Split","operatingSystem":"iOS","applicationCategory":"FinanceApplication","url":"https://approvethemove.com/split/","description":"Split bills with friends using multiple split modes and multi-currency support. Free, no ads.","author":{"@type":"Person","name":"Yousif Ameen"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":"https://apps.apple.com/app/id6762064476","downloadUrl":"https://apps.apple.com/app/id6762064476"}</script>
 <script>(function(){try{var t=localStorage.getItem("atm-theme");if(t!=="dark"&&t!=="light"){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
-<body data-accent="orange">
+<body data-app="split" data-accent="orange">
 
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" id="top">
@@ -77,6 +77,11 @@
         <span class="badge">Offline</span>
         <span class="badge">56 Currencies</span>
       </div>
+
+      <aside class="founder-note">
+        <p>Every trip with friends used to end the same way: a screenshot of a spreadsheet and a long argument about who owed what. ATM Split is how my trips end now &mdash; one tap, everyone settled, even across currencies.</p>
+        <cite>&mdash; Yousif, Doha</cite>
+      </aside>
     </div>
   </section>
 
@@ -85,23 +90,33 @@
       <h2>Screenshots</h2>
       <div class="screenshot-gallery">
         <div class="screenshot-item">
-          <img src="../images/screenshots/split/01_groups.png" alt="Groups" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/split/01_groups.png" alt="Groups" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Groups</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/split/02_group_detail.png" alt="Group Detail" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/split/02_group_detail.png" alt="Group Detail" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Group Detail</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/split/03_expenses_settle.png" alt="Settle Up" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/split/03_expenses_settle.png" alt="Settle Up" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Settle Up</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/split/04_activity.png" alt="Activity" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/split/04_activity.png" alt="Activity" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Activity</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/split/05_settings.png" alt="Settings" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/split/05_settings.png" alt="Settings" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Settings</div>
         </div>
       </div>
@@ -171,23 +186,23 @@
     <div class="container">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Do my friends need the app too?</summary>
           <p>No. ATM Split is a personal tool for tracking who owes whom. You manage all the expenses yourself and can share the results with your group via CSV export or just by showing them the app.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Can I mix currencies in a single group?</summary>
           <p>Yes. Each expense can use a different currency, and ATM Split fetches live exchange rates to settle everything in your group's base currency.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>How does the settlement calculation work?</summary>
           <p>The app uses a debt simplification algorithm that finds the minimum number of payments needed to settle everyone up. Instead of 10 people making 20 small transfers, it might reduce it to just a handful of clean payments.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Can I export my group's history?</summary>
           <p>Yes. Every group can be exported as CSV, including all expenses, splits, and settlements. You own your data.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Is there a limit on group size or number of groups?</summary>
           <p>No. Create as many groups as you want with as many people as you need.</p>
         </details>
@@ -213,11 +228,13 @@
         <a href="https://www.instagram.com/yousif.ameen" target="_blank" rel="noopener">Instagram</a>
       </div>
       <p>&copy; 2026 Approve The Move. All rights reserved.</p>
+      <p class="footer-signoff" lang="ar" dir="rtl">صُنع بحب في الدوحة</p>
+      <p class="footer-doha"><span data-doha-clock></span></p>
     </div>
   </footer>
 
   <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
 
-  <script src="/js/main.js?v=20260515" defer></script>
+  <script src="/js/main.js?v=20260710" defer></script>
 </body>
 </html>

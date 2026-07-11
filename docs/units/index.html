@@ -8,8 +8,8 @@
 <link rel="canonical" href="https://approvethemove.com/units/">
 <meta name="author" content="Yousif Ameen">
 <meta name="color-scheme" content="dark light">
-<meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0c0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=20260515">
+<link rel="stylesheet" href="/css/style.css?v=20260710">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Approve The Move">
 <meta property="og:locale" content="en_US">
@@ -36,7 +36,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Unit Converter","operatingSystem":"iOS","applicationCategory":"UtilitiesApplication","url":"https://approvethemove.com/units/","description":"Convert length, weight, temperature, volume, speed, and 10+ more categories. Instant results. Free, no ads.","author":{"@type":"Person","name":"Yousif Ameen"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":"https://apps.apple.com/app/id6760981967","downloadUrl":"https://apps.apple.com/app/id6760981967"}</script>
 <script>(function(){try{var t=localStorage.getItem("atm-theme");if(t!=="dark"&&t!=="light"){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
-<body data-accent="teal">
+<body data-app="units" data-accent="teal">
 
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" id="top">
@@ -76,6 +76,11 @@
         <span class="badge">14+ Categories</span>
         <span class="badge">iOS 17+</span>
       </div>
+
+      <aside class="founder-note">
+        <p>This started as a weekend project to answer one question &mdash; how many cups in a litre &mdash; without watching an ad first. It grew into fourteen categories.</p>
+        <cite>&mdash; Yousif, Doha</cite>
+      </aside>
     </div>
   </section>
 
@@ -84,23 +89,33 @@
       <h2>Screenshots</h2>
       <div class="screenshot-gallery">
         <div class="screenshot-item">
-          <img src="../images/screenshots/units/iPhone_6.7_01_converter.png" alt="Converter" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/units/iPhone_6.7_01_converter.png" alt="Converter" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Converter</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/units/iPhone_6.7_02_categories.png" alt="Categories" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/units/iPhone_6.7_02_categories.png" alt="Categories" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Categories</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/units/iPhone_6.7_03_settings.png" alt="Settings" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/units/iPhone_6.7_03_settings.png" alt="Settings" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Settings</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/units/iPhone_6.7_04_temperature.png" alt="Temperature" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/units/iPhone_6.7_04_temperature.png" alt="Temperature" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Temperature</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/units/iPhone_6.7_05_lightmode.png" alt="Light Mode" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/units/iPhone_6.7_05_lightmode.png" alt="Light Mode" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Light Mode</div>
         </div>
       </div>
@@ -188,23 +203,23 @@
     <div class="container">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>How many unit categories are included?</summary>
           <p>14+ categories covering length, weight, temperature, volume, speed, energy, power, pressure, force, area, time, frequency, angle, fuel efficiency, and data storage.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Does it need an internet connection?</summary>
           <p>No. Unit Converter works entirely offline. It uses Apple's Foundation Measurement framework for accurate conversions, so no network request is ever made.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Is it really free and ad-free?</summary>
           <p>Yes. Completely free, no ads, no tracking, no paywall. It's a pure utility.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>How accurate are the conversions?</summary>
           <p>They use Apple's built-in Foundation Measurement API, which is the same library iOS uses for system-wide unit conversions. Precision matches industry standards.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Can I add custom units?</summary>
           <p>Not currently. The app covers the standard Foundation Measurement units. If there's a unit you need that's missing, let me know on Instagram or LinkedIn.</p>
         </details>
@@ -230,11 +245,13 @@
         <a href="https://www.instagram.com/yousif.ameen" target="_blank" rel="noopener">Instagram</a>
       </div>
       <p>&copy; 2026 Approve The Move. All rights reserved.</p>
+      <p class="footer-signoff" lang="ar" dir="rtl">صُنع بحب في الدوحة</p>
+      <p class="footer-doha"><span data-doha-clock></span></p>
     </div>
   </footer>
 
   <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
 
-  <script src="/js/main.js?v=20260515" defer></script>
+  <script src="/js/main.js?v=20260710" defer></script>
 </body>
 </html>

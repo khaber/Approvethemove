@@ -8,8 +8,8 @@
 <link rel="canonical" href="https://approvethemove.com/">
 <meta name="author" content="Yousif Ameen">
 <meta name="color-scheme" content="dark light">
-<meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0c0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=20260515">
+<link rel="stylesheet" href="/css/style.css?v=20260710">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Approve The Move">
 <meta property="og:locale" content="en_US">
@@ -67,16 +67,33 @@
   <main id="main">
 
   <section class="hero">
-    <div class="container">
-      <span class="hero-badge">iOS Apps &middot; Built in Qatar</span>
-      <h1>Apps I <span class="accent">love</span> building.</h1>
-      <p>This is my hobby &mdash; seven iOS apps so far, from finance trackers to card games to a universal CGM dashboard. Built with SwiftUI, shaped by the things I wanted to exist.</p>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-value">4</span><span class="stat-label">On App Store</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-value">3</span><span class="stat-label">In TestFlight</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-value">7</span><span class="stat-label">Total Apps</span></div>
+    <div class="container hero-layout">
+      <div class="hero-copy">
+        <span class="hero-badge">iOS Apps &middot; <span lang="ar" dir="rtl">صُنع في قطر</span></span>
+        <h1>Apps I <span class="accent">love</span> building.</h1>
+        <p>This is my hobby &mdash; seven iOS apps so far, from finance trackers to card games to a universal CGM dashboard. Built with SwiftUI, shaped by the things I wanted to exist.</p>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-value">4</span><span class="stat-label">On App Store</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-value">3</span><span class="stat-label">In TestFlight</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-value">7</span><span class="stat-label">Total Apps</span></div>
+        </div>
+      </div>
+
+      <div class="hero-phone">
+        <div class="device-frame device-hero">
+          <div class="rotator-stage" data-rotator aria-hidden="true">
+            <img class="rotator-shot is-active" src="images/hero/flow.webp" alt="" width="520" height="1131" fetchpriority="high" decoding="async" data-label="ATM Flow" data-href="flow/">
+            <img class="rotator-shot" src="images/hero/split.webp" alt="" width="520" height="1130" loading="lazy" decoding="async" data-label="ATM Split" data-href="https://apps.apple.com/app/id6762064476">
+            <img class="rotator-shot" src="images/hero/converter.webp" alt="" width="520" height="1131" loading="lazy" decoding="async" data-label="Currency Converter" data-href="https://apps.apple.com/app/id6761050400">
+            <img class="rotator-shot" src="images/hero/units.webp" alt="" width="520" height="1130" loading="lazy" decoding="async" data-label="Unit Converter" data-href="https://apps.apple.com/app/id6760981967">
+            <img class="rotator-shot" src="images/hero/qataricards.webp" alt="" width="520" height="1130" loading="lazy" decoding="async" data-label="Qatari Cards" data-href="https://apps.apple.com/app/id6760917981">
+            <img class="rotator-shot" src="images/hero/glucorelay.webp" alt="" width="520" height="1130" loading="lazy" decoding="async" data-label="GlucoRelay" data-href="GlucoRelay/">
+            <img class="rotator-shot" src="images/hero/chat.webp" alt="" width="520" height="1130" loading="lazy" decoding="async" data-label="ATMChat" data-href="chat/">
+          </div>
+        </div>
+        <a class="rotator-chip" href="flow/">ATM Flow &rarr;</a>
       </div>
     </div>
   </section>
@@ -254,16 +271,19 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-links">
+        <a href="now/">Now</a>
         <a href="privacy/">Privacy</a>
         <a href="https://www.instagram.com/yousif.ameen" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.linkedin.com/in/yousifameen/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
       <p>&copy; 2026 Approve The Move. All rights reserved.</p>
+      <p class="footer-signoff" lang="ar" dir="rtl">صُنع بحب في الدوحة</p>
+      <p class="footer-doha"><span data-doha-clock></span></p>
     </div>
   </footer>
 
   <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
 
-  <script src="/js/main.js?v=20260515" defer></script>
+  <script src="/js/main.js?v=20260710" defer></script>
 </body>
 </html>

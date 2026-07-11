@@ -8,8 +8,8 @@
 <link rel="canonical" href="https://approvethemove.com/GlucoRelay/">
 <meta name="author" content="Yousif Ameen">
 <meta name="color-scheme" content="dark light">
-<meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0c0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=20260515">
+<link rel="stylesheet" href="/css/style.css?v=20260710">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Approve The Move">
 <meta property="og:locale" content="en_US">
@@ -36,7 +36,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GlucoRelay","operatingSystem":"iOS","applicationCategory":"HealthApplication","url":"https://approvethemove.com/GlucoRelay/","description":"One iPhone dashboard for every CGM. Dexcom, FreeStyle Libre, Medtronic CareLink, Nightscout, Medtrum, and Apple Health \u2014 all in one app.","author":{"@type":"Person","name":"Yousif Ameen"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script>(function(){try{var t=localStorage.getItem("atm-theme");if(t!=="dark"&&t!=="light"){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
-<body data-accent="pink">
+<body data-app="glucorelay" data-accent="pink">
 
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" id="top">
@@ -76,6 +76,11 @@
         <span class="badge">Universal CGM</span>
         <span class="badge">iOS 18.6+</span>
       </div>
+
+      <aside class="founder-note">
+        <p>I wear a Medtronic CGM myself, and I was tired of every brand needing its own companion app. GlucoRelay is the single dashboard I wished existed &mdash; for my readings and everyone else's.</p>
+        <cite>&mdash; Yousif, Doha</cite>
+      </aside>
     </div>
   </section>
 
@@ -84,23 +89,33 @@
       <h2>Screenshots</h2>
       <div class="screenshot-gallery">
         <div class="screenshot-item">
-          <img src="../images/screenshots/GlucoRelay/01-dashboard.png" alt="Dashboard" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/GlucoRelay/01-dashboard.png" alt="Dashboard" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Dashboard</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/GlucoRelay/02-history.png" alt="History" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/GlucoRelay/02-history.png" alt="History" loading="lazy" decoding="async">
+          </div>
           <div class="caption">History</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/GlucoRelay/03-settings.png" alt="Settings" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/GlucoRelay/03-settings.png" alt="Settings" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Settings</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/GlucoRelay/04-alerts.png" alt="Alerts" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/GlucoRelay/04-alerts.png" alt="Alerts" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Alerts</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/GlucoRelay/05-nightstand.png" alt="Nightstand" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/GlucoRelay/05-nightstand.png" alt="Nightstand" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Nightstand</div>
         </div>
       </div>
@@ -250,10 +265,12 @@
         <a href="mailto:support@approvethemove.com">Support</a>
       </div>
       <p>&copy; 2026 Approve The Move. All rights reserved.</p>
+      <p class="footer-signoff" lang="ar" dir="rtl">صُنع بحب في الدوحة</p>
+      <p class="footer-doha"><span data-doha-clock></span></p>
     </div>
   </footer>
 
   <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
-  <script src="/js/main.js?v=20260515" defer></script>
+  <script src="/js/main.js?v=20260710" defer></script>
 </body>
 </html>
