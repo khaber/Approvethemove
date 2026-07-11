@@ -8,8 +8,8 @@
 <link rel="canonical" href="https://approvethemove.com/chat/">
 <meta name="author" content="Yousif Ameen">
 <meta name="color-scheme" content="dark light">
-<meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0c0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=20260515">
+<link rel="stylesheet" href="/css/style.css?v=20260710">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Approve The Move">
 <meta property="og:locale" content="en_US">
@@ -36,7 +36,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ATMChat","operatingSystem":"iOS","applicationCategory":"SocialNetworkingApplication","url":"https://approvethemove.com/chat/","description":"Chat without internet. Messages travel over Wi-Fi and Bluetooth mesh. No servers, no accounts, fully decentralized.","author":{"@type":"Person","name":"Yousif Ameen"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script>(function(){try{var t=localStorage.getItem("atm-theme");if(t!=="dark"&&t!=="light"){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
-<body data-accent="purple">
+<body data-app="chat" data-accent="purple">
 
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" id="top">
@@ -77,6 +77,11 @@
         <span class="badge">Truly Peer-to-Peer</span>
         <span class="badge">iOS 17.6+</span>
       </div>
+
+      <aside class="founder-note">
+        <p>Weekends in the Qatari desert mean zero bars of signal. I wanted our phones to keep talking anyway &mdash; so I built a messenger that needs no internet at all.</p>
+        <cite>&mdash; Yousif, Doha</cite>
+      </aside>
     </div>
   </section>
 
@@ -85,23 +90,33 @@
       <h2>Screenshots</h2>
       <div class="screenshot-gallery">
         <div class="screenshot-item">
-          <img src="../images/screenshots/chat/01_family_chat_list.png" alt="Chat List" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/chat/01_family_chat_list.png" alt="Chat List" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Chat List</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/chat/02_conversation_detail.png" alt="Conversation" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/chat/02_conversation_detail.png" alt="Conversation" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Conversation</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/chat/03_settings_identity.png" alt="Identity" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/chat/03_settings_identity.png" alt="Identity" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Identity</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/chat/04_about_approvethemove.png" alt="About" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/chat/04_about_approvethemove.png" alt="About" loading="lazy" decoding="async">
+          </div>
           <div class="caption">About</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/chat/05_contact_and_privacy.png" alt="Contact" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/chat/05_contact_and_privacy.png" alt="Contact" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Contact &amp; Privacy</div>
         </div>
       </div>
@@ -180,23 +195,23 @@
     <div class="container">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Do I need internet to use ATMChat?</summary>
           <p>No. ATMChat works entirely over local Wi-Fi and Bluetooth. It's designed for situations where there's no internet &mdash; travel, events, remote areas, or anywhere you just don't want to depend on a cellular connection.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>How far away can another person be?</summary>
           <p>Direct Wi-Fi range is typically 30&ndash;100 meters indoors. With mesh routing through other devices, messages can reach even further by hopping between phones in between you and the recipient.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Can I send photos and videos offline?</summary>
           <p>Yes. Photos, videos, voice messages, contacts, and files all transmit directly between devices over the local connection. Nothing goes through a server.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Is the communication secure?</summary>
           <p>Messages use Apple's MultipeerConnectivity framework which handles secure local transport. Since everything stays on your local network, data never touches external servers.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Do I need to create an account?</summary>
           <p>No. There's no sign-up, email, or phone number required. Your device is your identity.</p>
         </details>
@@ -222,11 +237,13 @@
         <a href="https://www.instagram.com/yousif.ameen" target="_blank" rel="noopener">Instagram</a>
       </div>
       <p>&copy; 2026 Approve The Move. All rights reserved.</p>
+      <p class="footer-signoff" lang="ar" dir="rtl">صُنع بحب في الدوحة</p>
+      <p class="footer-doha"><span data-doha-clock></span></p>
     </div>
   </footer>
 
   <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
 
-  <script src="/js/main.js?v=20260515" defer></script>
+  <script src="/js/main.js?v=20260710" defer></script>
 </body>
 </html>

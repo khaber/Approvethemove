@@ -25,8 +25,9 @@ docs/
 ├── css/style.css             # All styles (no render-blocking @import)
 ├── js/main.js                # Progressive enhancement only
 ├── icons/                    # apple-touch-icon + maskable PWA icons
-├── images/                   # App icons + screenshots
+├── images/                   # App icons, screenshots, hero/ rotator webp
 ├── flow/  split/  chat/  converter/  units/  QatariCards/  GlucoRelay/
+├── now/                      # "What I'm building now" page
 └── privacy/                  # Privacy policy hub
 ```
 
@@ -71,7 +72,7 @@ brand mark or social card changes.
 ## Cache busting (important)
 
 `style.css` and `main.js` are referenced with a version query, e.g.
-`/css/style.css?v=20260515`. GitHub Pages serves these files with a
+`/css/style.css?v=20260710`. GitHub Pages serves these files with a
 ~10‑minute CDN/browser cache and the filename never changes, so a
 returning visitor can otherwise load **new HTML against an old cached
 stylesheet** (broken layout) during a deploy.
@@ -82,7 +83,7 @@ One command:
 
 ```bash
 cd docs && grep -rl '?v=' --include='*.html' . | \
-  xargs sed -i 's/?v=20260515/?v=NEWDATE/g'
+  xargs sed -i 's/?v=20260710/?v=NEWDATE/g'
 ```
 
 ## Notes

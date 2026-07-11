@@ -8,8 +8,8 @@
 <link rel="canonical" href="https://approvethemove.com/converter/">
 <meta name="author" content="Yousif Ameen">
 <meta name="color-scheme" content="dark light">
-<meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0c0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
-<link rel="stylesheet" href="/css/style.css?v=20260515">
+<link rel="stylesheet" href="/css/style.css?v=20260710">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Approve The Move">
 <meta property="og:locale" content="en_US">
@@ -36,7 +36,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Currency Converter","operatingSystem":"iOS","applicationCategory":"FinanceApplication","url":"https://approvethemove.com/converter/","description":"Convert between 100+ world currencies with live exchange rates. Works offline. Free, no ads.","author":{"@type":"Person","name":"Yousif Ameen"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":"https://apps.apple.com/app/id6761050400","downloadUrl":"https://apps.apple.com/app/id6761050400"}</script>
 <script>(function(){try{var t=localStorage.getItem("atm-theme");if(t!=="dark"&&t!=="light"){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
-<body>
+<body data-app="converter" data-accent="blue">
 
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" id="top">
@@ -76,6 +76,11 @@
         <span class="badge">100+ Currencies</span>
         <span class="badge">iOS 17+</span>
       </div>
+
+      <aside class="founder-note">
+        <p>I check exchange rates constantly &mdash; riyals, dollars, euros. Every app I tried buried the number under ads and popups. This one opens, converts, done.</p>
+        <cite>&mdash; Yousif, Doha</cite>
+      </aside>
     </div>
   </section>
 
@@ -84,23 +89,33 @@
       <h2>Screenshots</h2>
       <div class="screenshot-gallery">
         <div class="screenshot-item">
-          <img src="../images/screenshots/converter/1_Main_ProMax.png" alt="Main Screen" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/converter/1_Main_ProMax.png" alt="Main Screen" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Main Screen</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/converter/2_Keypad_ProMax.png" alt="Keypad Input" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/converter/2_Keypad_ProMax.png" alt="Keypad Input" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Keypad Input</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/converter/3_AddCurrency_ProMax.png" alt="Add Currency" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/converter/3_AddCurrency_ProMax.png" alt="Add Currency" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Add Currency</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/converter/4_Settings_ProMax.png" alt="Settings" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/converter/4_Settings_ProMax.png" alt="Settings" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Settings</div>
         </div>
         <div class="screenshot-item">
-          <img src="../images/screenshots/converter/5_LightMode_ProMax.png" alt="Light Mode" loading="lazy" decoding="async">
+          <div class="device-frame">
+            <img src="../images/screenshots/converter/5_LightMode_ProMax.png" alt="Light Mode" loading="lazy" decoding="async">
+          </div>
           <div class="caption">Light Mode</div>
         </div>
       </div>
@@ -164,23 +179,23 @@
     <div class="container">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Where do the exchange rates come from?</summary>
           <p>Live rates are fetched from open.er-api.com, a public currency data API. No personal data is sent with the request &mdash; just the currency query.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Does it work offline?</summary>
           <p>Yes. The app caches rates so you can keep using it without internet. Cached rates are saved on your device for offline use.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>How often are rates updated?</summary>
           <p>Rates refresh automatically when you open the app with an internet connection. You can also manually refresh them anytime with one tap.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>How many currencies are supported?</summary>
           <p>Over 100 world currencies. You can add the ones you use most to your quick list and reorder them however you want.</p>
         </details>
-        <details class="faq-item">
+        <details class="faq-item" name="faq">
           <summary>Is there really no subscription or ads?</summary>
           <p>Correct. It's fully free with zero ads, zero tracking, and no "premium" version locked behind a paywall.</p>
         </details>
@@ -206,11 +221,13 @@
         <a href="https://www.instagram.com/yousif.ameen" target="_blank" rel="noopener">Instagram</a>
       </div>
       <p>&copy; 2026 Approve The Move. All rights reserved.</p>
+      <p class="footer-signoff" lang="ar" dir="rtl">صُنع بحب في الدوحة</p>
+      <p class="footer-doha"><span data-doha-clock></span></p>
     </div>
   </footer>
 
   <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
 
-  <script src="/js/main.js?v=20260515" defer></script>
+  <script src="/js/main.js?v=20260710" defer></script>
 </body>
 </html>
