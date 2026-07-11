@@ -19,11 +19,20 @@
 
   function syncThemeColor(theme) {
     var color = theme === 'light' ? '#f6f1e7' : '#0e0c0a';
-    var meta = document.querySelector('meta[name="theme-color"]:not([media])');
+    // The page ships two media-scoped theme-color metas; a media-less meta
+    // only wins if it is the FIRST theme-color meta in tree order, so insert
+    // (once) before the existing ones rather than appending.
+    var meta = document.querySelector('meta[name="theme-color"][data-js]');
     if (!meta) {
       meta = document.createElement('meta');
       meta.name = 'theme-color';
-      document.head.appendChild(meta);
+      meta.setAttribute('data-js', '');
+      var first = document.querySelector('meta[name="theme-color"]');
+      if (first) {
+        first.parentNode.insertBefore(meta, first);
+      } else {
+        document.head.appendChild(meta);
+      }
     }
     meta.setAttribute('content', color);
   }
@@ -177,6 +186,11 @@
 
     var index = 0;
     var paused = false;
+    var focused = false;
+
+    function isExternal(href) {
+      return /^https?:\/\//.test(href) && href.indexOf(window.location.origin) !== 0;
+    }
 
     function show(i) {
       shots.forEach(function (img, n) {
@@ -185,18 +199,35 @@
       if (chip) {
         chip.classList.add('is-switching');
         window.setTimeout(function () {
-          chip.href = shots[i].getAttribute('data-href') || chip.href;
+          var href = shots[i].getAttribute('data-href') || chip.getAttribute('href');
+          chip.setAttribute('href', href);
+          // Match the site convention: external destinations open in a new tab.
+          if (isExternal(href)) {
+            chip.setAttribute('target', '_blank');
+            chip.setAttribute('rel', 'noopener');
+          } else {
+            chip.removeAttribute('target');
+            chip.removeAttribute('rel');
+          }
           chip.textContent = (shots[i].getAttribute('data-label') || '') + ' →';
           chip.classList.remove('is-switching');
         }, 180);
       }
     }
 
-    stage.addEventListener('mouseenter', function () { paused = true; });
-    stage.addEventListener('mouseleave', function () { paused = false; });
-    document.addEventListener('visibilitychange', function () {
-      paused = document.hidden;
-    });
+    function recompute() { paused = focused || document.hidden; }
+
+    stage.addEventListener('mouseenter', function () { focused = true; recompute(); });
+    stage.addEventListener('mouseleave', function () { focused = false; recompute(); });
+    document.addEventListener('visibilitychange', recompute);
+
+    if (chip) {
+      // Don't re-target the link out from under a user hovering or focusing it.
+      chip.addEventListener('mouseenter', function () { focused = true; recompute(); });
+      chip.addEventListener('mouseleave', function () { focused = false; recompute(); });
+      chip.addEventListener('focus', function () { focused = true; recompute(); });
+      chip.addEventListener('blur', function () { focused = false; recompute(); });
+    }
 
     window.setInterval(function () {
       if (paused) return;
@@ -307,8 +338,12 @@
   /* ---- The APPROVED stamp ------------------------------- */
 
   function initStamp() {
-    var badge = document.querySelector('button.hero-badge');
+    var badge = document.querySelector('.hero-badge');
     if (!badge) return;
+
+    // Non-interactive decoration by default; JS upgrades it to a mouse-only
+    // easter egg (no keyboard/AT control, so nothing dead without JS).
+    badge.classList.add('is-stampable');
 
     badge.addEventListener('click', function () {
       var old = badge.querySelector('.stamp');
