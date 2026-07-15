@@ -6,8 +6,9 @@
    (pointer-events:none, z-index below content, never carries text), so
    contrast, layout and progressive enhancement are untouched. */
 
-/* Iridescent accent that slowly drifts accent -> accent-2 on hairlines only.
-   Registered so it can animate; unsupported engines fall back to the flat
+/* Iris: the accent used on decorative hairlines/dots. Registered as a color
+   token (kept static — accent -> accent-2 drift was removed to avoid animating
+   an inherited property page-wide). Unsupported engines fall back to the flat
    accent via var(--iris, var(--accent)). */
 @property --iris {
   syntax: '<color>';
@@ -306,18 +307,6 @@ body::after {
   :root:not([data-theme="dark"]) body::after { opacity: 0.2; filter: invert(1); }
 }
 
-/* The iris drifts accent -> accent-2 on the body so per-app pages tint from
-   their own palette (var(--accent) resolves at the body). Only hairlines,
-   dots and the display word read --iris — never text, never a sole signal. */
-body {
-  animation: layl-iris var(--dur-iris) ease-in-out infinite alternate;
-}
-
-@keyframes layl-iris {
-  from { --iris: var(--accent); }
-  to { --iris: var(--accent-2); }
-}
-
 main { isolation: isolate; }
 
 a {
@@ -576,7 +565,7 @@ section { padding-block: clamp(72px, 8vw, 112px); }
   border: 1px solid rgba(var(--accent-rgb), 0.13);
   border-radius: 50%;
   background:
-    radial-gradient(circle at 50% 0.8%, var(--iris, var(--accent)) 0 2.5px, rgba(var(--accent-rgb), 0.5) 4px, transparent 11px),
+    radial-gradient(circle at 50% 0.8%, rgba(var(--accent-rgb), 0.95) 0 2.5px, rgba(var(--accent-rgb), 0.5) 4px, transparent 11px),
     radial-gradient(circle at 50% 50%, transparent 58%, rgba(var(--accent-rgb), 0.09) 58.5%, transparent 59.5%),
     conic-gradient(from 20deg, transparent 0 12%, rgba(var(--accent-rgb), 0.13) 13%, transparent 14% 46%, rgba(var(--accent-2-rgb), 0.1) 47%, transparent 48% 100%);
   box-shadow: 0 0 120px rgba(var(--accent-rgb), 0.08) inset;
@@ -663,7 +652,7 @@ section { padding-block: clamp(72px, 8vw, 112px); }
    unsupported; both stops are AA-safe accents on the display size. */
 @supports ((background-clip: text) or (-webkit-background-clip: text)) {
   .hero h1 .accent {
-    background: linear-gradient(96deg, var(--iris, var(--accent)), var(--accent-2));
+    background: linear-gradient(96deg, var(--accent), var(--accent-2));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -671,9 +660,17 @@ section { padding-block: clamp(72px, 8vw, 112px); }
   }
 }
 
-[data-theme="dark"] .hero h1 .accent,
-:root:not([data-theme="light"]) .hero h1 .accent {
+/* Dark-only glow. Gated so the no-JS + light-OS path (which renders the
+   light palette but never sets data-theme) does NOT receive it — a bare
+   :not([data-theme="light"]) would wrongly match there. */
+[data-theme="dark"] .hero h1 .accent {
   filter: drop-shadow(0 0 22px rgba(var(--accent-rgb), 0.22));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .hero h1 .accent {
+    filter: drop-shadow(0 0 22px rgba(var(--accent-rgb), 0.22));
+  }
 }
 
 .hero > .container > p {
@@ -2081,6 +2078,14 @@ main { view-transition-name: page-content; }
   /* Drop the decorative night sky so the forced palette stays clean. */
   body::before,
   body::after { display: none; }
+  /* The gradient-clip hero word must fall back to the system text color,
+     or its transparent fill would leave it invisible. */
+  .hero h1 .accent {
+    background: none;
+    -webkit-text-fill-color: CanvasText;
+    color: CanvasText;
+    filter: none;
+  }
   .app-card,
   .value-card,
   .feature-item,
