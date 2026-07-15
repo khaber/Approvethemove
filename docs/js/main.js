@@ -217,12 +217,166 @@
     });
   }
 
+  function initRotator() {
+    var stage = document.querySelector('[data-rotator]');
+    if (!stage) return;
+
+    var shots = stage.querySelectorAll('.rotator-shot');
+    var chip = document.querySelector('.rotator-chip');
+    if (shots.length < 2 || reducedMotion) return;
+
+    var index = 0;
+    var pointerInside = false;
+    var chipFocused = false;
+
+    function isExternal(href) {
+      return /^https?:\/\//.test(href) && href.indexOf(window.location.origin) !== 0;
+    }
+
+    function paused() {
+      return pointerInside || chipFocused || document.hidden;
+    }
+
+    function show(nextIndex) {
+      shots.forEach(function (image, shotIndex) {
+        image.classList.toggle('is-active', shotIndex === nextIndex);
+      });
+
+      if (!chip) return;
+      chip.classList.add('is-switching');
+      window.setTimeout(function () {
+        var href = shots[nextIndex].getAttribute('data-href') || chip.getAttribute('href');
+        chip.setAttribute('href', href);
+        chip.textContent = (shots[nextIndex].getAttribute('data-label') || '') + ' →';
+        if (isExternal(href)) {
+          chip.setAttribute('target', '_blank');
+          chip.setAttribute('rel', 'noopener');
+        } else {
+          chip.removeAttribute('target');
+          chip.removeAttribute('rel');
+        }
+        chip.classList.remove('is-switching');
+      }, 180);
+    }
+
+    stage.addEventListener('pointerenter', function () { pointerInside = true; });
+    stage.addEventListener('pointerleave', function () { pointerInside = false; });
+
+    if (chip) {
+      chip.addEventListener('pointerenter', function () { pointerInside = true; });
+      chip.addEventListener('pointerleave', function () { pointerInside = false; });
+      chip.addEventListener('focus', function () { chipFocused = true; });
+      chip.addEventListener('blur', function () { chipFocused = false; });
+    }
+
+    window.setInterval(function () {
+      if (paused()) return;
+      index = (index + 1) % shots.length;
+      show(index);
+    }, 3500);
+  }
+
+  function initLightbox() {
+    var screenshots = document.querySelectorAll('.screenshot-item img');
+    if (!screenshots.length || typeof HTMLDialogElement !== 'function') return;
+
+    var dialog = document.createElement('dialog');
+    dialog.className = 'lightbox';
+    dialog.setAttribute('aria-label', 'Screenshot viewer');
+    dialog.innerHTML =
+      '<img alt="">' +
+      '<button type="button" class="lightbox-close" aria-label="Close screenshot viewer">✕</button>' +
+      '<p class="lightbox-caption"></p>';
+    document.body.appendChild(dialog);
+
+    var preview = dialog.querySelector('img');
+    var caption = dialog.querySelector('.lightbox-caption');
+    var closeButton = dialog.querySelector('.lightbox-close');
+
+    closeButton.addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) dialog.close();
+    });
+
+    screenshots.forEach(function (image) {
+      var item = image.closest('.screenshot-item');
+      var label = item && item.querySelector('.caption');
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'screenshot-open';
+      button.setAttribute('aria-label', 'View full screenshot: ' + (image.alt || 'screenshot'));
+      image.parentNode.insertBefore(button, image);
+      button.appendChild(image);
+      button.addEventListener('click', function () {
+        preview.src = image.currentSrc || image.src;
+        preview.alt = image.alt;
+        caption.textContent = label ? label.textContent : image.alt;
+        dialog.showModal();
+      });
+    });
+  }
+
+  function initCountUp() {
+    var values = document.querySelectorAll('.stat-value');
+    if (!values.length || reducedMotion || !('IntersectionObserver' in window)) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+        var element = entry.target;
+        var target = parseInt(element.textContent, 10);
+        if (!target || target > 999) return;
+        var start = null;
+
+        function tick(timestamp) {
+          if (start === null) start = timestamp;
+          var progress = Math.min((timestamp - start) / 750, 1);
+          element.textContent = String(Math.round(target * (1 - Math.pow(1 - progress, 3))));
+          if (progress < 1) window.requestAnimationFrame(tick);
+        }
+
+        window.requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.6 });
+
+    values.forEach(function (element) { observer.observe(element); });
+  }
+
+  function initDohaClock() {
+    var clocks = document.querySelectorAll('[data-doha-clock]');
+    if (!clocks.length || !window.Intl || !Intl.DateTimeFormat) return;
+
+    var formatter;
+    try {
+      formatter = new Intl.DateTimeFormat('en-US', {
+        hour: 'numeric',
+        minute: '2-digit',
+        timeZone: 'Asia/Qatar'
+      });
+    } catch (error) {
+      return;
+    }
+
+    function update() {
+      var message = "It's " + formatter.format(new Date()) + ' in Doha right now.';
+      clocks.forEach(function (clock) { clock.textContent = message; });
+    }
+
+    update();
+    window.setInterval(update, 30000);
+  }
+
   function init() {
     initTheme();
     initNav();
     initScrollUI();
     initAmbientPointer();
     initTilt();
+    initRotator();
+    initLightbox();
+    initCountUp();
+    initDohaClock();
   }
 
   if (document.readyState === 'loading') {
