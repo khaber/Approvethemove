@@ -1,7 +1,5 @@
-/* Approve The Move — progressive enhancement.
-   The page is fully functional without this script;
-   it only adds interactivity. The no-flash theme is
-   set by a tiny inline script in the document <head>. */
+/* Approve The Move — progressive enhancements for Doha Afterlight.
+   Navigation, content, themes, and links remain usable without this file. */
 (function () {
   'use strict';
 
@@ -11,279 +9,312 @@
     window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---- Theme toggle (with circular wipe) --------------- */
+  /* Only expose enhanced controls once this file has actually loaded. */
+  root.classList.add('js');
+
+  function motionIsReduced() {
+    return Boolean(
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    );
+  }
 
   function currentTheme() {
-    return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    var explicit = root.getAttribute('data-theme');
+    if (explicit === 'light' || explicit === 'dark') return explicit;
+    return window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: light)').matches
+      ? 'light'
+      : 'dark';
   }
 
   function syncThemeColor(theme) {
-    var color = theme === 'light' ? '#f6f1e7' : '#0e0c0a';
-    // The page ships two media-scoped theme-color metas; a media-less meta
-    // only wins if it is the FIRST theme-color meta in tree order, so insert
-    // (once) before the existing ones rather than appending.
-    var meta = document.querySelector('meta[name="theme-color"][data-js]');
-    if (!meta) {
-      meta = document.createElement('meta');
+    var color = theme === 'light' ? '#f7f4ee' : '#070a12';
+    var metas = document.querySelectorAll('meta[name="theme-color"]');
+
+    if (!metas.length) {
+      var meta = document.createElement('meta');
       meta.name = 'theme-color';
-      meta.setAttribute('data-js', '');
-      var first = document.querySelector('meta[name="theme-color"]');
-      if (first) {
-        first.parentNode.insertBefore(meta, first);
-      } else {
-        document.head.appendChild(meta);
-      }
+      meta.setAttribute('content', color);
+      document.head.appendChild(meta);
+      return;
     }
-    meta.setAttribute('content', color);
+
+    metas.forEach(function (meta) {
+      meta.setAttribute('content', color);
+    });
   }
 
-  function syncToggle(btn, theme) {
+  function syncThemeToggle(button, theme) {
     var isLight = theme === 'light';
-    btn.setAttribute('aria-pressed', String(isLight));
-    btn.setAttribute(
+    button.setAttribute('aria-pressed', String(isLight));
+    button.setAttribute(
       'aria-label',
       isLight ? 'Switch to dark theme' : 'Switch to light theme'
     );
   }
 
   function initTheme() {
-    var btn = document.querySelector('[data-theme-toggle]');
-    if (!btn) return;
-    syncToggle(btn, currentTheme());
-    syncThemeColor(currentTheme());
+    var buttons = document.querySelectorAll('[data-theme-toggle]');
+    var theme = currentTheme();
 
-    function applyTheme(next) {
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
-      syncToggle(btn, next);
-      syncThemeColor(next);
-    }
-
-    btn.addEventListener('click', function () {
-      var next = currentTheme() === 'light' ? 'dark' : 'light';
-
-      if (!document.startViewTransition || reducedMotion) {
-        applyTheme(next);
-        return;
-      }
-
-      var rect = btn.getBoundingClientRect();
-      root.style.setProperty('--wipe-x', rect.left + rect.width / 2 + 'px');
-      root.style.setProperty('--wipe-y', rect.top + rect.height / 2 + 'px');
-      root.classList.add('theme-wipe');
-
-      var transition = document.startViewTransition(function () {
-        applyTheme(next);
-      });
-      transition.finished.finally(function () {
-        root.classList.remove('theme-wipe');
+    root.setAttribute('data-theme', theme);
+    syncThemeColor(theme);
+    buttons.forEach(function (button) {
+      syncThemeToggle(button, theme);
+      button.addEventListener('click', function () {
+        var next = currentTheme() === 'light' ? 'dark' : 'light';
+        root.setAttribute('data-theme', next);
+        try {
+          localStorage.setItem(THEME_KEY, next);
+        } catch (error) {
+          /* Storage can be unavailable in strict privacy modes. */
+        }
+        buttons.forEach(function (item) {
+          syncThemeToggle(item, next);
+        });
+        syncThemeColor(next);
       });
     });
   }
-
-  /* ---- Mobile navigation ------------------------------- */
 
   function initNav() {
     var toggle = document.querySelector('[data-nav-toggle]');
     var menu = document.getElementById('nav-menu');
+
     if (!toggle || !menu) return;
 
-    function setOpen(open) {
+    function setOpen(open, returnFocus) {
       menu.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if (!open && returnFocus) toggle.focus();
     }
 
     toggle.addEventListener('click', function () {
-      setOpen(menu.classList.contains('open') === false);
+      setOpen(!menu.classList.contains('open'), false);
     });
 
-    menu.addEventListener('click', function (e) {
-      if (e.target.closest('a')) setOpen(false);
+    menu.addEventListener('click', function (event) {
+      if (event.target.closest('a')) setOpen(false, false);
     });
 
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && menu.classList.contains('open')) {
-        setOpen(false);
-        toggle.focus();
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && menu.classList.contains('open')) {
+        setOpen(false, true);
       }
     });
 
-    document.addEventListener('click', function (e) {
+    document.addEventListener('click', function (event) {
       if (
         menu.classList.contains('open') &&
-        !e.target.closest('#nav-menu') &&
-        !e.target.closest('[data-nav-toggle]')
+        !event.target.closest('#nav-menu') &&
+        !event.target.closest('[data-nav-toggle]')
       ) {
-        setOpen(false);
+        setOpen(false, false);
       }
     });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 760 && menu.classList.contains('open')) {
+        setOpen(false, false);
+      }
+    }, { passive: true });
   }
 
-  /* ---- Back to top -------------------------------------- */
-
-  function initBackToTop() {
-    var btn = document.querySelector('.back-to-top');
-    if (!btn) return;
+  function initScrollUI() {
+    var header = document.querySelector('.site-header');
+    var backToTop = document.querySelector('.back-to-top');
     var ticking = false;
 
     function update() {
-      btn.classList.toggle('visible', window.scrollY > 400);
+      var y = window.scrollY;
+      if (header) header.classList.toggle('is-scrolled', y > 18);
+      if (backToTop) backToTop.classList.toggle('visible', y > 520);
       ticking = false;
     }
 
-    window.addEventListener(
-      'scroll',
-      function () {
-        if (!ticking) {
-          ticking = true;
-          window.requestAnimationFrame(update);
-        }
-      },
-      { passive: true }
-    );
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }, { passive: true });
+
     update();
   }
 
-  /* ---- Scroll reveal ------------------------------------ */
+  function initAmbientPointer() {
+    if (
+      motionIsReduced() ||
+      !window.matchMedia ||
+      !window.matchMedia('(pointer: fine)').matches
+    ) return;
 
-  function initReveal() {
-    var targets = document.querySelectorAll(
-      '.app-card, .feature-item, .step, .privacy-hub-card, .content-section, .about-content'
-    );
-    if (!targets.length) return;
+    var frame = 0;
+    var latestX = 0;
+    var latestY = 0;
 
-    if (reducedMotion || !('IntersectionObserver' in window)) {
-      targets.forEach(function (el) { el.classList.add('visible'); });
-      return;
-    }
+    window.addEventListener('pointermove', function (event) {
+      latestX = (event.clientX / window.innerWidth - 0.5) * 22;
+      latestY = (event.clientY / window.innerHeight - 0.5) * 16;
+      if (frame) return;
 
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-    );
-
-    targets.forEach(function (el) {
-      el.classList.add('reveal');
-      observer.observe(el);
-    });
+      frame = window.requestAnimationFrame(function () {
+        root.style.setProperty('--ambient-x', latestX.toFixed(2) + 'px');
+        root.style.setProperty('--ambient-y', latestY.toFixed(2) + 'px');
+        frame = 0;
+      });
+    }, { passive: true });
   }
 
-  /* ---- Hero phone rotator ------------------------------- */
+  function initTilt() {
+    if (
+      motionIsReduced() ||
+      !window.matchMedia ||
+      !window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    ) return;
+
+    document.querySelectorAll('.app-card, .value-card').forEach(function (card) {
+      var bounds = null;
+      var frame = 0;
+      var x = 0;
+      var y = 0;
+
+      function render() {
+        if (!bounds) return;
+        var relativeX = Math.max(0, Math.min(1, (x - bounds.left) / bounds.width));
+        var relativeY = Math.max(0, Math.min(1, (y - bounds.top) / bounds.height));
+        card.style.setProperty('--tilt-x', ((0.5 - relativeY) * 3.5).toFixed(2) + 'deg');
+        card.style.setProperty('--tilt-y', ((relativeX - 0.5) * 4.5).toFixed(2) + 'deg');
+        card.style.setProperty('--glow-x', (relativeX * bounds.width - 110).toFixed(1) + 'px');
+        card.style.setProperty('--glow-y', (relativeY * bounds.height - 110).toFixed(1) + 'px');
+        frame = 0;
+      }
+
+      card.addEventListener('pointerenter', function (event) {
+        bounds = card.getBoundingClientRect();
+        x = event.clientX;
+        y = event.clientY;
+        render();
+      }, { passive: true });
+
+      card.addEventListener('pointermove', function (event) {
+        x = event.clientX;
+        y = event.clientY;
+        if (frame) return;
+        frame = window.requestAnimationFrame(render);
+      }, { passive: true });
+
+      card.addEventListener('pointerleave', function () {
+        if (frame) window.cancelAnimationFrame(frame);
+        frame = 0;
+        bounds = null;
+        card.style.setProperty('--tilt-x', '0deg');
+        card.style.setProperty('--tilt-y', '0deg');
+        card.style.setProperty('--glow-x', 'calc(50% - 110px)');
+        card.style.setProperty('--glow-y', 'calc(50% - 110px)');
+      }, { passive: true });
+    });
+  }
 
   function initRotator() {
     var stage = document.querySelector('[data-rotator]');
     if (!stage) return;
+
     var shots = stage.querySelectorAll('.rotator-shot');
     var chip = document.querySelector('.rotator-chip');
     if (shots.length < 2 || reducedMotion) return;
 
     var index = 0;
-    var paused = false;
-    var focused = false;
+    var pointerInside = false;
+    var chipFocused = false;
 
     function isExternal(href) {
       return /^https?:\/\//.test(href) && href.indexOf(window.location.origin) !== 0;
     }
 
-    function show(i) {
-      shots.forEach(function (img, n) {
-        img.classList.toggle('is-active', n === i);
-      });
-      if (chip) {
-        chip.classList.add('is-switching');
-        window.setTimeout(function () {
-          var href = shots[i].getAttribute('data-href') || chip.getAttribute('href');
-          chip.setAttribute('href', href);
-          // Match the site convention: external destinations open in a new tab.
-          if (isExternal(href)) {
-            chip.setAttribute('target', '_blank');
-            chip.setAttribute('rel', 'noopener');
-          } else {
-            chip.removeAttribute('target');
-            chip.removeAttribute('rel');
-          }
-          chip.textContent = (shots[i].getAttribute('data-label') || '') + ' →';
-          chip.classList.remove('is-switching');
-        }, 180);
-      }
+    function paused() {
+      return pointerInside || chipFocused || document.hidden;
     }
 
-    function recompute() { paused = focused || document.hidden; }
+    function show(nextIndex) {
+      shots.forEach(function (image, shotIndex) {
+        image.classList.toggle('is-active', shotIndex === nextIndex);
+      });
 
-    stage.addEventListener('mouseenter', function () { focused = true; recompute(); });
-    stage.addEventListener('mouseleave', function () { focused = false; recompute(); });
-    document.addEventListener('visibilitychange', recompute);
+      if (!chip) return;
+      chip.classList.add('is-switching');
+      window.setTimeout(function () {
+        var href = shots[nextIndex].getAttribute('data-href') || chip.getAttribute('href');
+        chip.setAttribute('href', href);
+        chip.textContent = (shots[nextIndex].getAttribute('data-label') || '') + ' →';
+        if (isExternal(href)) {
+          chip.setAttribute('target', '_blank');
+          chip.setAttribute('rel', 'noopener');
+        } else {
+          chip.removeAttribute('target');
+          chip.removeAttribute('rel');
+        }
+        chip.classList.remove('is-switching');
+      }, 180);
+    }
+
+    stage.addEventListener('pointerenter', function () { pointerInside = true; });
+    stage.addEventListener('pointerleave', function () { pointerInside = false; });
 
     if (chip) {
-      // Don't re-target the link out from under a user hovering or focusing it.
-      chip.addEventListener('mouseenter', function () { focused = true; recompute(); });
-      chip.addEventListener('mouseleave', function () { focused = false; recompute(); });
-      chip.addEventListener('focus', function () { focused = true; recompute(); });
-      chip.addEventListener('blur', function () { focused = false; recompute(); });
+      chip.addEventListener('pointerenter', function () { pointerInside = true; });
+      chip.addEventListener('pointerleave', function () { pointerInside = false; });
+      chip.addEventListener('focus', function () { chipFocused = true; });
+      chip.addEventListener('blur', function () { chipFocused = false; });
     }
 
     window.setInterval(function () {
-      if (paused) return;
+      if (paused()) return;
       index = (index + 1) % shots.length;
       show(index);
     }, 3500);
   }
 
-  /* ---- Screenshot lightbox ------------------------------ */
-
   function initLightbox() {
-    var imgs = document.querySelectorAll('.screenshot-item .device-frame img');
-    if (!imgs.length || typeof HTMLDialogElement !== 'function') return;
+    var screenshots = document.querySelectorAll('.screenshot-item img');
+    if (!screenshots.length || typeof HTMLDialogElement !== 'function') return;
 
     var dialog = document.createElement('dialog');
     dialog.className = 'lightbox';
     dialog.setAttribute('aria-label', 'Screenshot viewer');
     dialog.innerHTML =
       '<img alt="">' +
-      '<button type="button" class="lightbox-close" aria-label="Close">✕</button>' +
+      '<button type="button" class="lightbox-close" aria-label="Close screenshot viewer">✕</button>' +
       '<p class="lightbox-caption"></p>';
     document.body.appendChild(dialog);
 
-    var big = dialog.querySelector('img');
+    var preview = dialog.querySelector('img');
     var caption = dialog.querySelector('.lightbox-caption');
+    var closeButton = dialog.querySelector('.lightbox-close');
 
-    dialog.querySelector('.lightbox-close').addEventListener('click', function () {
-      dialog.close();
-    });
-    dialog.addEventListener('click', function (e) {
-      if (e.target === dialog) dialog.close();
+    closeButton.addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) dialog.close();
     });
 
-    imgs.forEach(function (img) {
-      var frame = img.closest('.device-frame');
-      var item = img.closest('.screenshot-item');
+    screenshots.forEach(function (image) {
+      var item = image.closest('.screenshot-item');
       var label = item && item.querySelector('.caption');
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'lightbox-trigger';
-      btn.setAttribute(
-        'aria-label',
-        'View full screenshot: ' + (img.alt || 'screenshot')
-      );
-      frame.parentNode.insertBefore(btn, frame);
-      btn.appendChild(frame);
-      btn.addEventListener('click', function () {
-        big.src = img.currentSrc || img.src;
-        big.alt = img.alt;
-        caption.textContent = label ? label.textContent : img.alt;
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'screenshot-open';
+      button.setAttribute('aria-label', 'View full screenshot: ' + (image.alt || 'screenshot'));
+      image.parentNode.insertBefore(button, image);
+      button.appendChild(image);
+      button.addEventListener('click', function () {
+        preview.src = image.currentSrc || image.src;
+        preview.alt = image.alt;
+        caption.textContent = label ? label.textContent : image.alt;
         dialog.showModal();
       });
     });
   }
-
-  /* ---- Hero stats count-up ------------------------------ */
 
   function initCountUp() {
     var values = document.querySelectorAll('.stat-value');
@@ -293,115 +324,63 @@
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         observer.unobserve(entry.target);
-        var el = entry.target;
-        var target = parseInt(el.textContent, 10);
+        var element = entry.target;
+        var target = parseInt(element.textContent, 10);
         if (!target || target > 999) return;
         var start = null;
-        function tick(ts) {
-          if (start === null) start = ts;
-          var p = Math.min((ts - start) / 900, 1);
-          el.textContent = String(Math.round(target * (1 - Math.pow(1 - p, 3))));
-          if (p < 1) window.requestAnimationFrame(tick);
+
+        function tick(timestamp) {
+          if (start === null) start = timestamp;
+          var progress = Math.min((timestamp - start) / 750, 1);
+          element.textContent = String(Math.round(target * (1 - Math.pow(1 - progress, 3))));
+          if (progress < 1) window.requestAnimationFrame(tick);
         }
+
         window.requestAnimationFrame(tick);
       });
     }, { threshold: 0.6 });
 
-    values.forEach(function (el) { observer.observe(el); });
+    values.forEach(function (element) { observer.observe(element); });
   }
 
-  /* ---- "It's 9:41 PM in Doha" footer clock -------------- */
-
   function initDohaClock() {
-    var el = document.querySelector('[data-doha-clock]');
-    if (!el || !window.Intl || !Intl.DateTimeFormat) return;
+    var clocks = document.querySelectorAll('[data-doha-clock]');
+    if (!clocks.length || !window.Intl || !Intl.DateTimeFormat) return;
 
-    var fmt;
+    var formatter;
     try {
-      fmt = new Intl.DateTimeFormat('en-US', {
+      formatter = new Intl.DateTimeFormat('en-US', {
         hour: 'numeric',
         minute: '2-digit',
-        timeZone: 'Asia/Qatar',
+        timeZone: 'Asia/Qatar'
       });
-    } catch (e) {
+    } catch (error) {
       return;
     }
 
     function update() {
-      el.textContent = "It's " + fmt.format(new Date()) + ' in Doha right now.';
+      var message = "It's " + formatter.format(new Date()) + ' in Doha right now.';
+      clocks.forEach(function (clock) { clock.textContent = message; });
     }
 
     update();
     window.setInterval(update, 30000);
   }
 
-  /* ---- The APPROVED stamp ------------------------------- */
-
-  function initStamp() {
-    var badge = document.querySelector('.hero-badge');
-    if (!badge) return;
-
-    // Non-interactive decoration by default; JS upgrades it to a mouse-only
-    // easter egg (no keyboard/AT control, so nothing dead without JS).
-    badge.classList.add('is-stampable');
-
-    badge.addEventListener('click', function () {
-      var old = badge.querySelector('.stamp');
-      if (old) old.remove();
-      var stamp = document.createElement('span');
-      stamp.className = 'stamp stamped';
-      stamp.setAttribute('aria-hidden', 'true');
-      stamp.textContent = 'Approved';
-      badge.appendChild(stamp);
-      window.setTimeout(function () { stamp.remove(); }, 2600);
-    });
-  }
-
-  /* ---- Speculation Rules: prerender likely next pages --- */
-
-  function initPrerender() {
-    if (
-      !window.HTMLScriptElement ||
-      typeof HTMLScriptElement.supports !== 'function' ||
-      !HTMLScriptElement.supports('speculationrules')
-    ) {
-      return;
-    }
-    var s = document.createElement('script');
-    s.type = 'speculationrules';
-    s.textContent = JSON.stringify({
-      prerender: [
-        {
-          where: {
-            and: [
-              { href_matches: '/*' },
-              { not: { href_matches: '/*.(png|webp|svg|xml|txt|pdf)' } },
-            ],
-          },
-          eagerness: 'moderate',
-        },
-      ],
-    });
-    document.head.appendChild(s);
-  }
-
-  /* ---- Init --------------------------------------------- */
-
   function init() {
     initTheme();
     initNav();
-    initBackToTop();
-    initReveal();
+    initScrollUI();
+    initAmbientPointer();
+    initTilt();
     initRotator();
     initLightbox();
     initCountUp();
     initDohaClock();
-    initStamp();
-    initPrerender();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', init, { once: true });
   } else {
     init();
   }
