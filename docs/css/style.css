@@ -1,5 +1,20 @@
-/* Approve The Move — Doha Afterlight
-   A progressive, static-first visual system for approvethemove.com. */
+/* Approve The Move — Doha Afterlight, awake ("Layl", ليل / night)
+   A progressive, static-first visual system for approvethemove.com.
+   The "Layl" layer turns the midnight into a living night observatory —
+   breathing aurora, a starfield over a Doha horizon, an orbiting node and
+   iridescent accent edges. Every Layl layer is purely decorative
+   (pointer-events:none, z-index below content, never carries text), so
+   contrast, layout and progressive enhancement are untouched. */
+
+/* Iris: the accent used on decorative hairlines/dots. Registered as a color
+   token (kept static — accent -> accent-2 drift was removed to avoid animating
+   an inherited property page-wide). Unsupported engines fall back to the flat
+   accent via var(--iris, var(--accent)). */
+@property --iris {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #83bdff;
+}
 
 :root {
   color-scheme: dark;
@@ -44,6 +59,18 @@
   --font-serif: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', serif;
   --ambient-x: 0px;
   --ambient-y: 0px;
+  /* Layl night-observatory tokens (dark). Aurora alphas capped <=0.16. */
+  --aurora-1: rgba(var(--accent-rgb), 0.15);
+  --aurora-2: rgba(var(--accent-2-rgb), 0.11);
+  --aurora-3: rgba(93, 165, 255, 0.07);
+  --horizon: rgba(120, 226, 156, 0.05);
+  --star-layer: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22340%22%20height%3D%22340%22%20viewBox%3D%220%200%20340%20340%22%3E%3Ccircle%20cx%3D%2296.0%22%20cy%3D%2266.6%22%20r%3D%220.9%22%20fill%3D%22%23eef2f7%22%20opacity%3D%220.81%22%2F%3E%3Ccircle%20cx%3D%22286.8%22%20cy%3D%22115.4%22%20r%3D%220.9%22%20fill%3D%22%23eef2f7%22%20opacity%3D%220.94%22%2F%3E%3Ccircle%20cx%3D%22203.6%22%20cy%3D%22169.2%22%20r%3D%220.9%22%20fill%3D%22%23eef2f7%22%20opacity%3D%220.45%22%2F%3E%3Ccircle%20cx%3D%2278.7%22%20cy%3D%22102.5%22%20r%3D%220.9%22%20fill%3D%22%23eef2f7%22%20opacity%3D%220.76%22%2F%3E%3Ccircle%20cx%3D%22151.0%22%20cy%3D%22190.0%22%20r%3D%220.6%22%20fill%3D%22%23eef2f7%22%20opacity%3D%220.65%22%2F%3E%3Ccircle%20cx%3D%22290.8%22%20cy%3D%22119.4%22%20r%3D%220.7%22%20fill%3D%22%23eef2f7%22%20opacity%3D%220.44%22%2F%3E%3Ccircle%20cx%3D%22286.0%22%20cy%3D%22162.7%22%20r%3D%221.2%22%20fill%3D%22%23eef2f7%22%20opacity%3D%220.4%22%2F%3E%3Ccircle%20cx%3D%22331.9%22%20cy%3D%22182.7%22%20r%3D%220.6%22%20fill%3D%22%23a9ccff%22%20opacity%3D%220.39%22%2F%3E%3Ccircle%20cx%3D%22317.0%22%20cy%3D%22276.6%22%20r%3D%220.8%22%20fill%3D%22%23eef2f7%22%20opacity%3D%220.51%22%2F%3E%3Ccircle%20cx%3D%22155.5%22%20cy%3D%22334.0%22%20r%3D%220.9%22%20fill%3D%22%23eef2f7%22%20opacity%3D%220.91%22%2F%3E%3Ccircle%20cx%3D%22224.4%22%20cy%3D%22104.1%22%20r%3D%220.7%22%20fill%3D%22%23eef2f7%22%20opacity%3D%220.61%22%2F%3E%3Ccircle%20cx%3D%22204.0%22%20cy%3D%22280.6%22%20r%3D%220.9%22%20fill%3D%22%23eef2f7%22%20opacity%3D%220.38%22%2F%3E%3Ccircle%20cx%3D%22193.8%22%20cy%3D%22245.1%22%20r%3D%220.8%22%20fill%3D%22%23eef2f7%22%20opacity%3D%220.65%22%2F%3E%3Ccircle%20cx%3D%22277.2%22%20cy%3D%22118.9%22%20r%3D%220.6%22%20fill%3D%22%23a9ccff%22%20opacity%3D%220.35%22%2F%3E%3Ccircle%20cx%3D%22137.2%22%20cy%3D%22233.4%22%20r%3D%221.2%22%20fill%3D%22%23eef2f7%22%20opacity%3D%220.49%22%2F%3E%3Ccircle%20cx%3D%22160.1%22%20cy%3D%2286.1%22%20r%3D%220.6%22%20fill%3D%22%23a9ccff%22%20opacity%3D%220.74%22%2F%3E%3Ccircle%20cx%3D%22225.6%22%20cy%3D%22125.6%22%20r%3D%220.9%22%20fill%3D%22%23eef2f7%22%20opacity%3D%220.59%22%2F%3E%3Ccircle%20cx%3D%22241.3%22%20cy%3D%22289.4%22%20r%3D%221.2%22%20fill%3D%22%23eef2f7%22%20opacity%3D%220.38%22%2F%3E%3C%2Fsvg%3E");
+  --iris: var(--accent);
+  --font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, 'Consolas', monospace;
+  --dur-aurora: 52s;
+  --dur-iris: 24s;
+  --dur-orbit: 34s;
+  --dur-twinkle: 10s;
 }
 
 [data-theme="light"] {
@@ -74,6 +101,13 @@
   --shadow-sm: 0 1px 2px rgba(25, 34, 48, 0.05), 0 10px 28px rgba(25, 34, 48, 0.07);
   --shadow-md: 0 20px 56px rgba(25, 34, 48, 0.11), 0 1px 0 rgba(255, 255, 255, 0.9) inset;
   --shadow-lg: 0 30px 90px rgba(25, 34, 48, 0.16), 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+  /* Layl by day: a calm warm sky. Aurora ~half strength, stars off (they do
+     not read on cream), horizon barely there. --iris tracks the inked accent. */
+  --aurora-1: rgba(0, 102, 204, 0.06);
+  --aurora-2: rgba(113, 54, 164, 0.05);
+  --aurora-3: transparent;
+  --horizon: rgba(19, 115, 51, 0.03);
+  --star-layer: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -105,6 +139,11 @@
     --shadow-sm: 0 1px 2px rgba(25, 34, 48, 0.05), 0 10px 28px rgba(25, 34, 48, 0.07);
     --shadow-md: 0 20px 56px rgba(25, 34, 48, 0.11), 0 1px 0 rgba(255, 255, 255, 0.9) inset;
     --shadow-lg: 0 30px 90px rgba(25, 34, 48, 0.16), 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+    --aurora-1: rgba(0, 102, 204, 0.06);
+    --aurora-2: rgba(113, 54, 164, 0.05);
+    --aurora-3: transparent;
+    --horizon: rgba(19, 115, 51, 0.03);
+    --star-layer: none;
   }
 }
 
@@ -221,12 +260,31 @@ body::before {
   inset: -18vmax;
   pointer-events: none;
   contain: strict;
-  background:
-    radial-gradient(circle at 18% 18%, rgba(var(--accent-rgb), 0.15), transparent 26%),
-    radial-gradient(circle at 80% 12%, rgba(var(--accent-2-rgb), 0.11), transparent 25%),
-    radial-gradient(circle at 58% 78%, rgba(93, 165, 255, 0.07), transparent 28%);
+  background-image:
+    var(--star-layer),
+    radial-gradient(circle at 18% 18%, var(--aurora-1), transparent 26%),
+    radial-gradient(circle at 80% 12%, var(--aurora-2), transparent 25%),
+    radial-gradient(circle at 58% 78%, var(--aurora-3), transparent 28%),
+    radial-gradient(130% 62% at 50% 116%, var(--horizon), transparent 60%);
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 340px 340px, auto, auto, auto, auto;
   transform: translate3d(var(--ambient-x), var(--ambient-y), 0) scale(1.02);
+  animation: layl-breathe var(--dur-aurora) ease-in-out infinite alternate;
   transition: transform 800ms var(--ease-out);
+}
+
+/* The sky breathes: a slow drift + rescale + faint opacity shimmer.
+   Steered live by the existing pointer-parallax --ambient-x/--ambient-y.
+   Compositor-only (transform/opacity) so it never affects CLS or LCP. */
+@keyframes layl-breathe {
+  0% {
+    transform: translate3d(var(--ambient-x), var(--ambient-y), 0) scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(calc(var(--ambient-x) + 16px), calc(var(--ambient-y) - 12px), 0) scale(1.05);
+    opacity: 0.9;
+  }
 }
 
 body::after {
@@ -507,10 +565,14 @@ section { padding-block: clamp(72px, 8vw, 112px); }
   border: 1px solid rgba(var(--accent-rgb), 0.13);
   border-radius: 50%;
   background:
+    radial-gradient(circle at 50% 0.8%, rgba(var(--accent-rgb), 0.95) 0 2.5px, rgba(var(--accent-rgb), 0.5) 4px, transparent 11px),
     radial-gradient(circle at 50% 50%, transparent 58%, rgba(var(--accent-rgb), 0.09) 58.5%, transparent 59.5%),
     conic-gradient(from 20deg, transparent 0 12%, rgba(var(--accent-rgb), 0.13) 13%, transparent 14% 46%, rgba(var(--accent-2-rgb), 0.1) 47%, transparent 48% 100%);
   box-shadow: 0 0 120px rgba(var(--accent-rgb), 0.08) inset;
   pointer-events: none;
+  /* The luminous node: a bright dot pinned to the top of the ring; the ring's
+     existing rotation carries it around the orbit — no extra markup, fully
+     responsive, and it inherits the drifting --iris. */
   animation: afterlight-orbit 28s linear infinite;
 }
 
@@ -563,7 +625,7 @@ section { padding-block: clamp(72px, 8vw, 112px); }
   height: 7px;
   margin-right: 9px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--iris, var(--accent));
   box-shadow: 0 0 16px rgba(var(--accent-rgb), 0.9);
 }
 
@@ -583,6 +645,32 @@ section { padding-block: clamp(72px, 8vw, 112px); }
   font-style: italic;
   font-variation-settings: 'opsz' 72, 'wght' 560;
   letter-spacing: -0.045em;
+}
+
+/* Iridescent "love": a large-display accent->accent-2 gradient that drifts
+   with --iris. Solid var(--accent) fallback where background-clip:text is
+   unsupported; both stops are AA-safe accents on the display size. */
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .hero h1 .accent {
+    background: linear-gradient(96deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+
+/* Dark-only glow. Gated so the no-JS + light-OS path (which renders the
+   light palette but never sets data-theme) does NOT receive it — a bare
+   :not([data-theme="light"]) would wrongly match there. */
+[data-theme="dark"] .hero h1 .accent {
+  filter: drop-shadow(0 0 22px rgba(var(--accent-rgb), 0.22));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .hero h1 .accent {
+    filter: drop-shadow(0 0 22px rgba(var(--accent-rgb), 0.22));
+  }
 }
 
 .hero > .container > p {
@@ -635,6 +723,8 @@ section { padding-block: clamp(72px, 8vw, 112px); }
   font-variation-settings: 'opsz' 72, 'wght' 590;
   letter-spacing: -0.06em;
   line-height: 0.9;
+  /* Tabular figures keep the JS count-up from shifting width (CLS-safe). */
+  font-variant-numeric: tabular-nums;
 }
 
 .stat-label {
@@ -768,6 +858,29 @@ section { padding-block: clamp(72px, 8vw, 112px); }
 
 .rotator-chip:hover { border-color: var(--accent); transform: translateY(-2px); }
 .rotator-chip.is-switching { opacity: 0.45; }
+
+/* Doha telemetry — the observatory's instrument label. A real, static
+   monospace readout of Doha's coordinates beneath the hero phone. Decorative
+   framing for the brand, not body copy; --text-muted keeps it AA at this size. */
+.telemetry {
+  margin: 14px auto 0;
+  max-width: 100%;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-variant-numeric: tabular-nums slashed-zero;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.telemetry .tel-sep {
+  padding-inline: 0.55em;
+  color: var(--iris, var(--accent));
+  opacity: 0.7;
+}
 
 /* About */
 .about { padding-top: 48px; }
@@ -978,7 +1091,7 @@ section { padding-block: clamp(72px, 8vw, 112px); }
   position: absolute;
   inset: 0 0 auto;
   height: 3px;
-  background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb), 0.92), transparent);
+  background: linear-gradient(90deg, transparent, var(--iris, var(--accent)), transparent);
   opacity: 0.66;
 }
 
@@ -1303,7 +1416,7 @@ a.badge:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(var(--
   left: 24px;
   width: 36px;
   height: 2px;
-  background: var(--accent);
+  background: var(--iris, var(--accent));
   box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.55);
 }
 
@@ -1962,6 +2075,17 @@ main { view-transition-name: page-content; }
 }
 
 @media (forced-colors: active) {
+  /* Drop the decorative night sky so the forced palette stays clean. */
+  body::before,
+  body::after { display: none; }
+  /* The gradient-clip hero word must fall back to the system text color,
+     or its transparent fill would leave it invisible. */
+  .hero h1 .accent {
+    background: none;
+    -webkit-text-fill-color: CanvasText;
+    color: CanvasText;
+    filter: none;
+  }
   .app-card,
   .value-card,
   .feature-item,

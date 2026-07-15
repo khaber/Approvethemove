@@ -72,7 +72,7 @@ brand mark or social card changes.
 ## Cache busting (important)
 
 `style.css` and `main.js` are referenced with a version query, e.g.
-`/css/style.css?v=20260715`. GitHub Pages serves these files with a
+`/css/style.css?v=20260715b`. GitHub Pages serves these files with a
 ~10‑minute CDN/browser cache and the filename never changes, so a
 returning visitor can otherwise load **new HTML against an old cached
 stylesheet** (broken layout) during a deploy.
@@ -83,7 +83,7 @@ One command:
 
 ```bash
 cd docs && grep -rl '?v=' --include='*.html' . | \
-  xargs sed -i 's/?v=20260715/?v=NEWDATE/g'
+  xargs sed -i 's/?v=20260715b/?v=NEWDATE/g'
 ```
 
 ## Notes
