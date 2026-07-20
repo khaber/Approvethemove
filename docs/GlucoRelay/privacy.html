@@ -6,7 +6,7 @@
 <title>Privacy Policy — GlucoRelay | Approve The Move</title>
 <meta name="description" content="Privacy policy for GlucoRelay. We don't collect your data.">
 <link rel="canonical" href="https://approvethemove.com/GlucoRelay/privacy.html">
-<meta name="author" content="Yousif Ameen">
+<meta name="author" content="Approve The Move">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#070a12" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)">
@@ -73,7 +73,7 @@
   <div class="container">
     <div class="privacy-content">
       <h1>GlucoRelay &mdash; Privacy Policy</h1>
-      <p class="last-updated">Effective: April 19, 2026</p>
+      <p class="last-updated">Effective: April 19, 2026 &nbsp;|&nbsp; Last updated: July 21, 2026</p>
 
       <h2>Overview</h2>
       <p>GlucoRelay is an iPhone dashboard for continuous glucose monitor (CGM) data, built and published by Approve The Move. It connects to cloud services you already use with your CGM provider and displays the readings. We do not operate any servers and do not collect your personal data.</p>
@@ -87,25 +87,25 @@
 
       <h2>Data Storage</h2>
       <ul>
-        <li><strong>On your device only.</strong> Glucose data, settings, and preferences are stored locally on your iPhone, Apple Watch, and in your private iCloud container.</li>
-        <li><strong>Authentication credentials</strong> (CGM account tokens) are stored in the iOS Keychain, Apple's encrypted credential storage.</li>
-        <li><strong>No server.</strong> GlucoRelay does not operate any backend infrastructure. Data flows directly between your device and your CGM provider's cloud service.</li>
+        <li><strong>On your device.</strong> Glucose data, settings, and preferences are stored locally on your iPhone and Apple Watch. GlucoRelay does not keep your glucose history in a private iCloud container; the only time data leaves your device through iCloud is the optional Follower Sharing feature described below.</li>
+        <li><strong>Sign-in credentials</strong> for the CGM source you connect &mdash; which, depending on the provider, includes your account <strong>password</strong> as well as any session tokens &mdash; are stored in the iOS <strong>Keychain</strong>, Apple's encrypted credential storage. They stay on your device and are sent only to your CGM provider's own service to sign in; they are never sent to us. Some providers (such as Dexcom Share and LibreLinkUp) require the app to re-authenticate with your password when a session expires, which is why the password itself is retained.</li>
+        <li><strong>No server of ours.</strong> GlucoRelay does not operate any backend infrastructure. Data flows directly between your device and your CGM provider's cloud service.</li>
+        <li><strong>Calendar (optional, CarPlay).</strong> If you enable the CarPlay calendar feature, GlucoRelay writes your latest glucose readings into a dedicated on-device "GlucoRelay" calendar so they can appear on CarPlay. It uses write-only calendar access, prefers a local (non-iCloud) calendar, and never reads your other calendar events.</li>
       </ul>
 
       <h2>Follower Sharing (Optional)</h2>
-      <p>If you enable Follower Sharing, glucose readings are uploaded to Apple's CloudKit public database with an 8-character share code. Only people you give the share code to can access your readings. Shared readings are automatically deleted after 24 hours.</p>
+      <p>If you enable Follower Sharing, your glucose readings and a display name you set are uploaded to Apple's CloudKit <strong>public</strong> database under an 8-character share code. Access is protected by the secrecy of that code &mdash; anyone who has the code can read what you share, so treat it like a password and only give it to people you trust. Shared readings are set to expire after about 24 hours and are cleaned up periodically; because there is no server we run, cleanup happens opportunistically during later uploads rather than at an exact time. Stopping sharing deactivates your code so no new readings are published. You can also delete shared data sooner by turning the feature off and removing the app.</p>
 
       <h2>Data We Do NOT Collect</h2>
       <ul>
         <li>No personal information (name, email, phone)</li>
         <li>No analytics, tracking, or advertising frameworks</li>
         <li>No telemetry</li>
-        <li>No CGM account passwords (only encrypted session tokens)</li>
-        <li>No data sold or shared with third parties</li>
+        <li>No data sold or shared with third parties (your CGM sign-in credentials go only to your own CGM provider; see Data Storage)</li>
       </ul>
 
       <h2>Third-Party Services</h2>
-      <p>GlucoRelay connects only to CGM cloud services operated by their respective companies (Dexcom, Abbott, Medtronic, Medtrum). Your use of those services is governed by their privacy policies. GlucoRelay only reads data and never writes or modifies your CGM data.</p>
+      <p>GlucoRelay connects only to the CGM cloud service you choose, operated by its respective company (Dexcom, Abbott/FreeStyle LibreLinkUp, Medtronic CareLink, Medtrum), or to your own Nightscout server if you configure one. Your use of those services is governed by their own privacy policies. GlucoRelay only reads data and never writes or modifies your CGM data.</p>
 
       <h2>Debug Reports (TestFlight)</h2>
       <p>If you use the &ldquo;Send Feedback&rdquo; feature, a debug report is generated containing device info, connection status, and recent glucose readings. This report is shared only when you explicitly choose to send it. Passwords and authentication tokens are never included.</p>

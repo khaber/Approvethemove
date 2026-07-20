@@ -6,7 +6,7 @@
 <title>Privacy Policy &amp; Terms of Use — ATM Flow | Approve The Move</title>
 <meta name="description" content="Privacy policy and terms of use for ATM Flow by Approve The Move. Your financial data stays on your device and in your iCloud — we never see it.">
 <link rel="canonical" href="https://approvethemove.com/flow/privacy.html">
-<meta name="author" content="Yousif Ameen">
+<meta name="author" content="Approve The Move">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#070a12" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)">
@@ -74,7 +74,7 @@
     <div class="privacy-content">
 
       <h1>ATM Flow — Privacy Policy &amp; Terms of Use</h1>
-      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: April 13, 2026</p>
+      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: July 21, 2026</p>
 
       <p class="lead">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for ATM Flow. Please read both sections carefully before using the App.</p>
 
@@ -100,7 +100,7 @@
         <li><strong>No server-side communication</strong> — The App does not connect to any external server, cloud service, or remote endpoint operated by us or any third party. The only network activity is Apple CloudKit sync to your own private iCloud container (see Section 4).</li>
         <li><strong>No in-app purchases</strong> — No financial, billing, or payment information is collected or processed.</li>
         <li><strong>No location data</strong> — The App does not request, access, or store your geographic location.</li>
-        <li><strong>No contacts</strong> — The App does not access your contacts, microphone, or any device sensor beyond haptic feedback and the camera/photo library (used solely for attaching photos to transactions; see Section 5).</li>
+        <li><strong>No contacts</strong> — The App does not access your contacts, microphone, camera, or any device sensor beyond haptic feedback. Attaching a receipt photo to a transaction uses the system photo picker, which returns only the image you choose and grants the App no access to the rest of your photo library (see Section 5).</li>
       </ul>
 
       <!-- 3. On-Device Storage -->
@@ -110,12 +110,14 @@
       <h3>3.1 UserDefaults</h3>
       <p>A small amount of non-personal preference data is stored using Apple's <strong>UserDefaults</strong> system:</p>
       <ul>
-        <li>Theme preference (System, Light, or Dark)</li>
-        <li>Accent color selection</li>
+        <li>Theme and accent color preferences</li>
         <li>Haptic feedback preference</li>
-        <li>App lock setting (whether biometric authentication is enabled)</li>
+        <li>App lock setting (whether biometric authentication is enabled) and auto-lock timing</li>
+        <li>Base currency and number-formatting preference</li>
+        <li>Reminder settings (whether a daily reminder is enabled and its time)</li>
+        <li>Import column-mapping templates you save, and internal state such as onboarding completion</li>
       </ul>
-      <p>This data is declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
+      <p>A small subset of these preferences (such as your base currency and onboarding state) may sync across your own devices via Apple's iCloud key-value store; the rest stay on the device. This data is declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
 
       <h3>3.2 SwiftData</h3>
       <p>Your financial data is stored on your device using Apple's <strong>SwiftData</strong> framework, a local database that operates entirely within the App's sandbox. Data stored in SwiftData includes:</p>
@@ -127,9 +129,9 @@
         <li>Categories and tags</li>
         <li>Recurring transactions</li>
         <li>Transaction templates</li>
-        <li>Photos attached to transactions (stored as local files; see Section 5)</li>
+        <li>A reference to any receipt photo you attach (the image file itself is stored separately on-device; see Section 5)</li>
       </ul>
-      <p>All of this data exists exclusively on your device and, if you have iCloud enabled, in your personal iCloud container (see Section 4). We have no ability to read, access, or retrieve any of this data.</p>
+      <p>The records above exist on your device and, if you have iCloud enabled, in your personal iCloud container (see Section 4). Receipt photo <em>files</em> are the exception — they are kept only in the App's local storage and are not synced to iCloud (see Section 5). We have no ability to read, access, or retrieve any of this data.</p>
 
       <p><strong>How to delete:</strong> You can delete any individual record (account, transaction, budget, goal, category, tag, recurring transaction, or template) at any time within the App. You can erase all locally stored data by deleting ATM Flow from your device. No residual data is retained after uninstallation. iCloud data can be managed through your device's iCloud storage settings.</p>
 
@@ -148,9 +150,8 @@
       <p>When iCloud sync is enabled on your device, the following data is synced between your own devices:</p>
       <ul>
         <li>All SwiftData records (accounts, transactions, budgets, goals, categories, tags, recurring transactions, templates)</li>
-        <li>Photos attached to transactions</li>
       </ul>
-      <p>No other data (contacts, location, browsing history, device information, etc.) is ever transmitted.</p>
+      <p><strong>Receipt photo files are not synced.</strong> They remain only in the App's local storage on the device where you added them, so if you reinstall the App or set it up on another device, your transaction records return via iCloud but their attached photos do not. No other data (contacts, location, browsing history, device information, etc.) is ever transmitted.</p>
 
       <h3>4.3 Encryption</h3>
       <p>All data synced through CloudKit is encrypted <strong>in transit</strong> using TLS and <strong>at rest</strong> on Apple's servers. For more information on Apple's data protection practices, see <a href="https://support.apple.com/en-us/102651">Apple's iCloud security overview</a>.</p>
@@ -158,13 +159,13 @@
       <h3>4.4 Disabling iCloud Sync</h3>
       <p>You can disable iCloud sync for ATM Flow at any time through your device's Settings > Apple ID > iCloud. When sync is disabled, your data remains stored locally on your device only. Existing iCloud data can be deleted through your iCloud storage settings.</p>
 
-      <!-- 5. Photos &amp; Camera -->
-      <h2>5. Photos &amp; Camera</h2>
-      <p>ATM Flow allows you to attach photos to transactions (e.g., photos of receipts). This feature is entirely optional.</p>
+      <!-- 5. Photos -->
+      <h2>5. Photos</h2>
+      <p>ATM Flow allows you to attach a photo to a transaction (e.g., a photo of a receipt). This feature is entirely optional.</p>
       <ul>
-        <li><strong>Photo storage</strong> — Attached photos are stored locally on your device within the App's sandbox and, if iCloud sync is enabled, in your private CloudKit container.</li>
+        <li><strong>Photo storage</strong> — Attached photos are stored locally on your device within the App's sandbox. They are <strong>not</strong> synced to iCloud/CloudKit and are not backed up by the App to any other device (see Section 4).</li>
         <li><strong>No upload to external servers</strong> — Photos are never uploaded to any server we operate or any third-party service.</li>
-        <li><strong>Camera and photo library access</strong> — The App will request your permission before accessing your camera or photo library. You can revoke this permission at any time through your device's Settings > ATM Flow.</li>
+        <li><strong>Photo library access</strong> — Photos are chosen through Apple's system photo picker, which runs outside the App and hands back only the single image you select. The App is never granted access to your broader photo library, so there is no library permission to review or revoke. The App does not use the camera.</li>
       </ul>
 
       <!-- 6. Biometric Authentication (Face ID / Touch ID) -->
@@ -176,13 +177,14 @@
         <li>Biometric data never leaves the Secure Enclave, never reaches the App's process, and is never transmitted to any server.</li>
       </ul>
 
-      <!-- 7. CSV Import -->
-      <h2>7. CSV Import</h2>
-      <p>ATM Flow allows you to import financial data from CSV files stored on your device.</p>
+      <!-- 7. Statement &amp; File Import -->
+      <h2>7. Statement &amp; File Import</h2>
+      <p>ATM Flow allows you to import transactions from files stored on your device — including CSV, tab-separated and plain-text files, spreadsheets (.xlsx), and bank or credit-card statements in PDF form (including password-protected PDFs). Some statement formats are read using on-device text recognition (Apple's Vision framework) and PDF parsing (PDFKit).</p>
       <ul>
-        <li><strong>Local processing only</strong> — CSV files are read and processed entirely on your device. No file data is uploaded to any external server.</li>
+        <li><strong>Local processing only</strong> — Files are read and processed entirely on your device, including any text recognition. No file data, statement content, or recognized text is uploaded to any external server.</li>
         <li>The imported data is stored in your local SwiftData database (and synced to your private iCloud container if iCloud sync is enabled).</li>
-        <li>The original CSV file remains unchanged on your device; the App only reads from it.</li>
+        <li>The original file remains unchanged on your device; the App only reads from it.</li>
+        <li><strong>Passwords for protected PDFs</strong> — If you choose to save the password for a password-protected statement so you don't have to re-enter it, that password is stored in the device <strong>Keychain</strong>, protected behind Face ID / Touch ID, and never leaves your device or reaches us. You can remove saved passwords by deleting the App.</li>
       </ul>
 
       <!-- 8. Third-Party Services &amp; SDKs -->
@@ -224,6 +226,21 @@
           <td>Face ID / Touch ID for app lock</td>
           <td>None (biometric data stays in Secure Enclave)</td>
         </tr>
+        <tr>
+          <td>PDFKit</td>
+          <td>Reading PDF statements you import</td>
+          <td>None (on-device only)</td>
+        </tr>
+        <tr>
+          <td>Vision</td>
+          <td>On-device text recognition for scanned/PDF statements</td>
+          <td>None (on-device only)</td>
+        </tr>
+        <tr>
+          <td>Security (Keychain)</td>
+          <td>Storing saved statement-PDF passwords behind Face ID / Touch ID</td>
+          <td>None (device-only, never transmitted)</td>
+        </tr>
       </table>
       <p>We do not use Firebase, Google Analytics, Facebook SDK, AdMob, Crashlytics, Sentry, Amplitude, Mixpanel, or any other third-party data collection tool.</p>
 
@@ -239,7 +256,7 @@
       <ul>
         <li><strong>COPPA</strong> (Children's Online Privacy Protection Act, United States) — We do not knowingly collect personal information from children under the age of 13. Since the App collects no personal information from anyone, no COPPA violation can occur.</li>
         <li><strong>GDPR-K / Age of Digital Consent</strong> (European Economic Area) — We do not process personal data of minors under 16 (or the lower age set by individual EEA member states). Since no personal data is processed, no parental consent is required.</li>
-        <li><strong>Apple's Guidelines for Apps Used by Children</strong> — The App contains no data collection, no third-party analytics, no advertising, and no external links within the App experience.</li>
+        <li><strong>Apple's Guidelines for Apps Used by Children</strong> — The App contains no data collection, no third-party analytics, and no advertising. The only external links are in the Settings screen (rate the app on the App Store, view this privacy policy, and visit our website).</li>
       </ul>
       <p>Parents, guardians, and educators can allow children to use ATM Flow with full confidence that no personal information is collected, stored, or shared.</p>
 
@@ -288,7 +305,7 @@
         <li><strong>Sandboxed storage</strong> — On-device data (both UserDefaults and SwiftData) is stored within the App's iOS sandbox, which is isolated from other apps and protected by the operating system.</li>
         <li><strong>Secure biometric authentication</strong> — Face ID and Touch ID data is processed exclusively within the Secure Enclave hardware processor and never exposed to the App or any external system.</li>
         <li><strong>No network exposure</strong> — The App makes no internet connections to any server we operate, eliminating the risk of remote data breaches, man-in-the-middle attacks, or unauthorized server access. CloudKit sync is handled entirely by Apple's infrastructure.</li>
-        <li><strong>No persistent sensitive data</strong> — No passwords, tokens, credentials, or third-party financial data are ever stored or processed.</li>
+        <li><strong>Sensitive data kept in the Keychain</strong> — The App stores no account passwords or login credentials of any kind, because it has no accounts or logins. The only secret it can store is a password you explicitly choose to save for a protected statement PDF, which is held in the device Keychain behind Face ID / Touch ID and never transmitted.</li>
       </ul>
 
       <!-- 13. Data Retention -->
@@ -311,9 +328,14 @@
           <td>Until deleted by user or App is removed</td>
         </tr>
         <tr>
-          <td>Transaction photos</td>
-          <td>Device (local files) + iCloud (CloudKit)</td>
+          <td>Receipt photos</td>
+          <td>Device (local files only — not synced to iCloud)</td>
           <td>Until deleted by user or App is removed</td>
+        </tr>
+        <tr>
+          <td>Saved statement-PDF passwords</td>
+          <td>Device (Keychain, Face ID / Touch ID protected)</td>
+          <td>Until removed by user or App is deleted</td>
         </tr>
       </table>
       <p>When you delete the App, all local data is permanently removed from your device by the operating system. iCloud data can be managed and deleted through your device's Settings > Apple ID > iCloud > Manage Storage.</p>
@@ -442,7 +464,7 @@
       <ul>
         <li>We will update the "Last updated" date at the top of this page.</li>
         <li>For material changes, we will notify you through the App before the changes take effect.</li>
-        <li>The updated document will be posted at this URL: <a href="https://approvethemove.com/flow/privacy">approvethemove.com/flow/privacy</a></li>
+        <li>The updated document will be posted at this URL: <a href="https://approvethemove.com/flow/privacy.html">approvethemove.com/flow/privacy.html</a></li>
       </ul>
       <p>Your continued use of the App after changes are posted constitutes acceptance of the updated terms. If you disagree with any changes, your sole remedy is to stop using the App and delete it from your device.</p>
 

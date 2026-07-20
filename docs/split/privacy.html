@@ -6,7 +6,7 @@
 <title>Privacy Policy &amp; Terms of Use — ATM Split | Approve The Move</title>
 <meta name="description" content="Privacy policy and terms of use for ATM Split by Approve The Move. We respect your privacy and do not collect personal data.">
 <link rel="canonical" href="https://approvethemove.com/split/privacy.html">
-<meta name="author" content="Yousif Ameen">
+<meta name="author" content="Approve The Move">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#070a12" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)">
@@ -74,7 +74,7 @@
     <div class="privacy-content">
 
       <h1>ATM Split — Privacy Policy &amp; Terms of Use</h1>
-      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: April 13, 2026</p>
+      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: July 21, 2026</p>
 
       <p class="lead">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for ATM Split. Please read both sections carefully before using the App.</p>
 
@@ -125,6 +125,7 @@
         <li>Theme preference (System, Light, or Dark)</li>
         <li>Accent color selection</li>
         <li>Haptic feedback preference</li>
+        <li>A cached copy of the most recently fetched exchange rates, kept so conversions still work offline (contains only public rate numbers, no personal data)</li>
       </ul>
 
       <p>Both storage mechanisms are declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
@@ -139,8 +140,8 @@
         <li><strong>Endpoint:</strong> The App retrieves exchange rate data from <strong>open.er-api.com</strong>, a public currency exchange rate API.</li>
         <li><strong>Data sent:</strong> The request contains only the base currency code (e.g., "USD", "QAR") as a URL path parameter. <strong>No personal data, device identifiers, IP-based tracking, or user information of any kind is included in the request.</strong></li>
         <li><strong>Data received:</strong> The response contains only currency exchange rate numbers. No tracking cookies, tokens, or user-identifying data are returned.</li>
-        <li><strong>Frequency:</strong> Requests are made only when needed for currency conversion and are not made on a background schedule.</li>
-        <li><strong>Offline use:</strong> The App is fully functional offline for single-currency groups. Exchange rate fetching is only triggered when multi-currency support is used.</li>
+        <li><strong>Frequency:</strong> A refresh is triggered when you open the add- or edit-expense screen, so up-to-date rates are ready if you enter a foreign-currency amount. Requests are never made on a background schedule, and the most recent rates are cached for reuse.</li>
+        <li><strong>Offline use:</strong> The App remains functional offline: if a rate request fails or you have no connection, it falls back to the last cached rates (and a set of rates bundled with the App). Single-currency groups never need a rate at all.</li>
       </ul>
 
       <h3>4.2 No Other Network Communication</h3>
@@ -152,7 +153,7 @@
       <ul>
         <li><strong>Generated locally:</strong> The CSV file is created entirely on your device. No data is sent to any server during generation.</li>
         <li><strong>Shared via iOS share sheet:</strong> When you export, the standard iOS share sheet is presented, giving you full control over where the file is sent (AirDrop, Files, email, etc.). We do not control, intercept, or log your sharing choice.</li>
-        <li><strong>No copies retained:</strong> The App does not retain a copy of exported CSV files. Once the share sheet is dismissed, the temporary file is discarded.</li>
+        <li><strong>Written to temporary storage:</strong> The CSV is written into the App's temporary directory so it can be handed to the share sheet. It is never uploaded anywhere, and iOS is free to clear the App's temporary directory automatically. Deleting the App removes any such files immediately.</li>
       </ul>
 
       <!-- 6. Third-Party Services &amp; SDKs -->

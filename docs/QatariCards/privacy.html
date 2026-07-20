@@ -6,7 +6,7 @@
 <title>Privacy Policy &amp; Terms of Use — Qatari Cards | Approve The Move</title>
 <meta name="description" content="Privacy policy and terms of use for Qatari Cards by Approve The Move. We respect your privacy and do not collect personal data.">
 <link rel="canonical" href="https://approvethemove.com/QatariCards/privacy.html">
-<meta name="author" content="Yousif Ameen">
+<meta name="author" content="Approve The Move">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#070a12" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)">
@@ -74,7 +74,7 @@
     <div class="privacy-content">
 
       <h1>Qatari Cards — Privacy Policy &amp; Terms of Use</h1>
-      <p class="last-updated">Effective date: April 9, 2026 &nbsp;|&nbsp; Last updated: May 2026</p>
+      <p class="last-updated">Effective date: April 9, 2026 &nbsp;|&nbsp; Last updated: July 21, 2026</p>
 
       <p class="lead">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for Qatari Cards. Please read both sections carefully before using the App.</p>
 
@@ -110,9 +110,10 @@
       <ul>
         <li>Display name (the player name you choose, used only within the App)</li>
         <li>A randomly generated unique identifier (UUID) used solely to identify your device during local multiplayer sessions</li>
-        <li>Theme preference (System, Light, or Dark)</li>
-        <li>Accent color selection</li>
+        <li>Theme and selected card-table appearance, preferred language, and a colorblind-friendly suit-symbols option</li>
         <li>Game settings: AI difficulty, AI speed, sound effects, haptic feedback, and card play confirmation preferences</li>
+        <li>Your achievements and play statistics, daily-challenge history and streak, and your donation-consent choices</li>
+        <li>A short-lived "resume" record so an interrupted multiplayer game can be rejoined</li>
       </ul>
       <p>Active game state — your cards, bids, tricks, and scores — exists in memory during gameplay. In addition, recent versions of the App can save a <strong>replay</strong> of a finished game on your device so you can review or share it. Replays contain only gameplay (the cards, bids, plays, and result) plus your chosen display name; they are stored privately within the App's sandbox, only the most recent games are kept, you can delete them at any time from within the App, and — like all local data — they <strong>never leave your device unless you explicitly share or donate them</strong>. There is no automatic cloud sync of your games.</p>
       <p>This data is declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
@@ -185,8 +186,19 @@
           <td>Haptic feedback</td>
           <td>None</td>
         </tr>
+        <tr>
+          <td>GameKit (Game Center)</td>
+          <td>Achievements and leaderboards</td>
+          <td>Handled by Apple's Game Center (see below)</td>
+        </tr>
+        <tr>
+          <td>CloudKit</td>
+          <td>Storing anonymous game replays you choose to donate</td>
+          <td>Only if you opt in to donate (see Section 3)</td>
+        </tr>
       </table>
       <p>We do not use Firebase, Google Analytics, Facebook SDK, Unity, AdMob, Crashlytics, Sentry, Amplitude, Mixpanel, or any other third-party data collection tool.</p>
+      <p><strong>Game Center.</strong> If you are signed in to Apple's Game Center, Qatari Cards reports achievement progress and scores to your Game Center account so your milestones are saved. This is an Apple service governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>; we do not receive or store your Game Center identity. You can disable Game Center for the app in iOS Settings.</p>
 
       <!-- 6. Apple's Data Practices -->
       <h2>6. Apple's Data Practices</h2>
@@ -247,13 +259,13 @@
       <ul>
         <li><strong>Encrypted multiplayer communications</strong> — All local multiplayer sessions use Apple's mandatory TLS encryption via MCSession, ensuring game data transmitted between devices cannot be intercepted.</li>
         <li><strong>Sandboxed storage</strong> — On-device preferences are stored within the App's iOS sandbox, which is isolated from other apps and protected by the operating system.</li>
-        <li><strong>Minimal network exposure</strong> — The App makes no internet connection except when you explicitly donate an anonymous replay (sent securely to Apple's CloudKit over TLS). It opens no other remote endpoints, greatly limiting the risk of remote data breaches or unauthorized server access.</li>
+        <li><strong>Minimal network exposure</strong> — The App's only internet use is Apple's Game Center (if you are signed in) and uploading an anonymous replay when you explicitly donate one (sent securely to Apple's CloudKit over TLS). It opens no other remote endpoints, greatly limiting the risk of remote data breaches or unauthorized server access.</li>
         <li><strong>No persistent sensitive data</strong> — No passwords, tokens, credentials, or financial data are ever stored or processed.</li>
       </ul>
 
       <!-- 10. Data Retention -->
       <h2>10. Data Retention</h2>
-      <p>We do not operate servers, databases, or cloud storage of any kind. We do not retain any user data. All data associated with Qatari Cards exists exclusively on your personal device:</p>
+      <p>We do not operate any account system or collect personal data. Almost all data associated with Qatari Cards exists exclusively on your personal device; the only exception is an anonymous game replay that you explicitly choose to donate, which is stored in Apple's CloudKit for AI training (see Section 3):</p>
       <table class="legal-table" aria-label="Data retention practices" tabindex="0">
         <tr>
           <th>Data Type</th>
@@ -266,9 +278,19 @@
           <td>Until App is deleted</td>
         </tr>
         <tr>
-          <td>Game state</td>
+          <td>Active game state (cards, bids, tricks, scores in progress)</td>
           <td>Device (RAM only)</td>
           <td>Current session only</td>
+        </tr>
+        <tr>
+          <td>Saved game replays</td>
+          <td>Device (files in the App's sandbox)</td>
+          <td>Only the most recent games are kept; until you delete them or the App</td>
+        </tr>
+        <tr>
+          <td>Donated replays (only if you opt in)</td>
+          <td>Apple CloudKit (anonymous, no personal identifiers)</td>
+          <td>Retained for AI training; see Section 3</td>
         </tr>
         <tr>
           <td>Multiplayer session data</td>
@@ -280,7 +302,7 @@
 
       <!-- 11. International Considerations -->
       <h2>11. International Considerations</h2>
-      <p>Qatari Cards is available worldwide through the Apple App Store. Since the App does not collect or transmit any data to external servers, there are no international data transfers to disclose. All data remains on your local device at all times, regardless of your geographic location.</p>
+      <p>Qatari Cards is available worldwide through the Apple App Store. The App does not collect personal data or transmit it to external servers. The only data that leaves your device is an anonymous replay you choose to donate (stored in Apple's CloudKit) and, if you are signed in, Game Center achievement progress handled by Apple — both processed through Apple's global infrastructure under Apple's Privacy Policy. Everything else remains on your local device at all times, regardless of your geographic location.</p>
 
       <!-- ======================================================== -->
       <!--                  PART II: TERMS OF USE                   -->
