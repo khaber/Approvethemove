@@ -74,7 +74,7 @@
     <div class="privacy-content">
 
       <h1>ATMChat — Privacy Policy &amp; Terms of Use</h1>
-      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: July 21, 2026</p>
+      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: July 27, 2026</p>
 
       <p class="lead">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for ATMChat. Please read both sections carefully before using the App.</p>
 
@@ -115,6 +115,7 @@
         <li>Display names and avatars of peers you have chatted with</li>
         <li>Per-conversation unread counts</li>
         <li>Your blocked-peers list (kept only on your device; never shared with anyone, including the blocked peer)</li>
+        <li>Your notification preferences (which alert types you receive) and per-chat mute list</li>
       </ul>
       <p>This data is declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
 
@@ -155,6 +156,7 @@
         <li><strong>Message reactions</strong> — Emoji reactions you attach to specific messages.</li>
         <li><strong>Delete requests</strong> — When you delete a message for all participants, a deletion signal is sent to connected peers to remove the message from their devices.</li>
         <li><strong>Display names and device UUIDs</strong> — So peers can identify each other during messaging sessions. UUIDs are randomly generated and not linked to any personal information.</li>
+        <li><strong>"Everyone Nearby" room messages</strong> — Text messages you send to the shared room are delivered to every connected device and relayed through intermediate ATMChat devices like any mesh traffic (see Sections 4.3 and 4.4). Anyone on the local mesh can read what you post in the room — treat it like speaking up in a shared space.</li>
       </ul>
       <p>All of this data is transmitted <strong>directly between devices over the local network</strong>. None of it is routed through the internet, stored on any server, or accessible to anyone other than the connected peers in the session.</p>
 
@@ -181,6 +183,7 @@
 
       <h3>4.6 Media &amp; File Privacy</h3>
       <p>Photos, videos, voice messages, contact cards, and files you send through ATMChat are transmitted directly to the recipient's device over the local peer-to-peer connection. They are never uploaded to any server, cloud storage service, or content delivery network. Once transmitted, the media exists only on the sender's and recipient's devices.</p>
+      <p>Photos you send from your library are downscaled and re-encoded on your device before sending, which also strips embedded metadata such as location (EXIF). If you choose to save received photos or videos to your own photo library, the App uses Apple's <strong>add-only</strong> photo access — it can add the items you explicitly save but can never read, browse, or access anything else in your library.</p>
 
       <!-- 5. Third-Party Services &amp; SDKs -->
       <h2>5. Third-Party Services &amp; SDKs</h2>
