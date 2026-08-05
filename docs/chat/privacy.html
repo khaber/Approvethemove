@@ -74,7 +74,7 @@
     <div class="privacy-content">
 
       <h1>ATMChat — Privacy Policy &amp; Terms of Use</h1>
-      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: July 27, 2026</p>
+      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: August 5, 2026</p>
 
       <p class="lead">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for ATMChat. Please read both sections carefully before using the App.</p>
 
@@ -102,6 +102,7 @@
         <li><strong>No in-app purchases</strong> — No financial, billing, or payment information is collected or processed.</li>
         <li><strong>No location data</strong> — The App does not request, access, or store your geographic location.</li>
       </ul>
+      <p><strong>We do not sell, rent, or trade any personal information — and we never could, because we never possess it.</strong> Your data lives on your device, not with us.</p>
 
       <!-- 3. On-Device Storage -->
       <h2>3. On-Device Storage</h2>
@@ -128,7 +129,7 @@
       </ul>
       <p>All ChatStorage data resides exclusively within the App's iOS sandbox on your device. It is never uploaded, synced, backed up to any cloud service, or transmitted to any server. The only time message content leaves your device is when it is sent directly to a nearby peer over the local network (see Section 4).</p>
 
-      <p><strong>How to delete:</strong> You can delete individual messages, clear entire conversations from within the App, or erase all locally stored data at any time by deleting ATMChat from your device. No residual data is retained after uninstallation.</p>
+      <p><strong>How to delete:</strong> You can delete individual messages, clear entire conversations from within the App, or remove the App's stored data at any time by deleting ATMChat from your device — iOS removes everything in the App's sandbox (message history, conversation list, and preferences) on uninstall. Two narrow exceptions, both standard iOS behavior: the random device UUID stored in the iOS Keychain (Section 3.1) may persist on the device after the App is deleted until it is removed, and device backups you made before deletion may retain copies of previously stored data. Neither of these ever reaches us.</p>
 
       <!-- 4. Local Networking &amp; Mesh Messaging -->
       <h2>4. Local Networking &amp; Mesh Messaging</h2>
@@ -136,10 +137,10 @@
 
       <h3>4.1 How It Works</h3>
       <ul>
-        <li><strong>No internet connection is used or required.</strong> All communication occurs directly between devices over local Wi-Fi and Bluetooth Low Energy (BLE). No data passes through our servers, Apple's servers, or any third-party relay.</li>
+        <li><strong>Messaging is fully peer-to-peer — no internet connection is used or required to send or receive messages.</strong> All messaging occurs directly between devices over local Wi-Fi and Bluetooth Low Energy (BLE). No message data passes through our servers, Apple's servers, or any third-party relay. The App's only internet access is the optional link-preview fetch performed on your device when a user shares a URL, as described in Section 2.</li>
         <li>The App uses Apple's <strong>Bonjour</strong> protocol (via MultipeerConnectivity) and <strong>BLE advertising</strong> (via CoreBluetooth) to discover nearby devices that are running ATMChat.</li>
         <li>Once peers discover each other, a direct connection is established. All subsequent data exchange occurs over this local peer-to-peer link.</li>
-        <li><strong>No message logs exist on any server.</strong> Because the App never connects to the internet and operates no backend infrastructure, there is no server that could store, log, intercept, or retain any of your messages. We have no ability to read, access, or recover your messages.</li>
+        <li><strong>No message logs exist on any server.</strong> Because messaging never touches the internet and we operate no backend infrastructure, there is no server that could store, log, intercept, or retain any of your messages. We have no ability to read, access, or recover your messages.</li>
       </ul>
 
       <h3>4.2 Data Transmitted During Sessions</h3>
@@ -175,7 +176,7 @@
         <li>Your messages never touch the internet, so they cannot be intercepted remotely — an eavesdropper would have to be physically nearby, within local Wi-Fi/Bluetooth range, while you chat.</li>
         <li>Within that local radio range, transmitted data is not encrypted. Treat ATMChat conversations like conversations in a shared physical space.</li>
         <li>We recommend not sending highly sensitive information (passwords, ID numbers, financial details) over any local mesh network, including ATMChat.</li>
-        <li>A future update may add transport encryption; if the trade-offs change, this policy will be updated accordingly (see Section 25).</li>
+        <li>A future update may add transport encryption; if the trade-offs change, this policy will be updated accordingly (see Section 31).</li>
       </ul>
 
       <h3>4.5 Session Lifecycle</h3>
@@ -255,7 +256,7 @@
       </ul>
       <p><strong>Since we do not collect, store, or process any personal data, there is no data for us to provide, correct, restrict, delete, port, or cease processing.</strong> Your local preferences and message history can be erased by deleting the App. If you believe we hold data about you in error, please contact us and we will investigate promptly.</p>
       <p><strong>Legal basis for processing:</strong> We do not process personal data. The on-device preference and message storage operates under <strong>legitimate interest</strong> (providing a functional messaging experience) and does not constitute data processing under GDPR as the data never leaves the device or reaches us.</p>
-      <p><strong>Data controller:</strong> Approve The Move (contact details in Section 14).</p>
+      <p><strong>Data controller:</strong> Approve The Move (contact details in Section 32).</p>
 
       <h3>8.2 California (CCPA / CPRA)</h3>
       <p>If you are a California resident, the <strong>California Consumer Privacy Act (CCPA)</strong> as amended by the <strong>California Privacy Rights Act (CPRA)</strong> grants you specific rights regarding personal information:</p>
@@ -285,6 +286,7 @@
         <li><strong>No persistent sensitive data</strong> — No passwords, tokens, credentials, or financial data are ever stored or processed.</li>
         <li><strong>Mesh relay hygiene</strong> — Messages routed through intermediate devices are forwarded in memory only; the relaying app never displays them and retains no copy after forwarding (see Section 4.3 for the honest limits of this).</li>
       </ul>
+      <p><strong>An honest note on security:</strong> no method of electronic storage or local wireless transmission is 100% secure, and we cannot and do not guarantee absolute security. Section 4.4 describes the App's transport-security model candidly. To the maximum extent permitted by applicable law, we are not liable for security incidents arising from circumstances beyond our reasonable control, including vulnerabilities in the underlying operating system, radio protocols, or your device.</p>
 
       <!-- 10. Data Retention -->
       <h2>10. Data Retention</h2>
@@ -321,7 +323,7 @@
           <td>Active session only</td>
         </tr>
       </table>
-      <p>When you delete the App, all associated data is permanently removed from your device by the operating system.</p>
+      <p>When you delete the App, iOS permanently removes all data in the App's sandbox from your device. As is standard iOS behavior, the random device UUID stored in the iOS Keychain (Section 3.1) may persist on the device until it is removed, and device backups made before deletion may retain copies of previously stored data. Neither is ever accessible to us.</p>
 
       <!-- 11. International Considerations -->
       <h2>11. International Considerations</h2>
@@ -366,84 +368,126 @@
       <!-- 16. User Content -->
       <h2>16. User Content</h2>
       <p>ATMChat enables you to send messages, photos, videos, voice messages, files, and other content ("User Content") to nearby peers. You retain full ownership of all User Content you create and transmit through the App.</p>
-      <p>Because ATMChat operates without servers or cloud infrastructure, we never receive, store, access, or have any control over your User Content. You are solely responsible for the content you transmit to other users.</p>
+      <p><strong>You are solely responsible for all User Content you create, send, or share through the App</strong>, and for ensuring that your User Content — and your use of the App generally — complies with all applicable laws and regulations and does not infringe or violate the rights of any third party.</p>
+      <p>Because ATMChat operates entirely peer-to-peer, without servers or cloud infrastructure, we never receive, store, host, access, or moderate your User Content, and <strong>no capability to monitor User Content exists</strong> — there is simply no server through which it passes. To the maximum extent permitted by applicable law, we have no knowledge of, no control over, and no responsibility or liability for any User Content that you or any other user sends, receives, or is exposed to through the App. Content you receive comes from the nearby people you chat with, not from us.</p>
       <p><strong>Blocking &amp; reporting:</strong> The App includes built-in safety tools — you can block any peer (chat options menu, managed under Settings → Blocked; the App then drops all traffic from that peer) and report objectionable messages (long-press → Report), which sends the report to <a href="mailto:support@approvethemove.com">support@approvethemove.com</a>. Because there are no servers, we cannot remotely delete content from other people's devices, but we do review reports and may act on them, including cooperating with lawful requests from authorities.</p>
 
       <!-- 17. Message Delivery Disclaimer -->
       <h2>17. Message Delivery Disclaimer</h2>
-      <p><strong>ATMChat is an offline, peer-to-peer mesh messaging application. Message delivery is not guaranteed.</strong> Due to the inherent nature of local mesh networking:</p>
+      <p><strong>ATMChat is an offline, peer-to-peer mesh messaging application. Message delivery is best-effort only and is not guaranteed.</strong> Due to the inherent nature of local mesh networking:</p>
       <ul>
         <li><strong>Range limitations</strong> — Messages can only be delivered to devices within range of your local Wi-Fi or Bluetooth Low Energy signal, either directly or via intermediate mesh devices.</li>
         <li><strong>Mesh availability</strong> — If there is no connected path of ATMChat devices between you and the intended recipient, messages cannot be delivered.</li>
         <li><strong>Session dependency</strong> — Messages can only be transmitted while both sender and recipient (or a connected mesh path) have the App actively running. There is no server to queue or store messages for later delivery.</li>
         <li><strong>Environmental factors</strong> — Physical obstacles, interference, device settings, and distance may affect connection quality and message delivery reliability.</li>
         <li><strong>Local queuing only</strong> — If a recipient is temporarily out of range, the App keeps the message in an on-device queue and retries automatically when that peer reconnects locally. There is no internet or server path for delivery, so a message to a peer who never comes back into range will never be delivered.</li>
+        <li><strong>Best-effort delivery</strong> — Messages may be lost, delayed, duplicated, or fail to arrive without notice to you. If you share session access — for example by posting in the "Everyone Nearby" room or by chatting in a crowded environment — messages may also be received by unintended nearby peers.</li>
       </ul>
-      <p>You acknowledge and agree that ATMChat is not a substitute for reliable, guaranteed communication services. Do not rely on ATMChat for time-sensitive, emergency, or critical communications.</p>
+      <p><strong>ATMCHAT IS NOT DESIGNED, INTENDED, OR SUITABLE FOR EMERGENCY COMMUNICATIONS.</strong> Never rely on ATMChat to contact emergency services, to summon help, or in any situation where a failure or delay in delivering a message could cause harm to any person or property. Always use a reliable, connected communication service (such as a telephone call to your local emergency number) for emergencies. You acknowledge and agree that ATMChat is not a substitute for reliable, guaranteed communication services.</p>
 
-      <!-- 18. Disclaimer of Warranties -->
-      <h2>18. Disclaimer of Warranties</h2>
-      <p><strong>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</strong></p>
-      <p>To the fullest extent permitted by applicable law, we disclaim all warranties, including but not limited to:</p>
+      <!-- 18. Assumption of Risk -->
+      <h2>18. Assumption of Risk</h2>
+      <p>By using ATMChat, you expressly acknowledge, understand, and voluntarily accept the risks inherent in offline, peer-to-peer mesh messaging, including that:</p>
       <ul>
-        <li>Implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</li>
-        <li>Warranties that the App will be uninterrupted, error-free, secure, or free of viruses or other harmful components.</li>
-        <li>Warranties regarding the accuracy, reliability, or completeness of any content within the App.</li>
-        <li>Warranties that messages will be delivered successfully, completely, or in a timely manner.</li>
+        <li>Messages may be lost, delayed, duplicated, or never delivered, and there is no server to recover them (Section 17);</li>
+        <li>Local peer-to-peer sessions are not encrypted in transit (Section 4.4), and a technically sophisticated party within physical radio range could in principle intercept transmitted data;</li>
+        <li>Messages may reach unintended nearby peers, particularly in the shared "Everyone Nearby" room or in dense environments;</li>
+        <li>Content you receive comes from other nearby users, not from us, and may be inaccurate, offensive, or unlawful — the blocking and reporting tools (Section 16) are your first line of defense;</li>
+        <li>Beta builds may behave unpredictably, and locally stored data may be lost (Section 20).</li>
+      </ul>
+      <p>To the maximum extent permitted by applicable law, you assume all risks arising from these characteristics of the App. Some jurisdictions do not allow certain assumptions of risk or waivers of liability, so some of the above may not apply to you.</p>
+
+      <!-- 19. No Professional Advice -->
+      <h2>19. No Professional Advice</h2>
+      <p>ATMChat is a general-purpose communication tool. Nothing in the App, and nothing we publish about it, constitutes legal, medical, financial, safety, or other professional advice, and no communication you receive through the App from another user is advice from us. The App is not an emergency service, safety device, or life-safety communication system (Section 17). For any matter requiring professional judgment, consult a qualified professional.</p>
+
+      <!-- 20. Beta Software -->
+      <h2>20. Beta Software</h2>
+      <p>ATMChat is currently distributed as beta software through Apple's TestFlight. You acknowledge and agree that beta software is provided for testing and evaluation purposes only; that it may contain bugs, defects, or errors; that features may change, break, or be removed without notice; that the App may be modified, suspended, or discontinued at any time; and that <strong>data created in beta versions — including message history, conversations, and preferences — may be lost at any time</strong>, including when a beta build is updated or expires. To the maximum extent permitted by applicable law, beta software is provided without any warranty or commitment of continued availability, in addition to the disclaimers in Section 21. Your use of beta builds is also subject to Apple's TestFlight terms.</p>
+
+      <!-- 21. Disclaimer of Warranties -->
+      <h2>21. Disclaimer of Warranties</h2>
+      <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE", WITH ALL FAULTS AND WITHOUT WARRANTY, CONDITION, OR GUARANTEE OF ANY KIND, AND WE EXPRESSLY DISCLAIM ALL WARRANTIES AND CONDITIONS, WHETHER EXPRESS, IMPLIED, OR STATUTORY.</strong></p>
+      <p>The disclaimed warranties include, without limitation:</p>
+      <ul>
+        <li>Implied warranties or conditions of merchantability, satisfactory quality, fitness for a particular purpose, title, non-infringement, quiet enjoyment, and accuracy;</li>
+        <li>Any warranties arising from course of dealing, course of performance, or usage of trade;</li>
+        <li>Warranties that the App will be uninterrupted, error-free, secure, or free of viruses or other harmful components;</li>
+        <li>Warranties regarding the accuracy, reliability, or completeness of any content within the App;</li>
+        <li>Warranties that messages will be delivered successfully, completely, in a timely manner, or only to intended recipients;</li>
         <li>Warranties regarding the availability, range, or reliability of local peer-to-peer or mesh networking connections.</li>
       </ul>
-      <p>You acknowledge that the App is a communication tool that depends on local networking conditions and that your use of the App is at your sole risk.</p>
+      <p>No advice or information, whether oral or written, obtained from us or through the App, creates any warranty not expressly stated in these terms. You acknowledge that the App is a communication tool that depends on local networking conditions and that your use of the App is at your sole risk.</p>
+      <p>Some jurisdictions do not allow the exclusion of implied warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions may not apply to you.</p>
 
-      <!-- 19. Limitation of Liability -->
-      <h2>19. Limitation of Liability</h2>
+      <!-- 22. Limitation of Liability -->
+      <h2>22. Limitation of Liability</h2>
       <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL APPROVE THE MOVE OR ANY OF ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY:</strong></p>
       <ul>
-        <li>Indirect, incidental, special, consequential, or punitive damages;</li>
-        <li>Loss of profits, revenue, data, goodwill, or other intangible losses;</li>
+        <li>Indirect, incidental, special, consequential, punitive, or exemplary damages;</li>
+        <li>Loss of data, profits, revenue, goodwill, anticipated savings, or other intangible losses;</li>
+        <li>Personal injury or property damage, to the extent such a limitation is permitted by applicable law;</li>
         <li>Damages arising from your use of or inability to use the App;</li>
         <li>Damages arising from any unauthorized access to or alteration of your device;</li>
-        <li>Damages arising from failure to deliver messages or loss of message content;</li>
+        <li>Damages arising from failure to deliver messages, delayed delivery, delivery to unintended nearby peers, or loss of message content — including in time-sensitive or emergency situations (see Section 17);</li>
         <li>Damages arising from interception or unauthorized access to data transmitted over local networks;</li>
+        <li>Damages arising from the conduct or content of any third party, including other users of the App;</li>
         <li>Any other damages arising out of or in connection with these terms or the App;</li>
       </ul>
-      <p><strong>regardless of the theory of liability (contract, tort, negligence, strict liability, or otherwise), even if we have been advised of the possibility of such damages.</strong></p>
-      <p>In jurisdictions that do not allow the exclusion or limitation of liability for certain damages, our liability shall be limited to the maximum extent permitted by law. In no event shall our total aggregate liability exceed the amount you paid for the App (which is zero, as the App is free).</p>
+      <p><strong>regardless of the theory of liability (contract, tort including negligence, strict liability, or otherwise), and even if we have been advised of the possibility of such damages.</strong></p>
+      <p><strong>Aggregate cap:</strong> to the maximum extent permitted by applicable law, our total aggregate liability for all claims arising out of or relating to these terms or the App shall not exceed the greater of (a) the amount you paid us for the App in the twelve (12) months preceding the event giving rise to the claim, and (b) ten United States dollars (USD 10). The exclusions and limitations in this section apply even if any limited remedy fails of its essential purpose.</p>
+      <p>Some jurisdictions do not allow the exclusion or limitation of liability for certain damages — including liability for death or personal injury caused by negligence, or liability for fraud — so some of the above may not apply to you. In such jurisdictions, our liability is limited to the maximum extent permitted by applicable law.</p>
 
-      <!-- 20. Indemnification -->
-      <h2>20. Indemnification</h2>
-      <p>You agree to indemnify, defend, and hold harmless Approve The Move, and their respective officers, directors, employees, contractors, agents, licensors, and suppliers from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or related to:</p>
+      <!-- 23. Indemnification -->
+      <h2>23. Indemnification</h2>
+      <p>You agree to indemnify, defend, and hold harmless Approve The Move, and their respective officers, directors, employees, contractors, agents, licensors, and suppliers from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees and legal costs) arising out of or related to:</p>
       <ul>
-        <li>Your use of or access to the App;</li>
+        <li>Your use, misuse, or access of the App;</li>
         <li>Your violation of these Terms of Use;</li>
-        <li>Your violation of any applicable law or the rights of any third party;</li>
-        <li>Any content you transmit through the App.</li>
+        <li>Your violation of any applicable law or regulation;</li>
+        <li>Your infringement or violation of the rights of any third party, including intellectual property, privacy, or publicity rights;</li>
+        <li>Any User Content you create, send, or share through the App.</li>
       </ul>
+      <p>We reserve the right, at your expense, to assume the exclusive defense and control of any matter subject to indemnification by you, in which case you agree to cooperate with our defense. This section survives any termination of these terms.</p>
 
-      <!-- 21. Governing Law &amp; Dispute Resolution -->
-      <h2>21. Governing Law &amp; Dispute Resolution</h2>
+      <!-- 24. Force Majeure -->
+      <h2>24. Force Majeure</h2>
+      <p>To the maximum extent permitted by applicable law, we shall not be liable for any failure or delay in the operation of the App, or in our performance under these terms, caused by events beyond our reasonable control, including, without limitation: acts of God, natural disasters, war, terrorism, civil unrest, labor disputes, governmental actions, epidemics or pandemics, power outages, network or telecommunications failures, radio interference, failures or outages of third-party services, cloud platforms, or distribution platforms (including the Apple App Store and TestFlight), changes to or restrictions imposed by iOS or Apple's frameworks and policies, or any other event beyond our reasonable control.</p>
+
+      <!-- 25. Governing Law &amp; Dispute Resolution -->
+      <h2>25. Governing Law &amp; Dispute Resolution</h2>
       <p>These terms shall be governed by and construed in accordance with the laws of the <strong>State of Qatar</strong>, without regard to its conflict of law provisions.</p>
       <p>Any dispute, controversy, or claim arising out of or relating to these terms or the App shall be resolved as follows:</p>
       <ol>
-        <li><strong>Informal resolution</strong> — You agree to first attempt to resolve any dispute informally by contacting us at <a href="mailto:support@approvethemove.com">support@approvethemove.com</a>. We will attempt to resolve the dispute within 30 days.</li>
-        <li><strong>Binding arbitration</strong> — If informal resolution fails, any remaining dispute shall be resolved through binding arbitration administered in Doha, Qatar, in accordance with the rules of the Qatar International Court and Dispute Resolution Centre (QICDRC), unless otherwise required by your local laws.</li>
+        <li><strong>Informal resolution</strong> — You agree to first attempt to resolve any dispute informally by contacting us at <a href="mailto:support@approvethemove.com">support@approvethemove.com</a>. We will attempt to resolve the dispute within 30 days. Most concerns can be sorted out this way, and we genuinely prefer it.</li>
+        <li><strong>Courts of Qatar</strong> — If informal resolution fails, then to the maximum extent permitted by applicable law, any remaining dispute shall be subject to the exclusive jurisdiction of the competent courts of the State of Qatar, including, where applicable, the Qatar International Court and Dispute Resolution Centre (QICDRC).</li>
       </ol>
       <p>Nothing in this section shall prevent either party from seeking injunctive or equitable relief from a court of competent jurisdiction to prevent the actual or threatened infringement of intellectual property rights.</p>
-      <p><strong>For EU/EEA residents:</strong> Nothing in these terms limits your right to bring proceedings before the courts of your country of residence, as required by Regulation (EU) No 1215/2012.</p>
-      <p><strong>For US residents:</strong> You and we each waive the right to a jury trial and the right to participate in a class action lawsuit or class-wide arbitration.</p>
+      <p><strong>Consumer-rights savings clause:</strong> If the mandatory consumer-protection laws of your country of residence grant you the right to bring or defend proceedings before the courts of your home jurisdiction, or the benefit of mandatory local law, nothing in these terms deprives you of that right. <strong>For EU/EEA residents:</strong> Nothing in these terms limits your right to bring proceedings before the courts of your country of residence, as required by Regulation (EU) No 1215/2012.</p>
+      <p><strong>For US residents:</strong> To the extent permitted by applicable law, you and we each waive the right to a jury trial and the right to participate in a class action lawsuit. Some jurisdictions do not allow such waivers, so this paragraph may not apply to you.</p>
 
-      <!-- 22. Termination -->
-      <h2>22. Termination</h2>
+      <!-- 26. Termination -->
+      <h2>26. Termination</h2>
       <p>These terms are effective until terminated. Your rights under these terms will terminate automatically and without notice if you fail to comply with any provision.</p>
-      <p>Upon termination, you must cease all use of the App and delete all copies from your devices. Sections 15 through 21 shall survive any termination of these terms.</p>
+      <p>Upon termination, you must cease all use of the App and delete all copies from your devices. Sections 15 through 25, and Sections 27 through 30, shall survive any termination of these terms.</p>
       <p>We reserve the right to modify, suspend, or discontinue the App (or any part thereof) at any time without notice or liability.</p>
 
-      <!-- 23. Severability -->
-      <h2>23. Severability</h2>
-      <p>If any provision of these terms is found to be unlawful, void, or unenforceable by a court of competent jurisdiction, that provision shall be deemed severable and shall not affect the validity and enforceability of the remaining provisions, which shall continue in full force and effect.</p>
+      <!-- 27. Severability -->
+      <h2>27. Severability</h2>
+      <p>If any provision of these terms is found to be unlawful, void, or unenforceable by a court of competent jurisdiction, that provision shall be deemed severable and shall not affect the validity and enforceability of the remaining provisions, which shall continue in full force and effect. To the maximum extent permitted by applicable law, any unenforceable provision shall be construed or reformed to achieve, as nearly as possible, its intended effect.</p>
 
-      <!-- 24. Entire Agreement -->
-      <h2>24. Entire Agreement</h2>
+      <!-- 28. No Waiver -->
+      <h2>28. No Waiver</h2>
+      <p>Our failure to enforce any right or provision of these terms shall not constitute a waiver of that right or provision. Any waiver must be in writing and expressly stated by us to be effective, and a waiver on one occasion shall not constitute a waiver on any other occasion.</p>
+
+      <!-- 29. Assignment -->
+      <h2>29. Assignment</h2>
+      <p>We may assign or transfer these terms, in whole or in part, without restriction, including in connection with a reorganization, merger, acquisition, or sale of assets. You may not assign or transfer these terms, or any of your rights or obligations under them, without our prior written consent; any attempted assignment in violation of this section is void.</p>
+
+      <!-- 30. Entire Agreement -->
+      <h2>30. Entire Agreement</h2>
       <p>These terms, together with the Privacy Policy above and Apple's Licensed Application EULA, constitute the entire agreement between you and Approve The Move regarding your use of ATMChat. These terms supersede any prior agreements, communications, or understandings, whether written or oral, relating to the App.</p>
+      <p><strong>Consumer rights:</strong> Nothing in these terms excludes, limits, or restricts any statutory consumer rights or other rights that you have under the mandatory laws of your jurisdiction and that cannot lawfully be excluded, limited, or waived. To the extent of any conflict, those non-waivable rights prevail.</p>
 
       <!-- ======================================================== -->
       <!--                      GENERAL                             -->
@@ -451,8 +495,8 @@
 
       <h2 class="legal-part">General</h2>
 
-      <!-- 25. Changes to This Document -->
-      <h2>25. Changes to This Document</h2>
+      <!-- 31. Changes to This Document -->
+      <h2>31. Changes to This Document</h2>
       <p>We may update this Privacy Policy and Terms of Use from time to time to reflect changes in the App, our practices, or applicable laws. When we make changes:</p>
       <ul>
         <li>We will update the "Last updated" date at the top of this page.</li>
@@ -461,8 +505,8 @@
       </ul>
       <p>Your continued use of the App after changes are posted constitutes acceptance of the updated terms. If you disagree with any changes, your sole remedy is to stop using the App and delete it from your device.</p>
 
-      <!-- 26. Contact Us -->
-      <h2>26. Contact Us</h2>
+      <!-- 32. Contact Us -->
+      <h2>32. Contact Us</h2>
       <p>If you have any questions, concerns, complaints, or requests regarding this Privacy Policy, these Terms of Use, or our practices, please contact us:</p>
       <ul>
         <li><strong>Email:</strong> <a href="mailto:support@approvethemove.com">support@approvethemove.com</a></li>
@@ -471,7 +515,7 @@
       </ul>
       <p>We commit to responding to all privacy-related inquiries within <strong>30 days</strong> of receipt. For GDPR-related requests, we will respond within the legally required timeframe of one calendar month.</p>
 
-      <p class="legal-meta">Document version 2.0 &nbsp;|&nbsp; Effective April 13, 2026 &nbsp;|&nbsp; Applies to ATMChat v0.1 and all subsequent versions unless superseded.</p>
+      <p class="legal-meta">Document version 3.0 &nbsp;|&nbsp; Effective August 5, 2026 &nbsp;|&nbsp; Applies to ATMChat v0.1 and all subsequent versions unless superseded.</p>
 
     </div>
   </div>

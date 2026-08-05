@@ -74,7 +74,7 @@
     <div class="privacy-content">
 
       <h1>Currency Converter — Privacy Policy &amp; Terms of Use</h1>
-      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: July 21, 2026</p>
+      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: August 5, 2026</p>
 
       <p class="lead">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for Currency Converter. Please read both sections carefully before using the App.</p>
 
@@ -103,6 +103,7 @@
         <li><strong>No contacts or photos</strong> — The App does not access your contacts, photo library, camera, microphone, or any other device sensor beyond haptic feedback.</li>
         <li><strong>No cloud sync</strong> — The App does not use iCloud, CloudKit, or any cloud synchronization service. All data remains exclusively on your device.</li>
       </ul>
+      <p><strong>We do not sell, rent, or trade any personal information &mdash; we never possess it in the first place.</strong> Because no personal data ever reaches us, there is nothing on our side to sell, share, monetize, or lose.</p>
 
       <!-- 3. On-Device Storage -->
       <h2>3. On-Device Storage</h2>
@@ -119,7 +120,7 @@
       </ul>
       <p>In addition, the App caches exchange rate data locally on your device for offline use. This cached data contains only currency codes and their corresponding exchange rates — no personal information of any kind. The App also includes bundled seed/fallback rates so it can function without any network connection.</p>
       <p>This data is declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
-      <p><strong>How to delete:</strong> You can erase all locally stored preferences and cached exchange rates at any time by deleting Currency Converter from your device. No residual data is retained after uninstallation.</p>
+      <p><strong>How to delete:</strong> You can erase all locally stored preferences and cached exchange rates at any time by deleting Currency Converter from your device. The App itself retains no residual data after uninstallation; device or iCloud backups made before deletion may retain copies, which are managed by iOS/Apple and outside our control.</p>
 
       <!-- 4. Network Activity -->
       <h2>4. Network Activity</h2>
@@ -140,7 +141,7 @@
       <p>The response contains only currency exchange rate data — currency codes and their corresponding numerical rates. No personal data, tracking pixels, scripts, or identifiers are received or processed.</p>
 
       <h3>4.3 Offline Operation</h3>
-      <p>The App includes bundled seed/fallback exchange rates and caches previously fetched rates locally. If a rate request fails or no internet connection is available, the App operates fully offline using cached or bundled rates, so it always keeps working.</p>
+      <p>The App includes bundled seed/fallback exchange rates and caches previously fetched rates locally. If a rate request fails or no internet connection is available, the App operates fully offline using cached or bundled rates, and is designed to keep working.</p>
 
       <h3>4.4 No Other Network Activity</h3>
       <p>Beyond fetching exchange rates from open.er-api.com, the App makes <strong>no other network requests</strong>. There are no connections to analytics servers, advertising networks, crash reporting services, social media APIs, or any other external endpoints.</p>
@@ -201,7 +202,7 @@
       </ul>
       <p><strong>Since we do not collect, store, or process any personal data, there is no data for us to provide, correct, restrict, delete, port, or cease processing.</strong> Your local preferences can be erased by deleting the App. If you believe we hold data about you in error, please contact us and we will investigate promptly.</p>
       <p><strong>Legal basis for processing:</strong> We do not process personal data. The on-device preference storage operates under <strong>legitimate interest</strong> (providing a functional user experience) and does not constitute data processing under GDPR as the data never leaves the device or reaches us.</p>
-      <p><strong>Data controller:</strong> Approve The Move (contact details in Section 13).</p>
+      <p><strong>Data controller:</strong> Approve The Move (contact details in Section 31).</p>
 
       <h3>8.2 California (CCPA / CPRA)</h3>
       <p>If you are a California resident, the <strong>California Consumer Privacy Act (CCPA)</strong> as amended by the <strong>California Privacy Rights Act (CPRA)</strong> grants you specific rights regarding personal information:</p>
@@ -225,11 +226,12 @@
       <h2>9. Data Security</h2>
       <p>Although we do not collect or store personal data on any server, we employ the following security measures to protect your experience within the App:</p>
       <ul>
-        <li><strong>Encrypted network communication</strong> — All exchange rate requests are made over HTTPS (TLS-encrypted connections), ensuring that data in transit between your device and the exchange rate API cannot be intercepted.</li>
+        <li><strong>Encrypted network communication</strong> — All exchange rate requests are made over HTTPS (TLS-encrypted connections), helping protect data in transit between your device and the exchange rate API from interception.</li>
         <li><strong>Sandboxed storage</strong> — On-device preferences and cached rates are stored within the App's iOS sandbox, which is isolated from other apps and protected by the operating system.</li>
         <li><strong>Minimal network exposure</strong> — The App connects only to a single, well-defined endpoint (open.er-api.com) for exchange rate data, minimizing the network attack surface.</li>
         <li><strong>No persistent sensitive data</strong> — No passwords, tokens, credentials, or financial data are ever stored or processed.</li>
       </ul>
+      <p>That said, we want to be honest with you: <strong>no method of electronic storage or transmission is 100% secure</strong>, and no developer can truthfully promise otherwise. The security of data on your device also depends on Apple's operating system, your own device settings (such as a passcode), and the infrastructure of the third-party rate service &mdash; none of which we control. To the maximum extent permitted by applicable law, we are not liable for security incidents arising from circumstances beyond our reasonable control.</p>
 
       <!-- 10. Data Retention -->
       <h2>10. Data Retention</h2>
@@ -287,85 +289,122 @@
 
       <!-- 15. Exchange Rate Disclaimer -->
       <h2>15. Exchange Rate Disclaimer</h2>
-      <p><strong>The exchange rates displayed in Currency Converter are provided for informational and personal reference purposes only.</strong></p>
+      <p><strong>The exchange rates displayed in Currency Converter are provided for informational and personal reference purposes only. They are not financial advice, and you must never rely on them for actual transactions.</strong></p>
       <p>You acknowledge and agree that:</p>
       <ul>
-        <li>Exchange rates are sourced from a third-party public API (open.er-api.com) and may be <strong>delayed, incomplete, or inaccurate</strong> at any given time.</li>
+        <li>Exchange rates are sourced from a third-party public API (<strong>open.er-api.com</strong>) that we do not own, operate, or control. The rates are <strong>indicative mid-market rates</strong> and may be <strong>delayed, cached, incomplete, or inaccurate</strong> at any given time.</li>
         <li>The rates displayed <strong>do not constitute financial advice</strong>, investment recommendations, or solicitations to buy, sell, or trade any currency.</li>
-        <li>Exchange rates <strong>should not be relied upon for currency trading decisions</strong>, foreign exchange transactions, financial planning, or any activity where the accuracy or timeliness of exchange rates is material.</li>
-        <li>Actual exchange rates at banks, currency exchanges, and financial institutions may differ significantly from the rates displayed in the App due to spreads, fees, commissions, and market fluctuations.</li>
-        <li>When the App operates offline using cached or bundled fallback rates, the displayed rates may be <strong>outdated</strong> and should be treated with additional caution.</li>
+        <li>Exchange rates <strong>must not be relied upon for actual transactions</strong> &mdash; including currency trading, foreign exchange transactions, remittances, money transfers, financial planning, accounting, tax calculations, or any other activity where the accuracy or timeliness of an exchange rate is material. <strong>Always confirm the actual rate with your bank, remittance provider, or financial institution before committing to any transaction.</strong></li>
+        <li>Actual rates offered by banks, currency exchanges, remittance services, and financial institutions include spreads, fees, and commissions and may differ <strong>significantly</strong> from the mid-market rates displayed in the App.</li>
+        <li>When the App operates offline using cached or bundled fallback rates, the displayed rates may be <strong>substantially outdated</strong> and should be treated with additional caution.</li>
         <li>We make <strong>no representations or warranties</strong> regarding the accuracy, completeness, reliability, timeliness, or suitability of any exchange rate data displayed in the App.</li>
       </ul>
-      <p><strong>You assume all risk associated with your use of the exchange rate information provided by the App.</strong> For financial transactions, trading, or any purpose requiring accurate and current exchange rates, you should consult an authorized financial institution or a professional foreign exchange service.</p>
+      <p><strong>You assume all risk associated with your use of the exchange rate information provided by the App, and to the maximum extent permitted by applicable law, we are not liable for any loss or damage arising from reliance on that information.</strong> For financial transactions, trading, remittances, or any purpose requiring accurate and current exchange rates, always consult an authorized financial institution or a professional foreign exchange service.</p>
 
-      <!-- 16. Intellectual Property -->
-      <h2>16. Intellectual Property</h2>
+      <!-- 16. No Professional or Financial Advice -->
+      <h2>16. No Professional or Financial Advice</h2>
+      <p>Currency Converter is a general-purpose informational utility. Nothing in the App &mdash; including displayed rates, conversion results, or any other content &mdash; constitutes financial, investment, trading, banking, tax, accounting, legal, or other professional advice, and the App is not a substitute for advice from a qualified professional. We are not a bank, broker, money-services business, remittance provider, or licensed financial advisor.</p>
+      <p>Before making any decision that depends on an exchange rate &mdash; sending money abroad, exchanging currency, pricing goods or services, settling invoices, or anything similar &mdash; consult your bank, a licensed remittance provider, or a qualified financial professional. To the maximum extent permitted by applicable law, we disclaim all liability for decisions made in reliance on information displayed in the App.</p>
+
+      <!-- 17. Assumption of Risk -->
+      <h2>17. Assumption of Risk</h2>
+      <p>By using Currency Converter, you expressly acknowledge and voluntarily accept the risks inherent in using a free, informational currency utility, including that:</p>
+      <ul>
+        <li>Displayed rates may differ &mdash; sometimes significantly &mdash; from the real-world rates available to you at any bank, exchange, or remittance service;</li>
+        <li>The third-party rate service may become slow, unavailable, or inaccurate at any time without notice, in which case the App relies on cached or bundled rates that may be out of date;</li>
+        <li>Conversion results are mathematical estimates based on indicative data and may not match the amount you would actually pay or receive in a real transaction;</li>
+        <li>Like all software, the App may contain defects and may behave unexpectedly on some devices or operating system versions.</li>
+      </ul>
+      <p>You agree that you use the App with these risks in mind and, to the maximum extent permitted by applicable law, you assume full responsibility for any decision you make based on information displayed in the App. This section does not exclude or limit any liability that cannot be excluded or limited under applicable law.</p>
+
+      <!-- 18. Intellectual Property -->
+      <h2>18. Intellectual Property</h2>
       <p>All rights, title, and interest in and to Currency Converter — including but not limited to the software code, visual design, user interface elements, graphics, animations, and documentation — are and shall remain the exclusive property of Approve The Move.</p>
       <p>The name "Currency Converter", the Approve The Move name and logo, and all associated branding are trademarks of Approve The Move. Nothing in these terms grants you any right to use our trademarks without prior written permission.</p>
       <p>Exchange rate data displayed within the App is sourced from third-party providers and is not claimed as proprietary content of Approve The Move.</p>
 
-      <!-- 17. Disclaimer of Warranties -->
-      <h2>17. Disclaimer of Warranties</h2>
-      <p><strong>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</strong></p>
-      <p>To the fullest extent permitted by applicable law, we disclaim all warranties, including but not limited to:</p>
+      <!-- 19. Disclaimer of Warranties -->
+      <h2>19. Disclaimer of Warranties</h2>
+      <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE", WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND, AND WE DISCLAIM ALL WARRANTIES AND CONDITIONS, WHETHER EXPRESS, IMPLIED, OR STATUTORY.</strong></p>
+      <p>Without limiting the above, and to the maximum extent permitted by applicable law, we specifically disclaim:</p>
       <ul>
-        <li>Implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</li>
-        <li>Warranties that the App will be uninterrupted, error-free, secure, or free of viruses or other harmful components.</li>
-        <li>Warranties regarding the accuracy, reliability, timeliness, or completeness of any exchange rate data or other content within the App.</li>
-        <li>Warranties that exchange rates will be current, correct, or reflective of actual market conditions.</li>
+        <li>Implied warranties of merchantability, satisfactory quality, fitness for a particular purpose, title, non-infringement, and quiet enjoyment;</li>
+        <li>Any warranties arising from course of dealing, course of performance, or usage of trade;</li>
+        <li>Any warranty that the App will be uninterrupted, error-free, secure, or free of viruses or other harmful components;</li>
+        <li>Any warranty regarding the accuracy, reliability, timeliness, or completeness of any exchange rate data or other content within the App, or that exchange rates will be current, correct, or reflective of actual market conditions.</li>
       </ul>
-      <p>You acknowledge that the App is a utility provided for informational purposes and that your use of the App is at your sole risk.</p>
+      <p>No oral or written information or advice given by us &mdash; whether through the App, our website, or our support email &mdash; creates any warranty not expressly stated in these terms.</p>
+      <p>You acknowledge that the App is a utility provided for informational purposes and that your use of the App is at your sole risk. Some jurisdictions do not allow the exclusion of implied warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions may not apply to you.</p>
 
-      <!-- 18. Limitation of Liability -->
-      <h2>18. Limitation of Liability</h2>
-      <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL APPROVE THE MOVE OR ANY OF ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY:</strong></p>
+      <!-- 20. Limitation of Liability -->
+      <h2>20. Limitation of Liability</h2>
+      <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL APPROVE THE MOVE OR ANY OF ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, LICENSORS, OR SUPPLIERS BE LIABLE FOR ANY:</strong></p>
       <ul>
-        <li>Indirect, incidental, special, consequential, or punitive damages;</li>
-        <li>Loss of profits, revenue, data, goodwill, or other intangible losses;</li>
+        <li>Indirect, incidental, special, consequential, punitive, or exemplary damages;</li>
+        <li>Loss of data, profits, revenue, goodwill, anticipated savings, or other intangible losses;</li>
+        <li>Personal injury or property damage, to the extent such a limitation is permitted by applicable law;</li>
         <li>Damages arising from your use of or inability to use the App;</li>
-        <li>Damages arising from any unauthorized access to or alteration of your device;</li>
-        <li>Damages arising from reliance on exchange rate data displayed in the App, including but not limited to financial losses incurred from currency trading, conversion, or exchange decisions;</li>
-        <li>Damages arising from the unavailability, delay, or inaccuracy of exchange rate data;</li>
+        <li>Damages arising from any unauthorized access to or alteration of your device or data;</li>
+        <li>Damages arising from reliance on exchange rate data displayed in the App, including but not limited to financial losses incurred from currency trading, conversion, remittance, or exchange decisions;</li>
+        <li>Damages arising from the unavailability, delay, or inaccuracy of exchange rate data or of the third-party rate service;</li>
         <li>Any other damages arising out of or in connection with these terms or the App;</li>
       </ul>
-      <p><strong>regardless of the theory of liability (contract, tort, negligence, strict liability, or otherwise), even if we have been advised of the possibility of such damages.</strong></p>
-      <p>In jurisdictions that do not allow the exclusion or limitation of liability for certain damages, our liability shall be limited to the maximum extent permitted by law. In no event shall our total aggregate liability exceed the amount you paid for the App (which is zero, as the App is free).</p>
+      <p><strong>regardless of the legal theory on which the claim is based (contract, tort &mdash; including negligence &mdash; strict liability, or otherwise), and even if we have been advised of the possibility of such damages.</strong></p>
+      <p><strong>Aggregate cap.</strong> To the maximum extent permitted by applicable law, our total aggregate liability for all claims arising out of or relating to the App or these terms shall not exceed the greater of (a) the amount you paid us for the App in the twelve (12) months preceding the event giving rise to the claim (the App is free, so this amount will typically be zero) and (b) ten United States dollars (USD 10).</p>
+      <p>The exclusions and limitations in this section apply even if any limited remedy fails of its essential purpose. Some jurisdictions do not allow the exclusion or limitation of incidental or consequential damages, or of liability for personal injury, so some or all of the above limitations may not apply to you; in those jurisdictions, our liability is limited to the maximum extent permitted by law.</p>
 
-      <!-- 19. Indemnification -->
-      <h2>19. Indemnification</h2>
-      <p>You agree to indemnify, defend, and hold harmless Approve The Move, and their respective officers, directors, employees, contractors, agents, licensors, and suppliers from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or related to:</p>
+      <!-- 21. Statutory Consumer Rights -->
+      <h2>21. Statutory Consumer Rights</h2>
+      <p>Nothing in these terms excludes, limits, or waives any statutory consumer rights or other rights that you have under the mandatory laws of your country of residence and that cannot be excluded, limited, or waived by agreement. The disclaimers, exclusions, and limitations in these terms apply only to the maximum extent permitted by applicable law and are not intended to deprive you of any protection the law guarantees you as a consumer.</p>
+
+      <!-- 22. Indemnification -->
+      <h2>22. Indemnification</h2>
+      <p>To the maximum extent permitted by applicable law, you agree to indemnify, defend, and hold harmless Approve The Move, and its officers, directors, employees, contractors, agents, licensors, and suppliers from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or related to:</p>
       <ul>
-        <li>Your use of or access to the App;</li>
-        <li>Your reliance on exchange rate data provided by the App;</li>
+        <li>Your use, misuse, or access of the App;</li>
+        <li>Your reliance on exchange rate data provided by the App, including any transaction, trading, or remittance decision you make;</li>
         <li>Your violation of these Terms of Use;</li>
-        <li>Your violation of any applicable law or the rights of any third party.</li>
+        <li>Your violation of any applicable law or regulation;</li>
+        <li>Your infringement of the rights of any third party.</li>
       </ul>
+      <p>This obligation does not apply to the extent a claim arises from our own breach of these terms, and it does not affect any non-waivable rights you have under applicable consumer protection law.</p>
 
-      <!-- 20. Governing Law &amp; Dispute Resolution -->
-      <h2>20. Governing Law &amp; Dispute Resolution</h2>
+      <!-- 23. Force Majeure -->
+      <h2>23. Force Majeure</h2>
+      <p>To the maximum extent permitted by applicable law, we shall not be liable for any failure or delay in the App's performance, availability, or functionality caused by events beyond our reasonable control, including but not limited to: outages, changes, or discontinuation of the third-party exchange rate service (open.er-api.com); cloud, hosting, or content delivery failures; Apple App Store or iOS platform restrictions, changes, or outages; internet or telecommunications network failures; power failures; acts of God, natural disasters, fire, or flood; war, terrorism, or civil unrest; labor disputes; epidemics or pandemics; or acts of government, laws, or regulations.</p>
+
+      <!-- 24. Governing Law &amp; Dispute Resolution -->
+      <h2>24. Governing Law &amp; Dispute Resolution</h2>
       <p>These terms shall be governed by and construed in accordance with the laws of the <strong>State of Qatar</strong>, without regard to its conflict of law provisions.</p>
       <p>Any dispute, controversy, or claim arising out of or relating to these terms or the App shall be resolved as follows:</p>
       <ol>
-        <li><strong>Informal resolution</strong> — You agree to first attempt to resolve any dispute informally by contacting us at <a href="mailto:support@approvethemove.com">support@approvethemove.com</a>. We will attempt to resolve the dispute within 30 days.</li>
-        <li><strong>Binding arbitration</strong> — If informal resolution fails, any remaining dispute shall be resolved through binding arbitration administered in Doha, Qatar, in accordance with the rules of the Qatar International Court and Dispute Resolution Centre (QICDRC), unless otherwise required by your local laws.</li>
+        <li><strong>Informal resolution</strong> — You agree to first attempt to resolve any dispute informally by contacting us at <a href="mailto:support@approvethemove.com">support@approvethemove.com</a>. We will attempt to resolve the dispute within 30 days. Most concerns can be settled this way, quickly and amicably.</li>
+        <li><strong>Courts of Qatar</strong> — If informal resolution fails, then to the extent permitted by applicable law, any remaining dispute shall be subject to the exclusive jurisdiction of the competent courts of the State of Qatar.</li>
       </ol>
       <p>Nothing in this section shall prevent either party from seeking injunctive or equitable relief from a court of competent jurisdiction to prevent the actual or threatened infringement of intellectual property rights.</p>
+      <p><strong>Consumer forum protection:</strong> If the mandatory laws of your country of residence grant you the right to bring or defend proceedings before the courts of that country, or the protection of that country's consumer laws, nothing in this section deprives you of that right or protection.</p>
       <p><strong>For EU/EEA residents:</strong> Nothing in these terms limits your right to bring proceedings before the courts of your country of residence, as required by Regulation (EU) No 1215/2012.</p>
-      <p><strong>For US residents:</strong> You and we each waive the right to a jury trial and the right to participate in a class action lawsuit or class-wide arbitration.</p>
 
-      <!-- 21. Termination -->
-      <h2>21. Termination</h2>
+      <!-- 25. Termination -->
+      <h2>25. Termination</h2>
       <p>These terms are effective until terminated. Your rights under these terms will terminate automatically and without notice if you fail to comply with any provision.</p>
-      <p>Upon termination, you must cease all use of the App and delete all copies from your devices. Sections 16 through 20 shall survive any termination of these terms.</p>
+      <p>Upon termination, you must cease all use of the App and delete all copies from your devices. Sections 15 through 24 and Sections 26 through 29 shall survive any termination of these terms.</p>
       <p>We reserve the right to modify, suspend, or discontinue the App (or any part thereof) at any time without notice or liability.</p>
 
-      <!-- 22. Severability -->
-      <h2>22. Severability</h2>
+      <!-- 26. No Waiver -->
+      <h2>26. No Waiver</h2>
+      <p>Our failure to enforce any right or provision of these terms shall not constitute a waiver of that right or provision. A waiver of any breach is effective only if in writing and shall not be deemed a waiver of any subsequent breach.</p>
+
+      <!-- 27. Assignment -->
+      <h2>27. Assignment</h2>
+      <p>We may assign or transfer these terms, in whole or in part, without restriction &mdash; for example, in connection with a reorganization or a transfer of the App. You may not assign or transfer these terms, or any of your rights or obligations under them, without our prior written consent; any attempted assignment in violation of this section is void.</p>
+
+      <!-- 28. Severability -->
+      <h2>28. Severability</h2>
       <p>If any provision of these terms is found to be unlawful, void, or unenforceable by a court of competent jurisdiction, that provision shall be deemed severable and shall not affect the validity and enforceability of the remaining provisions, which shall continue in full force and effect.</p>
 
-      <!-- 23. Entire Agreement -->
-      <h2>23. Entire Agreement</h2>
+      <!-- 29. Entire Agreement -->
+      <h2>29. Entire Agreement</h2>
       <p>These terms, together with the Privacy Policy above and Apple's Licensed Application EULA, constitute the entire agreement between you and Approve The Move regarding your use of Currency Converter. These terms supersede any prior agreements, communications, or understandings, whether written or oral, relating to the App.</p>
 
       <!-- ======================================================== -->
@@ -374,18 +413,18 @@
 
       <h2 class="legal-part">General</h2>
 
-      <!-- 24. Changes to This Document -->
-      <h2>24. Changes to This Document</h2>
+      <!-- 30. Changes to This Document -->
+      <h2>30. Changes to This Document</h2>
       <p>We may update this Privacy Policy and Terms of Use from time to time to reflect changes in the App, our practices, or applicable laws. When we make changes:</p>
       <ul>
         <li>We will update the "Last updated" date at the top of this page.</li>
-        <li>For material changes, we will notify you through the App before the changes take effect.</li>
+        <li>For material changes, where feasible, we will provide notice within the App (for example, via an app update) or on this page before the changes take effect.</li>
         <li>The updated document will be posted at this URL: <a href="https://approvethemove.com/converter/privacy">approvethemove.com/converter/privacy</a></li>
       </ul>
       <p>Your continued use of the App after changes are posted constitutes acceptance of the updated terms. If you disagree with any changes, your sole remedy is to stop using the App and delete it from your device.</p>
 
-      <!-- 25. Contact Us -->
-      <h2>25. Contact Us</h2>
+      <!-- 31. Contact Us -->
+      <h2>31. Contact Us</h2>
       <p>If you have any questions, concerns, complaints, or requests regarding this Privacy Policy, these Terms of Use, or our practices, please contact us:</p>
       <ul>
         <li><strong>Email:</strong> <a href="mailto:support@approvethemove.com">support@approvethemove.com</a></li>
@@ -394,7 +433,7 @@
       </ul>
       <p>We commit to responding to all privacy-related inquiries within <strong>30 days</strong> of receipt. For GDPR-related requests, we will respond within the legally required timeframe of one calendar month.</p>
 
-      <p class="legal-meta">Document version 2.0 &nbsp;|&nbsp; Effective April 13, 2026 &nbsp;|&nbsp; Applies to Currency Converter v1.0 and all subsequent versions unless superseded.</p>
+      <p class="legal-meta">Document version 3.0 &nbsp;|&nbsp; Effective August 5, 2026 &nbsp;|&nbsp; Applies to Currency Converter v1.0 and all subsequent versions unless superseded.</p>
 
     </div>
   </div>

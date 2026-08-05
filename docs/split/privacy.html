@@ -74,7 +74,7 @@
     <div class="privacy-content">
 
       <h1>ATM Split — Privacy Policy &amp; Terms of Use</h1>
-      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: July 21, 2026</p>
+      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: August 5, 2026</p>
 
       <p class="lead">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for ATM Split. Please read both sections carefully before using the App.</p>
 
@@ -102,6 +102,7 @@
         <li><strong>No location data</strong> — The App does not request, access, or store your geographic location.</li>
         <li><strong>No contacts or photos</strong> — The App does not access your contacts, photo library, camera, microphone, or any other device sensor beyond haptic feedback.</li>
       </ul>
+      <p><strong>We do not sell, rent, or trade any personal information — we never possess it in the first place.</strong> Because no personal data ever reaches us, there is nothing for us to sell, share, monetize, or lose.</p>
 
       <!-- 3. On-Device Storage -->
       <h2>3. On-Device Storage</h2>
@@ -129,7 +130,7 @@
       </ul>
 
       <p>Both storage mechanisms are declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
-      <p><strong>How to delete:</strong> You can delete any individual group, expense, member, or settlement within the App at any time. To erase all data permanently, delete ATM Split from your device. No residual data is retained after uninstallation.</p>
+      <p><strong>How to delete:</strong> You can delete any individual group, expense, member, or settlement within the App at any time. To erase all data permanently, delete ATM Split from your device. The App itself retains no residual data after uninstallation. Please note, however, that device or iCloud backups you made before deleting the App may still contain copies of its data; those backups are managed by you and Apple and are outside our control.</p>
 
       <!-- 4. Network Activity -->
       <h2>4. Network Activity</h2>
@@ -216,8 +217,8 @@
         <li><strong>Right to withdraw consent</strong> (Article 7) — Withdraw previously given consent at any time.</li>
       </ul>
       <p><strong>Since we do not collect, store, or process any personal data, there is no data for us to provide, correct, restrict, delete, port, or cease processing.</strong> Your local data can be erased by deleting individual items within the App or by deleting the App entirely. If you believe we hold data about you in error, please contact us and we will investigate promptly.</p>
-      <p><strong>Legal basis for processing:</strong> We do not process personal data. The on-device data storage operates under <strong>legitimate interest</strong> (providing a functional user experience) and does not constitute data processing under GDPR as the data never leaves the device or reaches us.</p>
-      <p><strong>Data controller:</strong> Approve The Move (contact details in Section 15).</p>
+      <p><strong>Legal basis for processing:</strong> We do not process personal data, so no legal basis under Article 6 is required on our part. Because the data you enter into the App is stored solely on your device and never leaves it or reaches us, we do not act as a controller or processor of that data, and GDPR obligations that presuppose our possession of personal data do not arise.</p>
+      <p><strong>Data controller:</strong> Approve The Move (contact details in Section 30).</p>
 
       <h3>9.2 California (CCPA / CPRA)</h3>
       <p>If you are a California resident, the <strong>California Consumer Privacy Act (CCPA)</strong> as amended by the <strong>California Privacy Rights Act (CPRA)</strong> grants you specific rights regarding personal information:</p>
@@ -242,10 +243,11 @@
       <p>Although we do not collect or store personal data on any server, we employ the following security measures to protect your experience within the App:</p>
       <ul>
         <li><strong>Sandboxed storage</strong> — All on-device data (SwiftData database and UserDefaults preferences) is stored within the App's iOS sandbox, which is isolated from other apps and protected by the operating system.</li>
-        <li><strong>Encrypted network requests</strong> — Exchange rate requests are made over HTTPS (TLS encryption), ensuring data in transit cannot be intercepted.</li>
+        <li><strong>Encrypted network requests</strong> — Exchange rate requests are made over HTTPS (TLS encryption), helping protect data in transit from interception.</li>
         <li><strong>No persistent sensitive data</strong> — No passwords, tokens, credentials, or payment information are ever stored or processed.</li>
         <li><strong>No remote attack surface</strong> — The App does not expose any server endpoints, APIs, or network services. The only outbound request is a simple HTTPS GET for exchange rates, which transmits no personal data.</li>
       </ul>
+      <p>That said, we want to be honest with you: <strong>no method of electronic storage or transmission is 100% secure</strong>, and no software can be guaranteed to be entirely free of vulnerabilities. The security of data stored on your device also depends on factors we do not control, such as your device passcode, your iOS version, and the physical security of your device. To the maximum extent permitted by applicable law, we are not liable for security incidents arising from circumstances beyond our reasonable control, including compromise of your device or of Apple's operating system.</p>
 
       <!-- 11. Data Retention -->
       <h2>11. Data Retention</h2>
@@ -268,8 +270,8 @@
         </tr>
         <tr>
           <td>Exported CSV files</td>
-          <td>Temporary (discarded after sharing)</td>
-          <td>Duration of share sheet session only</td>
+          <td>Device (App's temporary directory)</td>
+          <td>Until iOS automatically clears the temporary directory or the App is deleted</td>
         </tr>
       </table>
       <p>When you delete the App, all associated data is permanently removed from your device by the operating system.</p>
@@ -311,77 +313,115 @@
       <p>All rights, title, and interest in and to ATM Split — including but not limited to the software code, visual design, user interface elements, graphics, animations, and documentation — are and shall remain the exclusive property of Approve The Move.</p>
       <p>The name "ATM Split", the Approve The Move name and logo, and all associated branding are trademarks of Approve The Move. Nothing in these terms grants you any right to use our trademarks without prior written permission.</p>
 
-      <!-- 17. Financial Calculations Disclaimer -->
-      <h2>17. Financial Calculations Disclaimer</h2>
-      <p><strong>ATM Split is a convenience tool designed to help you split expenses and track shared costs among friends, family, or groups. It is not a financial, accounting, or legal service.</strong></p>
+      <!-- 17. No Financial Advice -->
+      <h2>17. No Financial Advice</h2>
+      <p><strong>ATM Split is a convenience tool designed to help you split expenses and track shared costs among friends, family, or groups. It is not a financial, accounting, tax, or legal service, and nothing in the App constitutes financial advice.</strong></p>
       <ul>
-        <li><strong>Settlement calculations are for reference only.</strong> The amounts displayed as owed, owing, or suggested for settlement are approximate calculations provided for your convenience and should be treated as suggestions, not definitive financial obligations.</li>
+        <li><strong>Settlement calculations are for reference only.</strong> The amounts displayed as owed, owing, or suggested for settlement are informational conveniences provided for your reference and should be treated as suggestions, not definitive financial obligations.</li>
+        <li><strong>Debt simplification is informational.</strong> The App's "who pays whom" suggestions merely reorganize recorded balances into fewer transfers for convenience. They do not create, modify, or discharge any legal obligation between you and any other person.</li>
         <li><strong>Users must verify all amounts before making real payments.</strong> You are solely responsible for confirming the accuracy of any settlement amount before transferring money, making payments, or taking any financial action based on the App's output.</li>
         <li><strong>Financial accuracy is not guaranteed.</strong> While we strive for correctness, we do not warrant that calculations — including expense splits, settlement optimizations, or currency conversions — are free from error. Rounding, currency fluctuations, and other factors may cause discrepancies.</li>
-        <li><strong>Exchange rates are approximate.</strong> Currency conversion rates are sourced from a public third-party API and may not reflect real-time market rates. We are not responsible for any financial loss arising from exchange rate inaccuracies.</li>
+        <li><strong>Exchange rates are approximate and may be stale.</strong> Currency conversion rates are sourced from a public third-party API and may not reflect real-time market rates; when you are offline, the App falls back to cached or bundled rates that may be out of date. To the maximum extent permitted by applicable law, we are not responsible for any financial loss arising from exchange rate inaccuracies or staleness.</li>
+        <li><strong>The App does not move money.</strong> ATM Split does not initiate, process, hold, or transfer funds of any kind. It is not a payment service, money transmitter, bank, or financial institution.</li>
+        <li><strong>We are not a party to your settlements.</strong> Any payment, settlement, or arrangement between you and the people you split expenses with is strictly between you and them. The developer is not a party to, a guarantor of, or responsible for any such arrangement or any dispute arising from it.</li>
         <li><strong>Not a substitute for professional advice.</strong> The App does not provide financial, tax, legal, or accounting advice. For significant financial matters, consult a qualified professional.</li>
       </ul>
-      <p>By using ATM Split, you acknowledge and agree that all financial decisions based on the App's calculations are made at your own risk and sole discretion.</p>
+      <p>By using ATM Split, you acknowledge and agree that, to the maximum extent permitted by applicable law, all financial decisions based on the App's calculations are made at your own risk and sole discretion.</p>
 
-      <!-- 18. Disclaimer of Warranties -->
-      <h2>18. Disclaimer of Warranties</h2>
-      <p><strong>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</strong></p>
-      <p>To the fullest extent permitted by applicable law, we disclaim all warranties, including but not limited to:</p>
+      <!-- 18. Assumption of Risk -->
+      <h2>18. Assumption of Risk</h2>
+      <p>To the maximum extent permitted by applicable law, you expressly acknowledge, understand, and voluntarily accept the risks inherent in using an expense-splitting tool of this kind, including:</p>
       <ul>
-        <li>Implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</li>
-        <li>Warranties that the App will be uninterrupted, error-free, secure, or free of viruses or other harmful components.</li>
-        <li>Warranties regarding the accuracy, reliability, or completeness of any calculations, currency conversions, or financial data within the App.</li>
+        <li><strong>Calculation reliance</strong> — Splits, balances, and settlement suggestions may contain errors from rounding, software defects, or the way expenses were entered. Acting on an unverified amount is a risk you choose to take.</li>
+        <li><strong>Rate staleness</strong> — Currency conversions depend on third-party exchange rates that may be delayed, cached, bundled, or otherwise out of date, and the true value of a converted amount may differ from what the App displays.</li>
+        <li><strong>Data entry errors</strong> — The App can only calculate from what is entered. Mistyped amounts, missing expenses, or misassigned payers will produce incorrect results.</li>
+        <li><strong>Data loss</strong> — All App data lives only on your device, with no cloud backup by design. If your device is lost, damaged, reset, or the App is deleted, your data cannot be recovered by us. We encourage you to use the CSV export feature to keep your own records of important groups.</li>
       </ul>
-      <p>You acknowledge that the App is a utility tool provided for convenience purposes and that your use of the App is at your sole risk.</p>
+      <p>Some jurisdictions do not allow certain assumptions of risk or waivers, so some of the above may not apply to you.</p>
 
-      <!-- 19. Limitation of Liability -->
-      <h2>19. Limitation of Liability</h2>
-      <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL APPROVE THE MOVE OR ANY OF ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY:</strong></p>
+      <!-- 19. Disclaimer of Warranties -->
+      <h2>19. Disclaimer of Warranties</h2>
+      <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE", WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY.</strong></p>
+      <p>To the maximum extent permitted by applicable law, we disclaim all warranties, express, implied, or statutory, including but not limited to:</p>
       <ul>
-        <li>Indirect, incidental, special, consequential, or punitive damages;</li>
-        <li>Loss of profits, revenue, data, goodwill, or other intangible losses;</li>
+        <li>Implied warranties of merchantability, fitness for a particular purpose, title, non-infringement, and quiet enjoyment.</li>
+        <li>Any warranties arising from course of dealing, course of performance, or usage of trade.</li>
+        <li>Warranties that the App will be uninterrupted, error-free, secure, or free of viruses or other harmful components.</li>
+        <li>Warranties regarding the accuracy, reliability, timeliness, or completeness of any calculations, settlement suggestions, currency conversions, or exchange rate data within the App.</li>
+      </ul>
+      <p>No advice or information, whether oral or written, obtained from us or through the App creates any warranty not expressly stated in these terms. You acknowledge that the App is a utility tool provided for convenience purposes and that your use of the App is at your sole risk.</p>
+      <p>Some jurisdictions do not allow the exclusion of implied warranties or limitations on applicable statutory rights, so some of the above exclusions may not apply to you.</p>
+
+      <!-- 20. Limitation of Liability -->
+      <h2>20. Limitation of Liability</h2>
+      <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL APPROVE THE MOVE OR ANY OF ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, CONTRACTORS, AGENTS, OR LICENSORS BE LIABLE FOR ANY:</strong></p>
+      <ul>
+        <li>Indirect, incidental, special, consequential, punitive, or exemplary damages;</li>
+        <li>Loss of data, profits, revenue, goodwill, anticipated savings, or other intangible losses;</li>
+        <li>Personal injury or property damage, to the extent such limitation is permitted by applicable law;</li>
         <li>Damages arising from your use of or inability to use the App;</li>
         <li>Damages arising from any unauthorized access to or alteration of your device;</li>
         <li>Financial losses arising from reliance on the App's calculations, settlement suggestions, or currency conversions;</li>
         <li>Any other damages arising out of or in connection with these terms or the App;</li>
       </ul>
-      <p><strong>regardless of the theory of liability (contract, tort, negligence, strict liability, or otherwise), even if we have been advised of the possibility of such damages.</strong></p>
-      <p>In jurisdictions that do not allow the exclusion or limitation of liability for certain damages, our liability shall be limited to the maximum extent permitted by law. In no event shall our total aggregate liability exceed the amount you paid for the App (which is zero, as the App is free).</p>
+      <p><strong>regardless of the theory of liability (contract, tort including negligence, strict liability, or otherwise), even if we have been advised of the possibility of such damages, and even if a limited remedy set forth in these terms is found to have failed of its essential purpose.</strong></p>
+      <p>To the maximum extent permitted by applicable law, our total aggregate liability for all claims arising out of or relating to these terms or the App shall not exceed the greater of (a) the amount you paid us for the App in the twelve (12) months preceding the event giving rise to the claim (which is zero, as the App is free) and (b) ten United States dollars (USD 10).</p>
+      <p>Some jurisdictions do not allow the exclusion or limitation of liability for certain damages, so some of the above limitations may not apply to you; in such jurisdictions, our liability is limited to the maximum extent permitted by applicable law.</p>
+      <p><strong>Consumer rights:</strong> Nothing in these terms excludes, limits, or waives any statutory consumer right or other right that cannot lawfully be excluded, limited, or waived under the laws applicable to you.</p>
 
-      <!-- 20. Indemnification -->
-      <h2>20. Indemnification</h2>
-      <p>You agree to indemnify, defend, and hold harmless Approve The Move, and their respective officers, directors, employees, contractors, agents, licensors, and suppliers from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or related to:</p>
+      <!-- 21. Indemnification -->
+      <h2>21. Indemnification</h2>
+      <p>To the maximum extent permitted by applicable law, you agree to indemnify, defend, and hold harmless Approve The Move, and their respective officers, directors, employees, contractors, agents, licensors, and suppliers from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees and legal costs) arising out of or related to:</p>
       <ul>
-        <li>Your use of or access to the App;</li>
+        <li>Your use or misuse of the App;</li>
         <li>Your violation of these Terms of Use;</li>
-        <li>Your violation of any applicable law or the rights of any third party;</li>
-        <li>Any financial dispute arising from your reliance on the App's calculations or settlement suggestions.</li>
+        <li>Your violation of any applicable law or regulation;</li>
+        <li>Your infringement of the rights of any third party;</li>
+        <li>Any financial dispute between you and any other person arising from your reliance on the App's calculations or settlement suggestions.</li>
       </ul>
 
-      <!-- 21. Governing Law &amp; Dispute Resolution -->
-      <h2>21. Governing Law &amp; Dispute Resolution</h2>
+      <!-- 22. Force Majeure -->
+      <h2>22. Force Majeure</h2>
+      <p>To the maximum extent permitted by applicable law, we shall not be liable for any failure or delay in the App's performance, or in the performance of any obligation under these terms, caused by events or circumstances beyond our reasonable control, including but not limited to:</p>
+      <ul>
+        <li>Outages, changes, or discontinuation of third-party services the App depends on, including the public exchange rate API (open.er-api.com), the Apple App Store, and Apple's platform services;</li>
+        <li>Restrictions, changes, or defects in iOS or other Apple operating system software;</li>
+        <li>Internet, network, or telecommunications failures;</li>
+        <li>Acts of God, natural disasters, fire, flood, epidemics, war, terrorism, civil unrest, labor disputes, power failures, or governmental actions or regulations.</li>
+      </ul>
+
+      <!-- 23. Governing Law &amp; Dispute Resolution -->
+      <h2>23. Governing Law &amp; Dispute Resolution</h2>
       <p>These terms shall be governed by and construed in accordance with the laws of the <strong>State of Qatar</strong>, without regard to its conflict of law provisions.</p>
       <p>Any dispute, controversy, or claim arising out of or relating to these terms or the App shall be resolved as follows:</p>
       <ol>
-        <li><strong>Informal resolution</strong> — You agree to first attempt to resolve any dispute informally by contacting us at <a href="mailto:support@approvethemove.com">support@approvethemove.com</a>. We will attempt to resolve the dispute within 30 days.</li>
-        <li><strong>Binding arbitration</strong> — If informal resolution fails, any remaining dispute shall be resolved through binding arbitration administered in Doha, Qatar, in accordance with the rules of the Qatar International Court and Dispute Resolution Centre (QICDRC), unless otherwise required by your local laws.</li>
+        <li><strong>Informal resolution</strong> — You agree to first attempt to resolve any dispute informally by contacting us at <a href="mailto:support@approvethemove.com">support@approvethemove.com</a>. We will attempt to resolve the dispute within 30 days. Most concerns can be sorted out quickly and amicably this way, and we genuinely prefer it.</li>
+        <li><strong>Courts of Qatar</strong> — If informal resolution fails, any remaining dispute shall, to the maximum extent permitted by applicable law, be subject to the exclusive jurisdiction of the competent courts of the State of Qatar.</li>
       </ol>
       <p>Nothing in this section shall prevent either party from seeking injunctive or equitable relief from a court of competent jurisdiction to prevent the actual or threatened infringement of intellectual property rights.</p>
       <p><strong>For EU/EEA residents:</strong> Nothing in these terms limits your right to bring proceedings before the courts of your country of residence, as required by Regulation (EU) No 1215/2012.</p>
-      <p><strong>For US residents:</strong> You and we each waive the right to a jury trial and the right to participate in a class action lawsuit or class-wide arbitration.</p>
+      <p><strong>Consumer forum rights:</strong> If the mandatory consumer protection laws of your country of residence grant you the non-waivable right to bring or defend proceedings in your local courts, or the benefit of your local law, nothing in this section deprives you of that right.</p>
 
-      <!-- 22. Termination -->
-      <h2>22. Termination</h2>
+      <!-- 24. Termination -->
+      <h2>24. Termination</h2>
       <p>These terms are effective until terminated. Your rights under these terms will terminate automatically and without notice if you fail to comply with any provision.</p>
-      <p>Upon termination, you must cease all use of the App and delete all copies from your devices. Sections 16 through 21 shall survive any termination of these terms.</p>
+      <p>Upon termination, you must cease all use of the App and delete all copies from your devices. Sections 16 through 23, together with Sections 25 through 28 and any other provision that by its nature should survive, shall survive any termination of these terms.</p>
       <p>We reserve the right to modify, suspend, or discontinue the App (or any part thereof) at any time without notice or liability.</p>
 
-      <!-- 23. Severability -->
-      <h2>23. Severability</h2>
+      <!-- 25. No Waiver -->
+      <h2>25. No Waiver</h2>
+      <p>Our failure to enforce any right or provision of these terms shall not constitute a waiver of that right or provision. Any waiver must be in writing and signed by us to be effective, and a waiver on one occasion shall not be a waiver on any other occasion.</p>
+
+      <!-- 26. Assignment -->
+      <h2>26. Assignment</h2>
+      <p>We may assign or transfer these terms, in whole or in part, to any successor of Approve The Move (for example, in connection with a reorganization or transfer of the App) without restriction. You may not assign or transfer these terms, or any of your rights or obligations under them, without our prior written consent, and any attempted assignment in violation of this section is void.</p>
+
+      <!-- 27. Severability -->
+      <h2>27. Severability</h2>
       <p>If any provision of these terms is found to be unlawful, void, or unenforceable by a court of competent jurisdiction, that provision shall be deemed severable and shall not affect the validity and enforceability of the remaining provisions, which shall continue in full force and effect.</p>
 
-      <!-- 24. Entire Agreement -->
-      <h2>24. Entire Agreement</h2>
+      <!-- 28. Entire Agreement -->
+      <h2>28. Entire Agreement</h2>
       <p>These terms, together with the Privacy Policy above and Apple's Licensed Application EULA, constitute the entire agreement between you and Approve The Move regarding your use of ATM Split. These terms supersede any prior agreements, communications, or understandings, whether written or oral, relating to the App.</p>
 
       <!-- ======================================================== -->
@@ -390,8 +430,8 @@
 
       <h2 class="legal-part">General</h2>
 
-      <!-- 25. Changes to This Document -->
-      <h2>25. Changes to This Document</h2>
+      <!-- 29. Changes to This Document -->
+      <h2>29. Changes to This Document</h2>
       <p>We may update this Privacy Policy and Terms of Use from time to time to reflect changes in the App, our practices, or applicable laws. When we make changes:</p>
       <ul>
         <li>We will update the "Last updated" date at the top of this page.</li>
@@ -400,8 +440,8 @@
       </ul>
       <p>Your continued use of the App after changes are posted constitutes acceptance of the updated terms. If you disagree with any changes, your sole remedy is to stop using the App and delete it from your device.</p>
 
-      <!-- 26. Contact Us -->
-      <h2>26. Contact Us</h2>
+      <!-- 30. Contact Us -->
+      <h2>30. Contact Us</h2>
       <p>If you have any questions, concerns, complaints, or requests regarding this Privacy Policy, these Terms of Use, or our practices, please contact us:</p>
       <ul>
         <li><strong>Email:</strong> <a href="mailto:support@approvethemove.com">support@approvethemove.com</a></li>
@@ -410,7 +450,7 @@
       </ul>
       <p>We commit to responding to all privacy-related inquiries within <strong>30 days</strong> of receipt. For GDPR-related requests, we will respond within the legally required timeframe of one calendar month.</p>
 
-      <p class="legal-meta">Document version 2.0 &nbsp;|&nbsp; Effective April 13, 2026 &nbsp;|&nbsp; Applies to ATM Split v1.0 and all subsequent versions unless superseded.</p>
+      <p class="legal-meta">Document version 3.0 &nbsp;|&nbsp; Effective August 5, 2026 &nbsp;|&nbsp; Applies to ATM Split v1.0 and all subsequent versions unless superseded.</p>
 
     </div>
   </div>
