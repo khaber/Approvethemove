@@ -120,7 +120,7 @@
       </ul>
       <p>In addition, the App caches exchange rate data locally on your device for offline use. This cached data contains only currency codes and their corresponding exchange rates — no personal information of any kind. The App also includes bundled seed/fallback rates so it can function without any network connection.</p>
       <p>This data is declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
-      <p><strong>How to delete:</strong> You can erase all locally stored preferences and cached exchange rates at any time by deleting Currency Converter from your device. No residual data is retained after uninstallation.</p>
+      <p><strong>How to delete:</strong> You can erase all locally stored preferences and cached exchange rates at any time by deleting Currency Converter from your device. The App itself retains no residual data after uninstallation; device or iCloud backups made before deletion may retain copies, which are managed by iOS/Apple and outside our control.</p>
 
       <!-- 4. Network Activity -->
       <h2>4. Network Activity</h2>
@@ -141,7 +141,7 @@
       <p>The response contains only currency exchange rate data — currency codes and their corresponding numerical rates. No personal data, tracking pixels, scripts, or identifiers are received or processed.</p>
 
       <h3>4.3 Offline Operation</h3>
-      <p>The App includes bundled seed/fallback exchange rates and caches previously fetched rates locally. If a rate request fails or no internet connection is available, the App operates fully offline using cached or bundled rates, so it always keeps working.</p>
+      <p>The App includes bundled seed/fallback exchange rates and caches previously fetched rates locally. If a rate request fails or no internet connection is available, the App operates fully offline using cached or bundled rates, and is designed to keep working.</p>
 
       <h3>4.4 No Other Network Activity</h3>
       <p>Beyond fetching exchange rates from open.er-api.com, the App makes <strong>no other network requests</strong>. There are no connections to analytics servers, advertising networks, crash reporting services, social media APIs, or any other external endpoints.</p>
@@ -226,7 +226,7 @@
       <h2>9. Data Security</h2>
       <p>Although we do not collect or store personal data on any server, we employ the following security measures to protect your experience within the App:</p>
       <ul>
-        <li><strong>Encrypted network communication</strong> — All exchange rate requests are made over HTTPS (TLS-encrypted connections), ensuring that data in transit between your device and the exchange rate API cannot be intercepted.</li>
+        <li><strong>Encrypted network communication</strong> — All exchange rate requests are made over HTTPS (TLS-encrypted connections), helping protect data in transit between your device and the exchange rate API from interception.</li>
         <li><strong>Sandboxed storage</strong> — On-device preferences and cached rates are stored within the App's iOS sandbox, which is isolated from other apps and protected by the operating system.</li>
         <li><strong>Minimal network exposure</strong> — The App connects only to a single, well-defined endpoint (open.er-api.com) for exchange rate data, minimizing the network attack surface.</li>
         <li><strong>No persistent sensitive data</strong> — No passwords, tokens, credentials, or financial data are ever stored or processed.</li>
@@ -418,7 +418,7 @@
       <p>We may update this Privacy Policy and Terms of Use from time to time to reflect changes in the App, our practices, or applicable laws. When we make changes:</p>
       <ul>
         <li>We will update the "Last updated" date at the top of this page.</li>
-        <li>For material changes, we will notify you through the App before the changes take effect.</li>
+        <li>For material changes, where feasible, we will provide notice within the App (for example, via an app update) or on this page before the changes take effect.</li>
         <li>The updated document will be posted at this URL: <a href="https://approvethemove.com/converter/privacy">approvethemove.com/converter/privacy</a></li>
       </ul>
       <p>Your continued use of the App after changes are posted constitutes acceptance of the updated terms. If you disagree with any changes, your sole remedy is to stop using the App and delete it from your device.</p>

@@ -118,7 +118,7 @@
       </ul>
       <p>Active game state — your cards, bids, tricks, and scores — exists in memory during gameplay. In addition, recent versions of the App can save a <strong>replay</strong> of a finished game on your device so you can review or share it. Replays contain only gameplay (the cards, bids, plays, and result) plus your chosen display name; they are stored privately within the App's sandbox, only the most recent games are kept, you can delete them at any time from within the App, and — like all local data — they <strong>never leave your device unless you explicitly share or donate them</strong>. There is no automatic cloud sync of your games.</p>
       <p>This data is declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
-      <p><strong>How to delete:</strong> You can erase all locally stored preferences and saved replays at any time by deleting them from within the App, or by deleting Qatari Cards from your device. No residual data is retained after uninstallation.</p>
+      <p><strong>How to delete:</strong> You can erase all locally stored preferences and saved replays at any time by deleting them from within the App, or by deleting Qatari Cards from your device. The App itself retains no residual data after uninstallation; device or iCloud backups made before deletion may retain copies, which are managed by iOS/Apple and outside our control.</p>
 
       <!-- 3b. Optional Gameplay Donation -->
       <h2>3b. Optional Gameplay Donation</h2>
@@ -153,7 +153,7 @@
       <p>No other data (photos, contacts, location, device information, browsing history, etc.) is ever transmitted.</p>
 
       <h3>4.3 Encryption</h3>
-      <p>All peer-to-peer communication is encrypted using <strong>Apple's built-in TLS encryption</strong> (MCSession with <code>.required</code> encryption preference). This means all game data transmitted between devices is encrypted in transit and cannot be intercepted by other devices or networks.</p>
+      <p>All peer-to-peer communication is encrypted using <strong>Apple's built-in TLS encryption</strong> (MCSession with <code>.required</code> encryption preference). This means all game data transmitted between devices is encrypted in transit, so it cannot be read by other devices or networks even if intercepted.</p>
 
       <h3>4.4 Session Lifecycle</h3>
       <p>When a multiplayer session ends (either by completing the game, disconnecting, or closing the App), all session data is permanently discarded on all connected devices. No multiplayer data is retained, logged, or stored after the session concludes.</p>
@@ -195,7 +195,7 @@
         <tr>
           <td>CloudKit</td>
           <td>Storing anonymous game replays you choose to donate</td>
-          <td>Only if you opt in to donate (see Section 3)</td>
+          <td>Only if you opt in to donate (see Section 3b)</td>
         </tr>
       </table>
       <p>We do not use Firebase, Google Analytics, Facebook SDK, Unity, AdMob, Crashlytics, Sentry, Amplitude, Mixpanel, or any other third-party data collection tool.</p>
@@ -258,7 +258,7 @@
       <h2>9. Data Security</h2>
       <p>Although we do not collect or store personal data on any server, we employ the following security measures to protect your experience within the App:</p>
       <ul>
-        <li><strong>Encrypted multiplayer communications</strong> — All local multiplayer sessions use Apple's mandatory TLS encryption via MCSession, ensuring game data transmitted between devices cannot be intercepted.</li>
+        <li><strong>Encrypted multiplayer communications</strong> — All local multiplayer sessions use Apple's mandatory TLS encryption via MCSession, protecting game data transmitted between devices against interception.</li>
         <li><strong>Sandboxed storage</strong> — On-device preferences are stored within the App's iOS sandbox, which is isolated from other apps and protected by the operating system.</li>
         <li><strong>Minimal network exposure</strong> — The App's only internet use is Apple's Game Center (if you are signed in) and uploading an anonymous replay when you explicitly donate one (sent securely to Apple's CloudKit over TLS). It opens no other remote endpoints, greatly limiting the risk of remote data breaches or unauthorized server access.</li>
         <li><strong>No persistent sensitive data</strong> — No passwords, tokens, credentials, or financial data are ever stored or processed.</li>
@@ -267,7 +267,7 @@
 
       <!-- 10. Data Retention -->
       <h2>10. Data Retention</h2>
-      <p>We do not operate any account system or collect personal data. Almost all data associated with Qatari Cards exists exclusively on your personal device; the only exception is an anonymous game replay that you explicitly choose to donate, which is stored in Apple's CloudKit for AI training (see Section 3):</p>
+      <p>We do not operate any account system or collect personal data. Almost all data associated with Qatari Cards exists exclusively on your personal device; the only exception is an anonymous game replay that you explicitly choose to donate, which is stored in Apple's CloudKit for AI training (see Section 3b):</p>
       <table class="legal-table" aria-label="Data retention practices" tabindex="0">
         <tr>
           <th>Data Type</th>
@@ -292,7 +292,7 @@
         <tr>
           <td>Donated replays (only if you opt in)</td>
           <td>Apple CloudKit (anonymous, no personal identifiers)</td>
-          <td>Retained for AI training; see Section 3</td>
+          <td>Retained for AI training; see Section 3b</td>
         </tr>
         <tr>
           <td>Multiplayer session data</td>

@@ -130,7 +130,7 @@
       </ul>
 
       <p>Both storage mechanisms are declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
-      <p><strong>How to delete:</strong> You can delete any individual group, expense, member, or settlement within the App at any time. To erase all data permanently, delete ATM Split from your device. No residual data is retained after uninstallation.</p>
+      <p><strong>How to delete:</strong> You can delete any individual group, expense, member, or settlement within the App at any time. To erase all data permanently, delete ATM Split from your device. The App itself retains no residual data after uninstallation. Please note, however, that device or iCloud backups you made before deleting the App may still contain copies of its data; those backups are managed by you and Apple and are outside our control.</p>
 
       <!-- 4. Network Activity -->
       <h2>4. Network Activity</h2>
@@ -217,7 +217,7 @@
         <li><strong>Right to withdraw consent</strong> (Article 7) — Withdraw previously given consent at any time.</li>
       </ul>
       <p><strong>Since we do not collect, store, or process any personal data, there is no data for us to provide, correct, restrict, delete, port, or cease processing.</strong> Your local data can be erased by deleting individual items within the App or by deleting the App entirely. If you believe we hold data about you in error, please contact us and we will investigate promptly.</p>
-      <p><strong>Legal basis for processing:</strong> We do not process personal data. The on-device data storage operates under <strong>legitimate interest</strong> (providing a functional user experience) and does not constitute data processing under GDPR as the data never leaves the device or reaches us.</p>
+      <p><strong>Legal basis for processing:</strong> We do not process personal data, so no legal basis under Article 6 is required on our part. Because the data you enter into the App is stored solely on your device and never leaves it or reaches us, we do not act as a controller or processor of that data, and GDPR obligations that presuppose our possession of personal data do not arise.</p>
       <p><strong>Data controller:</strong> Approve The Move (contact details in Section 30).</p>
 
       <h3>9.2 California (CCPA / CPRA)</h3>
@@ -243,7 +243,7 @@
       <p>Although we do not collect or store personal data on any server, we employ the following security measures to protect your experience within the App:</p>
       <ul>
         <li><strong>Sandboxed storage</strong> — All on-device data (SwiftData database and UserDefaults preferences) is stored within the App's iOS sandbox, which is isolated from other apps and protected by the operating system.</li>
-        <li><strong>Encrypted network requests</strong> — Exchange rate requests are made over HTTPS (TLS encryption), ensuring data in transit cannot be intercepted.</li>
+        <li><strong>Encrypted network requests</strong> — Exchange rate requests are made over HTTPS (TLS encryption), helping protect data in transit from interception.</li>
         <li><strong>No persistent sensitive data</strong> — No passwords, tokens, credentials, or payment information are ever stored or processed.</li>
         <li><strong>No remote attack surface</strong> — The App does not expose any server endpoints, APIs, or network services. The only outbound request is a simple HTTPS GET for exchange rates, which transmits no personal data.</li>
       </ul>
@@ -270,8 +270,8 @@
         </tr>
         <tr>
           <td>Exported CSV files</td>
-          <td>Temporary (discarded after sharing)</td>
-          <td>Duration of share sheet session only</td>
+          <td>Device (App's temporary directory)</td>
+          <td>Until iOS automatically clears the temporary directory or the App is deleted</td>
         </tr>
       </table>
       <p>When you delete the App, all associated data is permanently removed from your device by the operating system.</p>

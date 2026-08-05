@@ -133,7 +133,7 @@
       </ul>
       <p>The records above exist on your device and, if you have iCloud enabled, in your personal iCloud container (see Section 4). Receipt photo <em>files</em> are the exception — they are kept only in the App's local storage and are not synced to iCloud (see Section 5). We have no ability to read, access, or retrieve any of this data.</p>
 
-      <p><strong>How to delete:</strong> You can delete any individual record (account, transaction, budget, goal, category, tag, recurring transaction, or template) at any time within the App. You can erase all locally stored data by deleting ATM Flow from your device. No residual data is retained after uninstallation. iCloud data can be managed through your device's iCloud storage settings.</p>
+      <p><strong>How to delete:</strong> You can delete any individual record (account, transaction, budget, goal, category, tag, recurring transaction, or template) at any time within the App. You can erase locally stored data by deleting ATM Flow from your device. Deleting the App removes its sandboxed data, with one exception: Keychain entries (such as saved statement-PDF passwords) may persist after uninstallation unless you remove them in the App first (see Section 7). Device or iCloud backups made before deletion may also retain copies of your data outside our control. iCloud data can be managed through your device's iCloud storage settings.</p>
 
       <!-- 4. iCloud Sync (CloudKit) -->
       <h2>4. iCloud Sync (CloudKit)</h2>
@@ -142,7 +142,7 @@
       <h3>4.1 How It Works</h3>
       <ul>
         <li><strong>Your data goes to your iCloud, not our servers.</strong> CloudKit stores your data in a <strong>private database container</strong> associated with your personal Apple ID. Only you can access this data through devices signed into your Apple ID.</li>
-        <li>The developer (Approve The Move) <strong>cannot read, access, query, or retrieve</strong> any data in your private CloudKit container. Apple's architecture enforces this separation — private containers are cryptographically inaccessible to the app developer.</li>
+        <li>The developer (Approve The Move) <strong>cannot read, access, query, or retrieve</strong> any data in your private CloudKit container. Apple's access-control architecture enforces this separation — app developers have no access to users' private CloudKit databases. Note that CloudKit private-database data is end-to-end encrypted only when you enable Apple's optional <strong>Advanced Data Protection</strong>; otherwise it is encrypted in transit and at rest with keys managed by Apple (see Section 4.3).</li>
         <li>iCloud sync is managed entirely by Apple's infrastructure and protected by your Apple ID credentials and Apple's encryption.</li>
       </ul>
 
@@ -184,7 +184,7 @@
         <li><strong>Local processing only</strong> — Files are read and processed entirely on your device, including any text recognition. No file data, statement content, or recognized text is uploaded to any external server.</li>
         <li>The imported data is stored in your local SwiftData database (and synced to your private iCloud container if iCloud sync is enabled).</li>
         <li>The original file remains unchanged on your device; the App only reads from it.</li>
-        <li><strong>Passwords for protected PDFs</strong> — If you choose to save the password for a password-protected statement so you don't have to re-enter it, that password is stored in the device <strong>Keychain</strong>, protected behind Face ID / Touch ID, and never leaves your device or reaches us. You can remove saved passwords by deleting the App.</li>
+        <li><strong>Passwords for protected PDFs</strong> — If you choose to save the password for a password-protected statement so you don't have to re-enter it, that password is stored in the device <strong>Keychain</strong>, protected behind Face ID / Touch ID, and never leaves your device or reaches us. You can remove saved passwords at any time from within the App. Please note: because of how iOS manages the Keychain, Keychain entries may persist after the App is deleted and can survive a reinstall, so removing a saved password in-app is the reliable way to clear it.</li>
       </ul>
 
       <!-- 8. Third-Party Services &amp; SDKs -->
@@ -336,10 +336,10 @@
         <tr>
           <td>Saved statement-PDF passwords</td>
           <td>Device (Keychain, Face ID / Touch ID protected)</td>
-          <td>Until removed by user or App is deleted</td>
+          <td>Until removed by you in the App — Keychain entries may persist after the App is deleted and can survive a reinstall (see Section 7)</td>
         </tr>
       </table>
-      <p>When you delete the App, all local data is permanently removed from your device by the operating system. iCloud data can be managed and deleted through your device's Settings > Apple ID > iCloud > Manage Storage.</p>
+      <p>When you delete the App, its sandboxed data (UserDefaults, SwiftData, and receipt photo files) is removed from your device by the operating system; Keychain entries may persist as noted above. iCloud data can be managed and deleted through your device's Settings > Apple ID > iCloud > Manage Storage.</p>
 
       <!-- 14. International Considerations -->
       <h2>14. International Considerations</h2>

@@ -97,7 +97,7 @@
         <li><strong>No account creation</strong> — You are never required or asked to sign up, log in, create an account, or provide an email address, phone number, or any other personal identifier.</li>
         <li><strong>No analytics or tracking</strong> — We do not use any analytics frameworks, crash reporting services, telemetry tools, device fingerprinting, or usage tracking of any kind.</li>
         <li><strong>No advertising</strong> — The App contains no advertisements, no advertising SDKs, no ad identifiers (IDFA), and no advertising networks.</li>
-        <li><strong>No networking</strong> — The App does not connect to the internet, does not make HTTP requests, does not use Wi-Fi or Bluetooth for communication, and does not transmit any data to any external server, cloud service, or remote endpoint.</li>
+        <li><strong>No networking</strong> — The App itself makes no network requests: it does not connect to the internet, does not use Wi-Fi or Bluetooth for communication, and does not transmit any data to any external server, cloud service, or remote endpoint. The one exception is the optional Apple-provided "rate this app" prompt, which is operated by iOS and StoreKit and, when shown, communicates with Apple under Apple's own privacy policy — see Sections 4 and 5 below.</li>
         <li><strong>No in-app purchases</strong> — No financial, billing, or payment information is collected or processed.</li>
         <li><strong>No location data</strong> — The App does not request, access, or store your geographic location.</li>
         <li><strong>No contacts or photos</strong> — The App does not access your contacts, photo library, camera, microphone, or any other device sensor beyond haptic feedback.</li>
@@ -116,7 +116,7 @@
       </ul>
       <p>All unit conversions are calculated in real time using Apple's built-in Measurement and Dimension APIs. The numbers you type and the results are never saved, logged, or persisted &mdash; only the category and unit selections listed above are remembered.</p>
       <p>This data is declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
-      <p><strong>How to delete:</strong> You can erase all locally stored preferences at any time by deleting Unit Converter from your device. No residual data is retained after uninstallation.</p>
+      <p><strong>How to delete:</strong> You can erase all locally stored preferences at any time by deleting Unit Converter from your device. The App retains no residual data after uninstallation. Note, however, that device or iCloud backups made before you deleted the App may still contain a copy of these preferences; backups are managed by iOS and Apple, and are outside our control.</p>
 
       <!-- 4. Third-Party Services &amp; SDKs -->
       <h2>4. Third-Party Services &amp; SDKs</h2>

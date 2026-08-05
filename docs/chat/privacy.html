@@ -129,7 +129,7 @@
       </ul>
       <p>All ChatStorage data resides exclusively within the App's iOS sandbox on your device. It is never uploaded, synced, backed up to any cloud service, or transmitted to any server. The only time message content leaves your device is when it is sent directly to a nearby peer over the local network (see Section 4).</p>
 
-      <p><strong>How to delete:</strong> You can delete individual messages, clear entire conversations from within the App, or erase all locally stored data at any time by deleting ATMChat from your device. No residual data is retained after uninstallation.</p>
+      <p><strong>How to delete:</strong> You can delete individual messages, clear entire conversations from within the App, or remove the App's stored data at any time by deleting ATMChat from your device — iOS removes everything in the App's sandbox (message history, conversation list, and preferences) on uninstall. Two narrow exceptions, both standard iOS behavior: the random device UUID stored in the iOS Keychain (Section 3.1) may persist on the device after the App is deleted until it is removed, and device backups you made before deletion may retain copies of previously stored data. Neither of these ever reaches us.</p>
 
       <!-- 4. Local Networking &amp; Mesh Messaging -->
       <h2>4. Local Networking &amp; Mesh Messaging</h2>
@@ -137,10 +137,10 @@
 
       <h3>4.1 How It Works</h3>
       <ul>
-        <li><strong>No internet connection is used or required.</strong> All communication occurs directly between devices over local Wi-Fi and Bluetooth Low Energy (BLE). No data passes through our servers, Apple's servers, or any third-party relay.</li>
+        <li><strong>Messaging is fully peer-to-peer — no internet connection is used or required to send or receive messages.</strong> All messaging occurs directly between devices over local Wi-Fi and Bluetooth Low Energy (BLE). No message data passes through our servers, Apple's servers, or any third-party relay. The App's only internet access is the optional link-preview fetch performed on your device when a user shares a URL, as described in Section 2.</li>
         <li>The App uses Apple's <strong>Bonjour</strong> protocol (via MultipeerConnectivity) and <strong>BLE advertising</strong> (via CoreBluetooth) to discover nearby devices that are running ATMChat.</li>
         <li>Once peers discover each other, a direct connection is established. All subsequent data exchange occurs over this local peer-to-peer link.</li>
-        <li><strong>No message logs exist on any server.</strong> Because the App never connects to the internet and operates no backend infrastructure, there is no server that could store, log, intercept, or retain any of your messages. We have no ability to read, access, or recover your messages.</li>
+        <li><strong>No message logs exist on any server.</strong> Because messaging never touches the internet and we operate no backend infrastructure, there is no server that could store, log, intercept, or retain any of your messages. We have no ability to read, access, or recover your messages.</li>
       </ul>
 
       <h3>4.2 Data Transmitted During Sessions</h3>
@@ -323,7 +323,7 @@
           <td>Active session only</td>
         </tr>
       </table>
-      <p>When you delete the App, all associated data is permanently removed from your device by the operating system.</p>
+      <p>When you delete the App, iOS permanently removes all data in the App's sandbox from your device. As is standard iOS behavior, the random device UUID stored in the iOS Keychain (Section 3.1) may persist on the device until it is removed, and device backups made before deletion may retain copies of previously stored data. Neither is ever accessible to us.</p>
 
       <!-- 11. International Considerations -->
       <h2>11. International Considerations</h2>
