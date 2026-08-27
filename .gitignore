@@ -23,3 +23,11 @@ CLAUDE.md
 .DS_Store
 **/.DS_Store
 *.xcuserdata
+
+# Codex agent config (duplicate of CLAUDE.md)
+AGENTS.md
+
+# Local Qatari Joker backup archives (redundant with git history)
+QatariJoker_backup_*
+QatariJoker_post_ML_scaffolding_*
+QatariJoker_pre_scaffolding_*
