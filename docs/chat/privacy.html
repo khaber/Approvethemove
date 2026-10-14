@@ -74,7 +74,7 @@
     <div class="privacy-content">
 
       <h1>ATMChat — Privacy Policy &amp; Terms of Use</h1>
-      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: August 5, 2026</p>
+      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: October 14, 2026</p>
 
       <p class="lead">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for ATMChat. Please read both sections carefully before using the App.</p>
 
@@ -92,53 +92,58 @@
 
       <!-- 2. Information We Collect -->
       <h2>2. Information We Collect</h2>
-      <p><strong>We do not collect, transmit, or process any personal data.</strong> ATMChat is designed from the ground up as a privacy-first, offline mesh messaging application. Specifically:</p>
+      <p><strong>We do not collect your personal data: the App never sends it to us, and we operate no servers.</strong> The App does send some data to nearby devices (Section 4) and, for link previews, to the linked website (below). We receive personal data only when someone chooses to email us: your own support email or report, or a report another user sends about you, which can include your display name and device ID and, for a reported message, its text (see "Emails you choose to send" below). ATMChat is designed from the ground up as a privacy-first, offline mesh messaging application. Specifically:</p>
       <ul>
-        <li><strong>No account creation</strong> — You are never required or asked to sign up, log in, create an account, or provide an email address, phone number, or any other personal identifier. Your device identity is a randomly generated UUID that is not linked to your Apple ID, phone number, or any personal information.</li>
+        <li><strong>No account creation</strong> — You are never required or asked to sign up, log in, create an account, or provide an email address, phone number, or any other personal identifier. Your device identity is a randomly generated UUID that is not derived from your Apple ID, phone number, or other personal information.</li>
         <li><strong>No analytics or tracking</strong> — We do not use any analytics frameworks, crash reporting services, telemetry tools, device fingerprinting, or usage tracking of any kind.</li>
         <li><strong>No advertising</strong> — The App contains no advertisements, no advertising SDKs, no ad identifiers (IDFA), and no advertising networks.</li>
-        <li><strong>No server-side communication</strong> — We operate no servers, and the App never transmits any of your data to us or to any third party. All messaging traffic is strictly local peer-to-peer. The only internet requests the App ever makes are optional, on-device fetches of link-preview metadata (page title and thumbnail) for URLs you or a peer share, performed by Apple's LinkPresentation framework directly from your device to the linked website when an internet connection happens to be available. These requests are not routed through us, and nothing about them is logged or collected by us.</li>
-        <li><strong>No cloud sync</strong> — Messages, conversations, and all other data remain exclusively on your device. There is no cloud backup, no server-side message storage, and no synchronization service of any kind.</li>
+        <li><strong>No server-side communication</strong> — We operate no servers, and the App never sends your data to us on its own. All messaging traffic is strictly local peer-to-peer. The only internet requests the App can make are link previews (page title and image) for web links you or a peer share, including links posted in the "Everyone Nearby" room. When such a link appears on screen, Apple's LinkPresentation framework fetches the preview from your device, directly from the linked website (and any server that website uses for its preview image), so that website sees your IP address. In version 1.1 and earlier, previews load automatically whenever an internet connection is available. Since version 1.2 they are off by default and load only if you turn on Settings → Privacy → Load Link Previews. These requests are not routed through us, and nothing about them is logged or collected by us.</li>
+        <li><strong>Emails you choose to send</strong> — Report (long-press a message you received → Report, or a chat's options menu → Report…) prepares an email to <a href="mailto:support@approvethemove.com">support@approvethemove.com</a> in Apple's Mail composer, or copies it to your clipboard if Mail isn't set up. Settings → Contact &amp; Legal → Email Support opens your email app. Nothing is sent unless you send it. A report contains the name and ID of the chat you report from (for a one-to-one chat, the peer's display name and device ID) and, if you report a message, its type, text and time. We receive whatever you send, along with your email address, and use it only to reply to you, to review and act on reports, and to cooperate with lawful requests from authorities (Section 16).</li>
+        <li><strong>No cloud sync</strong> — The App has no cloud sync, no server-side message storage, and no synchronization service of any kind, and it never sends your messages or other App data to us. Your messages are stored on your device and on the devices of the people you exchange them with (for "Everyone Nearby" posts, every device that receives them). Like any app's data, they are included in your own device backups (iCloud Backup or a backup to a computer) if you use them. The device ID kept in the Keychain is not restored to a different device (Section 3.1).</li>
         <li><strong>No in-app purchases</strong> — No financial, billing, or payment information is collected or processed.</li>
-        <li><strong>No location data</strong> — The App does not request, access, or store your geographic location.</li>
+        <li><strong>No location data</strong> — The App does not request or use your geographic location. Videos and files you send keep any location metadata they already contain (Section 4.6).</li>
       </ul>
-      <p><strong>We do not sell, rent, or trade any personal information — and we never could, because we never possess it.</strong> Your data lives on your device, not with us.</p>
+      <p><strong>We do not sell, rent, or trade any personal information.</strong> Apart from emails people choose to send us, including reports, we never possess it: your data lives on your device and on the devices of the people you message, not with us.</p>
 
       <!-- 3. On-Device Storage -->
       <h2>3. On-Device Storage</h2>
-      <p>ATMChat stores data locally on your device using two storage mechanisms. This data is stored within the App's private sandbox, is not accessible to other apps, and <strong>never leaves your device</strong> except when explicitly transmitted to nearby peers during active messaging sessions (see Section 4).</p>
+      <p>ATMChat stores data locally on your device: your profile, settings and small lists in UserDefaults, your device ID normally in the Keychain (Section 3.1), and your chats, media and related files in the App's own folder (Section 3.2). This data stays within the App's private sandbox, is not accessible to other apps, and is never sent to us by the App. It <strong>leaves your device only</strong> when the App sends it to nearby devices, some of it automatically (Section 4); when a link preview loads (Section 2); when you choose to share, save, forward or report something yourself; and as part of your own device backups (iCloud Backup or a backup to a computer) if you use them.</p>
 
       <h3>3.1 UserDefaults &amp; Keychain</h3>
-      <p>A small amount of non-personal data is stored using Apple's <strong>UserDefaults</strong> and <strong>Keychain</strong> systems:</p>
+      <p>A small amount of data is stored using Apple's <strong>UserDefaults</strong> and <strong>Keychain</strong> systems:</p>
       <ul>
-        <li>Display name (the name you choose, shared only with peers you connect to)</li>
-        <li>A randomly generated unique identifier (UUID) used solely to identify your device during local messaging sessions — not linked to your Apple ID or any personal information. It is kept in the device Keychain (with a legacy UserDefaults fallback on older installs).</li>
-        <li>Display names and avatars of peers you have chatted with</li>
+        <li>Your display name and, if you set one, your profile photo (both shared with nearby devices as described in Section 4.2), and the network name other devices see during discovery, which is based on your display name</li>
+        <li>A randomly generated unique identifier (UUID) that identifies your device to other ATMChat devices — not derived from your Apple ID or other personal information. It is normally kept in the device Keychain, which is not restored to a different device. If the Keychain can't be used, it is kept in UserDefaults instead (as the earliest versions did), and that copy is included in device backups.</li>
+        <li>Display names of other ATMChat users your device has learned, either by connecting to them or from the neighbour announcements of devices it connects to (Section 4.2), not only people you have chatted with. Since version 1.2, at most 2,000 are kept.</li>
         <li>Per-conversation unread counts</li>
-        <li>Your blocked-peers list (kept only on your device; never shared with anyone, including the blocked peer)</li>
-        <li>Your notification preferences (which alert types you receive) and per-chat mute list</li>
+        <li>Your blocked-peers list: each blocked peer's device ID and last-known name (kept only on your device; never shared with anyone, including the blocked peer)</li>
+        <li>Your notification preferences (which alert types you receive), per-chat mute list, and each chat's Disappearing Messages setting</li>
+        <li>Since version 1.2: your Load Link Previews setting, and a count of message deliveries plus the date and app version of the last App Store rating prompt, used only to limit how often that prompt can appear</li>
       </ul>
       <p>This data is declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
 
       <h3>3.2 ChatStorage (Custom Local Storage)</h3>
-      <p>ATMChat uses a custom on-device storage system called <strong>ChatStorage</strong> to persist your messaging data locally. This includes:</p>
+      <p>ATMChat uses a custom on-device storage system called <strong>ChatStorage</strong>, plus a few related files in the App's own folder, to persist your messaging data locally. This includes:</p>
       <ul>
-        <li>Message history (text messages, media metadata, and message content)</li>
+        <li>Message history for each conversation, including the "Everyone Nearby" room: message text, sender name and device ID, time, replies, reactions (with the device ID of each person who reacted) and media details such as file names. Each conversation keeps up to 10,000 messages; older ones are removed. A deleted or expired message leaves a placeholder (sender, time and type, but no content).</li>
+        <li>Media files: copies of the photos, videos, voice messages, contact cards and files you send and receive</li>
         <li>Conversation list (the list of peers you have communicated with)</li>
-        <li>Read receipts (which messages you have read and when)</li>
+        <li>Delivery status of each message you send (sent, delivered or read). The App does not record when a message was read.</li>
+        <li>Offline queue: text messages and links you send while the other person is out of range, kept until their device confirms delivery (up to 500 per person; beyond that, the oldest is dropped). A queued message more than 72 hours old is discarded instead of sent.</li>
+        <li>Profile photos that other users' devices send when they connect to yours. Since version 1.2 they are re-encoded at a small size and at most 500 are kept.</li>
       </ul>
-      <p>All ChatStorage data resides exclusively within the App's iOS sandbox on your device. It is never uploaded, synced, backed up to any cloud service, or transmitted to any server. The only time message content leaves your device is when it is sent directly to a nearby peer over the local network (see Section 4).</p>
+      <p>All of this data resides within the App's iOS sandbox on your device. The App never uploads or syncs it, and never sends it to us or to any server. Like any app's data, it is included in your own device backups (iCloud Backup or a backup to a computer) if you use them, and is restored with them. Apart from those backups and anything you choose to share, save, forward or report yourself, message content leaves your device only when it is sent to a peer over the local network, directly or through other ATMChat devices (see Section 4), and, when a link preview loads, when the link itself is requested from the website it points to (Section 2). Since version 1.2, if the history or offline-queue file is damaged and can't be decoded, it is kept in the same folder under a new name rather than overwritten.</p>
 
-      <p><strong>How to delete:</strong> You can delete individual messages, clear entire conversations from within the App, or remove the App's stored data at any time by deleting ATMChat from your device — iOS removes everything in the App's sandbox (message history, conversation list, and preferences) on uninstall. Two narrow exceptions, both standard iOS behavior: the random device UUID stored in the iOS Keychain (Section 3.1) may persist on the device after the App is deleted until it is removed, and device backups you made before deletion may retain copies of previously stored data. Neither of these ever reaches us.</p>
+      <p><strong>How to delete:</strong> You can delete a message you sent in a one-to-one chat (long-press → Delete for Everyone). Its content is removed from your device at once, and a request to delete it is sent to the other person if they are reachable. Their copy may remain: nothing is sent while they are offline, and a recipient using version 1.2 or later ignores delete requests relayed through other devices (since version 1.2, the App tells you when you aren't directly connected). In version 1.1 and earlier, a message deleted or expired while it was still waiting in the offline queue could still be sent when that person reconnected. You can also turn on <em>Disappearing Messages</em> for a one-to-one chat (the chat's options menu → Disappearing Messages → 30 seconds, 5 minutes, 1 hour or 24 hours). Messages older than that, sent or received, are then removed from your device when you open the App or the chat, but not from the other person's device. Apart from Disappearing Messages, the App has no way to delete messages you received, posts in the "Everyone Nearby" room (yours included), or a whole conversation. To remove all of the App's stored data, delete ATMChat from your device — iOS removes everything in the App's sandbox (message history, media, conversation list, and preferences) on uninstall. Two narrow exceptions, both standard iOS behavior: the random device UUID stored in the iOS Keychain (Section 3.1) may persist on the device after the App is deleted until it is removed, and device backups you made before deletion may retain copies of previously stored data. Neither of these ever reaches us.</p>
 
       <!-- 4. Local Networking &amp; Mesh Messaging -->
       <h2>4. Local Networking &amp; Mesh Messaging</h2>
-      <p>Local networking is the <strong>primary feature</strong> of ATMChat. The App enables direct, peer-to-peer mesh messaging between nearby devices using two Apple frameworks: <strong>MultipeerConnectivity</strong> (Wi-Fi) and <strong>CoreBluetooth</strong> (Bluetooth Low Energy). This section provides comprehensive detail about how your data is handled during messaging sessions.</p>
+      <p>Local networking is the <strong>primary feature</strong> of ATMChat. The App enables peer-to-peer mesh messaging between nearby devices using two Apple frameworks: <strong>MultipeerConnectivity</strong> (Wi-Fi) and <strong>CoreBluetooth</strong> (Bluetooth Low Energy). This section provides comprehensive detail about how your data is handled during messaging sessions.</p>
 
       <h3>4.1 How It Works</h3>
       <ul>
-        <li><strong>Messaging is fully peer-to-peer — no internet connection is used or required to send or receive messages.</strong> All messaging occurs directly between devices over local Wi-Fi and Bluetooth Low Energy (BLE). No message data passes through our servers, Apple's servers, or any third-party relay. The App's only internet access is the optional link-preview fetch performed on your device when a user shares a URL, as described in Section 2.</li>
-        <li>The App uses Apple's <strong>Bonjour</strong> protocol (via MultipeerConnectivity) and <strong>BLE advertising</strong> (via CoreBluetooth) to discover nearby devices that are running ATMChat.</li>
+        <li><strong>Messaging is fully peer-to-peer — no internet connection is used or required to send or receive messages.</strong> All messaging travels over local Wi-Fi and Bluetooth Low Energy (BLE), directly between devices or relayed by other nearby ATMChat devices (Section 4.3). No message data passes through our servers, Apple's servers, or any internet service. The App's only possible internet access is the link-preview fetch described in Section 2, which is automatic in version 1.1 and earlier and, since version 1.2, off unless you turn it on.</li>
+        <li>The App uses Apple's <strong>Bonjour</strong> protocol (via MultipeerConnectivity) and <strong>BLE advertising</strong> (via CoreBluetooth) to discover nearby devices that are running ATMChat. While the App is open, your device advertises itself, and over Bluetooth it keeps doing so while the App is in the background. The MultipeerConnectivity advertisement carries your network name, which is based on your display name, so nearby devices looking for ATMChat can see it before any connection. The App's own Bluetooth advertisement carries only the name "ATMChat", not your name or device ID (Section 4.2 describes what a device that connects can obtain). Your device connects automatically to the ATMChat devices it finds.</li>
         <li>Once peers discover each other, a direct connection is established. All subsequent data exchange occurs over this local peer-to-peer link.</li>
         <li><strong>No message logs exist on any server.</strong> Because messaging never touches the internet and we operate no backend infrastructure, there is no server that could store, log, intercept, or retain any of your messages. We have no ability to read, access, or recover your messages.</li>
       </ul>
@@ -148,47 +153,49 @@
       <ul>
         <li><strong>Text messages</strong> — The content of messages you type and send to other peers.</li>
         <li><strong>Photos</strong> — Images you select from your photo library or capture with your camera to send to peers.</li>
-        <li><strong>Videos</strong> — Video files you select or record to send to peers.</li>
+        <li><strong>Videos</strong> — Video files you select from your photo library to send to peers.</li>
         <li><strong>Voice messages</strong> — Audio recordings you create within the App to send to peers.</li>
         <li><strong>Contact cards</strong> — Contact information you explicitly choose to share with peers.</li>
         <li><strong>Files</strong> — Documents and files you explicitly select to send to peers.</li>
         <li><strong>Delivery receipts</strong> — Confirmation signals indicating that a message has been delivered to the recipient's device.</li>
         <li><strong>Read receipts</strong> — Signals indicating that a recipient has opened and viewed your message.</li>
         <li><strong>Message reactions</strong> — Emoji reactions you attach to specific messages.</li>
-        <li><strong>Delete requests</strong> — When you delete a message for all participants, a deletion signal is sent to connected peers to remove the message from their devices.</li>
-        <li><strong>Display names and device UUIDs</strong> — So peers can identify each other during messaging sessions. UUIDs are randomly generated and not linked to any personal information.</li>
-        <li><strong>"Everyone Nearby" room messages</strong> — Text messages you send to the shared room are delivered to every connected device and relayed through intermediate ATMChat devices like any mesh traffic (see Sections 4.3 and 4.4). Anyone on the local mesh can read what you post in the room — treat it like speaking up in a shared space.</li>
+        <li><strong>Delete requests</strong> — When you use Delete for Everyone on a message you sent in a one-to-one chat, a request to remove it is sent to the person you sent it to, if they are reachable. A recipient using version 1.2 or later removes a message only at the request of the person who wrote it, and only when the request arrives over a direct connection; requests relayed through other devices are ignored, so their copy may remain (Section 3.2). Delete for Everyone isn't available in the "Everyone Nearby" room.</li>
+        <li><strong>Display name, profile photo and device UUID</strong> — These are sent automatically, as soon as a connection is made, to every ATMChat device yours connects to (not only people you chat with), so peers can identify each other. Your display name and UUID are also part of every message you send, including messages relayed through the mesh. Over Bluetooth, your display name and UUID are sent to any device that connects to the App's Bluetooth messaging service and subscribes to it, without pairing, so a nearby Bluetooth device that isn't running ATMChat can obtain them too. In version 1.1 and earlier, any device that connected to either of the App's two Bluetooth services could also read your UUID directly from it. The UUID is randomly generated and not derived from your Apple ID, phone number or other personal information, but it is sent together with your display name, does not change when you change your name, and can survive reinstalling the App (Section 3.2).</li>
+        <li><strong>Neighbour announcements</strong> — To route mesh messages, whenever your device's connections change it tells each device it is connected to which devices it is connected to (their UUIDs), with their display names, so devices two hops away can show names. Since version 1.2 these announcements name only your current neighbours. In version 1.1 and earlier they also carried the names and UUIDs of every device yours had connected to since the App last started.</li>
+        <li><strong>Typing indicators</strong> — While you type in a one-to-one chat, a signal that you are typing is sent to the person you are chatting with.</li>
+        <li><strong>"Everyone Nearby" room messages</strong> — Text messages and links you send to the shared room are delivered to every ATMChat device they can reach, directly or through intermediate ATMChat devices (see Sections 4.3 and 4.4), and each of those devices shows and stores them with your display name and UUID. Anyone on the local mesh can read what you post in the room, and the App has no way to delete a room post afterwards, from your device or anyone else's — treat it like speaking up in a shared space.</li>
       </ul>
-      <p>All of this data is transmitted <strong>directly between devices over the local network</strong>. None of it is routed through the internet, stored on any server, or accessible to anyone other than the connected peers in the session.</p>
+      <p>All of this data is transmitted <strong>over local Wi-Fi and Bluetooth, between nearby devices</strong>. None of it is routed through the internet or stored on any server. It can pass through other ATMChat devices that relay it (Section 4.3), and because it is not encrypted in transit (Section 4.4), someone nearby with the right equipment could capture it.</p>
 
       <h3>4.3 Mesh Routing &amp; Privacy Implications</h3>
       <p>ATMChat supports <strong>mesh networking</strong>, which means messages can hop through intermediate devices to reach their intended recipient. This enables communication even when two devices are not directly within range of each other, as long as intermediate ATMChat devices form a connected path.</p>
       <p>Important privacy details about mesh routing:</p>
       <ul>
-        <li><strong>Intermediate devices act as relays only.</strong> When a message hops through an intermediate device, the ATMChat app on that device forwards it onward automatically. Relayed messages are never displayed to the relay device's user and are never saved into that device's chat history.</li>
-        <li><strong>No persistent relay logs.</strong> Relaying happens in memory; intermediate devices do not retain any record of messages they have forwarded. Once a message is relayed, no trace of it remains on the relay device.</li>
+        <li><strong>Intermediate devices act as relays only.</strong> When a message hops through an intermediate device, the ATMChat app on that device forwards it onward automatically, including while the App is in the background. Relayed messages addressed to someone else are never displayed to the relay device's user and are never saved into that device's chat history. Posts in the "Everyone Nearby" room are different: every device they reach, relays included, shows and stores them (Section 4.2).</li>
+        <li><strong>No persistent relay logs.</strong> Relaying happens in memory; intermediate devices save no copy of the messages they forward. To avoid forwarding the same message twice, a relay remembers each packet's random ID (not its content) in memory only, for at most the last 5,000 packets. A relay can also see which device UUIDs a packet is from and to.</li>
         <li><strong>Honest limitation:</strong> mesh traffic is not end-to-end encrypted (see Section 4.4). While the ATMChat app never shows relayed content, a technically sophisticated user with modified software on the relay path could in principle inspect relayed data. Treat mesh conversations like conversations in a shared physical space.</li>
       </ul>
 
       <h3>4.4 Transport Security</h3>
       <p><strong>Local peer-to-peer sessions currently run without transport-layer encryption.</strong> This is a deliberate engineering trade-off: encrypted MultipeerConnectivity sessions proved significantly slower and less reliable over mixed Wi-Fi + Bluetooth mesh links, and dependable delivery is the App's core purpose. What this means in practice:</p>
       <ul>
-        <li>Your messages never touch the internet, so they cannot be intercepted remotely — an eavesdropper would have to be physically nearby, within local Wi-Fi/Bluetooth range, while you chat.</li>
+        <li>Your messages are never sent over the internet, so they cannot be intercepted remotely — an eavesdropper would have to be physically nearby, within local Wi-Fi/Bluetooth range, while you chat. (When a link preview loads, the shared link itself is requested from the website it points to; see Section 2.)</li>
         <li>Within that local radio range, transmitted data is not encrypted. Treat ATMChat conversations like conversations in a shared physical space.</li>
         <li>We recommend not sending highly sensitive information (passwords, ID numbers, financial details) over any local mesh network, including ATMChat.</li>
         <li>A future update may add transport encryption; if the trade-offs change, this policy will be updated accordingly (see Section 31).</li>
       </ul>
 
       <h3>4.5 Session Lifecycle</h3>
-      <p>When a messaging session ends (either by disconnecting, moving out of range, or closing the App), the active peer-to-peer connection is terminated. Message history that has been saved to ChatStorage (Section 3.2) persists locally on your device for your convenience. However, no session data is transmitted to any server, and no session metadata is retained beyond what is stored locally on your own device.</p>
+      <p>When a messaging session ends (by disconnecting, moving out of range, or quitting the App from the app switcher), the peer-to-peer connection is terminated. While the App is only in the background, it keeps using Bluetooth: it can stay connected to nearby devices, receive messages and relay other people's messages, and iOS can relaunch it in the background for Bluetooth events. Message history that has been saved to ChatStorage (Section 3.2) persists locally on your device. No session data is transmitted to any server, and no session metadata is retained beyond what is stored locally on your own device.</p>
 
       <h3>4.6 Media &amp; File Privacy</h3>
-      <p>Photos, videos, voice messages, contact cards, and files you send through ATMChat are transmitted directly to the recipient's device over the local peer-to-peer connection. They are never uploaded to any server, cloud storage service, or content delivery network. Once transmitted, the media exists only on the sender's and recipient's devices.</p>
-      <p>Photos you send from your library are downscaled and re-encoded on your device before sending, which also strips embedded metadata such as location (EXIF). If you choose to save received photos or videos to your own photo library, the App uses Apple's <strong>add-only</strong> photo access — it can add the items you explicitly save but can never read, browse, or access anything else in your library.</p>
+      <p>Photos, videos, voice messages, contact cards, and files you send through ATMChat are transmitted to the recipient's device over the local peer-to-peer connection. They are never uploaded to any server, cloud storage service, or content delivery network. Videos are sent only over a direct Wi-Fi connection. Other media up to 700 KB sent to someone who isn't directly connected passes through relaying devices on the way, in memory only (Section 4.3). Once transmitted, the media is stored on the sender's and recipient's devices (and in their device backups, if they use them); what the recipient does with it after that, such as saving, sharing or forwarding it, is up to them.</p>
+      <p>Photos you send from your library are downscaled and re-encoded on your device before sending, which also strips embedded metadata such as location (EXIF). Videos and files are sent as they are, without re-encoding, so they keep any metadata they contain (a video can include where it was recorded), and a file is sent with its original file name. If you choose to save received photos or videos to your own photo library, the App uses Apple's <strong>add-only</strong> photo access — it can add the items you explicitly save but can never read, browse, or access anything else in your library.</p>
 
       <!-- 5. Third-Party Services &amp; SDKs -->
       <h2>5. Third-Party Services &amp; SDKs</h2>
-      <p>ATMChat does <strong>not</strong> integrate, embed, or communicate with any third-party services, SDKs, APIs, or frameworks that collect, process, or transmit user data. The App uses exclusively Apple-provided first-party system frameworks:</p>
+      <p>ATMChat does <strong>not</strong> integrate or embed any third-party SDKs, APIs, or frameworks, and it does not communicate with any third-party service, except that a link preview (Section 2) contacts the website the link points to. The App uses only Apple-provided first-party system frameworks, including:</p>
       <table class="legal-table" aria-label="Framework and SDK data practices" tabindex="0">
         <tr>
           <th>Framework</th>
@@ -212,13 +219,43 @@
         </tr>
         <tr>
           <td>AVFoundation</td>
-          <td>Audio and video recording for voice messages and media capture</td>
+          <td>Recording and playing voice messages, and playing videos</td>
           <td>None</td>
         </tr>
         <tr>
           <td>PhotosUI</td>
           <td>Photo and video selection from user's library</td>
           <td>None</td>
+        </tr>
+        <tr>
+          <td>Photos</td>
+          <td>Saving photos and videos from a chat to your library, with add-only access</td>
+          <td>None</td>
+        </tr>
+        <tr>
+          <td>Contacts / ContactsUI</td>
+          <td>Choosing a contact card to share, and showing contact cards you receive</td>
+          <td>None (only the contact you choose is shared, with the peer you send it to)</td>
+        </tr>
+        <tr>
+          <td>UserNotifications</td>
+          <td>Notifications for new messages and peers joining, created on your device</td>
+          <td>None</td>
+        </tr>
+        <tr>
+          <td>LinkPresentation</td>
+          <td>Link previews for web links (automatic in version 1.1 and earlier; since version 1.2, only if you turn on Load Link Previews)</td>
+          <td>None by us; the linked website sees your IP address (Section 2)</td>
+        </tr>
+        <tr>
+          <td>MessageUI</td>
+          <td>Composing a report email that you choose to send</td>
+          <td>None by the App; an email you send reaches us (Section 2)</td>
+        </tr>
+        <tr>
+          <td>StoreKit</td>
+          <td>Since version 1.2: asking iOS to show the App Store rating prompt</td>
+          <td>None by us; Apple handles any rating you give</td>
         </tr>
       </table>
       <p>We do not use Firebase, Google Analytics, Facebook SDK, Unity, AdMob, Crashlytics, Sentry, Amplitude, Mixpanel, or any other third-party data collection tool.</p>
@@ -231,13 +268,13 @@
       <!-- 7. Children's Privacy -->
       <h2>7. Children's Privacy</h2>
       <p>ATMChat is rated <strong>4+</strong> by Apple and is designed to be suitable for users of all ages. The App does not contain violence, gambling (real or simulated), horror, mature themes, profanity, or any other objectionable material.</p>
-      <p>Because we do not collect any personal information from any user of any age, we are compliant with the following regulations regarding children's privacy:</p>
+      <p>Because the App collects no personal information from any user of any age, we are compliant with the following regulations regarding children's privacy:</p>
       <ul>
-        <li><strong>COPPA</strong> (Children's Online Privacy Protection Act, United States) — We do not knowingly collect personal information from children under the age of 13. Since the App collects no personal information from anyone, no COPPA violation can occur.</li>
-        <li><strong>GDPR-K / Age of Digital Consent</strong> (European Economic Area) — We do not process personal data of minors under 16 (or the lower age set by individual EEA member states). Since no personal data is processed, no parental consent is required.</li>
+        <li><strong>COPPA</strong> (Children's Online Privacy Protection Act, United States) — We do not knowingly collect personal information from children under the age of 13. The App sends us no personal information from anyone. If a child under 13 emails us, we handle that email as described in Section 8.1, and the child or a parent or guardian can ask us to delete it at any time.</li>
+        <li><strong>GDPR-K / Age of Digital Consent</strong> (European Economic Area) — The App sends us no personal data of minors under 16 (or the lower age set by individual EEA member states), or of anyone else, so no parental consent is required to use it. If a child emails us, we handle that email as described in Section 8.1, and the child or a parent or guardian can ask us to delete it at any time.</li>
         <li><strong>Apple's Guidelines for Apps Used by Children</strong> — The App contains no data collection, no third-party analytics, and no advertising.</li>
       </ul>
-      <p>Please note that ATMChat is a communication tool: the content you receive comes from the nearby people you chat with, not from us, and we cannot moderate it in advance. Built-in safety tools let anyone block a peer (Settings → Blocked) or report a message (long-press → Report). Parents and guardians should apply the same judgment they would to any messaging app.</p>
+      <p>Please note that ATMChat is a communication tool: the content you receive comes from the nearby people you chat with, not from us, and we cannot moderate it in advance. Built-in safety tools let anyone block a peer (a chat's options menu → Block; blocked peers are listed under Settings → Blocked) or report a message (long-press → Report). Parents and guardians should apply the same judgment they would to any messaging app.</p>
 
       <!-- 8. Your Rights Under Applicable Laws -->
       <h2>8. Your Rights Under Applicable Laws</h2>
@@ -254,8 +291,8 @@
         <li><strong>Right to object</strong> (Article 21) — Object to processing based on legitimate interests.</li>
         <li><strong>Right to withdraw consent</strong> (Article 7) — Withdraw previously given consent at any time.</li>
       </ul>
-      <p><strong>Since we do not collect, store, or process any personal data, there is no data for us to provide, correct, restrict, delete, port, or cease processing.</strong> Your local preferences and message history can be erased by deleting the App. If you believe we hold data about you in error, please contact us and we will investigate promptly.</p>
-      <p><strong>Legal basis for processing:</strong> We do not process personal data. The on-device preference and message storage operates under <strong>legitimate interest</strong> (providing a functional messaging experience) and does not constitute data processing under GDPR as the data never leaves the device or reaches us.</p>
+      <p><strong>The App does not send us any personal data, so we hold none from it to provide, correct, restrict, delete, port, or cease processing.</strong> The only personal data we may hold is email someone chooses to send us, such as a support request or a report (Section 16), including a report another user makes about you. An email includes the sender's email address and whatever it contains: a report includes the name and ID of the chat it was made from (for a one-to-one chat, the peer's display name and device ID) and, if a message is reported, its type, text and time. You can ask us for a copy of email you sent us, or ask us to delete it, at any time. If you think someone has reported you, you can ask us whether we hold a report that includes your display name or device ID, and for a copy of what it says about you; we won't tell you who sent it, and we may keep a report while we need it to keep the App safe or to meet a legal obligation. Your local preferences and message history can be erased by deleting the App; copies in device backups you have made are kept under your backup settings, and copies of messages on other people's devices are not affected. If you believe we hold data about you in error, please contact us and we will investigate promptly.</p>
+      <p><strong>Legal basis for processing:</strong> The App sends us no personal data. Its on-device preference and message storage stays under your control on your device (and in any backups you make); what the App sends goes only to nearby devices (Section 4) and, for link previews, to the linked website (Section 2), and none of it reaches us. If you email us, for example a support request or a report (Section 16), we process that correspondence, including your email address and anything it contains, on the basis of our <strong>legitimate interest</strong> in answering you and in keeping the App safe to use, and, where the law requires it, to meet a legal obligation, such as a lawful request from an authority (Section 16).</p>
       <p><strong>Data controller:</strong> Approve The Move (contact details in Section 32).</p>
 
       <h3>8.2 California (CCPA / CPRA)</h3>
@@ -267,30 +304,30 @@
         <li><strong>Right to opt out of sale or sharing</strong> — You may direct us not to sell or share your personal information.</li>
         <li><strong>Right to non-discrimination</strong> — You will not be discriminated against for exercising your privacy rights.</li>
       </ul>
-      <p><strong>We do not collect, sell, or share personal information.</strong> We have not sold or shared personal information of any consumer in the preceding 12 months, nor do we intend to do so.</p>
+      <p><strong>We do not sell or share personal information, and the App sends us none.</strong> The only personal information we may receive is email someone chooses to send us, such as a support request or a report (Section 8.1). We have not sold or shared personal information of any consumer in the preceding 12 months, nor do we intend to do so.</p>
       <p>California's "Do Not Track" signals and Global Privacy Control (GPC) are respected by default, as the App does not track users in any capacity.</p>
 
       <h3>8.3 Qatar &amp; Middle East</h3>
-      <p>If you are located in Qatar or other Gulf Cooperation Council (GCC) states, we comply with applicable data protection laws, including Qatar's Law No. 13 of 2016 on Personal Data Privacy. As we do not collect personal data, no registration with the Compliance and Data Protection Department is required.</p>
+      <p>If you are located in Qatar or other Gulf Cooperation Council (GCC) states, we comply with applicable data protection laws, including Qatar's Law No. 13 of 2016 on Personal Data Privacy. As the App does not collect personal data, no registration with the Compliance and Data Protection Department is required.</p>
 
       <h3>8.4 Other Jurisdictions</h3>
-      <p>Regardless of your location, the same principle applies: we do not collect personal data, so there is no data to exercise rights over. If your local laws grant you additional privacy rights, please contact us and we will cooperate fully.</p>
+      <p>Regardless of your location, the same principle applies: the App sends us no personal data, and the only personal data we may hold is email someone chooses to send us (Section 8.1). If your local laws grant you additional privacy rights, please contact us and we will cooperate fully.</p>
 
       <!-- 9. Data Security -->
       <h2>9. Data Security</h2>
-      <p>Although we do not collect or store personal data on any server, we employ the following security measures to protect your experience within the App:</p>
+      <p>Although the App sends us no personal data and we run no servers, we employ the following security measures to protect your experience within the App:</p>
       <ul>
-        <li><strong>Local-only communications</strong> — Messaging traffic exists only on the direct radio link between nearby devices. There is no server, cloud relay, or internet path that could be breached remotely. Transport-layer encryption is not currently enabled on the local link (see Section 4.4), so physical proximity is the security boundary.</li>
-        <li><strong>Sandboxed storage</strong> — On-device preferences and message history are stored within the App's iOS sandbox, which is isolated from other apps and protected by the operating system; the device identity lives in the iOS Keychain.</li>
-        <li><strong>Minimal network surface</strong> — The App operates no servers and initiates no internet connections other than optional on-device link-preview fetches (Section 2), eliminating the risk of remote data breaches or unauthorized server access.</li>
+        <li><strong>Local-only communications</strong> — Messaging traffic travels only over local radio links between nearby devices, directly or relayed by other nearby ATMChat devices (Section 4.3). There is no server, cloud relay, or internet path that could be breached remotely. Transport-layer encryption is not currently enabled on the local link (see Section 4.4), so physical proximity is the security boundary.</li>
+        <li><strong>Sandboxed storage</strong> — On-device preferences and message history are stored within the App's iOS sandbox, which is isolated from other apps and protected by the operating system; the device identity normally lives in the iOS Keychain (Section 3.1).</li>
+        <li><strong>Minimal network surface</strong> — The App operates no servers and initiates no internet connections other than link-preview fetches (Section 2). Since version 1.2 these are off unless you turn on Settings → Privacy → Load Link Previews, and only web (http/https) links are fetched; in earlier versions a preview is fetched automatically when a link message is shown in a chat. A fetch goes straight from your device to the linked website, which sees your IP address. Because we run no servers, there is no server-side store of your data that could be breached.</li>
         <li><strong>No persistent sensitive data</strong> — No passwords, tokens, credentials, or financial data are ever stored or processed.</li>
-        <li><strong>Mesh relay hygiene</strong> — Messages routed through intermediate devices are forwarded in memory only; the relaying app never displays them and retains no copy after forwarding (see Section 4.3 for the honest limits of this).</li>
+        <li><strong>Mesh relay hygiene</strong> — One-to-one messages routed through intermediate devices are forwarded in memory only. The relaying app never displays them and retains no copy after forwarding, only an in-memory record of recent message IDs so it does not relay the same message twice (see Section 4.3 for the honest limits of this). "Everyone Nearby" room posts are different: any device that receives one, including the devices that relay it, can display it and store it in its room history.</li>
       </ul>
       <p><strong>An honest note on security:</strong> no method of electronic storage or local wireless transmission is 100% secure, and we cannot and do not guarantee absolute security. Section 4.4 describes the App's transport-security model candidly. To the maximum extent permitted by applicable law, we are not liable for security incidents arising from circumstances beyond our reasonable control, including vulnerabilities in the underlying operating system, radio protocols, or your device.</p>
 
       <!-- 10. Data Retention -->
       <h2>10. Data Retention</h2>
-      <p>We do not operate servers, databases, or cloud storage of any kind. We do not retain any user data. All data associated with ATMChat exists exclusively on your personal device:</p>
+      <p>We do not operate servers, databases, or cloud storage of any kind, and we do not retain any data from the App. ATMChat's data is stored on your device, and copies of what you send are stored on the devices of the people who receive it. The App does not exclude its data from device backups, so if you use iCloud Backup or back up to a computer, your chat history, media, queued messages and settings are included in those backups like any other app's documents. Those copies are held by Apple or on your computer under your own backup settings, never by us. (The device ID is normally kept in a this-device-only Keychain item, which a backup does not carry to a different device.) On your device, data is kept as follows:</p>
       <table class="legal-table" aria-label="Data retention practices" tabindex="0">
         <tr>
           <th>Data Type</th>
@@ -298,37 +335,52 @@
           <th>Retention Period</th>
         </tr>
         <tr>
-          <td>User preferences</td>
+          <td>Your profile and settings (display name, avatar, notification and mute choices, disappearing-message timers, blocked-peers list, unread counts; since version 1.2 also the Load Link Previews choice and the counters that limit how often the App asks for an App Store rating)</td>
           <td>Device (UserDefaults)</td>
-          <td>Until App is deleted</td>
+          <td>Until you change them or the App is deleted</td>
         </tr>
         <tr>
-          <td>Message history</td>
+          <td>Device ID</td>
+          <td>Device (iOS Keychain; UserDefaults if the Keychain can't be used, Section 3.1)</td>
+          <td>While the App is installed; may remain in the Keychain after the App is deleted (see below)</td>
+        </tr>
+        <tr>
+          <td>Names and avatars of peers you have seen nearby, including names passed on by neighbouring devices</td>
+          <td>Device (UserDefaults and the App's Documents folder)</td>
+          <td>Until the App is deleted. Since version 1.2 these are capped at 2,000 names and 500 avatars; when full, entries for peers you have no conversation with and who are not nearby are removed first</td>
+        </tr>
+        <tr>
+          <td>Message history, including the "Everyone Nearby" room</td>
           <td>Device (ChatStorage)</td>
-          <td>Until deleted by user or App is deleted</td>
+          <td>Until the App is deleted, except that: each conversation keeps only its most recent 10,000 messages (older ones are dropped); a message you sent in a one-to-one chat is erased on your device when you use Delete for Everyone, and a message you received is erased if its sender deletes it for everyone and your App accepts the request (since version 1.2, only a request that arrives over a direct connection; Section 17); and in a one-to-one chat with a disappearing-message timer (30 seconds, 5 minutes, 1 hour or 24 hours), messages older than the chosen time are erased on your device only, when you next open the App or that chat. An erased message leaves a "This message was deleted" placeholder. Since version 1.2, a corrupt history or offline-queue file is set aside on the device instead of being overwritten, and stays there until the App is deleted</td>
         </tr>
         <tr>
-          <td>Conversation list</td>
+          <td>Photos, videos, voice messages, contact cards and files you send or receive</td>
+          <td>Device (App's Documents folder)</td>
+          <td>Until the message they belong to is deleted for everyone or expires under a disappearing-message timer (and no other message uses the same file), or the App is deleted. Files of messages dropped by the 10,000-message limit stay until the App is deleted</td>
+        </tr>
+        <tr>
+          <td>Conversation list, delivery and read status</td>
           <td>Device (ChatStorage)</td>
-          <td>Until deleted by user or App is deleted</td>
+          <td>Until the App is deleted (the App has no option to delete a whole conversation)</td>
         </tr>
         <tr>
-          <td>Read receipts</td>
-          <td>Device (ChatStorage)</td>
-          <td>Until deleted by user or App is deleted</td>
+          <td>Unsent text messages (offline queue)</td>
+          <td>Device (App's Documents folder)</td>
+          <td>Until a delivery or read receipt confirms them. When the App next tries that peer, messages older than 72 hours are discarded unsent, and at most 500 wait per peer. Messages for a peer who never becomes reachable again stay on your device until the App is deleted. Since version 1.2, a queued message you delete for everyone, or that expires, is also removed (see Section 17)</td>
         </tr>
         <tr>
-          <td>Active session data</td>
+          <td>Active session data (connections, mesh routes, IDs of recently relayed messages)</td>
           <td>Device (RAM only)</td>
-          <td>Active session only</td>
+          <td>While the App is running</td>
         </tr>
       </table>
       <p>When you delete the App, iOS permanently removes all data in the App's sandbox from your device. As is standard iOS behavior, the random device UUID stored in the iOS Keychain (Section 3.1) may persist on the device until it is removed, and device backups made before deletion may retain copies of previously stored data. Neither is ever accessible to us.</p>
 
       <!-- 11. International Considerations -->
       <h2>11. International Considerations</h2>
-      <p>ATMChat is available worldwide through the Apple App Store. Since the App does not collect or transmit any data to external servers, there are no international data transfers to disclose. All data remains on your local device at all times, regardless of your geographic location.</p>
-      <p>When you send messages to nearby peers, the data travels directly between devices over the local network and never crosses international boundaries via the internet or any remote infrastructure.</p>
+      <p>ATMChat is available worldwide through the Apple App Store. We do not receive any data from the App, and apart from emails people choose to send us (Section 2), we make no international data transfers. Apart from what it sends to nearby devices (Section 4), App data stays on your device, regardless of your geographic location, with two exceptions: device backups (if you use iCloud Backup, Apple stores the backup, possibly outside your country, under Apple's privacy policy), and link-preview fetches (Section 2; automatic in versions before 1.2, off unless you turn them on since version 1.2), which contact the linked website wherever it is hosted.</p>
+      <p>When you send messages to nearby peers, the data travels between nearby devices over local Wi-Fi and Bluetooth and never crosses international boundaries via the internet or any remote infrastructure.</p>
 
       <!-- ======================================================== -->
       <!--                  PART II: TERMS OF USE                   -->
@@ -369,19 +421,20 @@
       <h2>16. User Content</h2>
       <p>ATMChat enables you to send messages, photos, videos, voice messages, files, and other content ("User Content") to nearby peers. You retain full ownership of all User Content you create and transmit through the App.</p>
       <p><strong>You are solely responsible for all User Content you create, send, or share through the App</strong>, and for ensuring that your User Content — and your use of the App generally — complies with all applicable laws and regulations and does not infringe or violate the rights of any third party.</p>
-      <p>Because ATMChat operates entirely peer-to-peer, without servers or cloud infrastructure, we never receive, store, host, access, or moderate your User Content, and <strong>no capability to monitor User Content exists</strong> — there is simply no server through which it passes. To the maximum extent permitted by applicable law, we have no knowledge of, no control over, and no responsibility or liability for any User Content that you or any other user sends, receives, or is exposed to through the App. Content you receive comes from the nearby people you chat with, not from us.</p>
-      <p><strong>Blocking &amp; reporting:</strong> The App includes built-in safety tools — you can block any peer (chat options menu, managed under Settings → Blocked; the App then drops all traffic from that peer) and report objectionable messages (long-press → Report), which sends the report to <a href="mailto:support@approvethemove.com">support@approvethemove.com</a>. Because there are no servers, we cannot remotely delete content from other people's devices, but we do review reports and may act on them, including cooperating with lawful requests from authorities.</p>
+      <p>Because ATMChat operates entirely peer-to-peer, without servers or cloud infrastructure, your User Content never passes through us, we do not host or moderate it, and <strong>no capability to monitor User Content exists</strong> — there is simply no server through which it passes. The only User Content that can reach us is what someone chooses to email us, such as the text of a message included in a report (see below). To the maximum extent permitted by applicable law, we have no knowledge of, no control over, and no responsibility or liability for any User Content that you or any other user sends, receives, or is exposed to through the App. Content you receive comes from the nearby people you chat with, not from us.</p>
+      <p><strong>Blocking &amp; reporting:</strong> The App includes built-in safety tools. You can block a peer (a chat's options menu → Block); blocked peers are listed under Settings → Blocked, where you can unblock them. Blocking works on your device only. The App drops the blocked peer's messages (including their "Everyone Nearby" posts), reactions and other traffic to you, and hides them from your peer list, but it cannot stop them from sending. They can still connect to your device and see your display name, device ID and avatar, they still receive what you post in the "Everyone Nearby" room, and your device may still relay their mesh traffic to other people. You can also report a message (long-press → Report) or a peer (a chat's options menu → Report…). A report is an email to <a href="mailto:support@approvethemove.com">support@approvethemove.com</a> that the App pre-fills with the name and ID of the chat you report from (for a one-to-one chat, the peer's display name and device ID) and, if you report a message, its type, text and time; media is not attached. Nothing is sent until you send that email from your own mail account. If no Mail account is set up, the report is copied to your clipboard instead. Because there are no accounts or servers, we cannot remove content from other people's devices or bar anyone from the App, but we do read reports and may cooperate with lawful requests from authorities.</p>
 
       <!-- 17. Message Delivery Disclaimer -->
       <h2>17. Message Delivery Disclaimer</h2>
       <p><strong>ATMChat is an offline, peer-to-peer mesh messaging application. Message delivery is best-effort only and is not guaranteed.</strong> Due to the inherent nature of local mesh networking:</p>
       <ul>
         <li><strong>Range limitations</strong> — Messages can only be delivered to devices within range of your local Wi-Fi or Bluetooth Low Energy signal, either directly or via intermediate mesh devices.</li>
-        <li><strong>Mesh availability</strong> — If there is no connected path of ATMChat devices between you and the intended recipient, messages cannot be delivered.</li>
-        <li><strong>Session dependency</strong> — Messages can only be transmitted while both sender and recipient (or a connected mesh path) have the App actively running. There is no server to queue or store messages for later delivery.</li>
+        <li><strong>Mesh availability</strong> — If there is no connected path of ATMChat devices between you and the intended recipient, messages cannot be delivered. A message can pass through at most four intermediate devices. Over Bluetooth or the mesh, files larger than 700 KB cannot be sent, and videos can only be sent over a direct Wi-Fi connection.</li>
+        <li><strong>Session dependency</strong> — Messages can only travel while the App is running on the sending and receiving devices (and on any device relaying them) and those devices are connected, directly or through the mesh. Using iOS Bluetooth background modes, the App can keep sending and receiving while it is in the background, but iOS decides when it runs: a device that is switched off, out of range, or on which the App has been force-quit receives nothing. There is no server to queue or store messages for later delivery.</li>
         <li><strong>Environmental factors</strong> — Physical obstacles, interference, device settings, and distance may affect connection quality and message delivery reliability.</li>
-        <li><strong>Local queuing only</strong> — If a recipient is temporarily out of range, the App keeps the message in an on-device queue and retries automatically when that peer reconnects locally. There is no internet or server path for delivery, so a message to a peer who never comes back into range will never be delivered.</li>
+        <li><strong>Local queuing only</strong> — If you write a text message while the recipient can't be reached directly or through the mesh, the App keeps it in an on-device queue. It resends the message automatically when that peer is reachable again, until a delivery or read receipt confirms it arrived. Queued messages older than 72 hours are discarded unsent, and at most 500 messages wait per peer (the oldest are dropped first). Photos, videos, voice messages, contact cards and files are never queued: they can only be sent while the peer is reachable. Posts in the "Everyone Nearby" room are never queued either: they reach only the devices on the mesh when you post. There is no internet or server path for delivery, so a message to a peer who never comes back into range will never be delivered. Since version 1.2, a queued message that you delete for everyone, or that expires under a disappearing-message timer, is removed from the queue and not sent. In earlier versions it stays queued and is still delivered when the peer reconnects.</li>
         <li><strong>Best-effort delivery</strong> — Messages may be lost, delayed, duplicated, or fail to arrive without notice to you. If you share session access — for example by posting in the "Everyone Nearby" room or by chatting in a crowded environment — messages may also be received by unintended nearby peers.</li>
+        <li><strong>Delete for Everyone is limited</strong> — It is available only for messages you sent in a one-to-one chat (not in the "Everyone Nearby" room). It removes the other person's copy only if their App receives the delete request. Nothing is sent to a peer who can't be reached when you delete, so their copy stays. If the other person uses version 1.2 or later, their App ignores deletes relayed through the mesh, so their copy is removed only if your devices are directly connected; since version 1.2, the App tells you when you are not directly connected. Earlier versions also accept relayed deletes. Copies the recipient has already saved to Photos, forwarded, shared or captured in a screenshot are not affected.</li>
       </ul>
       <p><strong>ATMCHAT IS NOT DESIGNED, INTENDED, OR SUITABLE FOR EMERGENCY COMMUNICATIONS.</strong> Never rely on ATMChat to contact emergency services, to summon help, or in any situation where a failure or delay in delivering a message could cause harm to any person or property. Always use a reliable, connected communication service (such as a telephone call to your local emergency number) for emergencies. You acknowledge and agree that ATMChat is not a substitute for reliable, guaranteed communication services.</p>
 
@@ -391,9 +444,11 @@
       <ul>
         <li>Messages may be lost, delayed, duplicated, or never delivered, and there is no server to recover them (Section 17);</li>
         <li>Local peer-to-peer sessions are not encrypted in transit (Section 4.4), and a technically sophisticated party within physical radio range could in principle intercept transmitted data;</li>
+        <li>Display names and device IDs are not cryptographically verified, so a technically sophisticated party using modified software could in principle pretend to be someone else, particularly in messages relayed through the mesh;</li>
         <li>Messages may reach unintended nearby peers, particularly in the shared "Everyone Nearby" room or in dense environments;</li>
         <li>Content you receive comes from other nearby users, not from us, and may be inaccurate, offensive, or unlawful — the blocking and reporting tools (Section 16) are your first line of defense;</li>
-        <li>Beta builds may behave unpredictably, and locally stored data may be lost (Section 20).</li>
+        <li>Your chat history is stored only on your device (and in any device backups you make), so it can be lost through a software defect, a failed update, or loss of or damage to the device, and there is no server copy we could restore it from;</li>
+        <li>Beta (TestFlight) builds may behave unpredictably, and data created in them may be lost (Section 20).</li>
       </ul>
       <p>To the maximum extent permitted by applicable law, you assume all risks arising from these characteristics of the App. Some jurisdictions do not allow certain assumptions of risk or waivers of liability, so some of the above may not apply to you.</p>
 
@@ -403,7 +458,7 @@
 
       <!-- 20. Beta Software -->
       <h2>20. Beta Software</h2>
-      <p>ATMChat is currently distributed as beta software through Apple's TestFlight. You acknowledge and agree that beta software is provided for testing and evaluation purposes only; that it may contain bugs, defects, or errors; that features may change, break, or be removed without notice; that the App may be modified, suspended, or discontinued at any time; and that <strong>data created in beta versions — including message history, conversations, and preferences — may be lost at any time</strong>, including when a beta build is updated or expires. To the maximum extent permitted by applicable law, beta software is provided without any warranty or commitment of continued availability, in addition to the disclaimers in Section 21. Your use of beta builds is also subject to Apple's TestFlight terms.</p>
+      <p>ATMChat is available on the App Store. Pre-release (beta) builds are also distributed to testers through Apple's TestFlight. If you use a beta build, you acknowledge and agree that beta software is provided for testing and evaluation purposes only; that it may contain bugs, defects, or errors; that features may change, break, or be removed without notice; that the App may be modified, suspended, or discontinued at any time; and that <strong>data created in beta versions — including message history, conversations, and preferences — may be lost at any time</strong>, including when a beta build is updated or expires. To the maximum extent permitted by applicable law, beta software is provided without any warranty or commitment of continued availability, in addition to the disclaimers in Section 21. Your use of beta builds is also subject to Apple's TestFlight terms.</p>
 
       <!-- 21. Disclaimer of Warranties -->
       <h2>21. Disclaimer of Warranties</h2>
@@ -500,7 +555,7 @@
       <p>We may update this Privacy Policy and Terms of Use from time to time to reflect changes in the App, our practices, or applicable laws. When we make changes:</p>
       <ul>
         <li>We will update the "Last updated" date at the top of this page.</li>
-        <li>For material changes, we will notify you through the App before the changes take effect.</li>
+        <li>The App has no connection to us, so it cannot alert you to a change on its own. For material changes, we will describe them in the App Store release notes ("What's New") for the App version they relate to. The App's Settings → Contact &amp; Legal → Privacy Policy link always opens the current version of this document.</li>
         <li>The updated document will be posted at this URL: <a href="https://approvethemove.com/chat/privacy.html">approvethemove.com/chat/privacy.html</a></li>
       </ul>
       <p>Your continued use of the App after changes are posted constitutes acceptance of the updated terms. If you disagree with any changes, your sole remedy is to stop using the App and delete it from your device.</p>
@@ -512,10 +567,11 @@
         <li><strong>Email:</strong> <a href="mailto:support@approvethemove.com">support@approvethemove.com</a></li>
         <li><strong>Organization:</strong> Approve The Move</li>
         <li><strong>Website:</strong> <a href="https://approvethemove.com">approvethemove.com</a></li>
+        <li><strong>Security issues:</strong> email <a href="mailto:support@approvethemove.com?subject=Security">support@approvethemove.com</a> with "Security" in the subject (see <a href="/privacy/#security">Reporting a Security Issue</a>).</li>
       </ul>
       <p>We commit to responding to all privacy-related inquiries within <strong>30 days</strong> of receipt. For GDPR-related requests, we will respond within the legally required timeframe of one calendar month.</p>
 
-      <p class="legal-meta">Document version 3.0 &nbsp;|&nbsp; Effective August 5, 2026 &nbsp;|&nbsp; Applies to ATMChat v0.1 and all subsequent versions unless superseded.</p>
+      <p class="legal-meta">Document version 3.1 &nbsp;|&nbsp; This version effective October 14, 2026 &nbsp;|&nbsp; Applies to all versions of ATMChat unless superseded. Where App versions behave differently, the text above says which version it describes.</p>
 
     </div>
   </div>
