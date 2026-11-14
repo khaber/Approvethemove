@@ -74,7 +74,7 @@
     <div class="privacy-content">
 
       <h1>Qatari Cards — Privacy Policy &amp; Terms of Use</h1>
-      <p class="last-updated">Effective date: August 5, 2026 &nbsp;|&nbsp; Last updated: August 5, 2026</p>
+      <p class="last-updated">Effective date: November 14, 2026 &nbsp;|&nbsp; Last updated: November 14, 2026</p>
 
       <p class="lead">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for Qatari Cards. Please read both sections carefully before using the App.</p>
 
@@ -92,45 +92,48 @@
 
       <!-- 2. Information We Collect -->
       <h2>2. Information We Collect</h2>
-      <p><strong>We do not collect, transmit, or process any personal data.</strong> Qatari Cards is designed from the ground up as a privacy-first application. The only data that can ever leave your device is an <em>anonymous game replay you explicitly choose to donate</em> to help us improve the AI opponents — a feature that is off by default and fully described in section 3b, "Optional Gameplay Donation," below. Unless you opt in to that, nothing leaves your device. Specifically:</p>
+      <p><strong>The App does not send us a name, email address, phone number, contacts or location, and it never asks for your email address, phone number, contacts or location.</strong> Qatari Cards is designed as a privacy-first application. The only data that can reach a database we operate is a <em>game replay you explicitly choose to donate</em> to help us improve the computer opponents. That feature is off by default and is described in full in section 3b, "Optional Gameplay Donation," below, including the technical identifiers Apple's iCloud attaches to a donated game. Apart from that, data leaves your device only during local multiplayer (section 4) and when you share a replay file yourself. Specifically:</p>
       <ul>
         <li><strong>No account creation</strong> — You are never required or asked to sign up, log in, create an account, or provide an email address, phone number, or any other personal identifier.</li>
         <li><strong>No analytics or tracking</strong> — We do not use any analytics frameworks, crash reporting services, telemetry tools, device fingerprinting, or usage tracking of any kind. We never link any data to your identity, and we never track you across other apps or websites.</li>
         <li><strong>No advertising</strong> — The App contains no advertisements, no advertising SDKs, no ad identifiers (IDFA), and no advertising networks.</li>
-        <li><strong>No background or automatic transmission</strong> — The App never sends anything to a remote server on its own. The only data that can leave your device is an anonymous replay you manually choose to donate (see section 3b), plus local peer-to-peer traffic during multiplayer. With no donation and no multiplayer, the App makes no external network connections.</li>
+        <li><strong>No background or automatic transmission</strong> — The App never sends anything to a remote server on its own. A replay leaves your device only when you tap to donate or share that game, and multiplayer traffic goes only to the nearby devices at your table. With no donation and no multiplayer, the App makes no network connections.</li>
         <li><strong>No in-app purchases</strong> — No financial, billing, or payment information is collected or processed.</li>
         <li><strong>No location data</strong> — The App does not request, access, or store your geographic location.</li>
         <li><strong>No contacts or photos</strong> — The App does not access your contacts, photo library, camera, microphone, or any other device sensor beyond haptic feedback.</li>
       </ul>
-      <p><strong>We do not sell, rent, or trade any personal information — we never possess it.</strong> A promise we cannot break by accident: because no personal data ever reaches us, there is nothing we could sell, rent, trade, or lose.</p>
+      <p><strong>We do not sell, rent, or trade any information about you.</strong> The App never sends us your name or contact details, so there is none we could sell, rent, trade, or lose.</p>
 
       <!-- 3. On-Device Storage -->
       <h2>3. On-Device Storage</h2>
-      <p>Qatari Cards stores a small amount of non-personal preference data locally on your device using Apple's <strong>UserDefaults</strong> system. This data is stored within the App's private sandbox, is not accessible to other apps, and <strong>never leaves your device</strong>.</p>
+      <p>Qatari Cards stores a small amount of data locally on your device, most of it using Apple's <strong>UserDefaults</strong> system and some as files. This data is stored within the App's private sandbox and is not accessible to other apps. None of the items listed below is <strong>ever sent to us</strong>; your display name and random player identifier are shared with nearby devices during local multiplayer (section 4).</p>
       <p>Data stored locally includes:</p>
       <ul>
-        <li>Display name (the player name you choose, used only within the App)</li>
-        <li>A randomly generated unique identifier (UUID) used solely to identify your device during local multiplayer sessions</li>
+        <li>Display name (the player name you choose)</li>
+        <li>A randomly generated identifier (UUID) used to tell players apart during local multiplayer and, kept beside it, Apple's per-developer device identifier (identifierForVendor). The App uses the latter only on your device, to notice that your settings were restored onto a different device and give that device its own random identifier. It is never transmitted.</li>
         <li>Theme and selected card-table appearance, preferred language, and a colorblind-friendly suit-symbols option</li>
-        <li>Game settings: AI difficulty, AI speed, sound effects, haptic feedback, and card play confirmation preferences</li>
-        <li>Your achievements and play statistics, daily-challenge history and streak, and your donation-consent choices</li>
-        <li>A short-lived "resume" record so an interrupted multiplayer game can be rejoined</li>
+        <li>Game settings: computer-opponent level and speed, sound effects, haptic feedback, the hint button, and card play confirmation preferences</li>
+        <li>Your achievements and play statistics, daily-challenge history and streak, and your donation choices, including a list of which saved games you have already donated</li>
+        <li>An unfinished single-player game: the table, the score, the rounds played so far and the exact hand in progress, so you can continue it at the same card. Part of it is kept in UserDefaults and part as files in the App's sandbox. It has no time limit: it is kept until you finish that game or start a new single-player game.</li>
+        <li>A Daily Challenge in progress, saved after every move as files in the App's sandbox, so that an attempt interrupted by the App being closed can be resumed on the same day. It is deleted when you finish or leave the challenge; one left over from an earlier day is never resumed and is deleted when the App next checks it.</li>
+        <li>A short-lived "resume" record (which host you were playing with, the game mode, and when) so an interrupted multiplayer game can be rejoined within about 25 seconds</li>
       </ul>
-      <p>Active game state — your cards, bids, tricks, and scores — exists in memory during gameplay. In addition, recent versions of the App can save a <strong>replay</strong> of a finished game on your device so you can review or share it. Replays contain only gameplay (the cards, bids, plays, and result) plus your chosen display name; they are stored privately within the App's sandbox, only the most recent games are kept, you can delete them at any time from within the App, and — like all local data — they <strong>never leave your device unless you explicitly share or donate them</strong>. There is no automatic cloud sync of your games.</p>
-      <p>This data is declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
-      <p><strong>How to delete:</strong> You can erase all locally stored preferences and saved replays at any time by deleting them from within the App, or by deleting Qatari Cards from your device. The App itself retains no residual data after uninstallation; device or iCloud backups made before deletion may retain copies, which are managed by iOS/Apple and outside our control.</p>
+      <p>While you play, the game in progress is held in memory; single-player games and the Daily Challenge are also saved as described above. When a game finishes, the App saves a <strong>replay</strong> of it on your device so you can review or share it. A replay contains the gameplay (the cards, bids, plays, and result), the names shown at the table, the date, the game mode, the level and version of the computer opponents, the app build and, where they apply, the plays you flagged, the computer's suggestions at your plays and the number of hints you took. For a multiplayer game, the replay is saved on the host's device only, and it includes the display names of everyone at the table (see section 4.4). A replay file someone else sends you is added to the same library when you open it. Replays are stored privately within the App's sandbox; the 50 most recently saved are kept; you can delete any of them from within the App; and they <strong>never leave your device unless you explicitly share or donate them</strong>. There is no automatic cloud sync of your games.</p>
+      <p>This is declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) as Apple requires: API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (the App's own preferences), and <code>NSPrivacyAccessedAPICategoryFileTimestamp</code> with reason code <code>C617.1</code> (the App reads the saved date of its own replay files to decide which to keep). The manifest also declares the one type of data that can be collected, gameplay content from a donated game, as not linked to you and not used for tracking.</p>
+      <p><strong>How to delete:</strong> You can delete saved replays one by one from within the App. Deleting Qatari Cards from your device removes everything the App stored on it, including your preferences, statistics and any saved game. The App itself retains no residual data after uninstallation; device or iCloud backups made before deletion may retain copies, which are managed by iOS/Apple and outside our control.</p>
 
       <!-- 3b. Optional Gameplay Donation -->
       <h2>3b. Optional Gameplay Donation</h2>
-      <p>To help us improve the App's computer (AI) opponents, newer versions of Qatari Cards may invite you to <strong>donate an anonymous replay</strong> of a game you just played. This is <strong>entirely optional, off by default, and never automatic</strong> — it happens only when you tap to donate a specific game. The App is fully playable without ever donating, and declining never affects any feature.</p>
-      <p><strong>What a donation contains:</strong> only anonymous gameplay — the cards that were dealt, the bids, the cards played, and the result of the game.</p>
-      <p><strong>What a donation never contains:</strong> your name, any account, email, phone number, Apple ID, device identifier, IP-based location, or anything else that identifies you or your device. Your display name is removed before a donation is sent, and seats are recorded only by position (Player 1–6). Each donation receives a fresh random identifier that is never reused, so separate donations cannot be linked to one another or back to you.</p>
+      <p>To help us improve the App's computer opponents, Qatari Cards may invite you to <strong>donate a replay</strong> of a single-player game you played. This is <strong>entirely optional, off by default, and never automatic</strong> — a game is sent only when you tap to donate that game. The App is fully playable without ever donating, and declining never affects any feature. Donating requires being signed in to iCloud on your device. Multiplayer games, games continued from a save and games in which you took a hint cannot be donated.</p>
+      <p><strong>What a donation contains:</strong> the gameplay of that one game (the cards that were dealt, the bids, the cards played and the result), which seat you sat in, the game mode, the level and version of the computer opponents, whether it was a Daily Challenge, the app version and build, a score the App computes for how useful the game is, any plays you flagged in the replay viewer, and the computer's suggestion at each of your plays.</p>
+      <p><strong>What a donation never contains:</strong> your display name or anyone else's, the date of the game, your email address, phone number, contacts or location. Seats are recorded only by position. Each donated game gets a fresh random identifier that is not reused for another game. A Daily Challenge game is marked as one, and because every player is dealt the same cards on a given day, the day it was played can be worked out from its cards.</p>
+      <p><strong>What Apple's iCloud adds:</strong> a donation is stored as a record in Apple's CloudKit service, in a database we operate. Like every CloudKit record, it is stamped by Apple's servers with the time it was uploaded and with Apple-assigned identifiers for the iCloud account and the device that created it. These identifiers are not your name or Apple ID email, and we cannot turn them into either, but the account identifier is the same on every game donated from one iCloud account. Our collection tool saves only the game itself and does not use or keep these stamps.</p>
       <ul>
-        <li><strong>Purpose</strong> — donated replays are used solely to analyze and improve the App's AI opponents.</li>
+        <li><strong>Purpose</strong> — donated replays are used solely to analyze and improve the App's computer opponents.</li>
         <li><strong>No third parties</strong> — donations are never sold, rented, or shared with any third party, and are never used for advertising, marketing, or profiling.</li>
-        <li><strong>Where it is stored</strong> — donations are stored using Apple's <strong>CloudKit</strong> service in a database operated by us. Apple acts only as our storage provider, not as a recipient of the data.</li>
-        <li><strong>Anonymity &amp; withdrawal</strong> — because donations carry no identifier, they cannot be traced back to you. This also means an individual donation cannot be located and withdrawn after it is sent. You can turn off all future donation prompts at any time in the App's Settings.</li>
-        <li><strong>Retention</strong> — donated, anonymized replays may be retained for AI research, as they contain no personal data.</li>
+        <li><strong>Where it is stored</strong> — in Apple's <strong>CloudKit</strong> service, in a database operated by us. Apple acts as our storage provider.</li>
+        <li><strong>Withdrawal</strong> — the App has no control for withdrawing a game after it is sent. You can turn donations off at any time in the App's Settings; after that, no game is sent unless you turn donations on again. Because we never learn who you are, we cannot find your donations from your name or email address.</li>
+        <li><strong>Retention</strong> — donated games may be retained for research on the computer opponents. Collecting a game does not delete its record from iCloud, so the record, with the stamps described above, remains there.</li>
       </ul>
 
       <!-- 4. Local Multiplayer &amp; Networking -->
@@ -140,7 +143,7 @@
       <h3>4.1 How It Works</h3>
       <ul>
         <li><strong>No internet connection is used or required.</strong> All communication occurs directly between devices on the local network. No data passes through our servers, Apple's servers, or any third-party relay.</li>
-        <li>The App uses Apple's <strong>Bonjour</strong> protocol to discover nearby devices advertising or browsing for games.</li>
+        <li>The App uses Apple's <strong>Bonjour</strong> protocol to discover nearby devices. While you host a game, your device announces itself to nearby devices with your display name, your random player identifier, the game mode, whether the game has started, and the App's multiplayer and rules versions; any nearby device looking for a Qatari Cards game can see this before a connection is made. When you tap to join a table, your display name and random player identifier are sent to that host.</li>
       </ul>
 
       <h3>4.2 Data Transmitted During Sessions</h3>
@@ -149,14 +152,15 @@
         <li><strong>Player display names</strong> — So players can identify each other during the game.</li>
         <li><strong>Player unique identifiers (UUID)</strong> — Used internally to match peers to game seats. These are randomly generated and not linked to any personal information.</li>
         <li><strong>Game state messages</strong> — Card plays, bids, pass actions, trump suit selection, trick results, round results, and score updates.</li>
+        <li><strong>Version information</strong> — The App's multiplayer version and rules version, so devices on incompatible versions can decline to connect.</li>
       </ul>
       <p>No other data (photos, contacts, location, device information, browsing history, etc.) is ever transmitted.</p>
 
       <h3>4.3 Encryption</h3>
-      <p>All peer-to-peer communication is encrypted using <strong>Apple's built-in TLS encryption</strong> (MCSession with <code>.required</code> encryption preference). This means all game data transmitted between devices is encrypted in transit, so it cannot be read by other devices or networks even if intercepted.</p>
+      <p>All peer-to-peer communication is encrypted by <strong>Apple's MultipeerConnectivity framework</strong>; the App requires encryption for every session (MCSession with the <code>.required</code> encryption preference). Game data cannot be read by other devices or networks even if intercepted.</p>
 
       <h3>4.4 Session Lifecycle</h3>
-      <p>When a multiplayer session ends (either by completing the game, disconnecting, or closing the App), all session data is permanently discarded on all connected devices. No multiplayer data is retained, logged, or stored after the session concludes.</p>
+      <p>When a multiplayer game is played to the end, the host's device saves a replay of it, like any other finished game (section 3). That replay holds the cards, the bids, the plays, the result and the display names of everyone at the table. It stays on the host's device, where the host can watch it, delete it, or share it as a file; it cannot be donated. Devices that joined the game do not save a replay. A multiplayer game that is abandoned before it ends is not saved. While a game is in progress, a joining device also keeps a small "resume" record (which host it was playing with, the game mode, and when) so that it can rejoin within about 25 seconds of losing the connection; the record is cleared when the game ends, when you leave it, or when the App next finds it out of date. Multiplayer wins are counted in your local statistics. Nothing from a multiplayer session is sent to us or to any server.</p>
 
       <!-- 5. Third-Party Services &amp; SDKs -->
       <h2>5. Third-Party Services &amp; SDKs</h2>
@@ -178,38 +182,37 @@
           <td>None (local only)</td>
         </tr>
         <tr>
-          <td>AudioToolbox</td>
-          <td>System sound effects</td>
+          <td>AVFoundation</td>
+          <td>Game sound effects (sound files inside the App)</td>
           <td>None</td>
         </tr>
         <tr>
-          <td>UIKit (Haptics)</td>
+          <td>UIKit, Core Haptics</td>
           <td>Haptic feedback</td>
           <td>None</td>
         </tr>
         <tr>
-          <td>GameKit (Game Center)</td>
-          <td>Achievements and leaderboards</td>
-          <td>Handled by Apple's Game Center (see below)</td>
+          <td>Core ML</td>
+          <td>Computer opponents (the models run entirely on your device)</td>
+          <td>None</td>
         </tr>
         <tr>
           <td>CloudKit</td>
-          <td>Storing anonymous game replays you choose to donate</td>
+          <td>Storing game replays you choose to donate</td>
           <td>Only if you opt in to donate (see Section 3b)</td>
         </tr>
       </table>
       <p>We do not use Firebase, Google Analytics, Facebook SDK, Unity, AdMob, Crashlytics, Sentry, Amplitude, Mixpanel, or any other third-party data collection tool.</p>
-      <p><strong>Game Center.</strong> If you are signed in to Apple's Game Center, Qatari Cards reports achievement progress and scores to your Game Center account so your milestones are saved. This is an Apple service governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>; we do not receive or store your Game Center identity. You can disable Game Center for the app in iOS Settings.</p>
 
       <!-- 6. Apple's Data Practices -->
       <h2>6. Apple's Data Practices</h2>
-      <p>While Qatari Cards itself does not collect data, please be aware that Apple may independently collect certain information related to your use of the App Store, such as download statistics and crash logs. This data collection is governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>, not ours, and is outside our control.</p>
-      <p>In App Store Connect, Qatari Cards declares that it does <strong>not</strong> track users and collects <strong>no data linked to your identity</strong>. If you opt in to donate a replay (see section 3b), that anonymous gameplay content is declared under "User Content" as <em>not linked to you</em> and <em>not used for tracking</em>, as reflected on the App's App Store product page under "App Privacy."</p>
+      <p>Apart from what this policy describes, please be aware that Apple may independently collect certain information related to your use of the App Store, such as download statistics and crash logs. This data collection is governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>, not ours, and is outside our control.</p>
+      <p>In App Store Connect, Qatari Cards declares that it does <strong>not</strong> track users. If you opt in to donate a replay (see section 3b), that gameplay content is declared under "User Content" as <em>not linked to you</em> and <em>not used for tracking</em>, as reflected on the App's App Store product page under "App Privacy."</p>
 
       <!-- 7. Children's Privacy -->
       <h2>7. Children's Privacy</h2>
       <p>Qatari Cards is rated <strong>4+</strong> by Apple and is designed to be suitable for users of all ages. The App does not contain violence, gambling (real or simulated), horror, mature themes, profanity, or any other objectionable material.</p>
-      <p>Because we do not collect any personal information from any user of any age — the optional gameplay donation (section 3b) collects only anonymous gameplay content, never personal information, from any user regardless of age — we are compliant with the following regulations regarding children's privacy:</p>
+      <p>Because the App does not send us a name, contact details or location from any user of any age, and the optional gameplay donation (section 3b) sends only gameplay, with the technical stamps described there, we consider the App compliant with the following regulations regarding children's privacy:</p>
       <ul>
         <li><strong>COPPA</strong> (Children's Online Privacy Protection Act, United States) — We do not knowingly collect personal information from children under the age of 13. Since the App collects no personal information from anyone, no COPPA violation can occur.</li>
         <li><strong>GDPR-K / Age of Digital Consent</strong> (European Economic Area) — We do not process personal data of minors under 16 (or the lower age set by individual EEA member states). Since no personal data is processed, no parental consent is required.</li>
@@ -232,7 +235,7 @@
         <li><strong>Right to object</strong> (Article 21) — Object to processing based on legitimate interests.</li>
         <li><strong>Right to withdraw consent</strong> (Article 7) — Withdraw previously given consent at any time.</li>
       </ul>
-      <p><strong>Since we do not collect, store, or process any personal data, there is no data for us to provide, correct, restrict, delete, port, or cease processing.</strong> Your local preferences can be erased by deleting the App. If you believe we hold data about you in error, please contact us and we will investigate promptly.</p>
+      <p><strong>We hold no account, name or contact details for any user.</strong> If you have donated games, they are stored as described in section 3b; because we never learn who you are, we cannot locate your donations from a name or email address. Your local data can be erased by deleting the App. If you believe we hold data about you in error, please contact us and we will investigate promptly.</p>
       <p><strong>Legal basis for processing:</strong> We do not process personal data. The on-device preference storage operates under <strong>legitimate interest</strong> (providing a functional user experience) and does not constitute data processing under GDPR as the data never leaves the device or reaches us.</p>
       <p><strong>Data controller:</strong> Approve The Move (contact details in Section 32, "Contact Us").</p>
 
@@ -258,16 +261,16 @@
       <h2>9. Data Security</h2>
       <p>Although we do not collect or store personal data on any server, we employ the following security measures to protect your experience within the App:</p>
       <ul>
-        <li><strong>Encrypted multiplayer communications</strong> — All local multiplayer sessions use Apple's mandatory TLS encryption via MCSession, protecting game data transmitted between devices against interception.</li>
+        <li><strong>Encrypted multiplayer communications</strong> — All local multiplayer sessions are encrypted by Apple's MultipeerConnectivity framework; the App requires encryption for every session (MCSession), protecting game data transmitted between devices against interception.</li>
         <li><strong>Sandboxed storage</strong> — On-device preferences are stored within the App's iOS sandbox, which is isolated from other apps and protected by the operating system.</li>
-        <li><strong>Minimal network exposure</strong> — The App's only internet use is Apple's Game Center (if you are signed in) and uploading an anonymous replay when you explicitly donate one (sent securely to Apple's CloudKit over TLS). It opens no other remote endpoints, greatly limiting the risk of remote data breaches or unauthorized server access.</li>
+        <li><strong>Minimal network exposure</strong> — The App's only internet use is, when you explicitly donate a replay, an iCloud account check and the upload to Apple's CloudKit, both over Apple's encrypted connections. It opens no other remote endpoints.</li>
         <li><strong>No persistent sensitive data</strong> — No passwords, tokens, credentials, or financial data are ever stored or processed.</li>
       </ul>
       <p>We want to be honest with you: <strong>no method of electronic storage or transmission is 100% secure</strong>, and no developer can truthfully guarantee absolute security. Our strongest protection is architectural — the App simply never possesses your personal data, so it cannot be breached from our side. To the maximum extent permitted by applicable law, we are not liable for security incidents caused by circumstances beyond our reasonable control, such as a compromise of your own device, your local network, or Apple's infrastructure.</p>
 
       <!-- 10. Data Retention -->
       <h2>10. Data Retention</h2>
-      <p>We do not operate any account system or collect personal data. Almost all data associated with Qatari Cards exists exclusively on your personal device; the only exception is an anonymous game replay that you explicitly choose to donate, which is stored in Apple's CloudKit for AI training (see Section 3b):</p>
+      <p>We do not operate any account system or collect personal data. Almost all data associated with Qatari Cards exists exclusively on your personal device; the exceptions are a game replay that you explicitly choose to donate, which is stored in Apple's CloudKit (see Section 3b), and the replay of a multiplayer game, which is saved on the host's device (see Section 4.4):</p>
       <table class="legal-table" aria-label="Data retention practices" tabindex="0">
         <tr>
           <th>Data Type</th>
@@ -275,36 +278,46 @@
           <th>Retention Period</th>
         </tr>
         <tr>
-          <td>User preferences</td>
+          <td>User preferences, statistics, achievements</td>
           <td>Device (UserDefaults)</td>
           <td>Until App is deleted</td>
         </tr>
         <tr>
-          <td>Active game state (cards, bids, tricks, scores in progress)</td>
-          <td>Device (RAM only)</td>
+          <td>Game in progress (cards, bids, tricks, scores)</td>
+          <td>Device (memory)</td>
           <td>Current session only</td>
         </tr>
         <tr>
-          <td>Saved game replays</td>
+          <td>Unfinished single-player game (the table, the score, the rounds played and the hand in progress)</td>
+          <td>Device (UserDefaults and files in the App's sandbox)</td>
+          <td>No time limit; until you finish it, start a new single-player game, or delete the App</td>
+        </tr>
+        <tr>
+          <td>Daily Challenge in progress</td>
           <td>Device (files in the App's sandbox)</td>
-          <td>Only the most recent games are kept; until you delete them or the App</td>
+          <td>Until you finish or leave the challenge; resumable on the same day only, and deleted when the App next checks it after that day</td>
+        </tr>
+        <tr>
+          <td>Saved game replays (for multiplayer: on the host's device)</td>
+          <td>Device (files in the App's sandbox)</td>
+          <td>The 50 most recently saved; until you delete them or the App</td>
         </tr>
         <tr>
           <td>Donated replays (only if you opt in)</td>
-          <td>Apple CloudKit (anonymous, no personal identifiers)</td>
-          <td>Retained for AI training; see Section 3b</td>
+          <td>Apple CloudKit, with Apple's upload time and account and device identifiers attached</td>
+          <td>Retained for research on the computer opponents; not deleted from iCloud when collected; see Section 3b</td>
         </tr>
         <tr>
-          <td>Multiplayer session data</td>
-          <td>Device (RAM only)</td>
-          <td>Active session only</td>
+          <td>Multiplayer resume record</td>
+          <td>Device (UserDefaults)</td>
+          <td>Usable for about 25 seconds after a lost connection; cleared when the game ends, when you leave it, or when the App next finds it out of date</td>
         </tr>
       </table>
       <p>When you delete the App, all associated data is permanently removed from your device by the operating system.</p>
 
       <!-- 11. International Considerations -->
       <h2>11. International Considerations</h2>
-      <p>Qatari Cards is available worldwide through the Apple App Store. The App does not collect personal data or transmit it to external servers. The only data that leaves your device is an anonymous replay you choose to donate (stored in Apple's CloudKit) and, if you are signed in, Game Center achievement progress handled by Apple — both processed through Apple's global infrastructure under Apple's Privacy Policy. Everything else remains on your local device at all times, regardless of your geographic location.</p>
+      <p>Qatari Cards is available worldwide through the Apple App Store. The App does not collect personal data or transmit it to external servers. The only data the App sends over the internet is a replay you choose to donate (stored in Apple's CloudKit), which is processed through Apple's global infrastructure under Apple's Privacy Policy. Local multiplayer traffic goes only to the nearby devices at your table (section 4). Everything else remains on your local device, regardless of your geographic location.</p>
 
       <!-- ======================================================== -->
       <!--                  PART II: TERMS OF USE                   -->
@@ -351,12 +364,12 @@
 
       <!-- 17. Voluntary Donations -->
       <h2>17. Voluntary Donations</h2>
-      <p>The App may invite you to donate an anonymous gameplay replay, exactly as described in Section 3b of the Privacy Policy above; every fact stated there remains accurate and is incorporated here by reference. In addition, you acknowledge and agree that:</p>
+      <p>The App may invite you to donate a gameplay replay, exactly as described in Section 3b of the Privacy Policy above; every fact stated there remains accurate and is incorporated here by reference. In addition, you acknowledge and agree that:</p>
       <ul>
         <li>Any donation made in or in connection with the App is <strong>entirely voluntary</strong>. The App is fully functional without ever donating, and declining never affects any feature, right, or service.</li>
         <li>Donations confer <strong>no additional features, rights, or services</strong> of any kind and create no obligation on our part toward you.</li>
-        <li>Donations are <strong>non-refundable and non-returnable except as required by applicable law or Apple's refund policies</strong>. Because a donated replay is anonymous by design, it cannot be located, retrieved, or returned after it is sent (see Section 3b).</li>
-        <li>By donating a replay, you grant us a perpetual, irrevocable, worldwide, royalty-free license to use that anonymous gameplay content solely for the purposes described in Section 3b.</li>
+        <li>Donations are <strong>non-refundable and non-returnable except as required by applicable law or Apple's refund policies</strong>. The App has no control for retrieving or withdrawing a donated replay after it is sent (see Section 3b).</li>
+        <li>By donating a replay, you grant us a perpetual, irrevocable, worldwide, royalty-free license to use that gameplay content solely for the purposes described in Section 3b.</li>
       </ul>
 
       <!-- 18. Local Multiplayer Sessions -->
@@ -419,7 +432,7 @@
 
       <!-- 23. Force Majeure -->
       <h2>23. Force Majeure</h2>
-      <p>To the maximum extent permitted by applicable law, we shall not be liable for any failure or delay in performance caused by events beyond our reasonable control, including, without limitation: acts of God, natural disasters, epidemics, war, terrorism, civil unrest, labor disputes, government action, power or telecommunications failures, internet or local network outages, failures or outages of third-party services and platforms (including Apple's App Store, Game Center, CloudKit, and other Apple infrastructure), and changes to or restrictions in iOS, device hardware, or Apple's developer policies that affect the App's availability or functionality.</p>
+      <p>To the maximum extent permitted by applicable law, we shall not be liable for any failure or delay in performance caused by events beyond our reasonable control, including, without limitation: acts of God, natural disasters, epidemics, war, terrorism, civil unrest, labor disputes, government action, power or telecommunications failures, internet or local network outages, failures or outages of third-party services and platforms (including Apple's App Store, CloudKit, and other Apple infrastructure), and changes to or restrictions in iOS, device hardware, or Apple's developer policies that affect the App's availability or functionality.</p>
 
       <!-- 24. Governing Law &amp; Dispute Resolution -->
       <h2>24. Governing Law &amp; Dispute Resolution</h2>
@@ -470,7 +483,7 @@
       <p>We may update this Privacy Policy and Terms of Use from time to time to reflect changes in the App, our practices, or applicable laws. When we make changes:</p>
       <ul>
         <li>We will update the "Last updated" date at the top of this page.</li>
-        <li>For material changes, we will notify you through the App before the changes take effect.</li>
+        <li>For material changes, we will describe the change in the App's release notes on the App Store.</li>
         <li>The updated document will be posted at this URL: <a href="https://approvethemove.com/QatariCards/privacy">approvethemove.com/QatariCards/privacy</a></li>
       </ul>
       <p>Your continued use of the App after changes are posted constitutes acceptance of the updated terms. If you disagree with any changes, your sole remedy is to stop using the App and delete it from your device.</p>
@@ -485,7 +498,7 @@
       </ul>
       <p>We commit to responding to all privacy-related inquiries within <strong>30 days</strong> of receipt. For GDPR-related requests, we will respond within the legally required timeframe of one calendar month.</p>
 
-      <p class="legal-meta">Document version 3.0 &nbsp;|&nbsp; Effective August 5, 2026 &nbsp;|&nbsp; Applies to Qatari Cards v0.1 and all subsequent versions unless superseded.</p>
+      <p class="legal-meta">Document version 3.1 &nbsp;|&nbsp; Effective November 14, 2026 &nbsp;|&nbsp; Applies to Qatari Cards 0.14 and all subsequent versions unless superseded.</p>
 
     </div>
   </div>
