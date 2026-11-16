@@ -74,7 +74,7 @@
     <div class="privacy-content">
 
       <h1>ATM Split — Privacy Policy &amp; Terms of Use</h1>
-      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: August 5, 2026</p>
+      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: November 16, 2026</p>
 
       <p class="lead">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for ATM Split. Please read both sections carefully before using the App.</p>
 
@@ -127,6 +127,7 @@
         <li>Accent color selection</li>
         <li>Haptic feedback preference</li>
         <li>A cached copy of the most recently fetched exchange rates, kept so conversions still work offline (contains only public rate numbers, no personal data)</li>
+        <li>Counters used to decide when to show Apple's standard rating prompt (for example, how many expenses you have added), which never leave your device</li>
       </ul>
 
       <p>Both storage mechanisms are declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
@@ -139,7 +140,7 @@
       <h3>4.1 Exchange Rate Requests</h3>
       <ul>
         <li><strong>Endpoint:</strong> The App retrieves exchange rate data from <strong>open.er-api.com</strong>, a public currency exchange rate API.</li>
-        <li><strong>Data sent:</strong> The request contains only the base currency code (e.g., "USD", "QAR") as a URL path parameter. <strong>No personal data, device identifiers, IP-based tracking, or user information of any kind is included in the request.</strong></li>
+        <li><strong>Data sent:</strong> The request contains only the base currency code, which is always "USD", as a URL path parameter. <strong>No personal data, device identifiers, or user information of any kind is included in the request.</strong> As with any web request, the rate provider can see your device's IP address when the request reaches it; we do not receive it, and the App does nothing to track or identify you.</li>
         <li><strong>Data received:</strong> The response contains only currency exchange rate numbers. No tracking cookies, tokens, or user-identifying data are returned.</li>
         <li><strong>Frequency:</strong> A refresh is triggered when you open the add- or edit-expense screen, so up-to-date rates are ready if you enter a foreign-currency amount. Requests are never made on a background schedule, and the most recent rates are cached for reuse.</li>
         <li><strong>Offline use:</strong> The App remains functional offline: if a rate request fails or you have no connection, it falls back to the last cached rates (and a set of rates bundled with the App). Single-currency groups never need a rate at all.</li>
@@ -180,6 +181,11 @@
           <td>Foundation</td>
           <td>HTTP requests for exchange rates</td>
           <td>None (no personal data sent)</td>
+        </tr>
+        <tr>
+          <td>StoreKit</td>
+          <td>Shows Apple's standard "Rate this app" prompt</td>
+          <td>None (handled entirely by Apple; we receive nothing)</td>
         </tr>
       </table>
       <p>We do not use Firebase, Google Analytics, Facebook SDK, Unity, AdMob, Crashlytics, Sentry, Amplitude, Mixpanel, or any other third-party data collection tool.</p>
@@ -435,7 +441,7 @@
       <p>We may update this Privacy Policy and Terms of Use from time to time to reflect changes in the App, our practices, or applicable laws. When we make changes:</p>
       <ul>
         <li>We will update the "Last updated" date at the top of this page.</li>
-        <li>For material changes, we will notify you through the App before the changes take effect.</li>
+        <li>For material changes, we will also describe them in the App Store release notes for the version that introduces them.</li>
         <li>The updated document will be posted at this URL: <a href="https://approvethemove.com/split/privacy">approvethemove.com/split/privacy</a></li>
       </ul>
       <p>Your continued use of the App after changes are posted constitutes acceptance of the updated terms. If you disagree with any changes, your sole remedy is to stop using the App and delete it from your device.</p>
