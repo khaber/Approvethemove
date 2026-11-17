@@ -74,7 +74,7 @@
     <div class="privacy-content">
 
       <h1>ATM Flow — Privacy Policy &amp; Terms of Use</h1>
-      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: October 10, 2026</p>
+      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: November 17, 2026</p>
 
       <p class="lead">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for ATM Flow. Please read both sections carefully before using the App.</p>
 
@@ -116,7 +116,8 @@
         <li>Base currency</li>
         <li>Reminder settings (whether a daily reminder is enabled and its time)</li>
         <li>Rating-request bookkeeping: a single running count of the transactions you save and statement imports you complete (only the number, not the transactions or files themselves), plus the date and app version of the most recent rating request. It is used only to decide when the App may ask iOS to show Apple's App Store rating prompt; Apple decides whether the prompt actually appears, and any rating you leave goes directly to Apple.</li>
-        <li>Import column-mapping templates you save, and internal state such as onboarding completion</li>
+        <li>Budget-alert bookkeeping: which 80% and 100% budget alerts have already been shown in the current period, so the same alert isn't repeated</li>
+        <li>Import column-mapping templates you save, and internal state such as onboarding completion and the time of the last iCloud change (shown in the iCloud section of Settings)</li>
       </ul>
       <p>A small subset of these preferences (such as your base currency and onboarding state) may sync across your own devices via Apple's iCloud key-value store; the rest stay on the device. This data is declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
 
@@ -178,14 +179,22 @@
         <li>Biometric data never leaves the Secure Enclave, never reaches the App's process, and is never transmitted to any server.</li>
       </ul>
 
-      <!-- 7. Statement &amp; File Import -->
-      <h2>7. Statement &amp; File Import</h2>
+      <!-- 7. Adding Data From Outside the App -->
+      <h2>7. Adding Data From Outside the App</h2>
+      <h3>7.1 Statement &amp; File Import</h3>
       <p>ATM Flow allows you to import transactions from files stored on your device — including CSV, tab-separated and plain-text files, spreadsheets (.xlsx), and bank or credit-card statements in PDF form (including password-protected PDFs). Some statement formats are read using on-device text recognition (Apple's Vision framework) and PDF parsing (PDFKit).</p>
       <ul>
         <li><strong>Local processing only</strong> — Files are read and processed entirely on your device, including any text recognition. No file data, statement content, or recognized text is uploaded to any external server.</li>
         <li>The imported data is stored in your local SwiftData database (and synced to your private iCloud container if iCloud sync is enabled).</li>
         <li>The original file remains unchanged on your device; the App only reads from it.</li>
         <li><strong>Passwords for protected PDFs</strong> — If you choose to save the password for a password-protected statement so you don't have to re-enter it, that password is stored in the device <strong>Keychain</strong>, protected behind Face ID / Touch ID, and never leaves your device or reaches us. You can remove saved passwords at any time from within the App. Please note: because of how iOS manages the Keychain, Keychain entries may persist after the App is deleted and can survive a reinstall, so removing a saved password in-app is the reliable way to clear it.</li>
+      </ul>
+      <h3>7.2 Siri, Shortcuts &amp; Apple Pay</h3>
+      <p>ATM Flow offers two actions for Siri and the Shortcuts app, <strong>Add Expense</strong> and <strong>Check Balance</strong>, and an Add Expense control for Control Center.</p>
+      <ul>
+        <li><strong>Optional Apple Pay automation</strong> — If you set up a Shortcuts automation for Wallet purchases (the guide is in Settings ▸ Log Apple Pay Purchases), Apple's Shortcuts app passes the amount and merchant of each purchase, plus any account, category or currency you chose in the shortcut, to ATM Flow on your device. ATM Flow saves it as a transaction, the same as one you type in.</li>
+        <li>The automation exists only if you create it in the Shortcuts app, and you can turn it off or delete it there at any time. ATM Flow never reads your Wallet or Apple Pay data directly.</li>
+        <li>Nothing passed in this way is sent to us or to any server we operate. The resulting transaction is stored like any other (see Sections 3 and 4).</li>
       </ul>
 
       <!-- 8. Third-Party Services &amp; SDKs -->
@@ -241,6 +250,26 @@
           <td>Security (Keychain)</td>
           <td>Storing saved statement-PDF passwords behind Face ID / Touch ID</td>
           <td>None (device-only, never transmitted)</td>
+        </tr>
+        <tr>
+          <td>App Intents</td>
+          <td>Siri and Shortcuts actions, the Control Center control, and the optional Apple Pay automation (Section 7.2)</td>
+          <td>None (on-device only)</td>
+        </tr>
+        <tr>
+          <td>UserNotifications</td>
+          <td>Local daily reminders and budget alerts, scheduled on the device</td>
+          <td>None (no push server)</td>
+        </tr>
+        <tr>
+          <td>PhotosUI</td>
+          <td>The system photo picker for receipt photos (Section 5)</td>
+          <td>None (only the image you pick)</td>
+        </tr>
+        <tr>
+          <td>StoreKit</td>
+          <td>Asking iOS to show Apple's App Store rating prompt</td>
+          <td>None (ratings go to Apple)</td>
         </tr>
       </table>
       <p>We do not use Firebase, Google Analytics, Facebook SDK, AdMob, Crashlytics, Sentry, Amplitude, Mixpanel, or any other third-party data collection tool.</p>
