@@ -136,19 +136,19 @@
       <ul>
         <li><strong>Where the data goes:</strong> your groups, members, expenses and settlements are stored in <strong>your own iCloud account</strong> using Apple's CloudKit, so they appear on your other iPhones and iPads signed in to the same Apple Account. Approve The Move has no access to your iCloud data.</li>
         <li><strong>Encryption:</strong> the contents of each record (names, amounts, notes, dates, currencies) are stored in CloudKit's encrypted fields, which are encrypted with keys tied to your Apple Account. The data is protected in transit and at rest by Apple.</li>
-        <li><strong>Not used for sharing:</strong> the App no longer uses iCloud to share groups with other people. Sharing a group works with a link instead (Section 3.4).</li>
+        <li><strong>Not used for sharing:</strong> the App doesn't use iCloud to share groups with other people. Sharing a group works with a link (Section 3.4).</li>
         <li><strong>Turning it off:</strong> switch iCloud Sync off in Settings to stop syncing. Data already in your iCloud stays there until you delete the groups in the App; you can also remove all of ATM Split's iCloud data from the Settings app on your device (your name ▸ iCloud ▸ Manage Storage).</li>
         <li><strong>Apple's role:</strong> iCloud is provided by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a> and the iCloud terms that apply to your Apple Account.</li>
       </ul>
 
       <h3>3.4 Shared Groups (sharing with a link)</h3>
-      <p>You can share a group with other people using a link. Anyone with ATM Split can open the link and join the group on any device; no account is needed. When you share a group:</p>
+      <p>From version 2.0, you can share a group with other people using a link. Anyone with ATM Split can open the link and join the group on any device; no account is needed. When you share a group:</p>
       <ul>
-        <li><strong>Encryption:</strong> the group's records are encrypted on your device with a key that exists only in the invite link (the part after the <code>#</code>) and on the devices of the people in the group.</li>
+        <li><strong>Encryption:</strong> the group's records are encrypted on your device with a key that exists only in the invite link (the part after the <code>#</code>) and on the devices of the people in the group (and, for those who turn on iCloud Sync, in their own iCloud along with the group).</li>
         <li><strong>Where the data goes:</strong> the encrypted records are stored on <strong>Approve The Move's relay server</strong>, which runs on Cloudflare. The relay can't read names, amounts or anything else in them.</li>
-        <li><strong>What the relay stores:</strong> only an opaque group id, opaque record ids, the encrypted records, and timestamps. No IP addresses, names or accounts are stored by us.</li>
+        <li><strong>What the relay stores:</strong> only an opaque group id, opaque record ids, the encrypted records, and timestamps. No IP addresses, names or accounts are stored by us. Like any network provider, Cloudflare sees the IP address of each connection in order to deliver it.</li>
         <li><strong>Who can see it:</strong> anyone with the link can see and edit the group, so share it only with people you trust.</li>
-        <li><strong>Stopping and deleting:</strong> the group's owner can stop sharing at any time, which deletes the group from the relay. A group is deleted from the relay when its owner deletes it, or after 400 days without use.</li>
+        <li><strong>Stopping and deleting:</strong> the person who shared the group can stop sharing at any time from the device they shared it from, which deletes the group from the relay; everyone else keeps their copy, which no longer updates. A group is deleted from the relay when its owner deletes it, or after 400 days without use.</li>
       </ul>
       <p>Both storage mechanisms are declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
       <p><strong>How to delete:</strong> You can delete any individual group, expense, member, or settlement within the App at any time. To erase all data permanently, delete ATM Split from your device. The App itself retains no residual data after uninstallation. Deleting the App does not remove a shared group from the relay; shared groups are deleted from the relay as described in Section 3.4. Please note, however, that device or iCloud backups you made before deleting the App may still contain copies of its data; those backups are managed by you and Apple and are outside our control.</p>
