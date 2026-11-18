@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["B5RVD86982.ApproveTheMove.ATM-Split"],
+        "components": [
+          { "/": "/split/join", "comment": "Invite link without a trailing slash" },
+          { "/": "/split/join/*", "comment": "Invite link: https://approvethemove.com/split/join/#<secret>" }
+        ]
+      }
+    ]
+  }
+}
