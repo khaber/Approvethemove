@@ -223,57 +223,89 @@
 
     var shots = stage.querySelectorAll('.rotator-shot');
     var chip = document.querySelector('.rotator-chip');
-    if (shots.length < 2 || reducedMotion) return;
+    if (shots.length < 2) return;
 
     var index = 0;
-    var pointerInside = false;
-    var chipFocused = false;
+    var userPaused = false;
+    var showcase = stage.closest('.hero-phone') || stage;
+    var controls = document.querySelector('[data-rotator-controls]') || document.createElement('div');
+    var icons = Array.from(controls.querySelectorAll('img')).map(function (image) { return image.cloneNode(); });
+    controls.replaceChildren();
+    controls.className = 'rotator-controls';
+    controls.setAttribute('role', 'group');
+    controls.setAttribute('aria-label', 'Choose an app preview');
+    var selectors = [];
+    var pauseButton = null;
 
     function isExternal(href) {
       return /^https?:\/\//.test(href) && href.indexOf(window.location.origin) !== 0;
     }
 
     function paused() {
-      return pointerInside || chipFocused || document.hidden;
+      return userPaused || motionIsReduced() || showcase.matches(':hover') ||
+        showcase.contains(document.activeElement) || document.hidden;
     }
 
     function show(nextIndex) {
+      index = nextIndex;
       shots.forEach(function (image, shotIndex) {
         image.classList.toggle('is-active', shotIndex === nextIndex);
       });
+      selectors.forEach(function (button, buttonIndex) {
+        button.setAttribute('aria-pressed', String(buttonIndex === nextIndex));
+      });
 
       if (!chip) return;
-      chip.classList.add('is-switching');
-      window.setTimeout(function () {
-        var href = shots[nextIndex].getAttribute('data-href') || chip.getAttribute('href');
-        chip.setAttribute('href', href);
-        chip.textContent = (shots[nextIndex].getAttribute('data-label') || '') + ' →';
-        if (isExternal(href)) {
-          chip.setAttribute('target', '_blank');
-          chip.setAttribute('rel', 'noopener');
-        } else {
-          chip.removeAttribute('target');
-          chip.removeAttribute('rel');
-        }
-        chip.classList.remove('is-switching');
-      }, 180);
+      var href = shots[nextIndex].getAttribute('data-href') || chip.getAttribute('href');
+      chip.setAttribute('href', href);
+      chip.textContent = (shots[nextIndex].getAttribute('data-label') || '') + ' →';
+      if (isExternal(href)) {
+        chip.setAttribute('target', '_blank');
+        chip.setAttribute('rel', 'noopener');
+      } else {
+        chip.removeAttribute('target');
+        chip.removeAttribute('rel');
+      }
     }
 
-    stage.addEventListener('pointerenter', function () { pointerInside = true; });
-    stage.addEventListener('pointerleave', function () { pointerInside = false; });
-
-    if (chip) {
-      chip.addEventListener('pointerenter', function () { pointerInside = true; });
-      chip.addEventListener('pointerleave', function () { pointerInside = false; });
-      chip.addEventListener('focus', function () { chipFocused = true; });
-      chip.addEventListener('blur', function () { chipFocused = false; });
+    function syncPauseButton() {
+      if (!pauseButton) return;
+      pauseButton.textContent = userPaused ? '▶' : 'Ⅱ';
+      pauseButton.setAttribute('aria-label', userPaused ? 'Play app previews' : 'Pause app previews');
     }
+
+    shots.forEach(function (image, shotIndex) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.setAttribute('aria-label', 'Preview ' + image.getAttribute('data-label'));
+      button.setAttribute('title', image.getAttribute('data-label'));
+      button.setAttribute('aria-pressed', String(shotIndex === index));
+      if (icons[shotIndex]) button.appendChild(icons[shotIndex]);
+      button.addEventListener('click', function () {
+        userPaused = true;
+        show(shotIndex);
+        syncPauseButton();
+      });
+      selectors.push(button);
+      controls.appendChild(button);
+    });
+    if (!motionIsReduced()) {
+      pauseButton = document.createElement('button');
+      pauseButton.type = 'button';
+      pauseButton.className = 'rotator-pause';
+      pauseButton.addEventListener('click', function () {
+        userPaused = !userPaused;
+        syncPauseButton();
+      });
+      syncPauseButton();
+      controls.appendChild(pauseButton);
+    }
+    showcase.appendChild(controls);
 
     window.setInterval(function () {
       if (paused()) return;
-      index = (index + 1) % shots.length;
-      show(index);
-    }, 3500);
+      show((index + 1) % shots.length);
+    }, 6500);
   }
 
   function initLightbox() {
@@ -292,8 +324,14 @@
     var preview = dialog.querySelector('img');
     var caption = dialog.querySelector('.lightbox-caption');
     var closeButton = dialog.querySelector('.lightbox-close');
+    var activeTrigger = null;
 
     closeButton.addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('close', function () {
+      if (activeTrigger && activeTrigger.isConnected && activeTrigger.getClientRects().length) {
+        activeTrigger.focus({ preventScroll: true });
+      }
+    });
     dialog.addEventListener('click', function (event) {
       if (event.target === dialog) dialog.close();
     });
@@ -308,6 +346,7 @@
       image.parentNode.insertBefore(button, image);
       button.appendChild(image);
       button.addEventListener('click', function () {
+        activeTrigger = button;
         preview.src = image.currentSrc || image.src;
         preview.alt = image.alt;
         caption.textContent = label ? label.textContent : image.alt;
