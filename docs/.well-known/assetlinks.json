@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.approvethemove.atmsplit",
+      "sha256_cert_fingerprints": [
+        "7C:22:81:D3:D4:C3:E3:EA:D5:4C:59:1E:D2:17:E4:08:2C:2C:D7:AF:8B:76:8A:C9:E7:43:2B:F3:ED:C7:7E:0B"
+      ]
+    }
+  }
+]
