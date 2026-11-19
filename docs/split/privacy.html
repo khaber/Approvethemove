@@ -92,21 +92,21 @@
 
       <!-- 2. Information We Collect -->
       <h2>2. Information We Collect</h2>
-      <p><strong>We do not collect, transmit, or process any personal data.</strong> ATM Split is designed from the ground up as a privacy-first application. Specifically:</p>
+      <p><strong>We do not collect any personal data, and we cannot read the contents of your groups.</strong> ATM Split is designed from the ground up as a privacy-first application. Specifically:</p>
       <ul>
         <li><strong>No account creation</strong> — You are never required or asked to sign up, log in, create an account, or provide an email address, phone number, or any other personal identifier.</li>
         <li><strong>No analytics or tracking</strong> — We do not use any analytics frameworks, crash reporting services, telemetry tools, device fingerprinting, or usage tracking of any kind.</li>
         <li><strong>No advertising</strong> — The App contains no advertisements, no advertising SDKs, no ad identifiers (IDFA), and no advertising networks.</li>
-        <li><strong>No servers of ours</strong> — The App never sends data to us or to any third-party cloud service. By default all data stays on your device. If <em>you</em> turn on iCloud Sync (version 2.0 and later), your groups are kept in <strong>your own iCloud account</strong>, encrypted, and are visible only to you and the people you choose to share a group with. We cannot read it (see Section 3.3).</li>
+        <li><strong>No access to your data</strong> — By default all data stays on your device. If <em>you</em> turn on iCloud Sync (version 2.0 and later), your groups are kept in <strong>your own iCloud account</strong>, encrypted, and are visible only to you. We cannot read it (see Section 3.3). If <em>you</em> share a group with a link, its records are encrypted on your device before they are stored on our relay server, which cannot read names, amounts or anything else in them (see Section 3.4).</li>
         <li><strong>No in-app purchases</strong> — No financial, billing, or payment information is collected or processed.</li>
         <li><strong>No location data</strong> — The App does not request, access, or store your geographic location.</li>
         <li><strong>No contacts or photos</strong> — The App does not access your contacts, photo library, camera, microphone, or any other device sensor beyond haptic feedback. In Kids mode, leaving Kids mode asks for Face ID, Touch ID or the device passcode; that check is performed entirely by iOS, and the App never receives any biometric data.</li>
       </ul>
-      <p><strong>We do not sell, rent, or trade any personal information — we never possess it in the first place.</strong> Because no personal data ever reaches us, there is nothing for us to sell, share, monetize, or lose.</p>
+      <p><strong>We do not sell, rent, or trade any personal information — we never possess it in the first place.</strong> Because no personal data ever reaches us in a form we can read, there is nothing for us to sell, share, monetize, or lose.</p>
 
       <!-- 3. On-Device Storage -->
       <h2>3. On-Device Storage</h2>
-      <p>ATM Split stores data locally on your device using two Apple-provided storage systems: <strong>SwiftData</strong> (a persistent on-device database) and <strong>UserDefaults</strong> (lightweight key-value storage for preferences). All data is stored within the App's private sandbox, is not accessible to other apps, and <strong>never leaves your device</strong> unless you turn on iCloud Sync (Section 3.3).</p>
+      <p>ATM Split stores data locally on your device using two Apple-provided storage systems: <strong>SwiftData</strong> (a persistent on-device database) and <strong>UserDefaults</strong> (lightweight key-value storage for preferences). All data is stored within the App's private sandbox, is not accessible to other apps, and <strong>never leaves your device</strong> unless you turn on iCloud Sync (Section 3.3) or share a group (Section 3.4).</p>
 
       <h3>3.1 SwiftData (Persistent Storage)</h3>
       <p>The App uses Apple's SwiftData framework to store your expense-related data on-device. This includes:</p>
@@ -118,7 +118,7 @@
         <li>Settlements (who owes whom and how much)</li>
         <li>Categories assigned to expenses</li>
       </ul>
-      <p>This data is stored in a local SQLite database managed by SwiftData within the App's sandbox. Unless you turn on iCloud Sync (Section 3.3), it is not uploaded, synced, or transmitted anywhere, and we operate no server-side storage of any kind.</p>
+      <p>This data is stored in a local SQLite database managed by SwiftData within the App's sandbox. Unless you turn on iCloud Sync (Section 3.3) or share a group (Section 3.4), it is not uploaded, synced, or transmitted anywhere.</p>
 
       <h3>3.2 UserDefaults (Preferences)</h3>
       <p>A small amount of non-personal preference data is stored using Apple's UserDefaults system:</p>
@@ -131,21 +131,31 @@
         <li>Counters used to decide when to show Apple's standard rating prompt (for example, how many expenses you have added), which never leave your device</li>
       </ul>
 
-      <h3>3.3 iCloud Sync and Shared Groups (optional, off by default)</h3>
-      <p>From version 2.0, you can turn on <strong>iCloud Sync</strong> in the App's Settings. It is off until you turn it on (or until you accept an invitation to a shared group). When it is on:</p>
+      <h3>3.3 iCloud Sync (optional, off by default)</h3>
+      <p>From version 2.0, you can turn on <strong>iCloud Sync</strong> in the App's Settings. It is off until you turn it on. iCloud Sync keeps <strong>your own groups on your own devices</strong>. When it is on:</p>
       <ul>
-        <li><strong>Where the data goes:</strong> your groups, members, expenses and settlements are stored in <strong>your own iCloud account</strong> using Apple's CloudKit, so they appear on your other iPhones and iPads signed in to the same Apple Account. Approve The Move runs no server and has no access to your iCloud data.</li>
+        <li><strong>Where the data goes:</strong> your groups, members, expenses and settlements are stored in <strong>your own iCloud account</strong> using Apple's CloudKit, so they appear on your other iPhones and iPads signed in to the same Apple Account. Approve The Move has no access to your iCloud data.</li>
         <li><strong>Encryption:</strong> the contents of each record (names, amounts, notes, dates, currencies) are stored in CloudKit's encrypted fields, which are encrypted with keys tied to your Apple Account. The data is protected in transit and at rest by Apple.</li>
-        <li><strong>Shared groups:</strong> if you share a group, the people you invite (and only them) can see and edit that group's members, expenses and settlements on their own devices. iCloud shows the group's participants their names or the email address/phone number used to invite them, as handled by Apple. You can remove people or stop sharing at any time; deleting a group you own removes it for everyone, and deleting a group someone shared with you removes only you from it.</li>
+        <li><strong>Not used for sharing:</strong> the App doesn't use iCloud to share groups with other people. Sharing a group works with a link (Section 3.4).</li>
         <li><strong>Turning it off:</strong> switch iCloud Sync off in Settings to stop syncing. Data already in your iCloud stays there until you delete the groups in the App; you can also remove all of ATM Split's iCloud data from the Settings app on your device (your name ▸ iCloud ▸ Manage Storage).</li>
         <li><strong>Apple's role:</strong> iCloud is provided by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a> and the iCloud terms that apply to your Apple Account.</li>
       </ul>
+
+      <h3>3.4 Shared Groups (sharing with a link)</h3>
+      <p>From version 2.0, you can share a group with other people using a link. Anyone with ATM Split can open the link and join the group on any device; no account is needed. When you share a group:</p>
+      <ul>
+        <li><strong>Encryption:</strong> the group's records are encrypted on your device with a key that exists only in the invite link (the part after the <code>#</code>) and on the devices of the people in the group (and, for those who turn on iCloud Sync, in their own iCloud along with the group).</li>
+        <li><strong>Where the data goes:</strong> the encrypted records are stored on <strong>Approve The Move's relay server</strong>, which runs on Cloudflare. The relay can't read names, amounts or anything else in them.</li>
+        <li><strong>What the relay stores:</strong> only an opaque group id, opaque record ids, the encrypted records, and timestamps. No IP addresses, names or accounts are stored by us. Like any network provider, Cloudflare sees the IP address of each connection in order to deliver it.</li>
+        <li><strong>Who can see it:</strong> anyone with the link can see and edit the group, so share it only with people you trust.</li>
+        <li><strong>Stopping and deleting:</strong> the person who shared the group can stop sharing at any time from the device they shared it from, which deletes the group from the relay; everyone else keeps their copy, which no longer updates. A group is deleted from the relay when its owner deletes it, or after 400 days without use.</li>
+      </ul>
       <p>Both storage mechanisms are declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
-      <p><strong>How to delete:</strong> You can delete any individual group, expense, member, or settlement within the App at any time. To erase all data permanently, delete ATM Split from your device. The App itself retains no residual data after uninstallation. Please note, however, that device or iCloud backups you made before deleting the App may still contain copies of its data; those backups are managed by you and Apple and are outside our control.</p>
+      <p><strong>How to delete:</strong> You can delete any individual group, expense, member, or settlement within the App at any time. To erase all data permanently, delete ATM Split from your device. The App itself retains no residual data after uninstallation. Deleting the App does not remove a shared group from the relay; shared groups are deleted from the relay as described in Section 3.4. Please note, however, that device or iCloud backups you made before deleting the App may still contain copies of its data; those backups are managed by you and Apple and are outside our control.</p>
 
       <!-- 4. Network Activity -->
       <h2>4. Network Activity</h2>
-      <p>ATM Split makes <strong>one type of network request</strong>: fetching live currency exchange rates to support multi-currency expense splitting.</p>
+      <p>ATM Split connects to the internet only to fetch live currency exchange rates (Section 4.1), to sync shared groups through our relay (Section 4.2) and, if you turn it on, for iCloud Sync (Section 4.3).</p>
 
       <h3>4.1 Exchange Rate Requests</h3>
       <ul>
@@ -156,11 +166,14 @@
         <li><strong>Offline use:</strong> The App remains functional offline: if a rate request fails or you have no connection, it falls back to the last cached rates (and a set of rates bundled with the App). Single-currency groups never need a rate at all.</li>
       </ul>
 
-      <h3>4.2 iCloud (only if you turn on iCloud Sync)</h3>
+      <h3>4.2 Shared-Group Relay (only for shared groups)</h3>
+      <p>For a group that is shared, the App sends and fetches that group's encrypted records to and from Approve The Move's relay server, which runs on Cloudflare, as described in Section 3.4. The key that encrypts them is not sent: it exists only in the invite link and on the devices of the people in the group. The relay can't read names, amounts or anything else in the records, and no IP addresses, names or accounts are stored by us.</p>
+
+      <h3>4.3 iCloud (only if you turn on iCloud Sync)</h3>
       <p>When iCloud Sync is on, the App exchanges your groups with your own iCloud account through Apple's CloudKit, as described in Section 3.3. These connections go only to Apple's iCloud servers; nothing is sent to us.</p>
 
-      <h3>4.3 No Other Network Communication</h3>
-      <p>Apart from exchange rate requests and, if you turn it on, iCloud Sync, the App does not connect to the internet, does not make any other HTTP requests, and does not transmit any data to any external server, cloud service, or remote endpoint. There is no telemetry, no analytics pings, no crash reporting uploads, and no background network activity.</p>
+      <h3>4.4 No Other Network Communication</h3>
+      <p>Apart from exchange rate requests, the relay for shared groups and, if you turn it on, iCloud Sync, the App does not connect to the internet, does not make any other HTTP requests, and does not transmit any data to any external server, cloud service, or remote endpoint. There is no telemetry, no analytics pings, no crash reporting uploads, and no background network activity.</p>
 
       <!-- 5. CSV Export -->
       <h2>5. CSV Export</h2>
@@ -197,7 +210,7 @@
         </tr>
         <tr>
           <td>CloudKit</td>
-          <td>Optional iCloud Sync and shared groups, stored in your own iCloud account</td>
+          <td>Optional iCloud Sync of your own groups, stored in your own iCloud account</td>
           <td>None by us (data stays in your iCloud; we have no access)</td>
         </tr>
         <tr>
@@ -212,6 +225,7 @@
         </tr>
       </table>
       <p>We do not use Firebase, Google Analytics, Facebook SDK, Unity, AdMob, Crashlytics, Sentry, Amplitude, Mixpanel, or any other third-party data collection tool.</p>
+      <p>Shared groups are stored on Approve The Move's own relay server, which runs on Cloudflare. The records are encrypted on your device, and the relay can't read them (Section 3.4).</p>
       <p>The exchange rate API (open.er-api.com) is a public, read-only service. We have no data-sharing agreement with this service, and no personal data is transmitted to it.</p>
 
       <!-- 7. Apple's Data Practices -->
@@ -245,8 +259,8 @@
         <li><strong>Right to object</strong> (Article 21) — Object to processing based on legitimate interests.</li>
         <li><strong>Right to withdraw consent</strong> (Article 7) — Withdraw previously given consent at any time.</li>
       </ul>
-      <p><strong>Since we do not collect, store, or process any personal data, there is no data for us to provide, correct, restrict, delete, port, or cease processing.</strong> Your local data can be erased by deleting individual items within the App or by deleting the App entirely. If you believe we hold data about you in error, please contact us and we will investigate promptly.</p>
-      <p><strong>Legal basis for processing:</strong> We do not process personal data, so no legal basis under Article 6 is required on our part. Because the data you enter into the App is stored on your device (and, only if you turn on iCloud Sync, in your own iCloud account) and never reaches us, we do not act as a controller or processor of that data, and GDPR obligations that presuppose our possession of personal data do not arise.</p>
+      <p><strong>Since we do not collect personal data, and shared groups reach our relay only encrypted with a key we never have, there is no data we can read to provide, correct, restrict, port, or cease processing.</strong> The owner of a shared group can delete it from the relay by stopping sharing (Section 3.4). Your local data can be erased by deleting individual items within the App or by deleting the App entirely. If you believe we hold data about you in error, please contact us and we will investigate promptly.</p>
+      <p><strong>Legal basis for processing:</strong> We do not process personal data, so no legal basis under Article 6 is required on our part. Because the data you enter into the App is stored on your device (and, only if you turn on iCloud Sync, in your own iCloud account) and, if you share a group, reaches our relay only in encrypted form that we cannot read, we do not act as a controller or processor of that data, and GDPR obligations that presuppose our possession of personal data do not arise.</p>
       <p><strong>Data controller:</strong> Approve The Move (contact details in Section 30).</p>
 
       <h3>9.2 California (CCPA / CPRA)</h3>
@@ -269,18 +283,18 @@
 
       <!-- 10. Data Security -->
       <h2>10. Data Security</h2>
-      <p>Although we do not collect or store personal data on any server, we employ the following security measures to protect your experience within the App:</p>
+      <p>Although we do not collect personal data, and shared groups are stored on our relay only in encrypted form, we employ the following security measures to protect your experience within the App:</p>
       <ul>
         <li><strong>Sandboxed storage</strong> — All on-device data (SwiftData database and UserDefaults preferences) is stored within the App's iOS sandbox, which is isolated from other apps and protected by the operating system.</li>
         <li><strong>Encrypted network requests</strong> — Exchange rate requests are made over HTTPS (TLS encryption), helping protect data in transit from interception.</li>
-        <li><strong>No persistent sensitive data</strong> — No passwords, tokens, credentials, or payment information are ever stored or processed.</li>
-        <li><strong>No remote attack surface</strong> — The App does not expose any server endpoints, APIs, or network services. Its outbound connections are an HTTPS GET for exchange rates, which transmits no personal data, and, only if you turn on iCloud Sync, Apple's CloudKit connections to your own iCloud account.</li>
+        <li><strong>No persistent sensitive data</strong> — No passwords, accounts or payment information are ever stored or processed. The only secrets the App keeps belong to shared groups (such as a group's key), and they stay on the devices of the people in the group.</li>
+        <li><strong>No remote attack surface</strong> — The App does not expose any server endpoints, APIs, or network services. Its outbound connections are an HTTPS GET for exchange rates, which transmits no personal data; connections to our relay for shared groups, which carry only encrypted records; and, only if you turn on iCloud Sync, Apple's CloudKit connections to your own iCloud account.</li>
       </ul>
       <p>That said, we want to be honest with you: <strong>no method of electronic storage or transmission is 100% secure</strong>, and no software can be guaranteed to be entirely free of vulnerabilities. The security of data stored on your device also depends on factors we do not control, such as your device passcode, your iOS version, and the physical security of your device. To the maximum extent permitted by applicable law, we are not liable for security incidents arising from circumstances beyond our reasonable control, including compromise of your device or of Apple's operating system.</p>
 
       <!-- 11. Data Retention -->
       <h2>11. Data Retention</h2>
-      <p>We do not operate servers, databases, or cloud storage of any kind. We do not retain any user data. Data associated with ATM Split exists on your personal device and, only if you turn on iCloud Sync, in your own iCloud account:</p>
+      <p>Data associated with ATM Split exists on your personal device; only if you turn on iCloud Sync, in your own iCloud account; and, only for groups that are shared, in encrypted form on our relay server:</p>
       <table class="legal-table" aria-label="Data retention practices" tabindex="0">
         <tr>
           <th>Data Type</th>
@@ -294,8 +308,13 @@
         </tr>
         <tr>
           <td>The same group data, if you turn on iCloud Sync</td>
-          <td>Your own iCloud account (Apple CloudKit), and the iCloud accounts of people you share a group with</td>
+          <td>Your own iCloud account (Apple CloudKit)</td>
           <td>Until you delete the group in the App or remove ATM Split's data from iCloud in your device's Settings</td>
+        </tr>
+        <tr>
+          <td>Shared groups: an opaque group id, opaque record ids, the encrypted records, and timestamps</td>
+          <td>Approve The Move's relay server (runs on Cloudflare)</td>
+          <td>Until the owner stops sharing or deletes the group, or after 400 days without use</td>
         </tr>
         <tr>
           <td>User preferences (theme, accent color, haptics, display mode, iCloud Sync on/off)</td>
@@ -308,11 +327,11 @@
           <td>Until iOS automatically clears the temporary directory or the App is deleted</td>
         </tr>
       </table>
-      <p>When you delete the App, all associated data is permanently removed from your device by the operating system.</p>
+      <p>When you delete the App, all associated data is permanently removed from your device by the operating system. A shared group stays on the relay until it is deleted as described above.</p>
 
       <!-- 12. International Considerations -->
       <h2>12. International Considerations</h2>
-      <p>ATM Split is available worldwide through the Apple App Store. Since the App does not collect or transmit any personal data to us or to third-party servers, there are no international data transfers by us to disclose. The exchange rate request contains no personal data. User-created data remains on your device unless you turn on iCloud Sync, in which case it is stored in your own iCloud account, where Apple's terms govern storage location.</p>
+      <p>ATM Split is available worldwide through the Apple App Store. The App does not send personal data to us in a form we can read. The exchange rate request contains no personal data. User-created data remains on your device unless you turn on iCloud Sync, in which case it is stored in your own iCloud account, where Apple's terms govern storage location, or share a group, in which case its records are stored, encrypted, on our relay server, which runs on Cloudflare.</p>
 
       <!-- ======================================================== -->
       <!--                  PART II: TERMS OF USE                   -->
