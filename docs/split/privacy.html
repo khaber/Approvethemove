@@ -74,7 +74,7 @@
     <div class="privacy-content">
 
       <h1>ATM Split — Privacy Policy &amp; Terms of Use</h1>
-      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: November 18, 2026</p>
+      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: November 19, 2026</p>
 
       <p class="lead">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for ATM Split. Please read both sections carefully before using the App.</p>
 
@@ -87,7 +87,7 @@
       <!-- 1. Introduction -->
       <h2>1. Introduction</h2>
       <p>This Privacy Policy explains how ATM Split ("the App"), developed and published by Approve The Move ("we", "us", or "our"), handles information when you ("you" or "the user") download, install, or use the App on any supported device.</p>
-      <p>We are committed to protecting your privacy. This policy applies to all versions of ATM Split distributed through the Apple App Store and any future platforms.</p>
+      <p>We are committed to protecting your privacy. This policy applies to all versions of ATM Split, on iPhone and iPad (distributed through the Apple App Store) and on Android (distributed through Google Play). Where the two differ, Section 3.5 describes the Android app.</p>
       <p>By downloading, installing, or using ATM Split, you acknowledge that you have read, understood, and agree to the practices described in this policy. If you do not agree, please do not use the App and remove it from your device.</p>
 
       <!-- 2. Information We Collect -->
@@ -149,6 +149,16 @@
         <li><strong>What the relay stores:</strong> only an opaque group id, opaque record ids, the encrypted records, and timestamps. No IP addresses, names or accounts are stored by us. Like any network provider, Cloudflare sees the IP address of each connection in order to deliver it.</li>
         <li><strong>Who can see it:</strong> anyone with the link can see and edit the group, so share it only with people you trust.</li>
         <li><strong>Stopping and deleting:</strong> the person who shared the group can stop sharing at any time from the device they shared it from, which deletes the group from the relay; everyone else keeps their copy, which no longer updates. A group is deleted from the relay when its owner deletes it, or after 400 days without use.</li>
+      </ul>
+      <h3>3.5 ATM Split for Android</h3>
+      <p>The Android app follows this policy with these differences, because it uses Android's own systems instead of Apple's:</p>
+      <ul>
+        <li><strong>Storage:</strong> your groups, members, expenses and settlements are stored in a private on-device database (Android Room/SQLite) inside the App's private storage, which other apps can't access. Cached exchange rates are kept in the App's private preferences. Nothing leaves your phone except a shared group's encrypted records (Section 3.4) and the exchange rate request (Section 4.1).</li>
+        <li><strong>No iCloud and no Android backup:</strong> the Android app has no iCloud Sync (Section 3.3 and 4.3 apply to Apple devices only) and opts out of Android's cloud backup and device-to-device transfer, so its data isn't copied to Google's backup servers. To have a group on several devices, open its invite link on each one.</li>
+        <li><strong>Shared groups:</strong> work exactly as described in Section 3.4, with the same relay, and between Android and Apple devices. If you share a group from an Android phone, a key that lets that phone end the group for everyone is kept on that phone only, protected by the Android Keystore.</li>
+        <li><strong>Not in the Android app yet:</strong> Easy mode, Kids mode, CSV export and iCloud Sync, so the parts of this policy about them don't apply to it.</li>
+        <li><strong>Google's role:</strong> Google may independently collect information related to your use of Google Play, such as install statistics, under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>, not ours. In the Data safety section on Google Play we declare that the App collects and shares no data.</li>
+        <li><strong>How to delete on Android:</strong> delete any group, member or expense in the App, or uninstall it (Settings ▸ Apps ▸ ATM Split ▸ Uninstall), which removes all of its data from the phone.</li>
       </ul>
       <p>Both storage mechanisms are declared in our <strong>Privacy Manifest</strong> (PrivacyInfo.xcprivacy) under API category <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with reason code <code>CA92.1</code> (access to store and retrieve user preferences), as required by Apple.</p>
       <p><strong>How to delete:</strong> You can delete any individual group, expense, member, or settlement within the App at any time. To erase all data permanently, delete ATM Split from your device. The App itself retains no residual data after uninstallation. Deleting the App does not remove a shared group from the relay; shared groups are deleted from the relay as described in Section 3.4. Please note, however, that device or iCloud backups you made before deleting the App may still contain copies of its data; those backups are managed by you and Apple and are outside our control.</p>
