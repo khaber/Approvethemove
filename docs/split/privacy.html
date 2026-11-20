@@ -74,7 +74,7 @@
     <div class="privacy-content">
 
       <h1>ATM Split — Privacy Policy &amp; Terms of Use</h1>
-      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: November 19, 2026</p>
+      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: November 20, 2026</p>
 
       <p class="lead">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for ATM Split. Please read both sections carefully before using the App.</p>
 
@@ -148,7 +148,7 @@
         <li><strong>Where the data goes:</strong> the encrypted records are stored on <strong>Approve The Move's relay server</strong>, which runs on Cloudflare. The relay can't read names, amounts or anything else in them.</li>
         <li><strong>What the relay stores:</strong> only an opaque group id, opaque record ids, the encrypted records, and timestamps. No IP addresses, names or accounts are stored by us. Like any network provider, Cloudflare sees the IP address of each connection in order to deliver it.</li>
         <li><strong>Who can see it:</strong> anyone with the link can see and edit the group, so share it only with people you trust.</li>
-        <li><strong>Stopping and deleting:</strong> the person who shared the group can stop sharing at any time from the device they shared it from, which deletes the group from the relay; everyone else keeps their copy, which no longer updates. A group is deleted from the relay when its owner deletes it, or after 400 days without use.</li>
+        <li><strong>Stopping and deleting:</strong> the person who shared the group can stop sharing at any time from the device they shared it from, which deletes the group from the relay; everyone else keeps their copy, which no longer updates. Deleting a shared group on your device only removes it from that device: the group carries on for everyone else, and if you were the person who shared it, the first other member's app takes over managing it. The person who manages a group can also choose to delete it for everyone: everyone keeps their own copy, which no longer updates, and the relay keeps the encrypted records for 30 days so the deletion can be undone, then deletes them. A group is also deleted from the relay after 400 days without use.</li>
       </ul>
       <h3>3.5 ATM Split for Android</h3>
       <p>The Android app follows this policy with these differences, because it uses Android's own systems instead of Apple's:</p>
@@ -269,7 +269,7 @@
         <li><strong>Right to object</strong> (Article 21) — Object to processing based on legitimate interests.</li>
         <li><strong>Right to withdraw consent</strong> (Article 7) — Withdraw previously given consent at any time.</li>
       </ul>
-      <p><strong>Since we do not collect personal data, and shared groups reach our relay only encrypted with a key we never have, there is no data we can read to provide, correct, restrict, port, or cease processing.</strong> The owner of a shared group can delete it from the relay by stopping sharing (Section 3.4). Your local data can be erased by deleting individual items within the App or by deleting the App entirely. If you believe we hold data about you in error, please contact us and we will investigate promptly.</p>
+      <p><strong>Since we do not collect personal data, and shared groups reach our relay only encrypted with a key we never have, there is no data we can read to provide, correct, restrict, port, or cease processing.</strong> The person who manages a shared group can delete it from the relay by stopping sharing, or by deleting it for everyone, in which case the encrypted records are removed 30 days later unless the deletion is undone (Section 3.4). Your local data can be erased by deleting individual items within the App or by deleting the App entirely. If you believe we hold data about you in error, please contact us and we will investigate promptly.</p>
       <p><strong>Legal basis for processing:</strong> We do not process personal data, so no legal basis under Article 6 is required on our part. Because the data you enter into the App is stored on your device (and, only if you turn on iCloud Sync, in your own iCloud account) and, if you share a group, reaches our relay only in encrypted form that we cannot read, we do not act as a controller or processor of that data, and GDPR obligations that presuppose our possession of personal data do not arise.</p>
       <p><strong>Data controller:</strong> Approve The Move (contact details in Section 30).</p>
 
@@ -324,7 +324,7 @@
         <tr>
           <td>Shared groups: an opaque group id, opaque record ids, the encrypted records, and timestamps</td>
           <td>Approve The Move's relay server (runs on Cloudflare)</td>
-          <td>Until the owner stops sharing or deletes the group, or after 400 days without use</td>
+          <td>Until the person managing the group stops sharing it, 30 days after they delete it for everyone (unless undone), or after 400 days without use</td>
         </tr>
         <tr>
           <td>User preferences (theme, accent color, haptics, display mode, iCloud Sync on/off)</td>
