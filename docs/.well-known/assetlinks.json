@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "com.approvethemove.atmsplit",
       "sha256_cert_fingerprints": [
-        "7C:22:81:D3:D4:C3:E3:EA:D5:4C:59:1E:D2:17:E4:08:2C:2C:D7:AF:8B:76:8A:C9:E7:43:2B:F3:ED:C7:7E:0B"
+        "7C:22:81:D3:D4:C3:E3:EA:D5:4C:59:1E:D2:17:E4:08:2C:2C:D7:AF:8B:76:8A:C9:E7:43:2B:F3:ED:C7:7E:0B",
+        "BE:9F:B7:74:68:5F:62:A7:14:51:AE:20:A8:26:02:B1:E7:09:2F:A9:F6:2B:8D:B5:9B:2E:C9:36:1D:D4:77:A7"
       ]
     }
   }
