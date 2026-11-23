@@ -136,11 +136,11 @@
       <div class="features-grid">
         <div class="feature-item">
           <h3>4-Player Game</h3>
-          <p>Classic 4-player format. Two teams of two, sitting opposite each other. 8 cards each from a modified deck (7 of Spades removed).</p>
+          <p>Classic 4-player format. Two teams of two, sitting opposite each other. 8 cards each from a 32-card deck: 7 up to Ace in every suit, without the 7 of Spades, plus the Wild Card.</p>
         </div>
         <div class="feature-item">
           <h3>6-Player Game</h3>
-          <p>Extended format with 6 players in two teams of three. Alternating seats. Uses cards from 3 upward (3 of Spades removed).</p>
+          <p>Extended format with 6 players in two teams of three, in alternating seats. 8 cards each from a 48-card deck: 3 up to Ace in every suit, without the 3 of Spades, plus the Wild Card.</p>
         </div>
         <div class="feature-item">
           <h3>Single Player (vs AI)</h3>
@@ -159,56 +159,76 @@
       <h2>How to Play</h2>
 
       <h3 class="subhead">Overview</h3>
-      <p>Qatari Cards is a team-based trick-taking card game. Players bid on how many tricks they can win, choose a trump suit, then play to meet their bid. The team that reaches 32 penalty points first loses.</p>
+      <p>Qatari Cards is a trick-taking card game for two teams, played with 4 or 6 players. Everyone gets 8 cards, so every round has 8 tricks: one card from every player makes a trick, and the best card wins it. Players bid how many tricks their team will win, the top bidder picks trump, and their team tries to make the bid. There is one shared score, held by one team at a time, and the team holding 32 or more at the end of a round loses.</p>
+      <p>Play always goes counter-clockwise: the player on your right plays after you, and is always on the other team. With 4 players your partner sits opposite you. With 6, the teams alternate seats, so your partners are two seats away on each side and the player straight across is an opponent.</p>
 
       <h3 class="subhead">Game Flow</h3>
       <div class="steps">
         <div class="step">
-          <p><strong>Dealing</strong> — Each player receives 8 cards. One card in the deck is the Wild Card — the most powerful card in the game.</p>
+          <p><strong>Dealing</strong> — All the cards are dealt, 8 to each player. One of them is the Wild Card, the strongest card in the game. Whoever starts the game deals first: you against the computer, or the host with friends. The deal moves one seat to the right only when the score passes to the other team.</p>
         </div>
         <div class="step">
-          <p><strong>Bidding (Mazaad)</strong> — Starting after the dealer, players bid from 5 to 8 on how many tricks their team will win. You can say Taaf (pass) or raise. If everyone says Taaf, the Wild Card holder is Majboor and must bid 5.</p>
+          <p><strong>Bidding (Mazaad)</strong> — Bidding starts with the player on the dealer's right and goes round the table. On your turn, bid how many of the 8 tricks your team will win, or say Taaf (pass). The first bid is at least 5, and every bid after that must be higher than the last, up to 8. Taaf is final: you're out of the bidding for the rest of the round. The bidding goes on until only one player hasn't said Taaf; that player made the highest bid and becomes the declarer. A bid of 8, Thaman Aklat, ends the bidding at once. If everyone else has said Taaf and nobody has bid yet, the last player decides: bid, or say Taaf too. If everyone says Taaf, it's Majboor.</p>
         </div>
         <div class="step">
-          <p><strong>Trump Selection</strong> — The highest bidder (declarer) picks the trump suit. Trump cards beat all non-trump cards.</p>
+          <p><strong>Trump Selection</strong> — The declarer names one of the four suits as trump for this round. Trumps beat every other suit; only the Wild Card beats a trump.</p>
         </div>
         <div class="step">
-          <p><strong>Playing Tricks</strong> — Players take turns playing one card each. You must follow the led suit if you can &mdash; though the Wild Card is the exception and may be played at any time. If you can't follow, you may play trump or any other card. Highest card of the led suit wins, unless trumped or beaten by the Wild Card.</p>
+          <p><strong>Playing Tricks</strong> — The player on the declarer's right leads the first trick, and whoever wins a trick leads the next. You can lead any card, with two exceptions: the round's first card can't be a trump, and the Wild Card can only be led as your last card. If you hold the suit that was led, you must play that suit or the Wild Card. If you can't follow, play any card: you don't have to trump, and you never have to win. The trick goes to the Wild Card if someone played it; if not, to the highest trump; if no trump was played, to the highest card of the suit led. A card of any other suit can't win, however high it is.</p>
         </div>
         <div class="step">
-          <p><strong>Scoring</strong> — If the bidding team wins at least as many tricks as they bid, the defending team gets penalty points. If not, the bidding team gets penalties. First team to 32 points loses.</p>
+          <p><strong>Scoring</strong> — After the 8th trick, the declarer's team has made its bid if it won at least that many tricks, and missed it if not, unless someone fell into the Wild Card trap (below). Then points move on the shared score.</p>
         </div>
       </div>
+
+      <h3 class="subhead">Scoring and Winning</h3>
+      <p>There is only one score, and it always sits with one team: that team holds it. Holding the score is bad. The team holding 32 or more at the end of a round loses the game. After each round, points move one way or the other:</p>
+      <ul>
+        <li><strong>Made your bid?</strong> Push your bid toward the other team.</li>
+        <li><strong>Missed it?</strong> Push double your bid toward your own team. A missed Majboor bid costs just the bid; the Wild Card trap always costs double.</li>
+      </ul>
+      <p>If the team the points move toward already holds the score, the score goes up. If the other team holds it, the score comes down, and if it would drop below zero it flips over: the team the points moved toward now holds what's left over, and the deal moves one seat to the right. If it lands on exactly 0, it stays where it is.</p>
+      <p>For example, with your team as &ldquo;us&rdquo;:</p>
+      <ul>
+        <li>We hold 5. They bid 6 and make it, so 6 points move toward us: we hold 11.</li>
+        <li>We hold 5. We bid 7 and make it, so 7 points move toward them. 5 &minus; 7 goes below zero, so it flips: they hold 2, and the deal moves one seat.</li>
+        <li>They hold 10. We bid 6 but win only 4 tricks, so 12 points move toward us. 10 &minus; 12 goes below zero, so it flips: we hold 2, and the deal moves one seat.</li>
+        <li>We hold 27. They bid 5 and make it, so 5 points move toward us: we hold 32, and we lose.</li>
+      </ul>
 
       <h3 class="subhead">Key Rules</h3>
       <div class="features-grid">
         <div class="feature-item">
           <h3>The Wild Card</h3>
-          <p>The Wild Card beats every card in the game, always winning the trick it's played in. But you can't lead with the Wild Card unless it's your only remaining card.</p>
+          <p>There is just one Wild Card. It belongs to no suit and beats every card, trumps included. When someone else leads, you can play it whenever you like, even if you could follow suit. But you can't lead with it while you still have other cards.</p>
         </div>
         <div class="feature-item">
           <h3>Wild Card Endgame</h3>
-          <p>If you're forced to lead the final trick with the Wild Card as your only card, your team immediately loses the round. Plan carefully.</p>
+          <p>If you're still holding the Wild Card and you win the 7th trick, you have to lead the last trick with it, and your team loses the round, whatever the trick count. If your team was bidding, the bid fails and costs double. If your team was defending, the bidders get their bid, even if they were short. Playing the Wild Card on someone else's lead in the last trick is fine.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Taaf (Pass)</h3>
+          <p>Taaf is final. Once you say it, you're out of the bidding for the rest of the round, so think before you say it.</p>
         </div>
         <div class="feature-item">
           <h3>Majboor (Forced Bid)</h3>
-          <p>If all players say Taaf during bidding, the player holding the Wild Card is Majboor and must bid the minimum (5). You can't avoid playing.</p>
-        </div>
-        <div class="feature-item">
-          <h3>Card Ranking</h3>
-          <p>From lowest to highest: 7, 8, 9, 10, Jack, Queen, King, Ace (4-player). Trump suit outranks all other suits.</p>
-        </div>
-        <div class="feature-item">
-          <h3>Follow Suit</h3>
-          <p>You must play a card of the led suit if you have one. If you can't follow suit, you're free to play trump or any card. The Wild Card is the one exception &mdash; it can be played even when you could follow suit.</p>
-        </div>
-        <div class="feature-item">
-          <h3>Opening Lead</h3>
-          <p>The very first lead of a round can't be a trump card &mdash; unless trumps are the only cards you hold. After that first trick, any suit may be led.</p>
+          <p>If every player says Taaf, whoever holds the Wild Card is shown to the table, must play a bid of 5, and picks trump. The good news: missing a Majboor bid costs only the bid, not double. Falling into the Wild Card trap still costs double.</p>
         </div>
         <div class="feature-item">
           <h3>Thaman Aklat (Bid 8)</h3>
-          <p>The maximum bid: all eight tricks. If you bid Thaman Aklat and win all 8 tricks, the penalty is devastating for the other team. If you fail, it's devastating for yours.</p>
+          <p>The top bid: all 8 tricks. Nobody can go higher, so the bidding stops right there. It scores like any other bid, with 8 at stake: make it and you push 8 points toward the other team; miss it and 16 come back to you.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Card Ranking</h3>
+          <p>Aces are high. From lowest to highest: 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace. The 4-player game uses 7 up to Ace; the 6-player game uses 3 up to Ace. Trumps beat every other suit, and the Wild Card beats everything.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Follow Suit</h3>
+          <p>If you hold the suit that was led, you must play that suit or the Wild Card. If you can't follow, play any card: a trump, another suit or the Wild Card. You never have to trump, and you never have to win the trick.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Opening Lead</h3>
+          <p>The very first card of each round can't be a trump, unless the leader holds nothing but trumps (and maybe the Wild Card). From the second trick on, any suit may be led.</p>
         </div>
       </div>
     </div>
@@ -219,16 +239,19 @@
       <h2>Strategy Tips</h2>
       <div class="steps">
         <div class="step">
-          <p><strong>Bid conservatively</strong> — Unless you have strong trump cards and the Wild Card, keep your bids modest.</p>
+          <p><strong>Bid conservatively</strong> — A missed bid costs double. Unless you hold a strong suit to name as trump, or the Wild Card, keep your bids modest.</p>
         </div>
         <div class="step">
-          <p><strong>Track played cards</strong> — Pay attention to what's been played. Knowing which high cards are gone changes everything.</p>
+          <p><strong>Count to 8</strong> — Your team needs as many tricks as it bid. To stop the other team, you need 9 minus their bid: 4 tricks stop a bid of 5, unless someone falls into the Wild Card trap.</p>
         </div>
         <div class="step">
-          <p><strong>Protect your Wild Card</strong> — Don't waste the Wild Card early. Use it to win critical tricks or avoid the endgame penalty.</p>
+          <p><strong>Track played cards</strong> — Pay attention to what's been played. Knowing which high cards and trumps are gone changes everything.</p>
         </div>
         <div class="step">
-          <p><strong>Coordinate with your partner</strong> — In multiplayer, teamwork wins games. Set up tricks for your partner.</p>
+          <p><strong>Don't hold the Wild Card too long</strong> — Use it to win a trick that matters, on someone else's lead, before the end. If you still have it near the last tricks, be careful about winning the 7th trick.</p>
+        </div>
+        <div class="step">
+          <p><strong>Coordinate with your partner</strong> — Teamwork wins games. If your partner is already winning the trick, play a low card.</p>
         </div>
       </div>
     </div>
@@ -252,11 +275,11 @@
         </details>
         <details class="faq-item" name="faq">
           <summary>I've never played Qatari Cards before. Is there a tutorial?</summary>
-          <p>The full rules are on this page above. It's a trick-taking team game with bidding and trump &mdash; similar to Spades or Hearts if you've played those. The app guides you through the key phases as you play.</p>
+          <p>Yes. The app shows a quick tour the first time you open it, and How to Play is on the main menu and in Settings. In single-player games the Hint button suggests a move (not in the Daily Challenge or with friends). The rules are also on this page above. It's a trick-taking team game with bidding and trump &mdash; if you've played Spades, it will feel familiar.</p>
         </details>
         <details class="faq-item" name="faq">
-          <summary>What does the Wild Card card do?</summary>
-          <p>The Wild Card beats every other card in the game. But there's a catch: if you're forced to lead the final trick with the Wild Card as your only card, your team loses the round immediately. It's powerful but risky.</p>
+          <summary>What does the Wild Card do?</summary>
+          <p>The Wild Card beats every other card in the game, trumps included, and you can play it on someone else's lead even when you could follow suit. But there's a catch: you can only lead it as your last card. If you win the 7th trick still holding it, you must lead it into the last trick, and your team loses the round. If you were bidding, the bid fails and costs double; if you were defending, the bidders get their bid. It's powerful but risky.</p>
         </details>
       </div>
     </div>
