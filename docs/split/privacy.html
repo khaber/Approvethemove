@@ -74,7 +74,7 @@
     <div class="privacy-content">
 
       <h1>ATM Split — Privacy Policy &amp; Terms of Use</h1>
-      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: November 20, 2026</p>
+      <p class="last-updated">Effective date: April 13, 2026 &nbsp;|&nbsp; Last updated: November 27, 2026</p>
 
       <p class="lead">This document contains both the <strong>Privacy Policy</strong> and the <strong>Terms of Use</strong> for ATM Split. Please read both sections carefully before using the App.</p>
 
@@ -98,9 +98,9 @@
         <li><strong>No analytics or tracking</strong> — We do not use any analytics frameworks, crash reporting services, telemetry tools, device fingerprinting, or usage tracking of any kind.</li>
         <li><strong>No advertising</strong> — The App contains no advertisements, no advertising SDKs, no ad identifiers (IDFA), and no advertising networks.</li>
         <li><strong>No access to your data</strong> — By default all data stays on your device. If <em>you</em> turn on iCloud Sync (version 2.0 and later), your groups are kept in <strong>your own iCloud account</strong>, encrypted, and are visible only to you. We cannot read it (see Section 3.3). If <em>you</em> share a group with a link, its records are encrypted on your device before they are stored on our relay server, which cannot read names, amounts or anything else in them (see Section 3.4).</li>
-        <li><strong>No in-app purchases</strong> — No financial, billing, or payment information is collected or processed.</li>
+        <li><strong>No in-app purchases</strong> — No financial, billing, or payment information is collected or processed by us. If you choose to type your own payment details into the App (Section 3.2), they stay on your device.</li>
         <li><strong>No location data</strong> — The App does not request, access, or store your geographic location.</li>
-        <li><strong>No contacts or photos</strong> — The App does not access your contacts, photo library, camera, microphone, or any other device sensor beyond haptic feedback. In Kids mode, leaving Kids mode asks for Face ID, Touch ID or the device passcode; that check is performed entirely by iOS, and the App never receives any biometric data.</li>
+        <li><strong>No contacts or photos</strong> — The App does not access your contacts, photo library, camera, microphone, or any other device sensor beyond haptic feedback. Up to version 2.2, leaving Kids mode asked for Face ID, Touch ID or the device passcode; that check was performed entirely by iOS, and the App never received any biometric data. From version 2.3, switching out of Kids mode needs no check and the App doesn't use Face ID or Touch ID at all.</li>
       </ul>
       <p><strong>We do not sell, rent, or trade any personal information — we never possess it in the first place.</strong> Because no personal data ever reaches us in a form we can read, there is nothing for us to sell, share, monetize, or lose.</p>
 
@@ -121,7 +121,7 @@
       <p>This data is stored in a local SQLite database managed by SwiftData within the App's sandbox. Unless you turn on iCloud Sync (Section 3.3) or share a group (Section 3.4), it is not uploaded, synced, or transmitted anywhere.</p>
 
       <h3>3.2 UserDefaults (Preferences)</h3>
-      <p>A small amount of non-personal preference data is stored using Apple's UserDefaults system:</p>
+      <p>Your preferences, and a few things you choose to keep on this device only, are stored using Apple's UserDefaults system:</p>
       <ul>
         <li>Theme preference (System, Light, or Dark)</li>
         <li>Accent color selection</li>
@@ -129,6 +129,8 @@
         <li>Display mode (Standard, Easy or Kids) and whether iCloud Sync is turned on</li>
         <li>A cached copy of the most recently fetched exchange rates, kept so conversions still work offline (contains only public rate numbers, no personal data)</li>
         <li>Counters used to decide when to show Apple's standard rating prompt (for example, how many expenses you have added), which never leave your device</li>
+        <li>From version 2.3, the optional <strong>payment details</strong> you type in Settings ▸ Payment Details (for example an IBAN, bank details or a phone number). They are stored only on this device, are never synced or sent to us, and are added to an <em>Ask for Payment</em> message only when you choose to include them. You can change or clear them in Settings at any time.</li>
+        <li>From version 2.3, the list of groups you archived on this device (only their ids). Archiving is per device and is never synced.</li>
       </ul>
 
       <h3>3.3 iCloud Sync (optional, off by default)</h3>
@@ -153,7 +155,7 @@
       <h3>3.5 ATM Split for Android</h3>
       <p>The Android app follows this policy with these differences, because it uses Android's own systems instead of Apple's:</p>
       <ul>
-        <li><strong>Storage:</strong> your groups, members, expenses and settlements are stored in a private on-device database (Android Room/SQLite) inside the App's private storage, which other apps can't access. Cached exchange rates are kept in the App's private preferences. Nothing leaves your phone except a shared group's encrypted records (Section 3.4) and the exchange rate request (Section 4.1).</li>
+        <li><strong>Storage:</strong> your groups, members, expenses and settlements are stored in a private on-device database (Android Room/SQLite) inside the App's private storage, which other apps can't access. Cached exchange rates, the optional payment details you type in Settings, and the list of archived groups are kept in the App's private preferences, on the phone only. Nothing leaves your phone except a shared group's encrypted records (Section 3.4) and the exchange rate request (Section 4.1).</li>
         <li><strong>No iCloud and no Android backup:</strong> the Android app has no iCloud Sync (Section 3.3 and 4.3 apply to Apple devices only) and opts out of Android's cloud backup and device-to-device transfer, so its data isn't copied to Google's backup servers. To have a group on several devices, open its invite link on each one.</li>
         <li><strong>Shared groups:</strong> work exactly as described in Section 3.4, with the same relay, and between Android and Apple devices. If you share a group from an Android phone, a key that lets that phone end the group for everyone is kept on that phone only, protected by the Android Keystore.</li>
         <li><strong>Not in the Android app yet:</strong> Easy mode, Kids mode, CSV export and iCloud Sync, so the parts of this policy about them don't apply to it.</li>
@@ -224,8 +226,8 @@
           <td>None by us (data stays in your iCloud; we have no access)</td>
         </tr>
         <tr>
-          <td>LocalAuthentication</td>
-          <td>Face ID / Touch ID / passcode check to leave Kids mode</td>
+          <td>LocalAuthentication (versions up to 2.2 only)</td>
+          <td>Face ID / Touch ID / passcode check to leave Kids mode; removed in version 2.3</td>
           <td>None (performed by iOS; no biometric data reaches the App)</td>
         </tr>
         <tr>
@@ -297,7 +299,7 @@
       <ul>
         <li><strong>Sandboxed storage</strong> — All on-device data (SwiftData database and UserDefaults preferences) is stored within the App's iOS sandbox, which is isolated from other apps and protected by the operating system.</li>
         <li><strong>Encrypted network requests</strong> — Exchange rate requests are made over HTTPS (TLS encryption), helping protect data in transit from interception.</li>
-        <li><strong>No persistent sensitive data</strong> — No passwords, accounts or payment information are ever stored or processed. The only secrets the App keeps belong to shared groups (such as a group's key), and they stay on the devices of the people in the group.</li>
+        <li><strong>No persistent sensitive data</strong> — No passwords or accounts are ever stored or processed, and no payment information is processed. The only payment details the App keeps are the optional ones you type yourself (Section 3.2), which stay on your device. The only secrets the App keeps belong to shared groups (such as a group's key), and they stay on the devices of the people in the group.</li>
         <li><strong>No remote attack surface</strong> — The App does not expose any server endpoints, APIs, or network services. Its outbound connections are an HTTPS GET for exchange rates, which transmits no personal data; connections to our relay for shared groups, which carry only encrypted records; and, only if you turn on iCloud Sync, Apple's CloudKit connections to your own iCloud account.</li>
       </ul>
       <p>That said, we want to be honest with you: <strong>no method of electronic storage or transmission is 100% secure</strong>, and no software can be guaranteed to be entirely free of vulnerabilities. The security of data stored on your device also depends on factors we do not control, such as your device passcode, your iOS version, and the physical security of your device. To the maximum extent permitted by applicable law, we are not liable for security incidents arising from circumstances beyond our reasonable control, including compromise of your device or of Apple's operating system.</p>
@@ -332,9 +334,14 @@
           <td>Until the person managing the group stops sharing it, 30 days after they delete it for everyone (unless undone), or after 400 days without use</td>
         </tr>
         <tr>
-          <td>User preferences (theme, accent color, haptics, display mode, iCloud Sync on/off)</td>
+          <td>User preferences (theme, accent color, haptics, display mode, iCloud Sync on/off), the optional payment details you type in Settings, and the list of archived groups</td>
           <td>Device (UserDefaults)</td>
           <td>Until App is deleted</td>
+        </tr>
+        <tr>
+          <td>Group summaries you share as a PDF (version 2.3 and later)</td>
+          <td>Device (App's temporary or cache directory)</td>
+          <td>Until the operating system clears it or the App is deleted</td>
         </tr>
         <tr>
           <td>Exported CSV files</td>
